@@ -2,26 +2,41 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans text-white">
-      <main className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 bg-[#7d2c2c]">
-        <div className="bg-white text-[#7d2c2c] p-6 rounded-lg shadow-md text-center md:text-left">
-          <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl shadow-md text-center">
-            <p className="text-xl font-semibold text-gray-700 dark:text-gray-200">
-              who are we?
-            </p>
-            <p className="text-3xl font-bold mt-2 text-gray-900 dark:text-white">
-              innovative
+    <div className="min-h-screen font-sans text-white w-full">
+      <main className="grid grid-cols-1 md:grid-cols-2 bg-[#7d2c20] w-full">
+        {/* WHO ARE WE --------------------------------------------------- */}
+        <div className="bg-white text-[#7d2c2c] p-6 text-center md:text-left flex items-center justify-center min-h-[300px] md:min-h-[400px]">
+          <div className="bg-[#eddada] p-8 text-center">
+            <p className="text-4xl font-bold text-[#8B0000]">Who are we?</p>
+            <p className="text-3xl font-normal mt-2 text-[#914040]">
+              Innovative|
             </p>
           </div>
         </div>
 
         {/* RIGHT SIDE --------------------------------------------*/}
-        <div className="relative w-full h-80 md:h-[400px]">
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
-            <h1 className="text-4xl md:text-5xl font-extrabold">
-              CORNELL AUTOBOAT
+        <div className="relative w-full min-h-[300px] md:min-h-[400px]">
+          <Image
+            src="/clifford2.png"
+            alt="Clifford"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5 ">
+            <h1 className="tracking-wider text-7xl font-bold">
+              CORNELL
             </h1>
-            <p className="text-xl font-bold mt-2">PROJECT TEAM</p>
+            <h1 className="tracking-wider text-7xl font-bold">
+              AUTOBOAT
+            </h1>
+            <p className="tracking-wider text-4xl font-bold mt-2">
+              PROJECT TEAM
+            </p>
           </div>
         </div>
       </main>
