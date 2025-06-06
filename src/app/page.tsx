@@ -41,18 +41,47 @@ export default function Home() {
         </div>
       </main>
 
-      {/* IMAGINATIVE Section  --------------------------------------------  */}
-      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
-        <div className="text-left max-w-xl">
-          <h2 className="text-2xl font-bold mb-4">IMAGINATIVE</h2>
-          <p>
-            We are a student-run team of hardware and software engineers,
-            dedicated to building and innovating in the field of naval
-            architecture and marine robotics.
-          </p>
-        </div>
-        <div className="w-full h-48 bg-gray-300 rounded-lg" />
-      </section>
+     {/* IMAGINATIVE Section 1 */}
+<section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+  <div className="text-left md:w-1/2 self-start">
+    <h2 className="text-2xl font-bold mb-4 text-white">IMAGINATIVE</h2>
+    <p className="text-white">
+      We are a student-run team of hardware and software engineers,
+      dedicated to building and innovating in the field of naval
+      architecture and marine robotics.
+    </p>
+  </div>
+  <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+</section>
+
+{/* INNOVATIVE Section 2 */}
+<section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+  <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+  <div className="text-left md:w-1/2 self-start">
+    <h2 className="text-2xl font-bold mb-4 text-white">INNOVATIVE</h2>
+    <p className="text-white">
+      Write Something Here
+    </p>
+  </div>
+</section>
+{/* SOMETHING Section 3 */}
+<section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+  <div className="text-left md:w-1/2 self-start">
+    <h2 className="text-2xl font-bold mb-4 text-white"> SOMETHING </h2>
+    <p className="text-white">
+      SOMETHING!
+    </p>
+  </div>
+  <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+</section>
+<section className="bg-[#1e293b] min-h-screen flex justify-center pt-20 pb-0">
+  <div className="text-center">
+    <h2 className="text-4xl font-bold mb-4 text-white">Check out our team video!</h2>
+     <div className= "w-full h-48 bg-gray-300 rounded-lg" />
+  </div>
+</section>
+
+
     </div>
   );
 }
