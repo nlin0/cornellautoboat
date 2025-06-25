@@ -28,12 +28,8 @@ export default function Home() {
             style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
           />
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5 ">
-            <h1 className="tracking-wider text-7xl font-bold">
-              CORNELL
-            </h1>
-            <h1 className="tracking-wider text-7xl font-bold">
-              AUTOBOAT
-            </h1>
+            <h1 className="tracking-wider text-7xl font-bold">CORNELL</h1>
+            <h1 className="tracking-wider text-7xl font-bold">AUTOBOAT</h1>
             <p className="tracking-wider text-4xl font-bold mt-2">
               PROJECT TEAM
             </p>
@@ -41,47 +37,180 @@ export default function Home() {
         </div>
       </main>
 
-     {/* IMAGINATIVE Section 1 */}
-<section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+      {/* IMAGINATIVE Section 1 */}
+      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="text-left md:w-1/2 self-start">
+          <h2 className="text-2xl font-bold mb-4 text-white">IMAGINATIVE</h2>
+          <p className="text-white">
+            We are a student-run team of hardware and software engineers,
+            dedicated to building and innovating in the field of naval
+            architecture and marine robotics.
+          </p>
+        </div>
+        <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+      </section>
+
+      {/* INNOVATIVE Section 2 */}
+      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+        <div className="text-left md:w-1/2 self-start">
+          <h2 className="text-2xl font-bold mb-4 text-white">INNOVATIVE</h2>
+          <p className="text-white">Write Something Here</p>
+        </div>
+      </section>
+      {/* SOMETHING Section 3 */}
+      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
+        <div className="text-left md:w-1/2 self-start">
+          <h2 className="text-2xl font-bold mb-4 text-white"> SOMETHING </h2>
+          <p className="text-white">SOMETHING!</p>
+        </div>
+        <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+      </section>
+
+      <section className="bg-[#330503] flex justify-center pt-20 pb-10">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold mb-2 text-white">
+            Check out our team video!
+          </h2>
+          <div className="w-full h-48 bg-gray-300 rounded-lg" />
+        </div>
+      </section>
+
+      <section className="bg-[#330503] py-10 text-white text-center">
+        <h2 className="text-6xl font-bold mb-2 text-white pb-10">
+          The 2025 - 2026 Competition Cycle
+        </h2>
+        <p className="max-w-4xl mx-auto text-3xl mb-6">
+          Incremental hardware updates, significant software changes, and an
+          emphasis on testing. Read more about each phase of the process below.
+        </p>
+        <div className="flex justify-center gap-6 flex-wrap">
+          <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+            <a
+              href="#testing"
+              className="text-3xl font-semibold hover:underline hover:text-red-400"
+            >
+              Testing
+            </a>
+          </div>
+          <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+            <a
+              href="#design"
+              className="text-3xl font-semibold hover:underline hover:text-red-400"
+            >
+              Design
+            </a>
+          </div>
+          <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+            <a
+              href="#manufacturing"
+              className="text-3xl font-semibold hover:underline hover:text-red-400"
+            >
+              Manufacturing
+            </a>
+          </div>
+          <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+            <a
+              href="#research"
+              className="text-3xl font-semibold hover:underline hover:text-red-400"
+            >
+              Research
+            </a>
+          </div>
+        </div>
+      </section>
+
+   <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
   <div className="text-left md:w-1/2 self-start">
-    <h2 className="text-2xl font-bold mb-4 text-white">IMAGINATIVE</h2>
+    <h2 className="text-4xl font-bold mb-4 text-white">Testing</h2>
     <p className="text-white">
       We are a student-run team of hardware and software engineers,
       dedicated to building and innovating in the field of naval
       architecture and marine robotics.
     </p>
   </div>
-  <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+  <div className="md:w-1/2 bg-gray-300 rounded-lg" />
 </section>
 
-{/* INNOVATIVE Section 2 */}
-<section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
-  <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
-  <div className="text-left md:w-1/2 self-start">
-    <h2 className="text-2xl font-bold mb-4 text-white">INNOVATIVE</h2>
-    <p className="text-white">
-      Write Something Here
-    </p>
-  </div>
-</section>
-{/* SOMETHING Section 3 */}
-<section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-center gap-8">
-  <div className="text-left md:w-1/2 self-start">
-    <h2 className="text-2xl font-bold mb-4 text-white"> SOMETHING </h2>
-    <p className="text-white">
-      SOMETHING!
-    </p>
-  </div>
-  <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
-</section>
-<section className="bg-[#1e293b] min-h-screen flex justify-center pt-20 pb-0">
-  <div className="text-center">
-    <h2 className="text-4xl font-bold mb-4 text-white">Check out our team video!</h2>
-     <div className= "w-full h-48 bg-gray-300 rounded-lg" />
-  </div>
-</section>
+      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row-reverse items-stretch gap-8">
+       
+        <div className="text-left md:w-1/2 self-start">
+          <h2 className="text-2xl font-bold mb-4 text-white">Design</h2>
+          <p className="text-white">
+            This year's design cycle is focused on delivering small but
+            impactful upgrades to the boat's hardware, and significant changes
+            to the main codebase to improve performance in autonomous tasks.
+            Some of the main projects are: 
+            <li>Placeholder</li> 
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li> 
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li> 
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+  
+          </p>
+          
+        </div>
+         <div className="md:w-1/2 bg-gray-300 rounded-lg" />
+      </section>
 
+      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
+        <div className="text-left md:w-1/2 self-start">
+          <h2 className="text-2xl font-bold mb-4 text-white">
+            {' '}
+            Manufacturing{' '}
+          </h2>
+          <p className="text-white">SOMETHING!</p>
+        </div>
+        <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
+      </section>
 
+      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row-reverse items-stretch gap-8">
+       
+        <div className="text-left md:w-1/2 self-start">
+          <h2 className="text-2xl font-bold mb-4 text-white">Research</h2>
+          <p className="text-white">
+            This year's design cycle is focused on delivering small but
+            impactful upgrades to the boat's hardware, and significant changes
+            to the main codebase to improve performance in autonomous tasks.
+            Some of the main projects are: 
+            <li>Placeholder</li> 
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li> 
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li> 
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+            <li>Placeholder</li>  
+  
+          </p>
+          
+        </div>
+         <div className="md:w-1/2 bg-gray-300 rounded-lg" />
+      </section>
+
+         <section className="bg-[#330503] flex justify-center pt-20 pb-10">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold mb-2 text-white">
+            Our Network
+          </h2>
+          <p className="text-2xl text-white">
+            For many of our members, AutoBoat has served as a gateway to incredible opportunities in industry. Check out some of companies our current members and alumni have worked at.
+  
+          </p>
+          <div className="w-full h-48 bg-gray-300 rounded-lg" />
+        </div>
+      </section>
     </div>
   );
 }
