@@ -67,7 +67,7 @@ export default function Home() {
         <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
       </section>
 
-      <section className="bg-[#330503] flex justify-center pt-20 pb-10">
+      <section className="bg-[#330503] flex justify-center pt-40 pb-40">
         <div className="text-center">
           <h2 className="text-4xl font-bold mb-2 text-white">
             Check out our team video!
@@ -75,6 +75,12 @@ export default function Home() {
           <div className="w-full h-48 bg-gray-300 rounded-lg" />
         </div>
       </section>
+
+
+  
+      
+      <div className="bg-[#a24646] py-10">
+        <div className=" max-w-7xl mx-auto px-6">
 
       {/* 2025 - 2026 COMP CYCLE ******************************************************************/}
       <section className="bg-[#330503] py-10 text-white text-center">
@@ -120,11 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-  
-      
-      <div className="bg-[#a24646] py-10">
-        <div className=" max-w-7xl mx-auto px-6">
            {/* TESTING ******************************************************************/}
       <section
         id="testing"
