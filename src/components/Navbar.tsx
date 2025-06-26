@@ -1,9 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
+{
+  /* Code for changing the tab color in the nav bar*/
+}
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -31,27 +34,29 @@ const Navbar = () => {
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-4">
             {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/team", label: "Team" },
-              { href: "/projects", label: "Projects" },
-              { href: "/media", label: "Media" },
-              { href: "/contact", label: "Join Us", isButton: true },
+              { href: '/', label: 'Home' },
+              { href: '/about', label: 'About' },
+              { href: '/team', label: 'Team' },
+              { href: '/projects', label: 'Projects' },
+              { href: '/media', label: 'Media' },
+              { href: '/contact', label: 'Join Us', isButton: true },
             ].map(({ href, label, isButton }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`px-3 py-2 rounded-md text-md font-medium
-                  ${
+              <>
+                {/* style what color the button changes to when clicked on */}
+                <Link
+                  key={href}
+                  href={href}
+                  className={`px-3 py-2 rounded-md text-md font-medium ${
                     isActive(href)
-                      ? "bg-[#6e0903] text-white"
-                      : "text-gray-900 hover:bg-red-100"
-                  }
-                  ${isButton ? "bg-red-600 text-white hover:bg-red-700" : ""}
-                `}
-              >
-                {label}
-              </Link>
+                      ? 'bg-[#6e0903] text-white'
+                      : 'text-gray-900 hover:bg-red-100'
+                  } ${
+                    isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''
+                  }`}
+                >
+                  {label}
+                </Link>
+              </>
             ))}
           </div>
 
@@ -106,23 +111,23 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/team", label: "Team" },
-              { href: "/projects", label: "Projects" },
-              { href: "/media", label: "Media" },
-              { href: "/contact", label: "Join Us", isButton: true },
+              { href: '/', label: 'Home' },
+              { href: '/about', label: 'About' },
+              { href: '/team', label: 'Team' },
+              { href: '/projects', label: 'Projects' },
+              { href: '/media', label: 'Media' },
+              { href: '/contact', label: 'Join Us', isButton: true },
             ].map(({ href, label, isButton }) => (
               <Link
                 key={href}
                 href={href}
                 className={`block px-3 py-2 rounded-md text-base font-medium
                    ${
-                    isActive(href)
-                      ? "bg-[#6e0903] text-white"
-                      : "text-gray-900 hover:bg-red-100"
-                  }
-                  ${isButton ? "bg-red-600 text-white hover:bg-red-700" : ""}
+                     isActive(href)
+                       ? 'bg-[#6e0903] text-white'
+                       : 'text-gray-900 hover:bg-red-100'
+                   }
+                  ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}
                 `}
               >
                 {label}

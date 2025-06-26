@@ -75,7 +75,8 @@ export default function Home() {
           <div className="w-full h-48 bg-gray-300 rounded-lg" />
         </div>
       </section>
-
+      
+      {/* 2025 - 2025 COMP CYCLE ******************************************************************/}
       <section className="bg-[#330503] py-10 text-white text-center">
         <h2 className="text-6xl font-bold mb-2 text-white pb-10">
           The 2025 - 2026 Competition Cycle
@@ -119,7 +120,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* TESTING ******************************************************************/}
       <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative">
         <div className="absolute top-0 left-0 w-full h-4 bg-black" />
 
@@ -133,7 +134,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 bg-gray-300 rounded-lg mt-6" />
       </section>
-
+      {/* DESIGN ******************************************************************/}
       <section className="bg-[#a24646] p-10 flex flex-col md:flex-row-reverse items-stretch gap-8">
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">Design</h2>
@@ -158,7 +159,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 bg-gray-300 rounded-lg" />
       </section>
-
+      {/* MANUFACTURING ******************************************************************/}
       <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">
@@ -170,6 +171,7 @@ export default function Home() {
         <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
       </section>
 
+      {/* RESEARCH ******************************************************************/}
       <section className="bg-[#a24646] p-10 flex flex-col md:flex-row-reverse items-stretch gap-8">
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">Research</h2>
