@@ -83,7 +83,7 @@ export default function Home() {
         <div className=" max-w-7xl mx-auto px-6">
 
       {/* 2025 - 2026 COMP CYCLE ******************************************************************/}
-      <section className="bg-[#330503] py-10 text-white text-center">
+      <section className="bg-[#7d2c20] py-10 text-white text-center">
         <h2 className="text-6xl font-bold mb-2 text-white pb-10">
           The 2025 - 2026 Competition Cycle
         </h2>

@@ -20,7 +20,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="bg-[#8a1620] py-10">
+      <div className="bg-[#330503] py-10">
         <div className="max-w-4xl mx-auto px-6">
           <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
