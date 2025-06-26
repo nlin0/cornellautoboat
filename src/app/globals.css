@@ -24,3 +24,11 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.scroll-mt-20 {
+  scroll-margin-top: 5rem; 
+}
+
+html {
+  scroll-behavior: smooth;
+}

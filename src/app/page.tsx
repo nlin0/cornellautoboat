@@ -61,7 +61,7 @@ export default function Home() {
       {/* SOMETHING Section 3 */}
       <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
         <div className="text-left md:w-1/2 self-start">
-          <h2 className="text-2xl font-bold mb-4 text-white"> SOMETHING </h2>
+          <h2 className="text-2xl font-bold mb-4 text-white">SOMETHING</h2>
           <p className="text-white">SOMETHING!</p>
         </div>
         <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
@@ -75,8 +75,8 @@ export default function Home() {
           <div className="w-full h-48 bg-gray-300 rounded-lg" />
         </div>
       </section>
-      
-      {/* 2025 - 2025 COMP CYCLE ******************************************************************/}
+
+      {/* 2025 - 2026 COMP CYCLE ******************************************************************/}
       <section className="bg-[#330503] py-10 text-white text-center">
         <h2 className="text-6xl font-bold mb-2 text-white pb-10">
           The 2025 - 2026 Competition Cycle
@@ -120,8 +120,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* TESTING ******************************************************************/}
-      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative">
+      <section
+        id="testing"
+        className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+      >
         <div className="absolute top-0 left-0 w-full h-4 bg-black" />
 
         <div className="text-left md:w-1/2 self-start mt-6">
@@ -134,8 +138,12 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 bg-gray-300 rounded-lg mt-6" />
       </section>
+
       {/* DESIGN ******************************************************************/}
-      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row-reverse items-stretch gap-8">
+      <section
+        id="design"
+        className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+      >
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">Design</h2>
           <p className="text-white">
@@ -159,20 +167,24 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 bg-gray-300 rounded-lg" />
       </section>
+
       {/* MANUFACTURING ******************************************************************/}
-      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
+      <section
+        id="manufacturing"
+        className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+      >
         <div className="text-left md:w-1/2 self-start">
-          <h2 className="text-2xl font-bold mb-4 text-white">
-            {' '}
-            Manufacturing{' '}
-          </h2>
+          <h2 className="text-2xl font-bold mb-4 text-white">Manufacturing</h2>
           <p className="text-white">SOMETHING!</p>
         </div>
         <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
       </section>
 
       {/* RESEARCH ******************************************************************/}
-      <section className="bg-[#a24646] p-10 flex flex-col md:flex-row-reverse items-stretch gap-8">
+      <section
+        id="research"
+        className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+      >
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">Research</h2>
           <p className="text-white">
@@ -196,6 +208,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2 bg-gray-300 rounded-lg" />
       </section>
+
       <section className="bg-[#330503] flex justify-center pt-20 pb-10">
         <div className="w-full max-w-4xl px-4 text-center">
           <h2 className="text-4xl font-bold mb-2 text-white">Our Network</h2>
