@@ -37,7 +37,7 @@ export default function Team() {
 
         <div className="flex flex-col md:flex-row justify-center items-start gap-10">
           {/* Card 1 */}
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-lg overflow-hidden shadow-lg rounded-b-3xl">
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-lg overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -71,7 +71,7 @@ export default function Team() {
           </div>
 
           {/* Card 2 */}
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-lg overflow-hidden shadow-lg rounded-b-3xl">
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-lg overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -117,8 +117,7 @@ export default function Team() {
         <div className="flex flex-col md:flex-row justify-center items-start gap-10">
           {/* Card 1 */}
 
-  
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -151,8 +150,8 @@ export default function Team() {
             <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 2 */}
-          
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -182,11 +181,11 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 3 */}
-         
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -216,11 +215,11 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 4 */}
-        
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -250,9 +249,8 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
-  
         </div>
         {/* ROW 2_____________________________________________________________________ */}
 
@@ -266,10 +264,25 @@ export default function Team() {
       </section>
 
       {/* TEAM SECTION SOFTWARE_____________________________________________________________________ */}
-     <section className="bg-[#e3dbda] py-16 px-4 text-white">
+      <section className="bg-[#e3dbda] py-16 px-4 text-white">
         <h2 className="text-4xl  text-black md:text-5xl font-semibold text-center mb-12">
           Software
         </h2>
+        <p className="text-md text-black font-semibold text-center mb-12">
+          Software is responsible for researching, developing, and testing all
+          computer programs which enable the boat to operate autonomously! 
+          <div className="w-full h-6 bg-[#e3dbda] rounded-b-full"></div>
+          <p className="text-sm text-black font-semibold text-center mb-12 max-w-4xl mx-auto ">
+
+          This includes building computer vision systems, implementing AI-driven
+          navigation and control algorithms, designing microcontroller software,
+          integrating different processes through ROS, and developing simulation
+          frameworks for testing. Members on Software are primarily CS and ECE
+          majors with interdisciplinary interests, a passion for innovation, and
+          dedication to see their projects through.
+        </p>
+        </p>
+        
         {/* ROW 1_____________________________________________________________________ */}
         <div className="bg-[#e3dbda] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto ">
           {' '}
@@ -277,8 +290,7 @@ export default function Team() {
         <div className="flex flex-col md:flex-row justify-center items-start gap-10">
           {/* Card 1 */}
 
-  
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -311,8 +323,8 @@ export default function Team() {
             <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 2 */}
-          
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -342,11 +354,11 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 3 */}
-         
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -376,11 +388,11 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 4 */}
-        
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -410,9 +422,8 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
-  
         </div>
         {/* ROW 2_____________________________________________________________________ */}
 
@@ -426,10 +437,12 @@ export default function Team() {
       </section>
 
       {/* TEAM SECTION SOFTWARE_____________________________________________________________________ */}
-     <section className="bg-[#e3dbda] py-16 px-4 text-white">
+      <section className="bg-[#e3dbda] py-16 px-4 text-white">
         <h2 className="text-4xl text-black md:text-5xl font-semibold text-center mb-12">
           Business
         </h2>
+      
+        
         {/* ROW 1_____________________________________________________________________ */}
         <div className="bg-[#e3dbda] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto ">
           {' '}
@@ -437,8 +450,7 @@ export default function Team() {
         <div className="flex flex-col md:flex-row justify-center items-start gap-10">
           {/* Card 1 */}
 
-  
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -471,8 +483,8 @@ export default function Team() {
             <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 2 */}
-          
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -502,11 +514,11 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 3 */}
-         
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -536,11 +548,11 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
           {/* Card 4 */}
-        
-         <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+
+          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
             <img
               src="/path/to/photo1.jpg"
               alt="Name"
@@ -570,9 +582,8 @@ export default function Team() {
             </div>
 
             {/* Rounded bottom piece */}
-               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
-  
         </div>
         {/* ROW 2_____________________________________________________________________ */}
 
