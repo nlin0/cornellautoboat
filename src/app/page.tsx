@@ -121,28 +121,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTING ******************************************************************/}
+  
+      
+      <div className="bg-[#a24646] py-10">
+        <div className=" max-w-7xl mx-auto px-6">
+           {/* TESTING ******************************************************************/}
       <section
         id="testing"
         className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
       >
-        <div className="absolute top-0 left-0 w-full h-4 bg-black" />
-
+    
+        <div className="md:w-1/2 bg-gray-300 rounded-lg mt-6" />
         <div className="text-left md:w-1/2 self-start mt-6">
           <h2 className="text-4xl font-bold mb-4 text-white">Testing</h2>
           <p className="text-white">
-            We are a student-run team of hardware and software engineers,
-            dedicated to building and innovating in the field of naval
-            architecture and marine robotics.
+            On-water testing is the team's main priority this year. This gives
+            the software team as much time as possible to develop and
+            troubleshoot AI, CV, and controls code in an environment similar to
+            competition. We test outdoors on a lake as much as possible.
+            However, when weather conditions don't allow, indoor pool testing is
+            crucial to stay on top of our timeline. In these cases, we use an
+            ultrasonic positioning system in lieu of a GPS for positional
+            tracking.
           </p>
         </div>
-        <div className="md:w-1/2 bg-gray-300 rounded-lg mt-6" />
       </section>
-
+   
       {/* DESIGN ******************************************************************/}
       <section
         id="design"
-        className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+        className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative "
       >
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">Design</h2>
@@ -173,11 +181,12 @@ export default function Home() {
         id="manufacturing"
         className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
       >
+        {' '}
+        <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
         <div className="text-left md:w-1/2 self-start">
           <h2 className="text-2xl font-bold mb-4 text-white">Manufacturing</h2>
           <p className="text-white">SOMETHING!</p>
         </div>
-        <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
       </section>
 
       {/* RESEARCH ******************************************************************/}
@@ -209,7 +218,10 @@ export default function Home() {
         <div className="md:w-1/2 bg-gray-300 rounded-lg" />
       </section>
 
-      <section className="bg-[#330503] flex justify-center pt-20 pb-10">
+      
+    </div>
+    </div>
+    <section className="bg-[#330503] flex justify-center pt-20 pb-10">
         <div className="w-full max-w-4xl px-4 text-center">
           <h2 className="text-4xl font-bold mb-2 text-white">Our Network</h2>
           <p className="text-2xl font-normal mb-6 text-white">
