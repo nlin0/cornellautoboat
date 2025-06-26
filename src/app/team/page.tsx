@@ -24,13 +24,16 @@ export default function Team() {
         <p className="text-xl md:text-2xl"> </p>
       </div>
 
-<section className="bg-[#330503] py-16 px-4 text-white">
+
+
+{/* TEAM SECTION TEAM LEADS_____________________________________________________________________ */}
+<section className="bg-[#701d18] py-16 px-4 text-white">
  
   <h2 className="text-4xl md:text-5xl font-semibold text-center mb-12">Team Leads</h2>
-<div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
+
   <div className="flex flex-col md:flex-row justify-center items-start gap-10">
     {/* Card 1 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+    <div className="bg-[#bda19f] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
       <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
       <div className="p-4">
         <p className="text-gray-400 text-sm">Full Team Lead</p>
@@ -66,15 +69,15 @@ export default function Team() {
         </div>
       </div>
     </div>
-  </div>
+  
   </div>
 </section>
-
+{/* TEAM SECTION HARDWARE_____________________________________________________________________ */}
 <section className="bg-[#5e0d08] py-16 px-4 text-white">
  
-  <h2 className="text-4xl md:text-5xl font-semibold text-center mb-12">Team Leads</h2>
+  <h2 className="text-4xl md:text-5xl font-semibold text-center mb-12">Hardware</h2>
   
-<div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
   <div className="flex flex-col md:flex-row justify-center items-start gap-10">
 
 
@@ -151,11 +154,11 @@ export default function Team() {
         </div>
       </div>
     </div>
-  </div>
+
   </div>
 
   
-  <div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
   <div className="flex flex-col md:flex-row justify-center items-start gap-10">
 
 
@@ -233,11 +236,90 @@ export default function Team() {
       </div>
     </div>
     
-  </div>
+
   
   </div>
-  
-<div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
+  <div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
   <div className="flex flex-col md:flex-row justify-center items-start gap-10">
 
 
@@ -315,9 +397,88 @@ export default function Team() {
       </div>
     </div>
   </div>
+
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+
+  </div>
   </div>
 
-<div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
   <div className="flex flex-col md:flex-row justify-center items-start gap-10">
 
 
@@ -395,168 +556,500 @@ export default function Team() {
       </div>
     </div>
   </div>
-  </div>
 
-<div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
-  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
-
-
-    {/* Card 1 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">Team</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR </p>
-        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {/* Card 2 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">TEAM</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR</p>
-        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    {/* Card 2 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">TEAM</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR</p>
-        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    {/* Card 2 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">TEAM</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR</p>
-        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-<div className="bg-[#000000] p-20 flex flex-col md:flex-row justify-center items-start gap-10">
-  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
-
-
-    {/* Card 1 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">Team</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR </p>
-        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {/* Card 2 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">TEAM</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR</p>
-        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    {/* Card 2 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">TEAM</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR</p>
-        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-    {/* Card 2 */}
-    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
-      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
-      <div className="p-4">
-        <p className="text-gray-400 text-sm">Full Team Lead</p>
-        <h3 className="text-2xl font-semibold italic">NAME</h3>
-        <p className="font-semibold mt-1">TEAM</p>
-        <p className="text-sm text-gray-300">EMAIL</p>
-        <p className="text-sm text-gray-300">Year: YEAR</p>
-        <p className="text-sm text-gray-300">Major: MAJOR</p>
-        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
-        <div className="mt-2 flex justify-end">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
 </section>
+
+
+{/* TEAM SECTION SOFTWARE_____________________________________________________________________ */}
+<section className="bg-[#5e0d08] py-16 px-4 text-white">
+ 
+  <h2 className="text-4xl md:text-5xl font-semibold text-center mb-12">Software</h2>
+  
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+{/* ROW 1_____________________________________________________________________ */}
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 3 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 4 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  {/* ROW 2_____________________________________________________________________ */}
+ <div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 3 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 4 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+
+  
+  </div>
+  
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+  
+  </div>
+  </div>
+
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+<div className="bg-[#5e0d08] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto"> </div>
+  <div className="flex flex-col md:flex-row justify-center items-start gap-10">
+
+
+    {/* Card 1 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo1.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">Team</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR </p>
+        <p className="text-sm text-gray-300">Hometown: HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+    {/* Card 2 */}
+    <div className="bg-[#1d1d1d] w-full md:w-[300px] rounded-lg overflow-hidden shadow-lg">
+      <img src="/path/to/photo2.jpg" alt="Name" className="w-full h-64 object-cover" />
+      <div className="p-4">
+        <p className="text-gray-400 text-sm">Full Team Lead</p>
+        <h3 className="text-2xl font-semibold italic">NAME</h3>
+        <p className="font-semibold mt-1">TEAM</p>
+        <p className="text-sm text-gray-300">EMAIL</p>
+        <p className="text-sm text-gray-300">Year: YEAR</p>
+        <p className="text-sm text-gray-300">Major: MAJOR</p>
+        <p className="text-sm text-gray-300">Hometown:HOMETOWN</p>
+        <div className="mt-2 flex justify-end">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+
 
     </div>
   );
