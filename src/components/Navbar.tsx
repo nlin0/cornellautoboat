@@ -41,22 +41,17 @@ const Navbar = () => {
               { href: '/media', label: 'Media' },
               { href: '/contact', label: 'Join Us', isButton: true },
             ].map(({ href, label, isButton }) => (
-              <>
-                {/* style what color the button changes to when clicked on */}
-                <Link
-                  key={href}
-                  href={href}
-                  className={`px-3 py-2 rounded-md text-md font-medium ${
-                    isActive(href)
-                      ? 'bg-[#6e0903] text-white'
-                      : 'text-gray-900 hover:bg-red-100'
-                  } ${
-                    isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''
-                  }`}
-                >
-                  {label}
-                </Link>
-              </>
+              <Link
+                key={href}
+                href={href}
+                className={`px-3 py-2 rounded-md text-md font-medium ${
+                  isActive(href)
+                    ? 'bg-[#6e0903] text-white'
+                    : 'text-gray-900 hover:bg-red-100'
+                } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
+              >
+                {label}
+              </Link>
             ))}
           </div>
 

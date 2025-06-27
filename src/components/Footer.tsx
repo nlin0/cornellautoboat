@@ -2,23 +2,32 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-black text-white">
+      <div className="max-w-full px-4 sm:px-6 lg:px-40 py-10">
+        <div className="flex flex-col md:flex-row justify-center items-start gap-200">
           {/* Logo and brief description */}
           <div className="space-y-4">
             <div className="flex items-center">
               {/* Replace with actual logo when available */}
               <div className="h-10 w-10 bg-red-600 rounded-full mr-3"></div>
-              <span className="font-bold text-xl">Cornell AutoBoat</span>
+              <span className="font-bold text-2xl">Cornell AutoBoat</span>
             </div>
-            <p className="text-gray-400 max-w-xs">
+            <p className="italic text-sm text-white max-w-xs">
+              Registered Project Team of Cornell University
+             
+            </p>
+            <p className="text-white max-w-xs">
+             
               Cornell University&apos;s autonomous boat team, building innovative
               marine robotics solutions and competing internationally.
             </p>
+             <p>
+            &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights
+            reserved.
+          </p>
           </div>
 
-          {/* Quick links */}
+       {/*   Quick links
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-400">
@@ -68,11 +77,11 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+          <div className="ml-4 sm:ml-15 lg:ml-80">
+            <h3 className="text-lg font-semibold mb-4 ">Contact Us</h3>
             <div className="space-y-2 text-gray-400">
               <p>Cornell University</p>
               <p>Ithaca, NY 14850</p>
@@ -132,13 +141,13 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="pt-8 mt-8 border-t border-gray-800 text-sm text-gray-400">
+ {/* <div className="pt-4 mt-4 border-t border-gray-800 text-sm text-gray-400">
           <p>
             &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights
             reserved.
           </p>
-        </div>
+        </div> */}
+        
       </div>
     </footer>
   );

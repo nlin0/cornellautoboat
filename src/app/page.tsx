@@ -38,10 +38,10 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <div className="bg-[#a24646] py-10">
-        <div className="bg-[#a24646] max-w-7xl mx-auto px-6">
+      <div className="bg-[#8a1c1c] py-10">
+        <div className="relative bg-[#8a1c1c] max-w-7xl mx-auto px-2 w-full">
           {/* IMAGINATIVE Section 1 */}
-          <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
+          <section className="bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
               <h2 className="text-4xl font-bold mb-4 text-white">
                 IMAGINATIVE
@@ -56,7 +56,7 @@ export default function Home() {
           </section>
 
           {/* INNOVATIVE Section 2 */}
-          <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
+          <section className="bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8">
             <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
             <div className="text-left md:w-1/2 self-start">
               <h2 className="text-4xl font-bold mb-4 text-white">INNOVATIVE</h2>
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </section>
           {/* SOMETHING Section 3 */}
-          <section className="bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8">
+          <section className="bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
               <h2 className="text-4xl font-bold mb-4 text-white">SOMETHING</h2>
               <p className="text-2xl text-white">SOMETHING!</p>
@@ -73,52 +73,61 @@ export default function Home() {
           </section>
         </div>
       </div>
+<div className="relative min-h-[500px] md:min-h-[800px] flex items-center justify-center">
+  {/* Background Image */}
+  <Image
+    src="/clifford2.png"
+    alt="Background"
+    fill
+    style={{ objectFit: 'cover' }}
+    priority
+  />
 
-      <div className="relative bg-[#330503] min-h-[500px] md:min-h-[800px] flex items-center justify-center">
-        <div className="relative bg-[#330503] max-w-7xl mx-auto px-6 w-full">
-          {/* TEAM VIDEO */}
-          <section className="bg-[#330503] p-10 flex flex-col md:flex-row items-center justify-center gap-15">
-            <div className="text-center w-full">
+  {/* Centered Overlay Box */}
+  <div className="max-w-15xl absolute inset-0 flex items-center justify-center">
+    <div
+      className="w-[100%] md:w-[95%] h-[70%] bg-[rgba(138,28,28,0.6)]"
+    />
+  </div>
 
-              <h2 className="text-6xl font-bold mb-4 text-white pb-5">
-                {' '}
-                About The Crew
-              </h2>
-              <p className="text-3xl  text-white pb-3">
-                We are a student-run team of hardware and software engineers,
-                dedicated to building and innovating in the field of naval
-                architecture and marine robotics. 
-              </p>
-              <p className="text-3xl  text-white">
-                Our driven members challenge
-                themselves in a fast-paced work environment, while also making
-                lifelong connections with incredible people.
-              </p>
-            </div>
-
-      
-
-            <div className="w-full max-w-5xl md:min-h-[450px] bg-[#000000]] border-[1px] border-[#000000] p-2 flex flex-col justify-center rounded-lg">
-            <div className="bg-[#d9c2bf] w-full md:min-h-[440px] p-6 text-center flex flex-col justify-center ">
-           
-            </div>
-            
-            
-            </div>
-          </section>
-        </div>
+  {/* Content */}
+  <div className="relative max-w-8xl mx-auto px-10 w-full">
+    <section className="p-10 flex flex-col md:flex-row items-center justify-center gap-15">
+      <div className="text-center w-full">
+        <h2 className="text-6xl font-bold mb-4 text-white pb-5">About The Crew</h2>
+        <p className="text-3xl text-white pb-3">
+          We are a student-run team of hardware and software engineers,
+          dedicated to building and innovating in the field of naval
+          architecture and marine robotics.
+        </p>
+        <p className="text-3xl text-white">
+          Our driven members challenge themselves in a fast-paced work
+          environment, while also making lifelong connections with incredible
+          people.
+        </p>
       </div>
 
-      <div className="bg-[#a24646] py-10">
+      <div className="w-full max-w-5xl md:min-h-[450px] bg-black border border-black p-2 flex flex-col justify-center rounded-lg">
+        <div className="bg-[#d9c2bf] w-full md:min-h-[440px] p-6 text-center flex flex-col justify-center">
+          {/* Optional extra content */}
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+      <div className="bg-[#8a1c1c] py-10">
         <div className=" max-w-7xl mx-auto px-6">
           {/* 2025 - 2026 COMP CYCLE ******************************************************************/}
-          <section className="bg-[#7d2c20] py-10 text-white text-center">
+          <section className="bg-[#6b1515] py-10 text-white text-center">
             <h2 className="text-6xl font-bold mb-2 text-white pb-10">
               The 2025 - 2026 Competition Cycle
             </h2>
             <p className="max-w-4xl mx-auto text-3xl mb-6">
-              Incremental hardware updates, significant software changes, and an
-              emphasis on testing. Read more about each phase of the process
+              PLACEHOLDER
+            </p>
+            <p className="max-w-4xl mx-auto text-3xl mb-6">
+              Read more about each phase of the process
               below.
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
@@ -159,7 +168,7 @@ export default function Home() {
           {/* TESTING ******************************************************************/}
           <section
             id="testing"
-            className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+            className="scroll-mt-20 bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
           >
             <div className="md:w-1/2 bg-gray-300 rounded-lg mt-6" />
             <div className="text-left md:w-1/2 self-start mt-6">
@@ -180,7 +189,7 @@ export default function Home() {
           {/* DESIGN ******************************************************************/}
           <section
             id="design"
-            className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative "
+            className="scroll-mt-20 bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8 relative "
           >
             <div className="text-left md:w-1/2 self-start">
               <h2 className="text-2xl font-bold mb-4 text-white">Design</h2>
@@ -209,7 +218,7 @@ export default function Home() {
           {/* MANUFACTURING ******************************************************************/}
           <section
             id="manufacturing"
-            className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+            className="scroll-mt-20 bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
           >
             {' '}
             <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
@@ -224,7 +233,7 @@ export default function Home() {
           {/* RESEARCH ******************************************************************/}
           <section
             id="research"
-            className="scroll-mt-20 bg-[#a24646] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
+            className="scroll-mt-20 bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
           >
             <div className="text-left md:w-1/2 self-start">
               <h2 className="text-2xl font-bold mb-4 text-white">Research</h2>
