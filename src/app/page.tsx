@@ -78,21 +78,33 @@ export default function Home() {
         <div className="relative bg-[#330503] max-w-7xl mx-auto px-6 w-full">
           {/* TEAM VIDEO */}
           <section className="bg-[#330503] p-10 flex flex-col md:flex-row items-center justify-center gap-15">
-            <div className="text-center md:w-3/5 lg:w-2/3">
+            <div className="text-center w-full">
 
-              <h2 className="text-7xl font-bold mb-4 text-white pb-5">
+              <h2 className="text-6xl font-bold mb-4 text-white pb-5">
                 {' '}
                 About The Crew
               </h2>
-              <p className="text-3xl  text-white px-2">
+              <p className="text-3xl  text-white pb-3">
                 We are a student-run team of hardware and software engineers,
                 dedicated to building and innovating in the field of naval
-                architecture and marine robotics. Our driven members challenge
+                architecture and marine robotics. 
+              </p>
+              <p className="text-3xl  text-white">
+                Our driven members challenge
                 themselves in a fast-paced work environment, while also making
                 lifelong connections with incredible people.
               </p>
             </div>
-            <div className="md:w-1/2 h-80 bg-gray-300 rounded-lg" />
+
+      
+
+            <div className="w-full max-w-5xl md:min-h-[450px] bg-[#000000]] border-[1px] border-[#000000] p-2 flex flex-col justify-center rounded-lg">
+            <div className="bg-[#d9c2bf] w-full md:min-h-[440px] p-6 text-center flex flex-col justify-center ">
+           
+            </div>
+            
+            
+            </div>
           </section>
         </div>
       </div>
