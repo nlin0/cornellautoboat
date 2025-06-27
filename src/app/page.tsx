@@ -80,11 +80,11 @@ export default function Home() {
           <section className="bg-[#330503] p-10 flex flex-col md:flex-row items-center justify-center gap-15">
             <div className="text-center md:w-3/5 lg:w-2/3">
 
-              <h2 className="text-7xl font-bold mb-4 text-white">
+              <h2 className="text-7xl font-bold mb-4 text-white pb-5">
                 {' '}
                 About The Crew
               </h2>
-              <p className="text-4xl text-white">
+              <p className="text-3xl  text-white px-2">
                 We are a student-run team of hardware and software engineers,
                 dedicated to building and innovating in the field of naval
                 architecture and marine robotics. Our driven members challenge
@@ -92,7 +92,7 @@ export default function Home() {
                 lifelong connections with incredible people.
               </p>
             </div>
-            <div className="md:w-1/2 h-100 bg-gray-300 rounded-lg" />
+            <div className="md:w-1/2 h-80 bg-gray-300 rounded-lg" />
           </section>
         </div>
       </div>

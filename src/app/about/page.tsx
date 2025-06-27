@@ -16,7 +16,7 @@ export default function About() {
           style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5 ">
-          <h1 className="tracking-wider text-7xl font-bold">Team History</h1>
+          <h1 className="tracking-wider text-9xl font-bold">Team History</h1>
         </div>
       </div>
 
