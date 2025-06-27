@@ -116,6 +116,48 @@ export default function Home() {
   </div>
 </div>
 
+
+{/* About the team without picture background
+
+
+
+      <div className="relative bg-[#8a1c1c] min-h-[500px] md:min-h-[800px] flex items-center justify-center">
+        <div className="relative bg-[#8a1c1c] max-w-8xl mx-auto px-30 w-full">
+          
+      
+          <section className="bg-[#6b1515] p-10 flex flex-col md:flex-row items-center justify-center gap-15">
+            <div className="text-center w-full">
+
+              <h2 className="text-6xl font-bold mb-4 text-white pb-5">
+                {' '}
+                About The Crew
+              </h2>
+              <p className="text-3xl  text-white pb-3">
+                We are a student-run team of hardware and software engineers,
+                dedicated to building and innovating in the field of naval
+                architecture and marine robotics. 
+              </p>
+              <p className="text-3xl  text-white">
+                Our driven members challenge
+                themselves in a fast-paced work environment, while also making
+                lifelong connections with incredible people.
+              </p>
+            </div>
+
+      
+
+            <div className="w-full max-w-5xl md:min-h-[450px] bg-[#000000]] border-[1px] border-[#000000] p-2 flex flex-col justify-center rounded-lg">
+            <div className="bg-[#d9c2bf] w-full md:min-h-[440px] p-6 text-center flex flex-col justify-center ">
+           
+            </div>
+            
+            
+            </div>
+          </section>
+        </div>
+      </div>
+*/}
+
       <div className="bg-[#8a1c1c] py-10">
         <div className=" max-w-7xl mx-auto px-6">
           {/* 2025 - 2026 COMP CYCLE ******************************************************************/}
