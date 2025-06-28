@@ -4,100 +4,46 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       <div className="max-w-full px-4 sm:px-6 lg:px-40 py-10">
-        <div className="flex flex-col md:flex-row justify-center items-start gap-200">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
           {/* Logo and brief description */}
-          <div className="space-y-4">
+          <div className="space-y-4 flex-1 max-w-md">
             <div className="flex items-center">
               {/* Replace with actual logo when available */}
-              <div className="h-10 w-10 bg-red-600 rounded-full mr-3"></div>
-              <span className="font-bold text-2xl">Cornell AutoBoat</span>
+              <div className="h-10 w-10 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
+              <span className="font-bold text-xl sm:text-2xl">Cornell AutoBoat</span>
             </div>
-            <p className="italic text-sm text-white max-w-xs">
+            <p className="italic text-sm text-gray-300">
               Registered Project Team of Cornell University
-             
             </p>
-            <p className="text-white max-w-xs">
-             
+            <p className="text-gray-300 text-sm sm:text-base">
               Cornell University&apos;s autonomous boat team, building innovative
               marine robotics solutions and competing internationally.
             </p>
-             <p>
-            &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights
-            reserved.
-          </p>
+            <p className="text-sm text-gray-400">
+              &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights
+              reserved.
+            </p>
           </div>
 
-       {/*   Quick links
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/team"
-                  className="hover:text-white transition-colors"
-                >
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects"
-                  className="hover:text-white transition-colors"
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/media"
-                  className="hover:text-white transition-colors"
-                >
-                  Media
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-white transition-colors"
-                >
-                  Join Us
-                </Link>
-              </li>
-            </ul>
-          </div> */}
-
           {/* Contact info */}
-          <div className="ml-4 sm:ml-15 lg:ml-80">
-            <h3 className="text-lg font-semibold mb-4 ">Contact Us</h3>
-            <div className="space-y-2 text-gray-400">
+          <div className="flex-shrink-0">
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <div className="space-y-2 text-gray-400 text-sm">
               <p>Cornell University</p>
               <p>Ithaca, NY 14850</p>
-              <p>autoboat@cornell.edu</p>
+              <p className="break-all">autoboat@cornell.edu</p>
 
               <div className="pt-4">
-                <h4 className="text-sm font-semibold mb-2">Follow Us</h4>
+                <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
                 <div className="flex space-x-4">
-                  {/* Social media icons - replace with actual icons or SVGs */}
+                  {/* Social media icons */}
                   <a
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-red-400 transition-colors"
+                    aria-label="Follow us on Instagram"
                   >
-                    <span className="sr-only">Instagram</span>
                     <svg
                       className="h-6 w-6"
                       fill="currentColor"
@@ -111,8 +57,8 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-red-400 transition-colors"
+                    aria-label="Follow us on GitHub"
                   >
-                    <span className="sr-only">GitHub</span>
                     <svg
                       className="h-6 w-6"
                       fill="currentColor"
@@ -126,8 +72,8 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-red-400 transition-colors"
+                    aria-label="Follow us on LinkedIn"
                   >
-                    <span className="sr-only">LinkedIn</span>
                     <svg
                       className="h-6 w-6"
                       fill="currentColor"
@@ -141,13 +87,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
- {/* <div className="pt-4 mt-4 border-t border-gray-800 text-sm text-gray-400">
-          <p>
-            &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights
-            reserved.
-          </p>
-        </div> */}
-        
       </div>
     </footer>
   );

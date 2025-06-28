@@ -2,601 +2,367 @@ import Image from 'next/image';
 
 export default function Team() {
   return (
-    <div className="min-h-screen font-sans text-white w-full">
-      {/* TOP SECTION - Light red bg */}
-      <div className="bg-[#a24646] w-full flex flex-col justify-center items-center text-center px-5 py-16">
-        <h1 className="tracking-wider text-5xl md:text-7xl font-normal mb-6">
-          Meet Our Team!
-        </h1>
-        <p className="text-2xl">
-          Our team consists of three subteams: Hardware, Software, and Business.
-        </p>
-      </div>
-
-      {/* MIDDLE SECTION - Darker red overlay */}
-      <div className="bg-[#a24646] relative w-full min-h-[200px] md:min-h-[200px]">
-        <div
-          className="absolute left-1/2 transform -translate-x-1/2 w-3/4 h-full"
-          style={{ backgroundColor: 'rgba(125, 46, 46, 0.75)' }}
-        />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5">
-          {/* Add content here */}
-        </div>
-      </div>
-
-      {/* BOTTOM STRIP - Light red bg */}
-      <div className="bg-[#a24646] w-full flex flex-col justify-center items-center text-center px-5 py-8">
-        <p className="text-xl md:text-2xl"> </p>
-      </div>
-
-      {/* TEAM SECTION TEAM LEADS_____________________________________________________________________ */}
-      <section className="bg-[#e3dbda] py-16 px-4 text-white">
-        <h2 className="text-4xl text-black md:text-5xl font-semibold text-center mb-12">
-          Team Leads
-        </h2>
-
-        <div className="flex flex-col md:flex-row justify-center items-start gap-10">
-          {/* Card 1 */}
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-lg overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#a9a3a3] rounded-b-full"></div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-lg overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#a9a3a3] rounded-b-full"></div>
+    <div className="bg-[#e3dbda] min-h-screen font-sans text-white w-full">
+      <div className="min-h-screen font-sans text-white w-full">
+        {/* Hero Section */}
+        <div className="relative w-full min-h-[300px] md:min-h-[400px]">
+          <Image
+            src="/ABteam2.jpg"
+            alt="Team"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+            <h1 className="tracking-wider text-4xl sm:text-6xl lg:text-8xl font-bold mb-4">
+              Meet the Team
+            </h1>
+            <p className="text-lg sm:text-xl lg:text-2xl max-w-4xl">
+              Our team consists of three subteams: Hardware, Software, and
+              Business.
+            </p>
           </div>
         </div>
-      </section>
-      {/* TEAM SECTION HARDWARE_____________________________________________________________________ */}
-      <section className="bg-[#e3dbda] py-16 px-4 text-white">
-        <h2 className="text-4xl text-black md:text-5xl font-semibold text-center mb-12">
-          Hardware
-        </h2>
-        {/* ROW 1_____________________________________________________________________ */}
-        <div className="bg-[#e3dbda] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto ">
-          {' '}
-        </div>
-        <div className="flex flex-col md:flex-row justify-center items-start gap-10">
-          {/* Card 1 */}
 
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
+        {/* Team Stats */}
+        <div className="bg-[#e3dbda] w-full flex flex-col justify-center items-center text-center px-4 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-black">
+            <div>
+              <p className="text-2xl font-bold">2021</p>
+              <p className="text-sm">Founded</p>
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-          {/* Card 2 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
+            <div>
+              <p className="text-2xl font-bold">50+</p>
+              <p className="text-sm">Members</p>
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-          {/* Card 3 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
+            <div>
+              <p className="text-2xl font-bold">14</p>
+              <p className="text-sm">Different Majors</p>
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-          {/* Card 4 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
+            <div>
+              <p className="text-2xl font-bold">4</p>
+              <p className="text-sm">Home Countries</p>
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
         </div>
-        {/* ROW 2_____________________________________________________________________ */}
 
-        {/* ROW 3_____________________________________________________________________ */}
+        <div className="bg-gray-400 h-1 w-4/5 mx-auto my-10 rounded"></div>
 
-        {/* ROW 4_____________________________________________________________________ */}
+        {/* Team Leads Section */}
+        <section className="bg-[#e3dbda] py-16 px-4 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-16">
+            Team Leads
+          </h2>
 
-        {/* ROW 5_____________________________________________________________________ */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 justify-items-center">
+              {/* Lead Card 1 */}
+              <div className="bg-[#706b6b] w-full max-w-[350px] rounded-t-3xl overflow-hidden shadow-lg">
+                <img
+                  src="/path/to/photo1.jpg"
+                  alt="Name"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <p className="text-white text-sm mb-1">Full Team Lead</p>
+                  <h3 className="text-2xl font-semibold italic mb-2">NAME</h3>
+                  <p className="font-semibold mb-3">Team</p>
+                  <div className="space-y-1 text-sm text-gray-300">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-4 flex justify-end">
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#a9a3a3] rounded-b-3xl"></div>
+              </div>
 
-        {/* ROW 6_____________________________________________________________________ */}
-      </section>
-
-      {/* TEAM SECTION SOFTWARE_____________________________________________________________________ */}
-      <section className="bg-[#e3dbda] py-16 px-4 text-white">
-        <h2 className="text-4xl  text-black md:text-5xl font-semibold text-center mb-12">
-          Software
-        </h2>
-        <p className="text-md text-black font-semibold text-center mb-12">
-          Software is responsible for researching, developing, and testing all
-          computer programs which enable the boat to operate autonomously! 
-          <div className="w-full h-6 bg-[#e3dbda] rounded-b-full"></div>
-          <p className="text-sm text-black font-semibold text-center mb-12 max-w-4xl mx-auto ">
-
-          This includes building computer vision systems, implementing AI-driven
-          navigation and control algorithms, designing microcontroller software,
-          integrating different processes through ROS, and developing simulation
-          frameworks for testing. Members on Software are primarily CS and ECE
-          majors with interdisciplinary interests, a passion for innovation, and
-          dedication to see their projects through.
-        </p>
-        </p>
-        
-        {/* ROW 1_____________________________________________________________________ */}
-        <div className="bg-[#e3dbda] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto ">
-          {' '}
-        </div>
-        <div className="flex flex-col md:flex-row justify-center items-start gap-10">
-          {/* Card 1 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
+              {/* Lead Card 2 */}
+              <div className="bg-[#706b6b] w-full max-w-[350px] rounded-t-3xl overflow-hidden shadow-lg">
+                <img
+                  src="/path/to/photo1.jpg"
+                  alt="Name"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <p className="text-white text-sm mb-1">Full Team Lead</p>
+                  <h3 className="text-2xl font-semibold italic mb-2">NAME</h3>
+                  <p className="font-semibold mb-3">Team</p>
+                  <div className="space-y-1 text-sm text-gray-300">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-4 flex justify-end">
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#a9a3a3] rounded-b-3xl"></div>
               </div>
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
-          {/* Card 2 */}
+        </section>
 
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+        {/* Hardware Section */}
+        <section className="bg-[#e3dbda] py-16 px-4 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-16">
+            Hardware
+          </h2>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+              {/* Hardware Cards */}
+              {Array.from({ length: 4 }, (_, index) => (
+                <div
+                  key={index}
+                  className="bg-[#706b6b] w-full max-w-[280px] rounded-t-3xl overflow-hidden shadow-lg"
                 >
                   <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
+                    src="/path/to/photo1.jpg"
+                    alt="Name"
+                    className="w-full h-40 object-cover"
                   />
-                </a>
-              </div>
+                  <div className="p-5">
+                    <p className="text-white text-sm mb-1">Hardware Team</p>
+                    <h3 className="text-xl font-semibold italic mb-2">NAME</h3>
+                    <p className="font-semibold mb-3">Hardware</p>
+                    <div className="space-y-1 text-sm text-gray-300">
+                      <p>EMAIL</p>
+                      <p>Year: YEAR</p>
+                      <p>Major: MAJOR</p>
+                      <p>Hometown: HOMETOWN</p>
+                    </div>
+                    <div className="mt-4 flex justify-end">
+                      <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <img
+                          src="/linkedin-icon.svg"
+                          alt="LinkedIn"
+                          className="w-5 h-5"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="w-full h-6 bg-[#260603] rounded-b-3xl"></div>
+                </div>
+              ))}
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
-          {/* Card 3 */}
+        </section>
 
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+        {/* Software Section */}
+        <section className="bg-[#e3dbda] py-16 px-4 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-8">
+            Software
+          </h2>
+
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-lg text-black font-semibold mb-4">
+              Software is responsible for researching, developing, and testing
+              all computer programs which enable the boat to operate
+              autonomously!
+            </p>
+            <p className="text-sm text-black leading-relaxed">
+              This includes building computer vision systems, implementing
+              AI-driven navigation and control algorithms, designing
+              microcontroller software, integrating different processes through
+              ROS, and developing simulation frameworks for testing. Members on
+              Software are primarily CS and ECE majors with interdisciplinary
+              interests, a passion for innovation, and dedication to see their
+              projects through.
+            </p>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+              {/* Software Cards */}
+              {Array.from({ length: 4 }, (_, index) => (
+                <div
+                  key={index}
+                  className="bg-[#706b6b] w-full max-w-[280px] rounded-t-3xl overflow-hidden shadow-lg"
                 >
                   <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
+                    src="/path/to/photo1.jpg"
+                    alt="Name"
+                    className="w-full h-40 object-cover"
                   />
-                </a>
-              </div>
+                  <div className="p-5">
+                    <p className="text-white text-sm mb-1">Software Team</p>
+                    <h3 className="text-xl font-semibold italic mb-2">NAME</h3>
+                    <p className="font-semibold mb-3">Software</p>
+                    <div className="space-y-1 text-sm text-gray-300">
+                      <p>EMAIL</p>
+                      <p>Year: YEAR</p>
+                      <p>Major: MAJOR</p>
+                      <p>Hometown: HOMETOWN</p>
+                    </div>
+                    <div className="mt-4 flex justify-end">
+                      <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <img
+                          src="/linkedin-icon.svg"
+                          alt="LinkedIn"
+                          className="w-5 h-5"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="w-full h-6 bg-[#260603] rounded-b-3xl"></div>
+                </div>
+              ))}
             </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
           </div>
-          {/* Card 4 */}
+        </section>
+{/* USE THIS ONE FOR CARDS!!!!*/}
+        <section className="bg-[#e3dbda] py-16 px-4 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-16">
+            Your Team Section
+          </h2>
 
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-        </div>
-        {/* ROW 2_____________________________________________________________________ */}
-
-        {/* ROW 3_____________________________________________________________________ */}
-
-        {/* ROW 4_____________________________________________________________________ */}
-
-        {/* ROW 5_____________________________________________________________________ */}
-
-        {/* ROW 6_____________________________________________________________________ */}
-      </section>
-
-      {/* TEAM SECTION SOFTWARE_____________________________________________________________________ */}
-      <section className="bg-[#e3dbda] py-16 px-4 text-white">
-        <h2 className="text-4xl text-black md:text-5xl font-semibold text-center mb-12">
-          Business
-        </h2>
-      
-        
-        {/* ROW 1_____________________________________________________________________ */}
-        <div className="bg-[#e3dbda] p-10 flex flex-col md:flex-row justify-center items-start gap-5 max-w-[1450px] mx-auto ">
-          {' '}
-        </div>
-        <div className="flex flex-col md:flex-row justify-center items-start gap-10">
-          {/* Card 1 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-          {/* Card 2 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-          {/* Card 3 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-          {/* Card 4 */}
-
-          <div className="bg-[#706b6b] w-full md:w-[350px]  rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-            <img
-              src="/path/to/photo1.jpg"
-              alt="Name"
-              className="w-full h-75 object-cove "
-            />
-            <div className="p-4">
-              <p className="text-white text-sm">Full Team Lead</p>
-              <h3 className="text-2xl font-semibold italic">NAME</h3>
-              <p className="font-semibold mt-1">Team</p>
-              <p className="text-sm text-white-300">EMAIL</p>
-              <p className="text-sm text-white-300">Year: YEAR</p>
-              <p className="text-sm text-white-300">Major: MAJOR </p>
-              <p className="text-sm text-white-300">Hometown: HOMETOWN</p>
-              <div className="mt-2 flex justify-end">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="/linkedin-icon.svg"
-                    alt="LinkedIn"
-                    className="w-5 h-5"
-                  />
-                </a>
-              </div>
-            </div>
-
-            {/* Rounded bottom piece */}
-            <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-          </div>
-        </div>
-        {/* ROW 2_____________________________________________________________________ */}
-
-        {/* ROW 3_____________________________________________________________________ */}
-
-        {/* ROW 4_____________________________________________________________________ */}
-
-        {/* ROW 5_____________________________________________________________________ */}
-
-        {/* ROW 6_____________________________________________________________________ */}
-      </section>
-      
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 justify-items-center">
+            {/* CARD STARTS HERE*/}
+            <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+  <img
+    src="ABteam1.jpg"
+    alt="Name"
+    className="w-full h-60 object-cover"
+  />
+  <div className="mt-0 p-4"> {/* reduced mt */}
+    <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+    <p className="font-semibold mb-2">Business</p>
+    <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+      <p>EMAIL</p>
+      <p>Year: YEAR</p>
+      <p>Major: MAJOR</p>
+      <p>Hometown: HOMETOWN</p>
     </div>
-     
+    <div className="mt-0 flex justify-end"> {/* reduced mt */}
+      <a
+        href="https://linkedin.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:opacity-80 transition-opacity"
+      >
+        <img
+          src="/linkedin-icon.svg"
+          alt="LinkedIn"
+          className="w-5 h-5"
+        />
+      </a>
+    </div>
+  </div>
+  <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+</div>
+
+            <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+              <img
+                src="/path/to/photo1.jpg"
+                alt="Name"
+                className="w-full h-48 object-cover"
+              />
+              <div className="mt-4 p-5">
+                <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                <p className="font-semibold mb-2">Business</p>
+                <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                  <p>EMAIL</p>
+                  <p>Year: YEAR</p>
+                  <p>Major: MAJOR</p>
+                  <p>Hometown: HOMETOWN</p>
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                  >
+                    <img
+                      src="/linkedin-icon.svg"
+                      alt="LinkedIn"
+                      className="w-5 h-5"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            </div>
+            <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+              <img
+                src="/path/to/photo1.jpg"
+                alt="Name"
+                className="w-full h-48 object-cover"
+              />
+              <div className="mt-4 p-5">
+                <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                <p className="font-semibold mb-2">Business</p>
+                <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                  <p>EMAIL</p>
+                  <p>Year: YEAR</p>
+                  <p>Major: MAJOR</p>
+                  <p>Hometown: HOMETOWN</p>
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                  >
+                    <img
+                      src="/linkedin-icon.svg"
+                      alt="LinkedIn"
+                      className="w-5 h-5"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            </div>
+            
+
+            
+          </div>
+          
+        </section>
+      </div>
+    </div>
   );
 }

@@ -5,9 +5,9 @@ export default function Home() {
     <div className="min-h-screen font-sans text-white w-full ">
       <main className="grid grid-cols-1 md:grid-cols-2 bg-[#7d2c20] w-full">
         {/* WHO ARE WE */}
-        <div className="bg-[#d9c2bf] text-[#7d2c2c] p-6 text-center md:text-left flex items-center justify-center min-h-[500px] md:min-h-[650px]">
-          <div className="w-full max-w-7xl md:min-h-[650px] bg-[#eddada] border-[1px] border-[#eddada] p-2 flex flex-col justify-center">
-            <div className="bg-[#d9c2bf] w-full md:min-h-[650px] p-6 text-center flex flex-col justify-center">
+        <div className="bg-[#d9c2bf] text-[#7d2c2c] p-6 text-center md:text-left flex items-center justify-center min-h-[500px] md:min-h-[500px]">
+          <div className="w-full max-w-7xl md:min-h-[500px] bg-[#eddada] border-[1px] border-[#eddada] p-2 flex flex-col justify-center">
+            <div className="bg-[#d9c2bf] w-full md:min-h-[550px] p-6 text-center flex flex-col justify-center">
               <p className="text-8xl font-bold text-[#8B0000]">Who are we?</p>
               <p className="text-5xl font-normal mt-2 text-[#914040]">
                 Innovative|
@@ -17,7 +17,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="relative w-full min-h-[500px] md:min-h-[650px]">
+        <div className="relative w-full min-h-[500px] md:min-h-[500px]">
           <Image
             src="/clifford2.png"
             alt="Clifford"
@@ -76,7 +76,7 @@ export default function Home() {
 <div className="relative min-h-[500px] md:min-h-[800px] flex items-center justify-center">
   {/* Background Image */}
   <Image
-    src="/clifford2.png"
+    src="/ABteam1.JPG"
     alt="Background"
     fill
     style={{ objectFit: 'cover' }}
