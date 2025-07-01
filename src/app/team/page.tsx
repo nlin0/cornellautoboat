@@ -61,23 +61,26 @@ export default function Team() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 justify-items-center">
               {/* Lead Card 1 */}
-              <div className="bg-[#706b6b] w-full max-w-[350px] rounded-t-3xl overflow-hidden shadow-lg">
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
                 <img
-                  src="/path/to/photo1.jpg"
+                  src="ABteam1.jpg"
                   alt="Name"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-60 object-cover"
                 />
-                <div className="p-6">
-                  <p className="text-white text-sm mb-1">Full Team Lead</p>
-                  <h3 className="text-2xl font-semibold italic mb-2">NAME</h3>
-                  <p className="font-semibold mb-3">Team</p>
-                  <div className="space-y-1 text-sm text-gray-300">
+                <div className="mt-0 p-4">
+                  {' '}
+                  {/* reduced mt */}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
                     <p>EMAIL</p>
                     <p>Year: YEAR</p>
                     <p>Major: MAJOR</p>
                     <p>Hometown: HOMETOWN</p>
                   </div>
-                  <div className="mt-4 flex justify-end">
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    {/* reduced mt */}
                     <a
                       href="https://linkedin.com"
                       target="_blank"
@@ -92,27 +95,28 @@ export default function Team() {
                     </a>
                   </div>
                 </div>
-                <div className="w-full h-6 bg-[#a9a3a3] rounded-b-3xl"></div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
               </div>
 
               {/* Lead Card 2 */}
-              <div className="bg-[#706b6b] w-full max-w-[350px] rounded-t-3xl overflow-hidden shadow-lg">
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
                 <img
-                  src="/path/to/photo1.jpg"
+                  src="ABteam1.jpg"
                   alt="Name"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-60 object-cover"
                 />
-                <div className="p-6">
-                  <p className="text-white text-sm mb-1">Full Team Lead</p>
-                  <h3 className="text-2xl font-semibold italic mb-2">NAME</h3>
-                  <p className="font-semibold mb-3">Team</p>
-                  <div className="space-y-1 text-sm text-gray-300">
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
                     <p>EMAIL</p>
                     <p>Year: YEAR</p>
                     <p>Major: MAJOR</p>
                     <p>Hometown: HOMETOWN</p>
                   </div>
-                  <div className="mt-4 flex justify-end">
+                  <div className="mt-0 flex justify-end">
+                    {' '}
                     <a
                       href="https://linkedin.com"
                       target="_blank"
@@ -127,7 +131,7 @@ export default function Team() {
                     </a>
                   </div>
                 </div>
-                <div className="w-full h-6 bg-[#a9a3a3] rounded-b-3xl"></div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
               </div>
             </div>
           </div>
@@ -142,44 +146,142 @@ export default function Team() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
               {/* Hardware Cards */}
-              {Array.from({ length: 4 }, (_, index) => (
-                <div
-                  key={index}
-                  className="bg-[#706b6b] w-full max-w-[280px] rounded-t-3xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src="/path/to/photo1.jpg"
-                    alt="Name"
-                    className="w-full h-40 object-cover"
-                  />
-                  <div className="p-5">
-                    <p className="text-white text-sm mb-1">Hardware Team</p>
-                    <h3 className="text-xl font-semibold italic mb-2">NAME</h3>
-                    <p className="font-semibold mb-3">Hardware</p>
-                    <div className="space-y-1 text-sm text-gray-300">
-                      <p>EMAIL</p>
-                      <p>Year: YEAR</p>
-                      <p>Major: MAJOR</p>
-                      <p>Hometown: HOMETOWN</p>
-                    </div>
-                    <div className="mt-4 flex justify-end">
-                      <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:opacity-80 transition-opacity"
-                      >
-                        <img
-                          src="/linkedin-icon.svg"
-                          alt="LinkedIn"
-                          className="w-5 h-5"
-                        />
-                      </a>
-                    </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
                   </div>
-                  <div className="w-full h-6 bg-[#260603] rounded-b-3xl"></div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
                 </div>
-              ))}
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
             </div>
           </div>
         </section>
@@ -210,48 +312,149 @@ export default function Team() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
               {/* Software Cards */}
-              {Array.from({ length: 4 }, (_, index) => (
-                <div
-                  key={index}
-                  className="bg-[#706b6b] w-full max-w-[280px] rounded-t-3xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src="/path/to/photo1.jpg"
-                    alt="Name"
-                    className="w-full h-40 object-cover"
-                  />
-                  <div className="p-5">
-                    <p className="text-white text-sm mb-1">Software Team</p>
-                    <h3 className="text-xl font-semibold italic mb-2">NAME</h3>
-                    <p className="font-semibold mb-3">Software</p>
-                    <div className="space-y-1 text-sm text-gray-300">
-                      <p>EMAIL</p>
-                      <p>Year: YEAR</p>
-                      <p>Major: MAJOR</p>
-                      <p>Hometown: HOMETOWN</p>
-                    </div>
-                    <div className="mt-4 flex justify-end">
-                      <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:opacity-80 transition-opacity"
-                      >
-                        <img
-                          src="/linkedin-icon.svg"
-                          alt="LinkedIn"
-                          className="w-5 h-5"
-                        />
-                      </a>
-                    </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
                   </div>
-                  <div className="w-full h-6 bg-[#260603] rounded-b-3xl"></div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    {/* reduced mt */}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
                 </div>
-              ))}
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    {/* reduced mt */}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    {/* reduced mt */}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
+              <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
+                <img
+                  src="ABteam1.jpg"
+                  alt="Name"
+                  className="w-full h-60 object-cover"
+                />
+                <div className="mt-0 p-4">
+                  {' '}
+                  <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                  <p className="font-semibold mb-2">TEAM</p>
+                  <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                    <p>EMAIL</p>
+                    <p>Year: YEAR</p>
+                    <p>Major: MAJOR</p>
+                    <p>Hometown: HOMETOWN</p>
+                  </div>
+                  <div className="mt-0 flex justify-end">
+                    {' '}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <img
+                        src="/linkedin-icon.svg"
+                        alt="LinkedIn"
+                        className="w-5 h-5"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+              </div>
             </div>
           </div>
         </section>
-{/* USE THIS ONE FOR CARDS!!!!*/}
+        {/* USE THIS ONE FOR CARDS!!!!*/}
         <section className="bg-[#e3dbda] py-16 px-4 text-white">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-16">
             Your Team Section
@@ -260,37 +463,39 @@ export default function Team() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 justify-items-center">
             {/* CARD STARTS HERE*/}
             <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
-  <img
-    src="ABteam1.jpg"
-    alt="Name"
-    className="w-full h-60 object-cover"
-  />
-  <div className="mt-0 p-4"> {/* reduced mt */}
-    <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
-    <p className="font-semibold mb-2">Business</p>
-    <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
-      <p>EMAIL</p>
-      <p>Year: YEAR</p>
-      <p>Major: MAJOR</p>
-      <p>Hometown: HOMETOWN</p>
-    </div>
-    <div className="mt-0 flex justify-end"> {/* reduced mt */}
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:opacity-80 transition-opacity"
-      >
-        <img
-          src="/linkedin-icon.svg"
-          alt="LinkedIn"
-          className="w-5 h-5"
-        />
-      </a>
-    </div>
-  </div>
-  <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
-</div>
+              <img
+                src="ABteam1.jpg"
+                alt="Name"
+                className="w-full h-60 object-cover"
+              />
+              <div className="mt-0 p-4">
+                {' '}
+                <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
+                <p className="font-semibold mb-2">TEAM</p>
+                <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
+                  <p>EMAIL</p>
+                  <p>Year: YEAR</p>
+                  <p>Major: MAJOR</p>
+                  <p>Hometown: HOMETOWN</p>
+                </div>
+                <div className="mt-0 flex justify-end">
+                  {' '}
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                  >
+                    <img
+                      src="/linkedin-icon.svg"
+                      alt="LinkedIn"
+                      className="w-5 h-5"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
+            </div>
 
             <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
               <img
@@ -356,11 +561,7 @@ export default function Team() {
               </div>
               <div className="w-full h-6 bg-[#260603] rounded-b-full"></div>
             </div>
-            
-
-            
           </div>
-          
         </section>
       </div>
     </div>
