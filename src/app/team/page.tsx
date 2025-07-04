@@ -4,7 +4,6 @@ export default function Team() {
   return (
     <div className="bg-[#e3dbda] min-h-screen font-sans text-white w-full">
       <div className="min-h-screen font-sans text-white w-full">
-        {/* Hero Section */}
         <div className="relative w-full min-h-[300px] md:min-h-[400px]">
           <Image
             src="/ABteam2.jpg"
@@ -69,7 +68,6 @@ export default function Team() {
                 />
                 <div className="mt-0 p-4">
                   {' '}
-                  {/* reduced mt */}
                   <h3 className="text-2xl font-semibold italic mb-1">NAME</h3>
                   <p className="font-semibold mb-2">TEAM</p>
                   <div className="mt-2 space-y-0.5 text-sm text-gray-300 leading-tight">
@@ -80,7 +78,6 @@ export default function Team() {
                   </div>
                   <div className="mt-0 flex justify-end">
                     {' '}
-                    {/* reduced mt */}
                     <a
                       href="https://linkedin.com"
                       target="_blank"
@@ -330,7 +327,6 @@ export default function Team() {
                   </div>
                   <div className="mt-0 flex justify-end">
                     {' '}
-                    {/* reduced mt */}
                     <a
                       href="https://linkedin.com"
                       target="_blank"
@@ -365,7 +361,6 @@ export default function Team() {
                   </div>
                   <div className="mt-0 flex justify-end">
                     {' '}
-                    {/* reduced mt */}
                     <a
                       href="https://linkedin.com"
                       target="_blank"
@@ -400,7 +395,6 @@ export default function Team() {
                   </div>
                   <div className="mt-0 flex justify-end">
                     {' '}
-                    {/* reduced mt */}
                     <a
                       href="https://linkedin.com"
                       target="_blank"
