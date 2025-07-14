@@ -4,19 +4,28 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-{
-  /* Code for changing the tab color in the nav bar*/
-}
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTechnicalOpen, setIsTechnicalOpen] = useState(false);
 
   const pathname = usePathname();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const toggleTechnicalMobile = () => setIsTechnicalOpen(!isTechnicalOpen);
 
   const isActive = (path: string) => path === pathname;
+
+  const technicalSubpages = [
+    'Perception',
+    'Artificial Intelligence',
+    'Controls & Microcontroller Designs',
+    'ROS & Simulations',
+    'Ground Station',
+    'Mechanical',
+    'Robotics',
+    'Electrical Systems',
+  ];
 
   return (
     <nav className="bg-[#ebd9d8] shadow-md sticky top-0 z-50">
@@ -37,7 +46,47 @@ const Navbar = () => {
               { href: '/', label: 'Home' },
               { href: '/about', label: 'About' },
               { href: '/team', label: 'Team' },
-              { href: '/technical', label: 'Technical Info' },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`px-3 py-2 rounded-md text-md font-medium ${
+                  isActive(href)
+                    ? 'bg-[#6e0903] text-white'
+                    : 'text-gray-900 hover:bg-red-100'
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
+
+            {/* Technical Info */}
+            <div className="relative group">
+              <button
+                className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 ${
+                  pathname.startsWith('/technical')
+                    ? 'bg-[#6e0903] text-white'
+                    : 'text-gray-900 hover:bg-red-100'
+                }`}
+              >
+                Technical Info
+              </button>
+              <div className="absolute z-50 hidden group-hover:block bg-white text-black shadow-md mt-2 rounded-md w-64">
+                {technicalSubpages.map((label) => (
+                  <Link
+                    key={label}
+                    href={`/technical/${label
+                      .toLowerCase()
+                      .replace(/\s+/g, '-')}`}
+                    className="block px-4 py-2 hover:bg-red-100 border-b border-gray-200 last:border-b-0"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {[
               { href: '/competition', label: 'Competition' },
               { href: '/media', label: 'Media' },
               { href: '/contact', label: 'Join Us', isButton: true },
@@ -64,39 +113,6 @@ const Navbar = () => {
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
-              {!isMenuOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
             </button>
           </div>
         </div>
@@ -104,32 +120,65 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {[
-              { href: '/', label: 'Home' },
-              { href: '/about', label: 'About' },
-              { href: '/team', label: 'Team' },
-              { href: '/projects', label: 'Projects' },
-              { href: '/media', label: 'Media' },
-              { href: '/contact', label: 'Join Us', isButton: true },
-            ].map(({ href, label, isButton }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`block px-3 py-2 rounded-md text-base font-medium
-                   ${
-                     isActive(href)
-                       ? 'bg-[#6e0903] text-white'
-                       : 'text-gray-900 hover:bg-red-100'
-                   }
-                  ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}
-                `}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
+        <div className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {[
+            { href: '/', label: 'Home' },
+            { href: '/about', label: 'About' },
+            { href: '/team', label: 'Team' },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive(href)
+                  ? 'bg-[#6e0903] text-white'
+                  : 'text-gray-900 hover:bg-red-100'
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
+
+          {/*  Technical subinfo */}
+          <button
+            onClick={toggleTechnicalMobile}
+            className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-red-100"
+          >
+            Technical Info
+          </button>
+          {isTechnicalOpen && (
+            <div className="ml-4 space-y-1">
+              {technicalSubpages.map((label) => (
+                <Link
+                  key={label}
+                  href={`/technical/${label
+                    .toLowerCase()
+                    .replace(/\s+/g, '-')}`}
+                  className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-red-50"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {[
+            { href: '/competition', label: 'Competition' },
+            { href: '/media', label: 'Media' },
+            { href: '/contact', label: 'Join Us', isButton: true },
+          ].map(({ href, label, isButton }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive(href)
+                  ? 'bg-[#6e0903] text-white'
+                  : 'text-gray-900 hover:bg-red-100'
+              } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>
