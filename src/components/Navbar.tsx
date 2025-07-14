@@ -37,7 +37,8 @@ const Navbar = () => {
               { href: '/', label: 'Home' },
               { href: '/about', label: 'About' },
               { href: '/team', label: 'Team' },
-              { href: '/projects', label: 'Projects' },
+              { href: '/technical', label: 'Technical Info' },
+              { href: '/competition', label: 'Competition' },
               { href: '/media', label: 'Media' },
               { href: '/contact', label: 'Join Us', isButton: true },
             ].map(({ href, label, isButton }) => (
