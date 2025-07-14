@@ -139,6 +139,20 @@ export default function Team() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-16">
             Hardware
           </h2>
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-lg text-black font-semibold mb-4">
+              Hardware designs and manufactures the boat’s electromechanical
+              system!
+            </p>
+            <p className="text-sm text-black leading-relaxed">
+              This involves doing CAD and ECAD, running simulations, machining,
+              working with composites, working with power tools, soldering and
+              assembling electrical components, among other technical skills.
+              Members of the hardware team gain a lot of valuable hands-on
+              experience, while also being able to apply concepts learned in
+              class to their work during the design process.
+            </p>
+          </div>
 
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
@@ -450,10 +464,22 @@ export default function Team() {
         </section>
         {/* USE THIS ONE FOR CARDS!!!!*/}
         <section className="bg-[#e3dbda] py-16 px-4 text-white">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-16">
-            Your Team Section
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black font-semibold text-center mb-8">
+            Business & Outreach
           </h2>
 
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <p className="text-lg text-black font-semibold mb-4">
+              Business organizes the team’s funding for supplies, apparel,
+              software licensing, and works with Outreach as the team’s public
+              facing arm
+            </p>
+            <p className="text-sm text-black leading-relaxed">
+              Outreach organizes events with local schools and organizations to
+              link our team with the Ithaca community, as well as to inspire the
+              next generation of engineers and scientists
+            </p>
+          </div>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-8 justify-items-center">
             {/* CARD STARTS HERE*/}
             <div className="bg-[#706b6b] w-full max-w-[320px] rounded-t-3xl overflow-hidden shadow-lg rounded-b-3xl">
