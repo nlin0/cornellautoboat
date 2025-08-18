@@ -73,51 +73,50 @@ export default function Home() {
           </section>
         </div>
       </div>
-<div className="relative min-h-[500px] md:min-h-[800px] flex items-center justify-center">
-  {/* Background Image */}
-  <Image
-    src="/ABteam1.JPG"
-    alt="Background"
-    fill
-    style={{ objectFit: 'cover' }}
-    priority
-  />
+      <div className="relative min-h-[500px] md:min-h-[800px] flex items-center justify-center">
+        {/* Background Image */}
+        <Image
+          src="/ABteam1.JPG"
+          alt="Background"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
 
-  {/* Centered Overlay Box */}
-  <div className="max-w-15xl absolute inset-0 flex items-center justify-center">
-    <div
-      className="w-[100%] md:w-[95%] h-[70%] bg-[rgba(138,28,28,0.6)]"
-    />
-  </div>
+        {/* Centered Overlay Box */}
+        <div className="max-w-15xl absolute inset-0 flex items-center justify-center">
+          <div className="w-[100%] md:w-[95%] h-[70%] bg-[rgba(138,28,28,0.6)]" />
+        </div>
 
-  {/* Content */}
-  <div className="relative max-w-8xl mx-auto px-10 w-full">
-    <section className="p-10 flex flex-col md:flex-row items-center justify-center gap-15">
-      <div className="text-center w-full">
-        <h2 className="text-6xl font-bold mb-4 text-white pb-5">About The Crew</h2>
-        <p className="text-3xl text-white pb-3">
-          We are a student-run team of hardware and software engineers,
-          dedicated to building and innovating in the field of naval
-          architecture and marine robotics.
-        </p>
-        <p className="text-3xl text-white">
-          Our driven members challenge themselves in a fast-paced work
-          environment, while also making lifelong connections with incredible
-          people.
-        </p>
-      </div>
+        {/* Content */}
+        <div className="relative max-w-8xl mx-auto px-10 w-full">
+          <section className="p-10 flex flex-col md:flex-row items-center justify-center gap-15">
+            <div className="text-center w-full">
+              <h2 className="text-6xl font-bold mb-4 text-white pb-5">
+                About The Crew
+              </h2>
+              <p className="text-3xl text-white pb-3">
+                We are a student-run team of hardware and software engineers,
+                dedicated to building and innovating in the field of naval
+                architecture and marine robotics.
+              </p>
+              <p className="text-3xl text-white">
+                Our driven members challenge themselves in a fast-paced work
+                environment, while also making lifelong connections with
+                incredible people.
+              </p>
+            </div>
 
-      <div className="w-full max-w-5xl md:min-h-[450px] bg-black border border-black p-2 flex flex-col justify-center rounded-lg">
-        <div className="bg-[#d9c2bf] w-full md:min-h-[440px] p-6 text-center flex flex-col justify-center">
-          {/* Optional extra content */}
+            <div className="w-full max-w-5xl md:min-h-[450px] bg-black border border-black p-2 flex flex-col justify-center rounded-lg">
+              <div className="bg-[#d9c2bf] w-full md:min-h-[440px] p-6 text-center flex flex-col justify-center">
+                {/* Optional extra content */}
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-    </section>
-  </div>
-</div>
 
-
-{/* About the team without picture background
+      {/* About the team without picture background
 
 
 
@@ -165,12 +164,9 @@ export default function Home() {
             <h2 className="text-6xl font-bold mb-2 text-white pb-10">
               The 2025 - 2026 Competition Cycle
             </h2>
+            <p className="max-w-4xl mx-auto text-3xl mb-6">PLACEHOLDER</p>
             <p className="max-w-4xl mx-auto text-3xl mb-6">
-              PLACEHOLDER
-            </p>
-            <p className="max-w-4xl mx-auto text-3xl mb-6">
-              Read more about each phase of the process
-              below.
+              Read more about each phase of the process below.
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
               <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
@@ -284,20 +280,24 @@ export default function Home() {
                 impactful upgrades to the boat's hardware, and significant
                 changes to the main codebase to improve performance in
                 autonomous tasks. Some of the main projects are:
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
-                <li>Placeholder</li>
               </p>
+
+              <ul className="list-disc pl-6 text-white">
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+                <li>Placeholder</li>
+              </ul>
             </div>
+
             <div className="md:w-1/2 bg-gray-300 rounded-lg" />
           </section>
         </div>
