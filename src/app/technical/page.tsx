@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans text-white w-full ">
         <p className="font-sans text-white text-3xl">
-            Technical Info placeholder!
+            Technical Info placeholder
         </p>
 
     </div>
