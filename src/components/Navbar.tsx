@@ -51,11 +51,10 @@ const Navbar = () => {
               <Link
                 key={href}
                 href={href}
-                className={`px-3 py-2 rounded-md text-md font-medium ${
-                  isActive(href)
+                className={`px-3 py-2 rounded-md text-md font-medium ${isActive(href)
                     ? 'bg-[#6e0903] text-white'
                     : 'text-gray-900 hover:bg-red-100'
-                }`}
+                  }`}
               >
                 {label}
               </Link>
@@ -63,38 +62,35 @@ const Navbar = () => {
 
             {/* Technical info with dropdown*/}
             <div
-  className="relative"
-  onMouseEnter={() => setIsTechnicalOpenDesktop(true)}
-  onMouseLeave={() => setIsTechnicalOpenDesktop(false)}
->
-  {/* Button triggers hover, not a Link */}
-  <button
-    className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 ${
-      pathname.startsWith('/technical')
-        ? 'bg-[#6e0903] text-white'
-        : 'text-gray-900 hover:bg-red-100'
-    }`}
-  >
-    Technical Info
-  </button>
+              className="relative"
+              onMouseEnter={() => setIsTechnicalOpenDesktop(true)}
+              onMouseLeave={() => setIsTechnicalOpenDesktop(false)}
+            >
+              {/* Button triggers hover, not a Link */}
+              <button
+                className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 ${pathname.startsWith('/technical')
+                    ? 'bg-[#6e0903] text-white'
+                    : 'text-gray-900 hover:bg-red-100'
+                  }`}
+              >
+                Technical Info
+              </button>
 
-  {/* Dropdown menu */}
-  {isTechnicalOpenDesktop && (
-    <div className="absolute left-0 top-full z-50 bg-white text-black mt-0 rounded-md w-64">
-      {technicalSubpages.map((label) => (
-        <Link
-          key={label}
-          href={`/technical/${label.toLowerCase().replace(/\s+/g, '-')}`}
-          className="block px-4 py-2 hover:bg-red-100 border-b border-gray-200 last:border-b-0"
-        >
-          {label}
-        </Link>
-      ))}
-    </div>
-  )}
-</div>
-
-
+              {/* Dropdown menu */}
+              {isTechnicalOpenDesktop && (
+                <div className="absolute left-0 top-full z-50 bg-white text-black mt-0 rounded-md w-64">
+                  {technicalSubpages.map((label) => (
+                    <Link
+                      key={label}
+                      href={`/technical/${label.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="block px-4 py-2 hover:bg-red-100 border-b border-gray-200 last:border-b-0"
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             {[
               { href: '/competition', label: 'Competition' },
               { href: '/media', label: 'Media' },
@@ -103,11 +99,10 @@ const Navbar = () => {
               <Link
                 key={href}
                 href={href}
-                className={`px-3 py-2 rounded-md text-md font-medium ${
-                  isActive(href)
+                className={`px-3 py-2 rounded-md text-md font-medium ${isActive(href)
                     ? 'bg-[#6e0903] text-white'
                     : 'text-gray-900 hover:bg-red-100'
-                } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
+                  } ${isButton ? 'bg-[#7d2c20] text-white hover:bg-red-700' : ''}`}
               >
                 {label}
               </Link>
@@ -138,11 +133,10 @@ const Navbar = () => {
             <Link
               key={href}
               href={href}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive(href)
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
                   ? 'bg-[#6e0903] text-white'
                   : 'text-gray-900 hover:bg-red-100'
-              }`}
+                }`}
             >
               {label}
             </Link>
@@ -179,11 +173,10 @@ const Navbar = () => {
             <Link
               key={href}
               href={href}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive(href)
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
                   ? 'bg-[#6e0903] text-white'
                   : 'text-gray-900 hover:bg-red-100'
-              } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
+                } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
             >
               {label}
             </Link>
