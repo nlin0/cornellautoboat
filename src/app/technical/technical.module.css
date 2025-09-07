@@ -57,7 +57,7 @@ boatImg is the class name (wrapper) of the boat image */
 
 
 .techHeading {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 10px;
   text-align: center;
   font-size: 34px;
@@ -67,7 +67,7 @@ boatImg is the class name (wrapper) of the boat image */
 
 .techSection{
   padding: 55px;
-  padding-top:10px;
+  padding-top:55px;
   font-size: 16px;
 }
 
@@ -81,7 +81,7 @@ boatImg is the class name (wrapper) of the boat image */
   background-color: #8a1c1c;
   border-radius: 15px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 68px;
 
 }
 
