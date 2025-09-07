@@ -63,34 +63,38 @@ const Navbar = () => {
             ))}
 
             {/* Technical info with dropdown*/}
-            <div className="relative">
-              <button
-                onClick={toggleTechnicalDesktop}
-                className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 ${
-                  pathname.startsWith('/technical')
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
-                }`}
-              >
-                <Link href="/technical">Technical Info</Link>
-              </button>
+            <div
+  className="relative"
+  onMouseEnter={() => setIsTechnicalOpenDesktop(true)}
+  onMouseLeave={() => setIsTechnicalOpenDesktop(false)}
+>
+  {/* Button triggers hover, not a Link */}
+  <button
+    className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 ${
+      pathname.startsWith('/technical')
+        ? 'bg-[#6e0903] text-white'
+        : 'text-gray-900 hover:bg-red-100'
+    }`}
+  >
+    Technical Info
+  </button>
 
-              {isTechnicalOpenDesktop && (
-                <div className="absolute left-0 z-50 bg-white text-black shadow-md mt-2 rounded-md w-64">
-                  {technicalSubpages.map((label) => (
-                    <Link
-                      key={label}
-                      href={`/technical/${label
-                        .toLowerCase()
-                        .replace(/\s+/g, '-')}`}
-                      className="block px-4 py-2 hover:bg-red-100 border-b border-gray-200 last:border-b-0"
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+  {/* Dropdown menu */}
+  {isTechnicalOpenDesktop && (
+    <div className="absolute left-0 top-full z-50 bg-white text-black mt-0 rounded-md w-64">
+      {technicalSubpages.map((label) => (
+        <Link
+          key={label}
+          href={`/technical/${label.toLowerCase().replace(/\s+/g, '-')}`}
+          className="block px-4 py-2 hover:bg-red-100 border-b border-gray-200 last:border-b-0"
+        >
+          {label}
+        </Link>
+      ))}
+    </div>
+  )}
+</div>
+
 
             {[
               { href: '/competition', label: 'Competition' },

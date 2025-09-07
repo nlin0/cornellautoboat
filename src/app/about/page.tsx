@@ -1,5 +1,7 @@
 import Image from 'next/image';
-{/* ABOUT SECTION ******************************************************************/}
+{
+  /* ABOUT SECTION ******************************************************************/
+}
 export default function About() {
   return (
     <div className="min-h-screen font-sans text-white w-full">
