@@ -31,21 +31,30 @@ boatImg is the class name (wrapper) of the boat image */
   inset: 0;
 }
 
-.technicalTitle {
-  font-size: 8vw;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-
-  /* centering */
+.titleBlock {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
-  position: absolute;
   z-index: 3;
   text-align: center;
+  color: white;
+  max-width: 80%; 
 }
+
+.technicalTitle {
+  font-size: 8vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.titleDescr {
+  font-size: 1.5vw;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
 
 .techHeading {
   margin-top: 40px;
@@ -61,6 +70,10 @@ boatImg is the class name (wrapper) of the boat image */
   font-size: 16px;
 }
 
+.descr {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
 
 .techImg {
   padding:5px;
@@ -75,6 +88,36 @@ boatImg is the class name (wrapper) of the boat image */
   width: 100%;
   border-radius: 10px;
   max-height: 400px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+
+/* horizontal containers */
+.horizontalContainer {
+  align-items:center;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  
+}
+
+.rightContainer {
+  width: 50%;
+  margin-left: 1vw;
+}
+
+.leftContainer {
+  justify-content:center;
+  width: 50%;
+  margin-right: 1vw;
+}
+
+.conImage {
+  width: 100%;
+  border-radius: 10px;
+  height: 35vh;
   overflow: hidden;
   object-fit: cover;
 }

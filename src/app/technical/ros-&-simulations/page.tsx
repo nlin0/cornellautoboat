@@ -16,20 +16,15 @@ export default function Rossims() {
           />
         </div>
         <div className={styles.overlay}> </div>
-        <h2 className={styles.technicalTitle}>Ros & Simulations</h2>
+        <div className={styles.titleBlock}>
+          <h2 className={styles.technicalTitle}>Ros & Simulations</h2>
+        </div>
+
+
       </div>
 
       <div className={styles.techSection}>
-        <p className={styles.descr}>
-          The ROS (Robot Operating System) and Simulations team uses the ROS
-          software libraries and tools to enable communication between the
-          Perception, AI, and Controls code. Members spend a lot of time
-          thinking about the big picture of our codebase, optimizing its
-          design and usability, troubleshooting integration issues, and
-          ensuring the rest of the team’s code is compatible. Additionally,
-          this team is responsible for creating a simulations framework for
-          the AI and controls team to test their code in isolation.
-        </p>
+
 
         <h3 className={styles.techHeading}>Robot Operating System</h3>
         <p className={styles.descr}>
