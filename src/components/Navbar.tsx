@@ -29,7 +29,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#ffffff] shadow-md sticky top-0 z-50">
+    <nav className="bg-[#FDFFFC] shadow-md sticky top-0 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -52,8 +52,8 @@ const Navbar = () => {
                 key={href}
                 href={href}
                 className={`px-3 py-2 rounded-md text-md font-medium ${isActive(href)
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
+                  ? 'bg-[#6e0903] text-white'
+                  : 'text-gray-900 hover:bg-red-100'
                   }`}
               >
                 {label}
@@ -69,8 +69,8 @@ const Navbar = () => {
               {/* Button triggers hover, not a Link */}
               <button
                 className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 ${pathname.startsWith('/technical')
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
+                  ? 'bg-[#6e0903] text-white'
+                  : 'text-gray-900 hover:bg-red-100'
                   }`}
               >
                 Technical Info
@@ -100,8 +100,8 @@ const Navbar = () => {
                 key={href}
                 href={href}
                 className={`px-3 py-2 rounded-md text-md font-medium ${isActive(href)
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
+                  ? 'bg-[#6e0903] text-white'
+                  : 'text-gray-900 hover:bg-red-100'
                   } ${isButton ? 'bg-[#7d2c20] text-white hover:bg-red-700' : ''}`}
               >
                 {label}
@@ -134,8 +134,8 @@ const Navbar = () => {
               key={href}
               href={href}
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
-                  ? 'bg-[#6e0903] text-white'
-                  : 'text-gray-900 hover:bg-red-100'
+                ? 'bg-[#6e0903] text-white'
+                : 'text-gray-900 hover:bg-red-100'
                 }`}
             >
               {label}
@@ -174,8 +174,8 @@ const Navbar = () => {
               key={href}
               href={href}
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
-                  ? 'bg-[#6e0903] text-white'
-                  : 'text-gray-900 hover:bg-red-100'
+                ? 'bg-[#6e0903] text-white'
+                : 'text-gray-900 hover:bg-red-100'
                 } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
             >
               {label}

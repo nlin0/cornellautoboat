@@ -67,6 +67,7 @@ boatImg is the class name (wrapper) of the boat image */
 
 .techSection{
   padding: 55px;
+  padding-top:10px;
   font-size: 16px;
 }
 
