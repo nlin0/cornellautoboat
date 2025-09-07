@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Team() {
   return (
-    <div className="bg-[#e3dbda] min-h-screen font-sans text-white w-full">
+    <div className="bg-[#e8e8e8] min-h-screen font-sans text-white w-full">
       <div className="min-h-screen font-sans text-white w-full">
         <div className="relative w-full min-h-[300px] md:min-h-[400px]">
           <Image
@@ -28,7 +28,7 @@ export default function Team() {
         </div>
 
         {/* Team Stats */}
-        <div className="bg-[#e3dbda] w-full flex flex-col justify-center items-center text-center px-4 py-12">
+        <div className="bg-[#e8e8e8] w-full flex flex-col justify-center items-center text-center px-4 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-black">
             <div>
               <p className="text-5xl font-bold">2021</p>

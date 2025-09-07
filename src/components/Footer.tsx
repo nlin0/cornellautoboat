@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="space-y-2 text-gray-400 text-sm">
               <p>Cornell University</p>
               <p>Ithaca, NY 14850</p>
-              <p className="break-all">autoboat@cornell.edu</p>
+              <p className="break-all">cornellautoboat@cornell.edu</p>
 
               <div className="pt-4">
                 <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
