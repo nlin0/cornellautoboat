@@ -5,19 +5,19 @@ export default function Home() {
     <div className="min-h-screen font-sans text-white w-full ">
       <main className="grid grid-cols-1 md:grid-cols-2 bg-[#7d2c20] w-full">
         {/* WHO ARE WE */}
-        <div className="bg-[#d9c2bf] text-[#7d2c2c] p-6 text-center md:text-left flex items-center justify-center min-h-[500px] md:min-h-[500px]">
-          <div className="w-full max-w-7xl md:min-h-[500px] bg-[#eddada] border-[1px] border-[#eddada] p-2 flex flex-col justify-center">
-            <div className="bg-[#d9c2bf] w-full md:min-h-[550px] p-6 text-center flex flex-col justify-center">
-              <p className="text-8xl font-bold text-[#8B0000]">Who are we?</p>
-              <p className="text-5xl font-normal mt-2 text-[#914040]">
-                Innovative|
+        <div className="bg-[#ffffff] text-[#7d2c2c] p-6 text-center md:text-left flex items-center justify-center min-h-[500px] md:min-h-[500px]">
+          <div className="w-full max-w-7xl md:min-h-[500px] bg-[#8a1c1c] border-[1px] border-[#eddada] p-2 flex flex-col justify-center">
+            <div className="bg-[#ffffff] w-full md:min-h-[550px] p-6 text-center flex flex-col justify-center">
+              <p className="text-6xl font-bold text-[#8a1c1c]">Who are we?</p>
+              <p className="text-4xl font-normal mt-2 text-[#8a1c1c]">
+                Innovation|
               </p>
             </div>
           </div>
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="relative w-full min-h-[500px] md:min-h-[500px]">
+        <div className="relative w-full min-h-[700px] md:min-h-[500px]">
           <Image
             src="/clifford2.png"
             alt="Clifford"
@@ -30,8 +30,8 @@ export default function Home() {
             style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
           />
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5">
-            <h1 className="tracking-wider text-8xl font-bold">CORNELL</h1>
-            <h1 className="tracking-wider text-8xl font-bold">AUTOBOAT</h1>
+            <h1 className="tracking-wider text-7xl font-bold">CORNELL</h1>
+            <h1 className="tracking-wider text-7xl font-bold">AUTOBOAT</h1>
             <p className="tracking-wider text-5xl font-bold mt-2">
               PROJECT TEAM
             </p>

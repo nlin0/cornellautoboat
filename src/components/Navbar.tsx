@@ -30,13 +30,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#ebd9d8] shadow-md sticky top-0 z-50">
+    <nav className="bg-[#ffffff] shadow-md sticky top-0 z-50">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               <div className="h-8 w-8 bg-red-600 rounded-full mr-2"></div>
-              <span className="font-bold text-xl text-gray-900">
+              <span className="font-bold text-xl text-[#8a1c1c]">
                 Cornell AutoBoat
               </span>
             </Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
             {[
               { href: '/competition', label: 'Competition' },
               { href: '/media', label: 'Media' },
-              { href: '/contact', label: 'Join Us', isButton: true },
+              { href: '/contact', label: 'Donate', isButton: true },
             ].map(({ href, label, isButton }) => (
               <Link
                 key={href}
@@ -171,7 +171,7 @@ const Navbar = () => {
           {[
             { href: '/competition', label: 'Competition' },
             { href: '/media', label: 'Media' },
-            { href: '/contact', label: 'Join Us', isButton: true },
+            { href: '/contact', label: 'Donate', isButton: true },
           ].map(({ href, label, isButton }) => (
             <Link
               key={href}
