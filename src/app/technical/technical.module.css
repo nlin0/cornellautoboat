@@ -1,0 +1,13 @@
+/* css module for technical page */
+
+.wrapper {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fdfdfd;
+}
+
+.title {
+  font-weight: bold;
+  color: #8a1c1c;
+}
