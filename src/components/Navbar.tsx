@@ -23,7 +23,6 @@ const Navbar = () => {
     'Artificial Intelligence',
     'Controls & Microcontroller Designs',
     'ROS & Simulations',
-    'Ground Station',
     'Mechanical',
     'Robotics',
     'Electrical Systems',
