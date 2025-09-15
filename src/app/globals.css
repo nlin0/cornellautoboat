@@ -32,3 +32,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(71, 3, 3);
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(139, 12, 12, 0.612);
+  z-index: 2;
+  inset: 0;
+}

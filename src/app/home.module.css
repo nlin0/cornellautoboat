@@ -1,0 +1,142 @@
+.wrapper {
+  background-color: #950404;
+}
+
+/* HERO IMAGE */
+.heroDuo {
+  display: flex;
+  flex-direction: row;
+  min-height: 88vh;
+}
+
+.leftHero {
+  display: flex;
+  width: 48%;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.styleBox1 {
+  background-color: #f5f5f5;
+  padding: 8px;
+}
+
+.styleBox2 {
+  background-color: #8a1c1c;
+  padding: 10px;
+  height: 100%;
+}
+
+.styleBox3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  height: 79vh;
+  color: #8a1c1c;
+}
+
+.dynamicText {
+  display: flex;
+  flex-direction: column;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.staticText {
+  font-size: 7vw;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.boatImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  width: 100%;
+}
+
+.rightHero {
+  flex: 1;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(117, 65, 65, 0.57);
+  z-index: 2;
+  inset: 0;
+}
+
+.cornellAB {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  font-size: 9vw;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+
+  z-index: 3;
+  position: relative;
+  color: #f5f5f5;
+  justify-self:center;
+  padding: 30px;
+}
+
+.biggerHeader {
+  line-height: .9;
+
+}
+
+
+.smallerHeader {
+  font-size: 6vw;
+}
+
+/* INFO BLOCK SECTION */
+.blockSection {
+  color: rgb(255, 255, 255);
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color: none;
+  width: 50%;
+  height: 50vh;
+}
+
+.techImg {
+  background-color: rgb(233, 233, 233);
+  border-radius: 30px;
+  height: 80%;
+  width: 100%;
+  margin: 10px;
+}
+
+.descrBlock {
+  margin: 15px;
+}
+
+.blockHeader {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
