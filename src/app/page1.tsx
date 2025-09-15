@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans text-white w-full ">
+    <div className="min-h-screen font-sans text-f6eded w-full ">
       <main className="grid grid-cols-1 md:grid-cols-2 bg-[#7d2c20] w-full">
         {/* WHO ARE WE */}
         <div className="bg-[#FDFFFC] text-[#7d2c2c] p-6 text-center md:text-left flex items-center justify-center min-h-[500px] md:min-h-[500px]">
@@ -43,10 +43,10 @@ export default function Home() {
           {/* IMAGINATIVE Section 1 */}
           <section className="bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-4xl font-bold mb-4 text-white">
+              <h2 className="text-4xl font-bold mb-4 text-f6eded">
                 IMAGINATIVE
               </h2>
-              <p className="text-2xl text-white">
+              <p className="text-2xl text-f6eded">
                 We are a student-run team of hardware and software engineers,
                 dedicated to building and innovating in the field of naval
                 architecture and marine robotics.
@@ -59,15 +59,15 @@ export default function Home() {
           <section className="bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8">
             <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-4xl font-bold mb-4 text-white">INNOVATIVE</h2>
-              <p className="text-2xl text-white">Write Something Here</p>
+              <h2 className="text-4xl font-bold mb-4 text-f6eded">INNOVATIVE</h2>
+              <p className="text-2xl text-f6eded">Write Something Here</p>
             </div>
           </section>
           {/* SOMETHING Section 3 */}
           <section className="bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-4xl font-bold mb-4 text-white">SOMETHING</h2>
-              <p className="text-2xl text-white">SOMETHING!</p>
+              <h2 className="text-4xl font-bold mb-4 text-f6eded">SOMETHING</h2>
+              <p className="text-2xl text-f6eded">SOMETHING!</p>
             </div>
             <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
           </section>
@@ -92,15 +92,15 @@ export default function Home() {
         <div className="relative max-w-8xl mx-auto px-10 w-full">
           <section className="p-10 flex flex-col md:flex-row items-center justify-center gap-15">
             <div className="text-center w-full">
-              <h2 className="text-6xl font-bold mb-4 text-white pb-5">
+              <h2 className="text-6xl font-bold mb-4 text-f6eded pb-5">
                 About The Crew
               </h2>
-              <p className="text-3xl text-white pb-3">
+              <p className="text-3xl text-f6eded pb-3">
                 We are a student-run team of hardware and software engineers,
                 dedicated to building and innovating in the field of naval
                 architecture and marine robotics.
               </p>
-              <p className="text-3xl text-white">
+              <p className="text-3xl text-f6eded">
                 Our driven members challenge themselves in a fast-paced work
                 environment, while also making lifelong connections with
                 incredible people.
@@ -127,16 +127,16 @@ export default function Home() {
           <section className="bg-[#6b1515] p-10 flex flex-col md:flex-row items-center justify-center gap-15">
             <div className="text-center w-full">
 
-              <h2 className="text-6xl font-bold mb-4 text-white pb-5">
+              <h2 className="text-6xl font-bold mb-4 text-f6eded pb-5">
                 {' '}
                 About The Crew
               </h2>
-              <p className="text-3xl  text-white pb-3">
+              <p className="text-3xl  text-f6eded pb-3">
                 We are a student-run team of hardware and software engineers,
                 dedicated to building and innovating in the field of naval
                 architecture and marine robotics. 
               </p>
-              <p className="text-3xl  text-white">
+              <p className="text-3xl  text-f6eded">
                 Our driven members challenge
                 themselves in a fast-paced work environment, while also making
                 lifelong connections with incredible people.
@@ -160,8 +160,8 @@ export default function Home() {
       <div className="bg-[#8a1c1c] py-10">
         <div className=" max-w-7xl mx-auto px-6">
           {/* 2025 - 2026 COMP CYCLE ******************************************************************/}
-          <section className="bg-[#6b1515] py-10 text-white text-center">
-            <h2 className="text-6xl font-bold mb-2 text-white pb-10">
+          <section className="bg-[#6b1515] py-10 text-f6eded text-center">
+            <h2 className="text-6xl font-bold mb-2 text-f6eded pb-10">
               The 2025 - 2026 Competition Cycle
             </h2>
             <p className="max-w-4xl mx-auto text-3xl mb-6">PLACEHOLDER</p>
@@ -169,7 +169,7 @@ export default function Home() {
               Read more about each phase of the process below.
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
-              <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+              <div className="bg-[#5e0f0a] text-f6eded px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
                 <a
                   href="#testing"
                   className="text-3xl font-semibold hover:underline hover:text-red-400"
@@ -177,7 +177,7 @@ export default function Home() {
                   Testing
                 </a>
               </div>
-              <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+              <div className="bg-[#5e0f0a] text-f6eded px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
                 <a
                   href="#design"
                   className="text-3xl font-semibold hover:underline hover:text-red-400"
@@ -185,7 +185,7 @@ export default function Home() {
                   Design
                 </a>
               </div>
-              <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+              <div className="bg-[#5e0f0a] text-f6eded px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
                 <a
                   href="#manufacturing"
                   className="text-3xl font-semibold hover:underline hover:text-red-400"
@@ -193,7 +193,7 @@ export default function Home() {
                   Manufacturing
                 </a>
               </div>
-              <div className="bg-[#5e0f0a] text-white px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
+              <div className="bg-[#5e0f0a] text-f6eded px-6 py-3 rounded-lg shadow-md hover:bg-red-100 transition">
                 <a
                   href="#research"
                   className="text-3xl font-semibold hover:underline hover:text-red-400"
@@ -210,8 +210,8 @@ export default function Home() {
           >
             <div className="md:w-1/2 bg-gray-300 rounded-lg mt-6" />
             <div className="text-left md:w-1/2 self-start mt-6">
-              <h2 className="text-4xl font-bold mb-4 text-white">Testing</h2>
-              <p className="text-white">
+              <h2 className="text-4xl font-bold mb-4 text-f6eded">Testing</h2>
+              <p className="text-f6eded">
                 On-water testing is the team's main priority this year. This
                 gives the software team as much time as possible to develop and
                 troubleshoot AI, CV, and controls code in an environment similar
@@ -230,8 +230,8 @@ export default function Home() {
             className="scroll-mt-20 bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8 relative "
           >
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-bold mb-4 text-white">Design</h2>
-              <p className="text-white">
+              <h2 className="text-2xl font-bold mb-4 text-f6eded">Design</h2>
+              <p className="text-f6eded">
                 This year's design cycle is focused on delivering small but
                 impactful upgrades to the boat's hardware, and significant
                 changes to the main codebase to improve performance in
@@ -261,10 +261,10 @@ export default function Home() {
             {' '}
             <div className="md:w-1/2 h-48 bg-gray-300 rounded-lg" />
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-bold mb-4 text-white">
+              <h2 className="text-2xl font-bold mb-4 text-f6eded">
                 Manufacturing
               </h2>
-              <p className="text-white">SOMETHING!</p>
+              <p className="text-f6eded">SOMETHING!</p>
             </div>
           </section>
 
@@ -274,15 +274,15 @@ export default function Home() {
             className="scroll-mt-20 bg-[#8a1c1c] p-10 flex flex-col md:flex-row items-stretch gap-8 relative"
           >
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-bold mb-4 text-white">Research</h2>
-              <p className="text-white">
+              <h2 className="text-2xl font-bold mb-4 text-f6eded">Research</h2>
+              <p className="text-f6eded">
                 This year's design cycle is focused on delivering small but
                 impactful upgrades to the boat's hardware, and significant
                 changes to the main codebase to improve performance in
                 autonomous tasks. Some of the main projects are:
               </p>
 
-              <ul className="list-disc pl-6 text-white">
+              <ul className="list-disc pl-6 text-f6eded">
                 <li>Placeholder</li>
                 <li>Placeholder</li>
                 <li>Placeholder</li>
@@ -304,8 +304,8 @@ export default function Home() {
       </div>
       <section className="bg-[#330503] flex justify-center pt-20 pb-10">
         <div className="w-full max-w-4xl px-4 text-center">
-          <h2 className="text-4xl font-bold mb-2 text-white">Our Network</h2>
-          <p className="text-2xl font-normal mb-6 text-white">
+          <h2 className="text-4xl font-bold mb-2 text-f6eded">Our Network</h2>
+          <p className="text-2xl font-normal mb-6 text-f6eded">
             For many of our members, AutoBoat has served as a gateway to
             incredible opportunities in industry. Check out some of the
             companies our current members and alumni have worked at.

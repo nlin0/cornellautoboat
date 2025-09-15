@@ -4,7 +4,7 @@ import Image from 'next/image';
 }
 export default function About() {
   return (
-    <div className="min-h-screen font-sans text-white w-full">
+    <div className="min-h-screen font-sans text-f6eded w-full">
       <div className="relative w-full min-h-[300px] md:min-h-[400px]">
         <Image
           src="/clifford2.png"
@@ -26,13 +26,13 @@ export default function About() {
         <div className="max-w-4xl mx-auto px-6">
           <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-white">
+              <h2 className="text-2xl font-normal mb-4 text-f6eded">
                 Fall 2021
               </h2>
-              <h2 className="text-3xl font-bold mb-4 text-white">
+              <h2 className="text-3xl font-bold mb-4 text-f6eded">
                 AutoBoat was Founded
               </h2>
-              <p className="text-white">
+              <p className="text-f6eded">
                 The team previously competed in NASA’s Micro-G competition which
                 had a mechanical focus. In 2021 the team pivoted to a more
                 software-heavy competition, RoboBoat.
@@ -45,13 +45,13 @@ export default function About() {
 
           <section className="flex flex-col md:flex-row items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-white">
+              <h2 className="text-2xl font-normal mb-4 text-f6eded">
                 Fall 2022
               </h2>
-              <h2 className="text-3xl font-bold mb-4 text-white">
+              <h2 className="text-3xl font-bold mb-4 text-f6eded">
                 The First Boat Prototype
               </h2>
-              <p className="text-white">
+              <p className="text-f6eded">
                 We built the first prototype of our boat, transitioning from a
                 catamaran to a more stable trimaran design. While the mechanical
                 team led this shift, the software team focused on developing
@@ -66,11 +66,11 @@ export default function About() {
 
           <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-white">
+              <h2 className="text-2xl font-normal mb-4 text-f6eded">
                 Spring 2023
               </h2>
-              <h2 className="text-3xl font-bold mb-4 text-white">George</h2>
-              <p className="text-white">
+              <h2 className="text-3xl font-bold mb-4 text-f6eded">George</h2>
+              <p className="text-f6eded">
                 Our first competition boat, George, was built. Our CV model was
                 completed, and the code for the navigational tasks was finished.
                 We competed in-person at RoboBoat for the first time, and
@@ -86,11 +86,11 @@ export default function About() {
 
           <section className="flex flex-col md:flex-row items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-white">
+              <h2 className="text-2xl font-normal mb-4 text-f6eded">
                 Fall 2023 - Spring 2024
               </h2>
-              <h2 className="text-3xl font-bold mb-4 text-white">Clifford</h2>
-              <p className="text-white">
+              <h2 className="text-3xl font-bold mb-4 text-f6eded">Clifford</h2>
+              <p className="text-f6eded">
                 RoboBoat 2024 would take place nearly two months earlier than
                 expected. Despite this, we still decided to build an entirely
                 new boat, Clifford, which was fully designed and manufactured in
@@ -111,13 +111,13 @@ export default function About() {
 
           <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
             <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-white">
+              <h2 className="text-2xl font-normal mb-4 text-f6eded">
                 Fall 2024 - Spring 2024
               </h2>
-              <h2 className="text-3xl font-bold mb-4 text-white">
+              <h2 className="text-3xl font-bold mb-4 text-f6eded">
                 National 6th Place Champions
               </h2>
-              <p className="text-white">
+              <p className="text-f6eded">
                 Our first competition boat, George, was built. Our CV model was
                 completed, and the code for the navigational tasks was finished.
                 We competed in-person at RoboBoat for the first time, and
