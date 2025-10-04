@@ -122,8 +122,9 @@
 }
 
 .teamCard {
+  overflow: hidden; /* realizing we might need this oops */
   background-color: #706b6b;
-  border-radius: 1.5rem 1.5rem 2rem 2rem;
+  border-radius: 2rem 2rem 2rem 2rem;
   border: 4px solid #363738;
   width: 100%;
   max-width: 320px;
