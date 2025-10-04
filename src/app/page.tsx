@@ -15,15 +15,15 @@ export default function Home() {
           fill
           quality={100}
           priority
-          className={styles.heroImage}
+          className={styles.heroHomeImage}
           style={{ objectFit: "cover" }}
         />
 
-        <div className={styles.heroContent}>
+        <div className={styles.heroHomeContent}>
           <div className={styles.homeHeroText}>
             <h2 className={styles.homeTitle}>Cornell AutoBoat</h2>
             <h2 className={styles.homeTitle2}>Project Team</h2>
-            <p className={styles.homeDescr}>Our boats are cool. Idk what to put here.</p>
+            <p className={styles.homeDescr}>Boats are cool. Idk what to put here.</p>
           </div>
 
           <div className={styles.homeHeroBoat}>
@@ -40,11 +40,17 @@ export default function Home() {
 
 
       {/* Block Section */}
-      <div className={styles.content}>
+      <div className={styles.homeContent}>
         <div className={styles.blockSection}>
-          <div className={styles.sectionContent}>
-            <div className={styles.container}>
+          <div className={styles.aboutCrewTitle}>
+            <h3>Aboat</h3>
+            <h3 className={styles.aboutCrewTitle2}>the Crew</h3>
 
+          </div>
+
+          <div className={styles.sectionContent}>
+
+            <div className={styles.container}>
               <div className={styles.descrBlock}>
                 <h2 className={styles.blockHeader}>Something</h2>
                 <p className={styles.descr}>
@@ -98,31 +104,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           <div className={styles.videoCont}>
             <p>video will go here</p>
 
           </div>
         </div>
 
-        <div className={styles.blockSection2}>
-
-          <h2 className={styles.compHeader}>The 2025-2026 Competition Cycle</h2>
-          <p className={styles.compDescr}>Incremental hardware updates, significant software changes, and an emphasis on testing. Add more things here. Blah blahblah blah. Lorem something something.</p>
-          <div className={styles.processBar}>
-            <p className={styles.processblock}>Testing</p>
-
-            <p className={styles.processblock}>Design</p>
-            <p className={styles.processblock}>Manufacturing</p>
-            <p className={styles.processblock}>Research</p>
-          </div>
-
-          <div className={styles.infoContainer}>
-            <p>changes depending on tab</p>
-
-          </div>
-
-        </div>
       </div>
 
 

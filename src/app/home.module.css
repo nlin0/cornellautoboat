@@ -7,7 +7,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 /* cornell autoboat texts */
@@ -21,6 +20,15 @@
   color: #8a1c1c;
   line-height: 1;
 
+
+}
+
+.homeContent {
+  position: relative;
+  z-index: 0;
+  top: 8vh;
+  background-color: #950404;
+  margin-bottom: 5vh;
 
 }
 
@@ -61,7 +69,6 @@
     transform: translate(-40vw, 0.4vh) rotate(-6deg);
   }
 
-  /* Middle section stretched — takes more time */
   40% {
     transform: translate(-10vw, -1vh) rotate(8deg);
   }
@@ -98,10 +105,8 @@
   }
 }
 
-
-/* Apply animation */
 .cliffordBoat {
-  width: 60vw;
+  width: clamp(60vw, 60vw, 100vw);
   max-width: 800px;
   height: auto;
   user-select: none;
@@ -109,13 +114,90 @@
   animation: boatFloat 18s ease-in-out infinite;
 }
 
-
-/* GENERAL PAGES */
-.heroImage {
+.heroHomeImage {
   object-fit: cover;
-  object-position: center -300px;
+  object-position: center -180px;
 }
 
+.aboutCrewTitle {
+  font-size: clamp(52px, 8vw, 12vw);
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #f5f5f5;
+  line-height: 1;
+
+  position: relative;
+  align-self: flex-start;
+}
+
+.aboutCrewTitle2 {
+  font-size: clamp(48px, 5vw, 10vw);
+}
+
+
+.blockSection {
+  color: rgb(255, 255, 255);
+  margin-top: 10rem;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color: none;
+  width: 50%;
+  height: 50vh;
+}
+
+.techImg {
+  background-color: rgb(222, 222, 222);
+  border-radius: 30px;
+  height: 80%;
+  width: 100%;
+  margin: 10px;
+}
+
+.descrBlock {
+  margin: 15px;
+}
+
+.blockHeader {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.videoCont {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(222, 222, 222);
+  color: red;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 60vh;
+  margin: 10px;
+}
+
+
+
+
+/* GENERAL PAGES */
 .heroContent {
   display: flex;
   flex-direction: column;
@@ -135,21 +217,18 @@
   z-index: -1;
 }
 
-.heroContent {
+.heroHomeContent {
   position: relative;
-  /* keeps content above background */
   z-index: 1;
   color: white;
   padding: 2rem;
   text-align: center;
 }
 
-
 .content {
   position: relative;
   z-index: 1;
-  color: white;
-  padding: 2rem;
+  margin: 0px;
 }
 
 /* HERO IMAGE */
@@ -239,130 +318,8 @@
   padding: 30px;
 }
 
-.biggerHeader {
-  line-height: .9;
-
-}
-
-
-.smallerHeader {
-  font-size: 6vw;
-}
-
-/* INFO BLOCK SECTION */
-.blockSection {
-  color: rgb(255, 255, 255);
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.sectionContent {
-  display: flex;
-  flex-direction: row;
-  margin: 30px;
-  gap: 20px;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-color: none;
-  width: 50%;
-  height: 50vh;
-}
-
-.techImg {
-  background-color: rgb(222, 222, 222);
-  border-radius: 30px;
-  height: 80%;
-  width: 100%;
-  margin: 10px;
-}
-
-.descrBlock {
-  margin: 15px;
-}
-
-.blockHeader {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.videoCont {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(222, 222, 222);
-  color: red;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 60vh;
-  margin: 10px;
-}
-
-
-.blockSection2 {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 50px;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5;
-  color: #950404;
-}
-
-.compHeader {
-  font-size: 5vw;
-  font-weight: bolder;
-  padding-bottom: 5px;
-  margin-bottom: 30px;
-  border-bottom-width: 2px;
-}
-
-.compDescr {
-  font-size: 2vw;
-}
-
-.processBar {
-  display: flex;
-  gap: 2px;
-  justify-content: center;
-  margin: 5px;
-  margin-top: 30px;
-}
-
-.processblock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: #950404;
-  font-size: 2.8vw;
-  text-align: center;
-  color: #f5f5f5;
-  font-weight: bold;
-  padding: 15px;
-  height: 8vh;
-  width: 23vw;
-}
-
-.infoContainer {
-  background-color: #950404;
-  height: 85vh;
-  width: 94vw;
-  margin: 30px;
-  margin-top: 0px;
-}
-
 /* MOBILE VIEW */
-@media (max-width: 900px) {
+@media (max-width: 661px) {
 
   /* HOMEPAGE */
   .homeHeroBoat {
@@ -372,8 +329,8 @@
     align-items: center;
   }
 
-  .heroImage {
-    object-position: center -420px;
+  .heroHomeImage {
+    object-position: center -280px;
     object-fit: cover;
     /* still fills container */
   }
@@ -395,25 +352,24 @@
   /* HOMEPAGE */
   .homeHeroBoat {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 2rem;
     justify-content: center;
     align-items: center;
   }
 
-  .heroImage {
-    object-position: center -220px;
-    object-fit: cover;
-    /* still fills container */
-  }
-
   .homeHeroText {
     margin-top: 1rem;
+  }
+  
+  .homeContent{
+    top: 28vh;
   }
 
   .cliffordBoat {
     width: 68vw;
     min-width: 480px;
   }
+
 
 
 
