@@ -32,7 +32,6 @@ const Footer = () => {
               <p>Cornell University</p>
               <p>Ithaca, NY 14850</p>
               <p className="break-all">cornellautoboat@cornell.edu</p>
-
               <div className="pt-4">
                 <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
                 <div className="flex space-x-4">
