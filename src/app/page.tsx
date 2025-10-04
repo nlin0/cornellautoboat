@@ -40,7 +40,7 @@ export default function Home() {
 
 
       {/* Block Section */}
-      <div className={styles.content}>
+      <div className={styles.homeContent}>
         <div className={styles.blockSection}>
           <div className={styles.aboutCrewTitle}>
             <h3>Aboat</h3>

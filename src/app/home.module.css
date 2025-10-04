@@ -23,6 +23,15 @@
 
 }
 
+.homeContent {
+  position: relative;
+  z-index: 0;
+  top: 8vh;
+  background-color: #950404;
+  margin-bottom: 5vh;
+
+}
+
 .homeTitle2 {
   font-size: clamp(1rem, 8vw, 6rem);
   margin-top: 0px;
@@ -97,7 +106,7 @@
 }
 
 .cliffordBoat {
-  width: 60vw;
+  width: clamp(60vw, 60vw, 100vw);
   max-width: 800px;
   height: auto;
   user-select: none;
@@ -107,7 +116,7 @@
 
 .heroHomeImage {
   object-fit: cover;
-  object-position: center -480px;
+  object-position: center -180px;
 }
 
 .aboutCrewTitle {
@@ -127,16 +136,10 @@
   font-size: clamp(48px, 5vw, 10vw);
 }
 
-.homeContent {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-}
 
-/* INFO BLOCK SECTION */
 .blockSection {
   color: rgb(255, 255, 255);
-  margin-top: 24rem;
+  margin-top: 10rem;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -192,6 +195,8 @@
 }
 
 
+
+
 /* GENERAL PAGES */
 .heroContent {
   display: flex;
@@ -214,7 +219,6 @@
 
 .heroHomeContent {
   position: relative;
-  /* keeps content above background */
   z-index: 1;
   color: white;
   padding: 2rem;
@@ -224,7 +228,7 @@
 .content {
   position: relative;
   z-index: 1;
-  margin:0px;
+  margin: 0px;
 }
 
 /* HERO IMAGE */
@@ -315,7 +319,7 @@
 }
 
 /* MOBILE VIEW */
-@media (max-width: 900px) {
+@media (max-width: 661px) {
 
   /* HOMEPAGE */
   .homeHeroBoat {
@@ -326,7 +330,7 @@
   }
 
   .heroHomeImage {
-    object-position: center -580px;
+    object-position: center -280px;
     object-fit: cover;
     /* still fills container */
   }
@@ -353,14 +357,12 @@
     align-items: center;
   }
 
-  .heroHomeImage {
-    object-position: center -420px;
-    object-fit: cover;
-    /* still fills container */
-  }
-
   .homeHeroText {
     margin-top: 1rem;
+  }
+  
+  .homeContent{
+    top: 28vh;
   }
 
   .cliffordBoat {
