@@ -104,31 +104,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           <div className={styles.videoCont}>
             <p>video will go here</p>
 
           </div>
         </div>
 
-        <div className={styles.blockSection2}>
-
-          <h2 className={styles.compHeader}>The 2025-2026 Competition Cycle</h2>
-          <p className={styles.compDescr}>Incremental hardware updates, significant software changes, and an emphasis on testing. Add more things here. Blah blahblah blah. Lorem something something.</p>
-          <div className={styles.processBar}>
-            <p className={styles.processblock}>Testing</p>
-
-            <p className={styles.processblock}>Design</p>
-            <p className={styles.processblock}>Manufacturing</p>
-            <p className={styles.processblock}>Research</p>
-          </div>
-
-          <div className={styles.infoContainer}>
-            <p>changes depending on tab</p>
-
-          </div>
-
-        </div>
       </div>
 
 
