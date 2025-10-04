@@ -61,7 +61,6 @@
     transform: translate(-40vw, 0.4vh) rotate(-6deg);
   }
 
-  /* Middle section stretched — takes more time */
   40% {
     transform: translate(-10vw, -1vh) rotate(8deg);
   }
@@ -99,7 +98,6 @@
 }
 
 
-/* Apply animation */
 .cliffordBoat {
   width: 60vw;
   max-width: 800px;
@@ -109,13 +107,30 @@
   animation: boatFloat 18s ease-in-out infinite;
 }
 
-
-/* GENERAL PAGES */
-.heroImage {
+.heroHomeImage {
   object-fit: cover;
   object-position: center -300px;
 }
 
+
+.aboutCrewTitle {
+  font-size: clamp(52px, 8vw, 12vw);
+  margin-left: 5vw;
+  margin-bottom:5vh;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #570000;
+  line-height: 1;
+
+  position: relative;
+  align-self: flex-start;
+}
+
+.aboutCrewTitle2 {
+  font-size: clamp(48px, 5vw, 10vw);
+}
+
+/* GENERAL PAGES */
 .heroContent {
   display: flex;
   flex-direction: column;
@@ -135,7 +150,7 @@
   z-index: -1;
 }
 
-.heroContent {
+.heroHomeContent {
   position: relative;
   /* keeps content above background */
   z-index: 1;
@@ -239,19 +254,11 @@
   padding: 30px;
 }
 
-.biggerHeader {
-  line-height: .9;
-
-}
-
-
-.smallerHeader {
-  font-size: 6vw;
-}
 
 /* INFO BLOCK SECTION */
 .blockSection {
   color: rgb(255, 255, 255);
+  margin-top: 24rem;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -372,8 +379,8 @@
     align-items: center;
   }
 
-  .heroImage {
-    object-position: center -420px;
+  .heroHomeImage {
+    object-position: center -480px;
     object-fit: cover;
     /* still fills container */
   }
@@ -395,13 +402,13 @@
   /* HOMEPAGE */
   .homeHeroBoat {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 2rem;
     justify-content: center;
     align-items: center;
   }
 
-  .heroImage {
-    object-position: center -220px;
+  .heroHomeImage {
+    object-position: center -420px;
     object-fit: cover;
     /* still fills container */
   }
@@ -414,6 +421,7 @@
     width: 68vw;
     min-width: 480px;
   }
+
 
 
 

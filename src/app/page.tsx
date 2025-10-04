@@ -15,15 +15,15 @@ export default function Home() {
           fill
           quality={100}
           priority
-          className={styles.heroImage}
+          className={styles.heroHomeImage}
           style={{ objectFit: "cover" }}
         />
 
-        <div className={styles.heroContent}>
+        <div className={styles.heroHomeContent}>
           <div className={styles.homeHeroText}>
             <h2 className={styles.homeTitle}>Cornell AutoBoat</h2>
             <h2 className={styles.homeTitle2}>Project Team</h2>
-            <p className={styles.homeDescr}>Our boats are cool. Idk what to put here.</p>
+            <p className={styles.homeDescr}>Boats are cool. Idk what to put here.</p>
           </div>
 
           <div className={styles.homeHeroBoat}>
@@ -42,9 +42,15 @@ export default function Home() {
       {/* Block Section */}
       <div className={styles.content}>
         <div className={styles.blockSection}>
-          <div className={styles.sectionContent}>
-            <div className={styles.container}>
+          <div className={styles.aboutCrewTitle}>
+            <h3>Aboat</h3>
+            <h3 className={styles.aboutCrewTitle2}>the Crew</h3>
 
+          </div>
+
+          <div className={styles.sectionContent}>
+
+            <div className={styles.container}>
               <div className={styles.descrBlock}>
                 <h2 className={styles.blockHeader}>Something</h2>
                 <p className={styles.descr}>
