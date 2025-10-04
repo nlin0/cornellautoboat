@@ -2,6 +2,156 @@
   background-color: #950404;
 }
 
+/* HOMEPAGE */
+.pageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* cornell autoboat texts */
+.homeHeroText {
+  padding: 15px;
+  margin-top: 7vh;
+  font-size: 11vw;
+  font-size: clamp(2rem, 11vw, 8rem);
+  letter-spacing: -.4vw;
+  font-weight: 500;
+  color: #8a1c1c;
+  line-height: 1;
+
+
+}
+
+.homeTitle2 {
+  font-size: clamp(1rem, 8vw, 6rem);
+  margin-top: 0px;
+
+}
+
+.homeDescr {
+  font-size: 2vw;
+  letter-spacing: 0vw;
+  line-height: 2;
+}
+
+.homeHeroBoat {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  /* still takes up space so content below isn't overlapped */
+  z-index: 0;
+}
+
+/* halfpage hero image */
+/* ANIMATION for boat drawing */
+@keyframes boatFloat {
+  0% {
+    transform: translate(-80vw, 0vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  8% {
+    transform: translate(-60vw, -0.6vh) rotate(5deg);
+  }
+
+  18% {
+    transform: translate(-40vw, 0.4vh) rotate(-6deg);
+  }
+
+  /* Middle section stretched — takes more time */
+  40% {
+    transform: translate(-10vw, -1vh) rotate(8deg);
+  }
+
+  60% {
+    transform: translate(20vw, 0.5vh) rotate(-5deg);
+  }
+
+  75% {
+    transform: translate(50vw, -0.8vh) rotate(8deg);
+  }
+
+  85% {
+    transform: translate(80vw, 0.2vh) rotate(-7deg);
+  }
+
+  90% {
+    transform: translate(120vw, 0vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  91% {
+    opacity: 0;
+  }
+
+  95% {
+    transform: translate(-100vw, 0vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-80vw, 0vh) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+/* Apply animation */
+.cliffordBoat {
+  width: 60vw;
+  max-width: 800px;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: boatFloat 18s ease-in-out infinite;
+}
+
+
+/* GENERAL PAGES */
+.heroImage {
+  object-fit: cover;
+  object-position: center -300px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.heroImage {
+  z-index: -1;
+}
+
+.heroContent {
+  position: relative;
+  /* keeps content above background */
+  z-index: 1;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 2rem;
+}
+
 /* HERO IMAGE */
 .heroDuo {
   display: flex;
@@ -182,7 +332,7 @@
 
 .processBar {
   display: flex;
-  gap:2px;
+  gap: 2px;
   justify-content: center;
   margin: 5px;
   margin-top: 30px;
@@ -209,4 +359,63 @@
   width: 94vw;
   margin: 30px;
   margin-top: 0px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 900px) {
+
+  /* HOMEPAGE */
+  .homeHeroBoat {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroImage {
+    object-position: center -420px;
+    object-fit: cover;
+    /* still fills container */
+  }
+
+  .homeHeroText {
+    margin-top: 1rem;
+  }
+
+  .cliffordBoat {
+    width: 68vw;
+    min-width: 480px;
+  }
+
+}
+
+/* FULL SCREEN VIEW */
+@media (min-width: 1400px) {
+
+  /* HOMEPAGE */
+  .homeHeroBoat {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroImage {
+    object-position: center -220px;
+    object-fit: cover;
+    /* still fills container */
+  }
+
+  .homeHeroText {
+    margin-top: 1rem;
+  }
+
+  .cliffordBoat {
+    width: 68vw;
+    min-width: 480px;
+  }
+
+
+
+
 }
