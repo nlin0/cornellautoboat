@@ -1,0 +1,64 @@
+.wrapper {
+  background-color: hsl(0, 2%, 81%);
+}
+
+.timelineSection {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 60px 1%;
+  position: relative;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.textBlock {
+  flex: 1;
+  z-index: 2;
+  color:black
+}
+
+.timelineSection .textBlock {
+  text-align: left;
+}
+
+.reverse .textBlock {
+  text-align: right;
+}
+
+.year {
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  opacity: 0.85;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timelineImage {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 10px 10px 20px rgba(202, 190, 190, 0.25);
+}

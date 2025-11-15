@@ -1,10 +1,10 @@
 import Image from 'next/image';
-{
-  /* ABOUT SECTION ******************************************************************/
-}
+import styles from './about.module.css';
+
 export default function About() {
   return (
     <div className="min-h-screen font-sans text-f6eded w-full">
+      {/* HERO IMAGE */}
       <div className="relative w-full min-h-[300px] md:min-h-[400px]">
         <Image
           src="/clifford2.png"
@@ -13,121 +13,139 @@ export default function About() {
           style={{ objectFit: 'cover' }}
           priority
         />
+
         <div
           className="absolute inset-0"
           style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5 ">
+
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5">
           <h1 className="tracking-wider text-9xl font-bold">Team History</h1>
         </div>
       </div>
 
-      <div className="bg-[#330503] py-10">
-        <div className="max-w-4xl mx-auto px-6">
-          <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
-            <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-f6eded">
-                Fall 2021
-              </h2>
-              <h2 className="text-3xl font-bold mb-4 text-f6eded">
-                AutoBoat was Founded
-              </h2>
-              <p className="text-f6eded">
-                The team previously competed in NASA’s Micro-G competition which
-                had a mechanical focus. In 2021 the team pivoted to a more
-                software-heavy competition, RoboBoat.
-              </p>
-            </div>
-            <div className="md:w-1/2 bg-gray-300 rounded-lg self-stretch" />
-          </section>
+      {/* TIMELINE SECTIONS */}
+      <div className={styles.wrapper}>
+        {/* SECTION 1 */}
+        <div className={styles.timelineSection}>
+          <div className={styles.textBlock}>
+            <div className={styles.year}>FALL 2021</div>
+            <h2 className={styles.title}>AutoBoat Was Founded</h2>
+            <p className={styles.subtitle}>
+              The team previously competed in NASA’s Micro-G competition which
+              had a mechanical focus. In 2021 the team pivoted to a more
+              software-heavy competition, RoboBoat.
+            </p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/clifford2.png"
+              alt="fall2021"
+              width={400}
+              height={300}
+              className={styles.timelineImage}
+            />
+          </div>
+        </div>
 
-          <div className="bg-gray-400 h-1 w-4/5 mx-auto my-10 rounded"></div>
+        {/* SECTION 2 (REVERSED) */}
+        <div className={`${styles.timelineSection} ${styles.reverse}`}>
+          <div className={styles.textBlock}>
+            <div className={styles.year}>FALL 2022</div>
+            <h2 className={styles.title}>The First Boat Prototype</h2>
+            <p className={styles.subtitle}>
+              We built the first prototype of our boat, transitioning from a
+              catamaran to a more stable trimaran design. While the mechanical
+              team led this shift, the software team focused on developing path
+              planning algorithms and a computer vision model. We also began
+              integrating ROS into our system.
+            </p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/clifford2.png"
+              alt="fall2022"
+              width={500}
+              height={500}
+              className={styles.timelineImage}
+            />
+          </div>
+        </div>
 
-          <section className="flex flex-col md:flex-row items-stretch gap-8">
-            <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-f6eded">
-                Fall 2022
-              </h2>
-              <h2 className="text-3xl font-bold mb-4 text-f6eded">
-                The First Boat Prototype
-              </h2>
-              <p className="text-f6eded">
-                We built the first prototype of our boat, transitioning from a
-                catamaran to a more stable trimaran design. While the mechanical
-                team led this shift, the software team focused on developing
-                path planning algorithms and a computer vision model. We also
-                began integrating ROS into our system.
-              </p>
-            </div>
-            <div className="md:w-1/2 bg-gray-300 rounded-lg self-stretch" />
-          </section>
+        {/* SECTION 3 */}
+        <div className={styles.timelineSection}>
+          <div className={styles.textBlock}>
+            <div className={styles.year}>SPRING 2023</div>
+            <h2 className={styles.title}>George</h2>
+            <p className={styles.subtitle}>
+              Our first competition boat, George, was built. Our CV model was
+              completed, and the code for the navigational tasks was finished.
+              We competed in-person at RoboBoat for the first time, and
+              qualified for finals. We learned so much from the competition and
+              came back with many ideas to improve the team moving forward.
+            </p>
+          </div>
 
-          <div className="bg-gray-400 h-1 w-4/5 mx-auto my-10 rounded"></div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/clifford2.png"
+              alt="spring2023"
+              width={400}
+              height={300}
+              className={styles.timelineImage}
+            />
+          </div>
+        </div>
 
-          <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
-            <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-f6eded">
-                Spring 2023
-              </h2>
-              <h2 className="text-3xl font-bold mb-4 text-f6eded">George</h2>
-              <p className="text-f6eded">
-                Our first competition boat, George, was built. Our CV model was
-                completed, and the code for the navigational tasks was finished.
-                We competed in-person at RoboBoat for the first time, and
-                qualified for finals. We learned so much from the competition
-                and came back with many ideas to improve the team moving
-                forward.
-              </p>
-            </div>
-            <div className="md:w-1/2 bg-gray-300 rounded-lg self-stretch" />
-          </section>
+        {/* SECTION 4 (REVERSED) */}
+        <div className={`${styles.timelineSection} ${styles.reverse}`}>
+          <div className={styles.textBlock}>
+            <div className={styles.year}>FALL 2023 - SPRING 2024</div>
+            <h2 className={styles.title}>Clifford</h2>
+            <p className={styles.subtitle}>
+              RoboBoat 2024 would take place nearly two months earlier than
+              expected. Despite this, we still decided to build an entirely new
+              boat, Clifford, which was fully designed and manufactured in just
+              one semester. Clifford is stronger, faster, and more stable than
+              George, providing the team with a more reliable hardware platform
+              to build upon in the future. The software team revamped the
+              codebase, integrated a compass and GPS, and improved the vision
+              models. Additionally, the Ground Station project and virtual
+              simulations were developed. At competition, we qualified for
+              finals again, and we won a design documentation award for our
+              website.
+            </p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/clifford2.png"
+              alt="fall2023"
+              width={400}
+              height={300}
+              className={styles.timelineImage}
+            />
+          </div>
+        </div>
 
-          <div className="bg-gray-400 h-1 w-4/5 mx-auto my-10 rounded"></div>
+        {/* SECTION 5 */}
+        <div className={styles.timelineSection}>
+          <div className={styles.textBlock}>
+            <div className={styles.year}>SPRING 2025</div>
+            <h2 className={styles.title}>International Champions</h2>
+            <p className={styles.subtitle}>
+              AutoBoat earns the international first-place title.
+            </p>
+          </div>
 
-          <section className="flex flex-col md:flex-row items-stretch gap-8">
-            <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-f6eded">
-                Fall 2023 - Spring 2024
-              </h2>
-              <h2 className="text-3xl font-bold mb-4 text-f6eded">Clifford</h2>
-              <p className="text-f6eded">
-                RoboBoat 2024 would take place nearly two months earlier than
-                expected. Despite this, we still decided to build an entirely
-                new boat, Clifford, which was fully designed and manufactured in
-                just one semester. Clifford is stronger, faster, and more stable
-                than George, providing the team with a more reliable hardware
-                platform to build upon in the future. The software team revamped
-                the codebase, integrated a compass and GPS, and improved the
-                vision models. Additionally, the Ground Station project and
-                virtual simulations were developed. At competition, we qualified
-                for finals again, and we won a design documentation award for
-                our website.
-              </p>
-            </div>
-            <div className="md:w-1/2 bg-gray-300 rounded-lg self-stretch" />
-          </section>
-
-          <div className="bg-gray-400 h-1 w-4/5 mx-auto my-10 rounded"></div>
-
-          <section className="flex flex-col md:flex-row-reverse items-stretch gap-8">
-            <div className="text-left md:w-1/2 self-start">
-              <h2 className="text-2xl font-normal mb-4 text-f6eded">
-                Fall 2024 - Spring 2024
-              </h2>
-              <h2 className="text-3xl font-bold mb-4 text-f6eded">
-                National 6th Place Champions
-              </h2>
-              <p className="text-f6eded">
-                Our first competition boat, George, was built. Our CV model was
-                completed, and the code for the navigational tasks was finished.
-                We competed in-person at RoboBoat for the first time, and
-                qualified for finals. We learned so much from the competition
-                and came back with many ideas to improve the team moving
-                forward.
-              </p>
-            </div>
-            <div className="md:w-1/2 bg-gray-300 rounded-lg self-stretch" />
-          </section>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/clifford2.png"
+              alt="spring2025"
+              width={400}
+              height={300}
+              className={styles.timelineImage}
+            />
+          </div>
         </div>
       </div>
     </div>
