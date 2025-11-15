@@ -131,18 +131,40 @@
   margin-top: 4px;     
   display: flex;
   flex-direction: column;   
-  justify-content: center;  
-  flex: 1;             
+  justify-content: flex-start;  
+  flex: 1;    
+  align-items: flex-start;         
 }
 
-.link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #2e3644;
-  font-weight: 600;
-  text-decoration: none;
+.iconRow {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.link:hover {
-  text-decoration: underline;
+
+.iconRow a {
+
+  align-items: center;
 }
+
+.linkedinIcon {
+  margin-top:10px;  
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-position: center;
+  background-image: url("/LinkedIn_icon.svg.png");
+}
+
+.portfolioIcon {
+  margin-top:10px;  
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-position: center;
+  background-image: url("/LinkedIn_icon.svg.png");
+}
+
+
