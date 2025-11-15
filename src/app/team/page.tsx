@@ -59,6 +59,7 @@ export default function Team() {
               />
               <div className={styles.textContent}>
                 <div className={styles.name}>{member.name}</div>
+                 <div className={styles.teamLead }>{member.title}</div>
                 <div className={styles.nameSubteam}>{member.subteam}</div>
       
                   {member.major} <br />

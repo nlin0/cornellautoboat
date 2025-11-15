@@ -2,7 +2,8 @@ export const teamLeads = [
   {
     name: "Thomas Wells",
     email: "tlw85@cornell.edu",
-    subteam: "Full Team Lead, Hardware",
+    title: "Full Team Lead",
+    subteam: "Hardware",
     classYear: "2027",
     hometown: "Lansing, NY",
     major: "Mechanical Engineering",
@@ -13,7 +14,8 @@ export const teamLeads = [
   {
     name: "Neha Naveen",
     email: "njn43@cornell.edu",
-    subteam: "Full Team Lead, Software",
+    title: "Full Team Lead",
+    subteam: "Software", 
     classYear: "2027",
     hometown: "California",
     major: "Computer Science",

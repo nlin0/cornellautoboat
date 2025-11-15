@@ -1,6 +1,6 @@
 
 .wrapper {
-  background-color: #f1eaecd7;
+  background-color: #e9e6ecd7;
   min-height: 100vh;
   width: 100%;
 }
@@ -75,7 +75,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 630px));
   justify-content: center; 
-  gap: 50px;
+  gap: 75px;
   padding: 20px 40px;
 }
 
@@ -83,7 +83,7 @@
 .card {
   display: flex;
   align-items: center;        
-  background: rgb(216, 214, 214);
+  background: rgb(160, 159, 160);
   border: 2px solid #b9b5b7;
   border-radius: 14px;
   padding: 20px;
@@ -108,9 +108,18 @@
   color: #0a1f44;
 }
 
+
+.teamLead {
+  font-size: 23px;
+  color: #4d4b4c;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  flex: 1;              
+}
 .nameSubteam {
-  font-size: 22px;
-  color: #687386;
+  font-size: 23px;
+  color: #515254;
   display: flex;
   flex-direction: column;  
   justify-content: center;
@@ -129,7 +138,7 @@
 .textContent {
 
   font-size: 20px;
-  color: #3c434c;
+  color: #000000;
   margin-top: 4px;     
   display: flex;
   flex-direction: column;   
