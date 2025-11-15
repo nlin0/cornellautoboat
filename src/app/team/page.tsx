@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './team.module.css';
 import { teamLeads } from './teamdata';
 import { hardware } from './teamdata';
+import { software } from './teamdata';
 export default function Team() {
   return (
     <div className={styles.wrapper}>
@@ -58,12 +59,13 @@ export default function Team() {
               />
               <div className={styles.textContent}>
                 <div className={styles.name}>{member.name}</div>
-                <div className={styles.subteam}>Subteam: {member.subteam}</div>
-                <div className={styles.info}>
+                <div className={styles.nameSubteam}>{member.subteam}</div>
+      
+                  {member.major} <br />
                   Class of {member.classYear} <br />
                   Hometown: {member.hometown} <br />
-                  Major: {member.major}
-                </div>
+                  Email: {member.email} <br />
+       
                 <div className={styles.iconRow}>
                   <a
                     href={member.linkedin}
@@ -103,13 +105,14 @@ export default function Team() {
               />
               <div className={styles.textContent}>
                 <div className={styles.name}>{member.name}</div>
-                <div className={styles.subteam}>Subteam: {member.subteam}</div>
-                <div className={styles.info}>
+                <div className={styles.nameSubteam}>{member.subteam}</div>
+                
                   {member.major}
                   <br />
                   Class of {member.classYear} <br />
                   Hometown: {member.hometown} <br />
-                </div>
+                  Email: {member.email} <br />
+      
                 <div className={styles.iconRow}>
                   <a
                     href={member.linkedin}
@@ -124,6 +127,51 @@ export default function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className={` ${styles.portfolioIcon}`}
+                    ></a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* software */}
+      <div>
+        <h2 className={styles.sectionTitle}>Software</h2>
+
+        <div className={styles.grid}>
+          {software.map((member, index) => (
+            <div className={styles.card} key={index}>
+              <Image
+                src={member.image}
+                alt={member.name}
+                width={180}
+                height={200}
+                className={styles.profileImage}
+                style={{ objectFit: 'cover' }}
+              />
+              <div className={styles.textContent}>
+                <div className={styles.name}>{member.name}</div>
+                <div className={styles.nameSubteam}>{member.subteam}</div>
+                {member.major}
+                <br />
+                Class of {member.classYear} <br />
+                Hometown: {member.hometown} <br />
+                Email: {member.email} <br />
+                <div className={styles.iconRow}>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={` ${styles.linkedinIcon}`}
+                  ></a>
+
+                  {member.portfolio && (
+                    <a
+                      href={member.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={` ${styles.githubIcon}`}
                     ></a>
                   )}
                 </div>

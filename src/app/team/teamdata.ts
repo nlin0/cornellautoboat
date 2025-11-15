@@ -1,7 +1,8 @@
 export const teamLeads = [
   {
     name: "Thomas Wells",
-    subteam: "Hardware",
+    email: "tlw85@cornell.edu",
+    subteam: "Full Team Lead, Hardware",
     classYear: "2027",
     hometown: "Lansing, NY",
     major: "Mechanical Engineering",
@@ -11,7 +12,8 @@ export const teamLeads = [
   },
   {
     name: "Neha Naveen",
-    subteam: "Software",
+    email: "njn43@cornell.edu",
+    subteam: "Full Team Lead, Software",
     classYear: "2027",
     hometown: "California",
     major: "Computer Science",
@@ -23,6 +25,7 @@ export const teamLeads = [
 export const hardware = [
   {
     name: "Rajarshi Das",
+    email: "rd496@cornell.edu",
     subteam: "Robotics Lead",
     classYear: "2026",
     hometown: "Westbury, NY",
@@ -33,6 +36,7 @@ export const hardware = [
   },
   {
     name: "Findlay Hartman",
+    email: "fgh36@cornell.edu",
     subteam: "Manufacturing Lead",
     classYear: "2027",
     hometown: "Tampa, FL",
@@ -43,6 +47,7 @@ export const hardware = [
   },
   {
     name: "Nitya Shukla",
+    email: "nds57@cornell.edu",
     subteam: "Design Lead",
     classYear: "2027",
     hometown: "Briarcliff Manor, NY",
@@ -53,10 +58,49 @@ export const hardware = [
   },
   {
     name: "Daniel Yu",
+    email: "dhy22@cornell.edu",
     subteam: "E-Systems Lead",
     classYear: "2026",
     hometown: "Raritan, NJ",
     major: "Electrical & Computer Engineering",
+    linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
+    image: "/ABteam2.jpg",
+    portfolio: "https://www.cornellautoboat.com/", 
+  },
+  
+];
+
+
+export const software = [
+  {
+    name: "Avishi Trivedi",
+    email: "at783@cornell.edu",
+    subteam: "Perception Lead",
+    classYear: "2027",
+    hometown: "San Jose, CA",
+    major: "Computer Science",
+    linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
+    image: "/ABteam2.jpg",
+    portfolio: "https://www.cornellautoboat.com/", 
+  },
+   {
+    name: "Raymond Lin",
+    email: "rpl67@cornell.edu",
+    subteam: "ROS + Sims Lead",
+    classYear: "2027",
+    hometown: "Princeton, NJ",
+    major: "Computer Science, Physics",
+    linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
+    image: "/ABteam2.jpg",
+    portfolio: "https://www.cornellautoboat.com/", 
+  },
+   {
+    name: "Selena Wang",
+    email: "shw59@cornell.edu",
+    subteam: "Controls Lead",
+    classYear: "2027",
+    hometown: "San Jose, CA",
+    major: "Computer Science, ECE",
     linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
     image: "/ABteam2.jpg",
     portfolio: "https://www.cornellautoboat.com/", 
