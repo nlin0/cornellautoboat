@@ -5,9 +5,7 @@ import './globals.css';
 export default function Home() {
   return (
 
-    // hero image
     <div className={styles.pageWrapper}>
-
       <div className={styles.heroHome}>
         <Image
           src="/background.svg"
