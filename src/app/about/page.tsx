@@ -133,7 +133,7 @@ export default function About() {
             <div className={styles.year}>SPRING 2025</div>
             <h2 className={styles.title}>International Champions</h2>
             <p className={styles.subtitle}>
-              AutoBoat earns the international first-place title.
+              AutoBoat earns the international fifth place title
             </p>
           </div>
 
