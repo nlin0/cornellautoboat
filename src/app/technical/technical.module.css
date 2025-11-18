@@ -1,7 +1,6 @@
 /* css module for technical page */
 
 .wrapper {
-  max-width: 1200px;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
   color: rgb(71, 3, 3);
@@ -14,6 +13,7 @@
   height: 400px;
   /* adjust as needed */
   overflow: hidden;
+  background-color: rgba(139, 12, 12, 1);
 }
 
 /* NOTE: boatImage is the literal image... 
@@ -23,6 +23,7 @@ boatImg is the class name (wrapper) of the boat image */
   object-position: center;
   z-index: 1;
   width: 100%;
+  height: 100%; 
 }
 
 .overlay {
@@ -39,7 +40,7 @@ boatImg is the class name (wrapper) of the boat image */
   transform: translate(-50%, -50%);
   z-index: 3;
   text-align: center;
-  color: f6eded;
+  color: #f6eded;
   max-width: 80%;
 }
 
