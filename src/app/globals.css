@@ -1,23 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FDFFFC;
+  /* main app background */
+  --background: #f6fbff;
   --foreground: #171717;
+  /* main text */
+
+  --primary: #960303;
+  --primary2: #510000;
+
+
+  --blue1: #0096e7;
+  --blue2: #7dd2ff;
+
+  --secondary: #ddf2fd;
+  --secondary2: #f6fbff;
+
+
+
+  --accent: #23303d;
+  --accent2: #1232517a;
+  --accent3: #960303b0;
+  --accent4: #ff8b8b95;
+
+
+  --header-text: #f6fbff;
+  --body-text: #2a2a2a;
+
+  /* LAYOUT */
+  --page-space: 2rem;
+  --margin-space: 4rem;
+  --margin-space-lg: 9rem;
+  --text-space-sm: 5px;
+
+
 }
 
 @theme inline {
+  /* backgrounds */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  /* main colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-secondary2: var(--secondary2);
+  --color-secondary3: var(--secondary3);
+  --color-accent: var(--accent);
+
+  /* text colors */
+  --color-header: var(--header-text);
+  --color-body: var(--body-text);
+
+  /* fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* text sizes */
+  --text-header-xlg: 88px;
+  --text-header-lg: 48px;
+  --text-header-md: 32px;
+  --text-header-sm: 24px;
+
+  --text-minsize: 18px;
+  --text-maxsize: 88px;
+
+  --text-descr-lg: 24px;
+  --text-descr-md: 18px;
+  --text-descr-sm: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
+
+/* if we wanted to implement dark mode */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
@@ -25,24 +85,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scroll-mt-20 {
-  scroll-margin-top: 5rem;
-}
 
 html {
   scroll-behavior: smooth;
-}
-
-.wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: rgb(255, 255, 255);
-  color: rgb(71, 3, 3);
-}
-
-.overlay {
-  position: absolute;
-  background-color: rgba(139, 12, 12, 0.612);
-  z-index: 2;
-  inset: 0;
 }
