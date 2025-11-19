@@ -3,29 +3,20 @@ import styles from './about.module.css';
 
 export default function About() {
   return (
-    <div className="min-h-screen font-sans text-f6eded w-full">
-      {/* HERO IMAGE */}
-      <div className="relative w-full min-h-[300px] md:min-h-[400px]">
-        <Image
-          src="/clifford2.png"
-          alt="Clifford"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-        />
-
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
-        />
-
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5">
-          <h1 className="tracking-wider text-9xl font-bold">Team History</h1>
-        </div>
+    <div className={styles.wrapper}>
+      <div className={styles.aboutIntro}>
+        <h2 className="text-primary font-bold text-header-xlg pt-18 mb-0">
+          Team History
+        </h2>
+        <p className="text-primary text-descr-lg font-light mb-8">
+          Continuing to make history
+        </p>
       </div>
-
-      {/* TIMELINE SECTIONS */}
-      <div className={styles.wrapper}>
+      <div className={styles.dividerWrapper}>
+        <img src="/divider1.svg" alt="" className={styles.divider} />
+      </div>
+      {/* --- TIMELINE SECTIONS --- */}
+      <div className={styles.timelineContainer}>
         {/* SECTION 1 */}
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
@@ -47,11 +38,17 @@ export default function About() {
             />
           </div>
         </div>
+      </div>
 
-        {/* SECTION 2 (REVERSED) */}
+      <div className={styles.dividerWrapper}>
+        <img src="/divider2.png" alt="" className={styles.divider} />
+      </div>
+
+      {/* SECTION 2 */}
+      <div className={styles.timelineContainer2}>
         <div className={`${styles.timelineSection} ${styles.reverse}`}>
-          <div className={styles.textBlock}>
-            <div className={styles.year}>FALL 2022</div>
+          <div className={styles.textBlock2}>
+            <div className={styles.year2}>FALL 2022</div>
             <h2 className={styles.title}>The First Boat Prototype</h2>
             <p className={styles.subtitle}>
               We built the first prototype of our boat, transitioning from a
@@ -71,8 +68,14 @@ export default function About() {
             />
           </div>
         </div>
+      </div>
 
-        {/* SECTION 3 */}
+      <div className={styles.dividerWrapper}>
+        <img src="/divider1.svg" alt="" className={styles.divider} />
+      </div>
+
+      {/* SECTION 3 */}
+      <div className={styles.timelineContainer}>
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
             <div className={styles.year}>SPRING 2023</div>
@@ -85,7 +88,6 @@ export default function About() {
               came back with many ideas to improve the team moving forward.
             </p>
           </div>
-
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"
@@ -96,11 +98,17 @@ export default function About() {
             />
           </div>
         </div>
+      </div>
 
-        {/* SECTION 4 (REVERSED) */}
+      <div className={styles.dividerWrapper}>
+        <img src="/divider2.png" alt="" className={styles.divider} />
+      </div>
+
+      {/* SECTION 4 */}
+      <div className={styles.timelineContainer2}>
         <div className={`${styles.timelineSection} ${styles.reverse}`}>
-          <div className={styles.textBlock}>
-            <div className={styles.year}>FALL 2023 - SPRING 2024</div>
+          <div className={styles.textBlock2}>
+            <div className={styles.year2}>FALL 2023 - SPRING 2024</div>
             <h2 className={styles.title}>Clifford</h2>
             <p className={styles.subtitle}>
               RoboBoat 2024 would take place nearly two months earlier than
@@ -126,17 +134,23 @@ export default function About() {
             />
           </div>
         </div>
+      </div>
 
-        {/* SECTION 5 */}
+      {/* FULL-WIDTH DIVIDER */}
+      <div className={styles.dividerWrapper}>
+        <img src="/divider1.svg" alt="" className={styles.divider} />
+      </div>
+
+      {/* SECTION 5 */}
+      <div className={styles.timelineContainer}>
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
             <div className={styles.year}>SPRING 2025</div>
             <h2 className={styles.title}>International Champions</h2>
             <p className={styles.subtitle}>
-              AutoBoat earns the international fifth place title
+              We earned the international fifth place title.
             </p>
           </div>
-
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"

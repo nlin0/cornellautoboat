@@ -1,16 +1,47 @@
 .wrapper {
-  background-color: rgba(238, 231, 231, 0.942);
+  background-color: var(--color-secondary);
 }
 
+.aboutIntro {
+  color: var(--body-text);
+  text-align: center;
+  padding-top: var(--page-space);
+  padding-bottom: var(--margin-space);
+}
+
+.dividerWrapper {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.divider {
+  width: 100%; /* stretch full width */
+  height: auto; /* maintain aspect ratio */
+
+  display: block;
+  object-fit: cover; /* fill the width nicely */
+}
+
+.timelineContainer {
+  width: 100%;
+  padding: var(--page-space);
+  background-color: var(--primary);
+}
+.timelineContainer2 {
+  width: 100%;
+  padding: var(--page-space);
+  background-color: var(--secondary);
+}
 .timelineSection {
   display: flex;
   align-items: center;
-  gap: 100px;
-  width: 100%;
-  max-width: 1600px;
+  gap: 80px;
   margin: 0 auto;
   padding: 60px 1%;
-  position: relative;
+  max-width: 1500px;
+
+  color: var(--secondary2);
 }
 
 .reverse {
@@ -20,21 +51,27 @@
 .textBlock {
   flex: 1;
   z-index: 2;
-  color:black
 }
 
-.timelineSection .textBlock {
-  text-align: left;
-}
-
-.reverse .textBlock {
-  text-align: right;
+.textBlock2 {
+    font-size: 30px;
+  flex: 1;
+  z-index: 2;
+  color: var(--body-text);
 }
 
 .year {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--secondary2);
+}
+
+.year2 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--body-text);
 }
 
 .title {
@@ -44,7 +81,7 @@
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 25px;
   opacity: 0.85;
 }
 
@@ -60,5 +97,6 @@
   max-width: 550px;
   height: auto;
   border-radius: 14px;
-  box-shadow: 10px 10px 20px rgba(202, 190, 190, 0.25);
+  border: 2px solid var(--secondary2);
+  object-fit: cover;
 }
