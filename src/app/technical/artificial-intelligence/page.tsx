@@ -19,11 +19,11 @@ export default function ArtificialIntelligence() {
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Artificial Intelligence</h2>
         </div>
-        <div className={styles.dividerWrapper}>
+        
+      </div>
+<div className={styles.dividerWrapper}>
           <img src="/divider5.png" alt="divider" className={styles.divider} />
         </div>
-      </div>
-
       {/* TECH CONTENT SECTION */}
       <div className={styles.techSection}>
         <h3 className={styles.techHeading}>About the AI Team</h3>

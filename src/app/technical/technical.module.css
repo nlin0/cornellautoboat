@@ -71,8 +71,8 @@
   width: 100vw;
   overflow: hidden;
   line-height: 0;
-  z-index: 2;
-  transform: translateY(35%);
+  z-index: 3;
+  transform: translateY(25%);
 }
 
 .inPageDivider {
@@ -83,9 +83,10 @@
   line-height: 0;
   z-index: 2;
 }
+
 .divider {
   width: 100vw;
-  max-height: 200px;
+  max-height: 300px;
   display: block;
 }
 
@@ -93,6 +94,7 @@
 .techSection {
   padding: 10% 10%;
   font-size: 16px;
+  z-index:1;
 }
 
 .techHeading {

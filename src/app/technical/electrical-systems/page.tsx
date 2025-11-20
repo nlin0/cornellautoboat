@@ -18,11 +18,10 @@ export default function ElectricalSys() {
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Electrical Systems</h2>
         </div>
-        <div className={styles.dividerWrapper}>
-          <img src="/divider5.png" alt="divider" className={styles.divider} />
-        </div>
       </div>
-
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           E-Systems coordinate the flow of information and power between all the

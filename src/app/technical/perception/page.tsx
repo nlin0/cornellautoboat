@@ -18,11 +18,10 @@ export default function Perception() {
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Perception</h2>
         </div>
-        <div className={styles.dividerWrapper}>
-          <img src="/divider5.png" alt="divider" className={styles.divider} />
-        </div>
       </div>
-
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The Perception team is responsible for translating the boat’s

@@ -18,11 +18,10 @@ export default function Mechanical() {
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Design & Manufacturing</h2>
         </div>
-        <div className={styles.dividerWrapper}>
-          <img src="/divider5.png" alt="divider" className={styles.divider} />
-        </div>
       </div>
-
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           Our unique trimaran design has a hollow center hull that houses all
@@ -45,7 +44,7 @@ export default function Mechanical() {
           strength-to-weight ratios for the frame, and building a framework
           within LS-DYNA for crash simulations.
         </p>
-        
+
         <div className={styles.techImg}>
           <Image
             src="/clifford2.png"
@@ -55,7 +54,7 @@ export default function Mechanical() {
             className={styles.techImage}
           />
         </div>
-<div className={styles.inPageDivider}>
+        <div className={styles.inPageDivider}>
           <img src="/divider7.png" alt="divider" className={styles.divider} />
         </div>
         <h3 className={styles.techHeading}>Hull Manufacturing</h3>

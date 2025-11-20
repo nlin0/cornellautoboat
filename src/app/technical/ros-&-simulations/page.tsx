@@ -18,11 +18,10 @@ export default function Rossims() {
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Ros & Simulations</h2>
         </div>
-        <div className={styles.dividerWrapper}>
-          <img src="/divider5.png" alt="divider" className={styles.divider} />
-        </div>
       </div>
-
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The ROS (Robot Operating System) and Simulations team uses the ROS

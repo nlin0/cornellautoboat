@@ -20,11 +20,10 @@ export default function ArtificialIntelligence() {
             Controls & Microcontroller Design
           </h2>
         </div>
-        <div className={styles.dividerWrapper}>
-          <img src="/divider5.png" alt="divider" className={styles.divider} />
-        </div>
       </div>
-
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The Controls & Microcontrollers team is responsible for all the
