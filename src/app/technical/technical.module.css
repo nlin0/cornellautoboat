@@ -127,3 +127,21 @@
   max-height: 1500px;
   object-fit: cover;
 }
+
+.sectionContent {
+  display: flex;
+  flex-direction: row;
+
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-color: none;
+  width: 50%;
+  height: auto;
+  min-height: 50vh;
+}
