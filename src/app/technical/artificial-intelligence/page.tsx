@@ -47,10 +47,10 @@ export default function ArtificialIntelligence() {
        
         <div className={styles.techImg}>
           <Image
-            src="/clifford2.png"
+            src="/AI1.png"
             alt="AI path planning visualization"
             width={600}
-            height={300}
+            height={500}
             className={styles.techImage}
           />
         </div>
@@ -64,7 +64,7 @@ export default function ArtificialIntelligence() {
 
         <div className={styles.techImg}>
           <Image
-            src="/clifford2.png"
+            src="/AI1.png"
             alt="AI path planning visualization"
             width={600}
             height={300}

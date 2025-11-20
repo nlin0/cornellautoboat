@@ -1,16 +1,15 @@
-import Image from "next/image";
-import styles from "../technical.module.css";
+import Image from 'next/image';
+import styles from '../technical.module.css';
 
 export default function Mechanical() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.heroImg}>
-
         <div className={styles.boatImg}>
           <Image
             src="/clifford2.png"
             alt="Clifford the boat"
-            fill               // ← key: image fills parent
+            fill // ← key: image fills parent
             priority
             className={styles.boatImage}
           />
@@ -18,6 +17,9 @@ export default function Mechanical() {
         <div className={styles.overlay}> </div>
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Design & Manufacturing</h2>
+        </div>
+        <div className={styles.dividerWrapper}>
+          <img src="/divider5.png" alt="divider" className={styles.divider} />
         </div>
       </div>
 
@@ -31,8 +33,8 @@ export default function Mechanical() {
           safety for reliability. We employ Ansys static structural and modal
           analysis tools to verify our designs, followed by testing to validate
           their performance. The electronics bay is accessed through sealed
-          openings, designed with redundancy, and tested for waterproofing.
-          Most components are custom-made, utilizing a variety of techniques,
+          openings, designed with redundancy, and tested for waterproofing. Most
+          components are custom-made, utilizing a variety of techniques,
           including composite fabrication, machining, laser cutting, and 3D
           printing.
         </p>
@@ -43,7 +45,7 @@ export default function Mechanical() {
           strength-to-weight ratios for the frame, and building a framework
           within LS-DYNA for crash simulations.
         </p>
-
+        
         <div className={styles.techImg}>
           <Image
             src="/clifford2.png"
@@ -53,22 +55,22 @@ export default function Mechanical() {
             className={styles.techImage}
           />
         </div>
-
+<div className={styles.inPageDivider}>
+          <img src="/divider7.png" alt="divider" className={styles.divider} />
+        </div>
         <h3 className={styles.techHeading}>Hull Manufacturing</h3>
         <p className={styles.descr}>
-          AMAS. The amas were made using foam cores with wooden tops and bottoms that
-          were carefully cut and sanded to the desired shape. These foam cores
-          were then used in a fiberglass layup to provide waterproofing and
-          strength for use in the water. After more sanding, the amas were then
-          coated with an epoxy barrier coat and spray painted to our final
+          AMAS. The amas were made using foam cores with wooden tops and bottoms
+          that were carefully cut and sanded to the desired shape. These foam
+          cores were then used in a fiberglass layup to provide waterproofing
+          and strength for use in the water. After more sanding, the amas were
+          then coated with an epoxy barrier coat and spray painted to our final
           desired result. We started by cutting and sanding four individual
           profiles using insulation foam. Each profile was two inches thick,
           which added up to our desired height of eight inches per ama.
         </p>
 
-        <p>
-          UNFINISHED... waiting for updates
-        </p>
+        <p>UNFINISHED... waiting for updates</p>
       </div>
     </div>
   );
