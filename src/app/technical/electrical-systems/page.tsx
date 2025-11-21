@@ -53,22 +53,29 @@ export default function ElectricalSys() {
           }}
         >
           <div>
-            <Image
-              src="/electrical1.png"
-              alt="electrical1"
-              width={600}
-              height={400}
-            />
+            <div className={styles.techImg}>
+              <Image
+                src="/electrical1.png"
+                alt="electrical1"
+                width={600}
+                height={400}
+                className={styles.techImage}
+              />
+            </div>
           </div>
 
           <div>
-            <Image
-              src="/electrical2.png"
-              alt="electrical2"
-              width={600}
-              height={400}
-            />
+            <div className={styles.techImg}>
+              <Image
+                src="/electrical2.png"
+                alt="electrical2"
+                width={600}
+                height={400}
+                className={styles.techImage}
+              />
+            </div>
           </div>
+
         </div>
 
         <h3 className={styles.techHeading}>Safety Feature</h3>

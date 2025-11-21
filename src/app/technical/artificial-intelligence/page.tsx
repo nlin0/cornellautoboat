@@ -19,14 +19,12 @@ export default function ArtificialIntelligence() {
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Artificial Intelligence</h2>
         </div>
-        
       </div>
-<div className={styles.dividerWrapper}>
-          <img src="/divider5.png" alt="divider" className={styles.divider} />
-        </div>
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       {/* TECH CONTENT SECTION */}
       <div className={styles.techSection}>
-        <h3 className={styles.techHeading}>About the AI Team</h3>
         <p className={styles.descr} style={{ marginBottom: '20px' }}>
           The AI team writes the code for the autonomous decision making
           abilities of the boat. Their responsibilities include researching,
@@ -44,7 +42,7 @@ export default function ArtificialIntelligence() {
           task at hand. Waypoints are selected with specialized task-specific
           algorithms.
         </p>
-       
+
         <div className={styles.techImg}>
           <Image
             src="/AI1.png"
@@ -77,7 +75,6 @@ export default function ArtificialIntelligence() {
           and avoidance techniques and incorporating more advanced path planning
           algorithms across all tasks.
         </p>
-
       </div>
     </div>
   );
