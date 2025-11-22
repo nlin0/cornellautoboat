@@ -46,33 +46,34 @@ export default function Navbar() {
 
   const isActive = useCallback((path: string) => path === pathname, [pathname]);
 
-  const getTechnicalHref = (label: string) => 
+  const getTechnicalHref = (label: string) =>
     `/technical/${label.toLowerCase().replace(/\s+/g, '-')}`;
 
   return (
-    <nav className="bg-[#FDFFFC] shadow-md sticky top-0 z-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              <div className="h-8 w-8 bg-red-600 rounded-full mr-2"></div>
-              <span className="font-bold text-xl text-[#8a1c1c]">
+            <Link href="/" className="flex-shrink-0 flex items-center gap-3">
+              <div className="h-10 w-10 bg-red-600 rounded-full flex items-center justify-center">
+                <span className="text-white text-xs font-bold">CA</span>
+              </div>
+              <span className="font-semibold text-lg text-gray-900 tracking-tight" style={{ fontFamily: 'Pirulen, Arial, sans-serif' }}>
                 Cornell AutoBoat
               </span>
             </Link>
           </div>
 
           {/* Desktop menu */}
-          <nav className="hidden md:flex items-center space-x-4" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center space-x-1" aria-label="Main navigation">
             {MAIN_NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`px-3 py-2 rounded-md text-md font-medium transition-colors ${
-                  isActive(href)
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
-                }`}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isActive(href)
+                  ? 'bg-[#960303] text-white'
+                  : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                  }`}
                 aria-current={isActive(href) ? 'page' : undefined}
               >
                 {label}
@@ -87,11 +88,10 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className={`px-3 py-2 rounded-md text-md font-medium flex items-center gap-1 transition-colors ${
-                  pathname.startsWith('/technical')
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
-                }`}
+                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-colors ${pathname.startsWith('/technical')
+                  ? 'bg-[#960303] text-white'
+                  : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                  }`}
                 aria-expanded={isTechnicalOpenDesktop}
                 aria-haspopup="true"
                 aria-label="Technical Information"
@@ -101,14 +101,14 @@ export default function Navbar() {
 
               {isTechnicalOpenDesktop && (
                 <div
-                  className="absolute left-0 top-full z-50 bg-white text-black mt-0 rounded-md w-64 shadow-lg"
+                  className="absolute left-0 top-full z-50 bg-white text-gray-900 mt-1 rounded-lg w-64 shadow-xl border border-gray-200"
                   role="menu"
                 >
                   {TECHNICAL_SUBPAGES.map((label) => (
                     <Link
                       key={label}
                       href={getTechnicalHref(label)}
-                      className="block px-4 py-2 hover:bg-red-100 border-b border-gray-200 last:border-b-0 transition-colors"
+                      className="block px-4 py-2.5 hover:bg-gray-50 hover:text-[#960303] border-b border-gray-100 last:border-b-0 transition-colors text-sm"
                       role="menuitem"
                     >
                       {label}
@@ -121,11 +121,12 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`px-3 py-2 rounded-md text-md font-medium transition-colors ${
-                  isActive(href)
-                    ? 'bg-[#6e0903] text-white'
-                    : 'text-gray-900 hover:bg-red-100'
-                } ${isButton ? 'bg-[#7d2c20] text-white hover:bg-red-700' : ''}`}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${isActive(href)
+                  ? 'bg-[#960303] text-white shadow-md'
+                  : isButton
+                    ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg font-semibold ml-2 px-5 py-2.5'
+                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                  }`}
                 aria-current={isActive(href) ? 'page' : undefined}
               >
                 {label}
@@ -178,11 +179,10 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive(href)
-                  ? 'bg-[#6e0903] text-white'
-                  : 'text-gray-900 hover:bg-red-100'
-              }`}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(href)
+                ? 'bg-[#960303] text-white'
+                : 'text-gray-700 hover:bg-gray-50'
+                }`}
               aria-current={isActive(href) ? 'page' : undefined}
             >
               {label}
@@ -193,7 +193,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggleTechnicalMobile}
-            className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-red-100 transition-colors"
+            className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors"
             aria-expanded={isTechnicalOpen}
             aria-haspopup="true"
           >
@@ -205,7 +205,7 @@ export default function Navbar() {
                 <Link
                   key={label}
                   href={getTechnicalHref(label)}
-                  className="block px-3 py-2 rounded-md text-sm text-gray-700 hover:bg-red-50 transition-colors"
+                  className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-[#960303] transition-colors"
                   role="menuitem"
                 >
                   {label}
@@ -218,11 +218,12 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                isActive(href)
-                  ? 'bg-[#6e0903] text-white'
-                  : 'text-gray-900 hover:bg-red-100'
-              } ${isButton ? 'bg-red-600 text-white hover:bg-red-700' : ''}`}
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-all ${isActive(href)
+                ? 'bg-[#960303] text-white shadow-md'
+                : isButton
+                  ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg font-semibold mt-2'
+                  : 'text-gray-700 hover:bg-gray-50'
+                }`}
               aria-current={isActive(href) ? 'page' : undefined}
             >
               {label}

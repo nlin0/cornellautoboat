@@ -175,8 +175,8 @@
 }
 
 .terminalInfoBoard {
-  background: rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
   padding: 1rem 1.5rem;
   margin-bottom: 1.5rem;
@@ -195,28 +195,7 @@
   margin: 0 0 1rem 0;
 }
 
-.boardingArea {
-  width: 100%;
-}
 
-.boardingLabel {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.7);
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.boardingLabel::before {
-  content: '🎫';
-  font-size: 1rem;
-}
 
 /* Terminal Footer */
 .terminalFooter {
@@ -462,7 +441,7 @@
 }
 
 .ticketValue {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--body-text);
   line-height: 1.2;
@@ -701,15 +680,6 @@
   border: none;
 }
 
-.memberCardBack .ticketHeader {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
-  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
-}
-
-.memberCardBack .ticketLogo {
-  background: rgba(255, 255, 255, 0.2);
-}
-
 .memberCardBack .ticketFooter {
   background: rgba(0, 0, 0, 0.1);
   border-top: 2px dashed rgba(255, 255, 255, 0.3);
@@ -726,13 +696,6 @@
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
-}
-
-.memberCardImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .memberCardBack .memberCardImageWrapper {
@@ -816,10 +779,10 @@
 
 .memberCardBack .memberCardName {
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin: 0 0 0.25rem 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: left;
+  text-align: center;
   width: 100%;
 }
 
