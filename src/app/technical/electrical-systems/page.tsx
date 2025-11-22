@@ -1,24 +1,11 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
 
 export default function ElectricalSystems() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Cornell AutoBoat team boat"
-            fill
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay} aria-hidden="true" />
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>Electrical Systems</h2>
-        </div>
-      </div>
+      <TechnicalHero title="Electrical Systems" />
 
       <div className={styles.techSection}>
 
