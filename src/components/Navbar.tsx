@@ -78,7 +78,7 @@ const Navbar = () => {
 
               {/* Dropdown menu */}
               {isTechnicalOpenDesktop && (
-                <div className="absolute left-0 top-full z-50 bg-white text-black mt-0 rounded-md w-64">
+                <div className="absolute left-0 top-full z-50 bg-white/90 backdrop-blur-md text-black mt-0 rounded-md w-64">
                   {technicalSubpages.map((label) => (
                     <Link
                       key={label}
