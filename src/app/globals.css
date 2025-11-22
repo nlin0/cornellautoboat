@@ -10,8 +10,9 @@
   /* main text */
 
   --primary: #960303;
+  --primary-dark: #950404;
+  --primary-text: #8a1c1c;
   --primary2: #510000;
-
 
   --blue1: #0096e7;
   --blue2: #7dd2ff;
@@ -19,15 +20,17 @@
   --secondary: #ddf2fd;
   --secondary2: #f6fbff;
 
-
   --accent: #23303d;
   --accent2: #1232517a;
   --accent3: #960303b0;
   --accent4: #ff8b8b95;
 
-
   --header-text: #f6fbff;
   --body-text: #2a2a2a;
+  --light-gray: #f5f5f5;
+  --light-gray-bg: #dedede;
+  --white: #ffffff;
+  --overlay-red: rgba(117, 65, 65, 0.57);
 
   /* LAYOUT */
   --page-space: 2rem;
@@ -45,10 +48,16 @@
 
   /* main colors */
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-text: var(--primary-text);
   --color-secondary: var(--secondary);
   --color-secondary2: var(--secondary2);
   --color-secondary3: var(--secondary3);
   --color-accent: var(--accent);
+  --color-light-gray: var(--light-gray);
+  --color-light-gray-bg: var(--light-gray-bg);
+  --color-white: var(--white);
+  --color-overlay-red: var(--overlay-red);
 
   /* text colors */
   --color-header: var(--header-text);

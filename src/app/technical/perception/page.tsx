@@ -1,12 +1,27 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
-import TechnicalHero from '../TechnicalHero';
 
 export default function Perception() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Perception" />
-
+      <div className={styles.heroImg}>
+        <div className={styles.boatImg}>
+          <Image
+            src="/clifford2.png"
+            alt="Clifford the boat"
+            fill // ← key: image fills parent
+            priority
+            className={styles.boatImage}
+          />
+        </div>
+        <div className={styles.overlay}> </div>
+        <div className={styles.titleBlock}>
+          <h2 className={styles.technicalTitle}>Perception</h2>
+        </div>
+      </div>
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The Perception team is responsible for translating the boat’s
@@ -27,8 +42,8 @@ export default function Perception() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/clifford2.png"
-            alt="Clifford the boat"
+            src="/perception1.png"
+            alt="perception1"
             width={500}
             height={200}
             className={styles.techImage}
@@ -48,20 +63,11 @@ export default function Perception() {
           some progress on this but it is still in its elementary development
           phase.
         </p>
-        <h3 className={styles.techHeading}>Sensors</h3>
+        <h3 className={styles.techHeading}>Lidar</h3>
         <p className={styles.descr}>
-          Our sensor suite includes a ZED2i stereo camera, SparkFun MicroMod
-          GNSS boards, and a Vectornav VN-300 GPS/IMU. The sensors group works
-          closely with members of the Controls & Microcontrollers and Electrical
-          Systems groups to integrate the sensors into our microcontroller
-          framework.
+          The LIDAR team works on developing and implementing algorithms for
+          object detection and object avoidance.
         </p>
-        <p className={styles.descr}>
-          In the future, we hope to integrate LiDAR into our sensor suite for
-          more robust depth sensing and confirmation of the objects detected by
-          CV.
-        </p>
-        <p className={styles.descr}>Content coming soon...</p>
       </div>
     </div>
   );

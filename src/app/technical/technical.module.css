@@ -1,37 +1,42 @@
-/* css module for technical page */
-
 .wrapper {
-  max-width: 1200px;
   margin: 0 auto;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--secondary);
   color: rgb(71, 3, 3);
 }
 
-/* HERO IMAGE (clifford img) */
+/* HERO IMAGE SECTION */
 .heroImg {
   position: relative;
   width: 100%;
-  height: 400px;
-  /* adjust as needed */
+  height: 80vh;
   overflow: hidden;
+  background-color: var(--primary);
 }
 
-/* NOTE: boatImage is the literal image... 
-boatImg is the class name (wrapper) of the boat image */
+/* IMAGE ITSELF */
+.boatImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .boatImage {
   object-fit: cover;
   object-position: center;
-  z-index: 1;
   width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
+/* BLUE OVERLAY */
 .overlay {
   position: absolute;
-  background-color: rgba(139, 12, 12, 0.612);
-  z-index: 2;
   inset: 0;
+  background-color: rgba(12, 101, 139, 0.6);
+  z-index: 2;
 }
 
+/*TITLE */
 .titleBlock {
   position: absolute;
   top: 50%;
@@ -39,87 +44,105 @@ boatImg is the class name (wrapper) of the boat image */
   transform: translate(-50%, -50%);
   z-index: 3;
   text-align: center;
-  color: f6eded;
-  max-width: 80%;
+  color: #f6eded;
+  max-width: 90%;
 }
 
 .technicalTitle {
-  font-size: 8vw;
+  font-size: 90px;
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
+  width: 80vw;
 }
 
 .titleDescr {
-  font-size: 1.5vw;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   margin-top: 1rem;
   line-height: 1.5;
+  color: #f6eded;
 }
 
+.dividerWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+  transform: translateY(25%);
+}
 
-.techHeading {
-  /* margin-top: 40px; */
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 34px;
-  font-weight: bold;
-  color: #950404;
+.inPageDivider {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
+}
+
+.divider {
+  width: 100vw;
+  max-height: 300px;
+  display: block;
 }
 
 .techSection {
-  padding: 55px;
-  padding-top: 55px;
+  padding: 10% 10%;
   font-size: 16px;
+  z-index: 1;
+}
+
+.techHeading {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--primary);
 }
 
 .descr {
-  margin-top: 0px;
-  margin-bottom: 30px;
+  font-size: 23px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  color: #000000;
 }
+
+/* IMAGE CARDS */
 
 .techImg {
   padding: 5px;
-  background-color: #8a1c1c;
+  background-color: var(--primary);
   border-radius: 15px;
-  margin-top: 20px;
-  margin-bottom: 68px;
-
+  margin: 20px auto 50px;
+  display: block;
+  width: fit-content;
 }
 
 .techImage {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  object-fit: contain;
   border-radius: 10px;
-  max-height: 400px;
-  overflow: hidden;
-  object-fit: cover;
 }
 
-
-/* horizontal containers */
-.horizontalContainer {
-  align-items: center;
+.sectionContent {
   display: flex;
-  gap: 15px;
-  margin-bottom: 60px;
-  margin-top: 60px;
+  flex-direction: row;
 
+  gap: 20px;
 }
 
-.rightContainer {
-  width: 50%;
-  margin-left: 1vw;
-}
-
-.leftContainer {
+.container {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  border-color: none;
   width: 50%;
-  margin-right: 1vw;
-}
-
-.conImage {
-  width: 100%;
-  border-radius: 10px;
-  height: 35vh;
-  overflow: hidden;
-  object-fit: cover;
+  height: auto;
+  min-height: 50vh;
 }

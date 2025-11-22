@@ -1,12 +1,29 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
-import TechnicalHero from '../TechnicalHero';
 
-export default function ControlsAndMicrocontrollerDesigns() {
+export default function ArtificialIntelligence() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Controls & Microcontroller Design" />
-
+      <div className={styles.heroImg}>
+        <div className={styles.boatImg}>
+          <Image
+            src="/clifford2.png"
+            alt="Clifford the boat"
+            fill
+            priority
+            className={styles.boatImage}
+          />
+        </div>
+        <div className={styles.overlay}> </div>
+        <div className={styles.titleBlock}>
+          <h2 className={styles.technicalTitle}>
+            Controls & Microcontroller Design
+          </h2>
+        </div>
+      </div>
+      <div className={styles.dividerWrapper}>
+        <img src="/divider5.png" alt="divider" className={styles.divider} />
+      </div>
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The Controls & Microcontrollers team is responsible for all the
@@ -17,12 +34,14 @@ export default function ControlsAndMicrocontrollerDesigns() {
         </p>
         <h3 className={styles.techHeading}>Sensors</h3>
         <p className={styles.descr}>
-          The team currently uses a VN-300 INS sensor to obtain positional and
+          The team currently uses a VN-300 sensor to obtain positional and
           heading data. Given the narrow paths the boat must pass through,
           obtaining reliable, accurate positional data is key. Out of the box
           GPS systems are typically not accurate enough for this use case, so
-          the team is experimenting with methods such as RTK positioning and
-          Kalman filtering.
+          the team is experimenting with Kalman filtering. The group is also
+          working with the Perception group to integrate LiDAR with CV-detected
+          data using sensor fusion techniques for more robust object-detection
+          and global state estimation.
         </p>
         <h3 className={styles.techHeading}>Controls</h3>
         <p className={styles.descr}>
@@ -38,10 +57,10 @@ export default function ControlsAndMicrocontrollerDesigns() {
 
         <div className={styles.techImg}>
           <Image
-            src="/clifford2.png"
-            alt="Controls and microcontroller systems"
+            src="/controls1.png"
+            alt="controls1"
             width={500}
-            height={200}
+            height={500}
             className={styles.techImage}
           />
         </div>
@@ -62,8 +81,8 @@ export default function ControlsAndMicrocontrollerDesigns() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/clifford2.png"
-            alt="Controls and microcontroller systems"
+            src="/controls2.png"
+            alt="controls2"
             width={500}
             height={200}
             className={styles.techImage}
@@ -85,7 +104,6 @@ export default function ControlsAndMicrocontrollerDesigns() {
           RP2040-based custom microcontroller for receiving signals from the
           remote controller and writing signals to motors.
         </p>
-        <p>UNFINISHED... waiting for updates</p>
       </div>
     </div>
   );
