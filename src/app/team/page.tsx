@@ -1,22 +1,8 @@
-import { Globe, Users, GraduationCap, School, Flag } from "lucide-react";
 import Image from 'next/image';
 import styles from './team.module.css';
 import { teamData } from "./teamdata";
 import MemberCard from './MemberCard';
-
-interface TeamStatProps {
-  icon: React.ReactNode;
-  label: string;
-}
-
-function TeamStat({ icon, label }: TeamStatProps) {
-  return (
-    <li className="flex flex-col items-center gap-2">
-      {icon}
-      {label}
-    </li>
-  );
-}
+import TeamIntro from './TeamIntro';
 
 function getSubteamDescription(team: string): string {
   const descriptions: Record<string, string> = {
@@ -30,24 +16,7 @@ function getSubteamDescription(team: string): string {
 export default function Team() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.teamIntro}>
-        <div className={styles.teamIntroText}>
-          <h2 className="text-primary font-bold text-header-xlg pt-18 mb-0">
-            Meet our Team!
-          </h2>
-          <p className="text-primary text-descr-lg font-light mb-8">
-            Our team consists of four subteams: Hardware, Software, Business and Outreach, and Team Leads.
-          </p>
-        </div>
-
-        <ul className={styles.teamIntroBand} role="list">
-          <TeamStat icon={<Flag size={48} aria-hidden="true" />} label="Founded in 2021" />
-          <TeamStat icon={<Users size={48} aria-hidden="true" />} label="60+ members" />
-          <TeamStat icon={<GraduationCap size={48} aria-hidden="true" />} label="14 different majors" />
-          <TeamStat icon={<School size={48} aria-hidden="true" />} label="3 different Cornell colleges" />
-          <TeamStat icon={<Globe size={48} aria-hidden="true" />} label="6 different home countries" />
-        </ul>
-      </div>
+      <TeamIntro />
 
       <div className={styles.dividerWrapper}>
         <Image
@@ -82,16 +51,11 @@ export default function Team() {
                     <span className={styles.statusLight}></span>
                     <span className={styles.statusText}>NOW BOARDING</span>
                   </div>
-                  <div className={styles.boardingTime}>ALL ABOARD</div>
                 </div>
               </div>
               <div className={styles.terminalContent}>
                 {getSubteamDescription(subteam.team) && (
-                  <div className={styles.terminalInfoBoard}>
-                    <div className={styles.infoBoardContent}>
-                      <p className={styles.terminalDescription}>{getSubteamDescription(subteam.team)}</p>
-                    </div>
-                  </div>
+                  <p className={styles.terminalDescription}>{getSubteamDescription(subteam.team)}</p>
                 )}
                 <div className={styles.subTeamGrid} role="list">
                   {subteam.members.map((member) => (
@@ -101,7 +65,6 @@ export default function Team() {
               </div>
               <div className={styles.terminalFooter}>
                 <div className={styles.terminalInfoFooter}>
-                  <span>Cornell AutoBoat Terminal • Gate {String(index + 1).padStart(2, '0')}</span>
                 </div>
               </div>
             </div>

@@ -49,11 +49,14 @@
 }
 
 .technicalTitle {
-  font-size: 90px;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: clamp(1.5rem, 7vw, 5rem);
+  letter-spacing: -0.3vw;
+  font-weight: 500;
+  color: var(--header-text);
   margin: 0;
-  width: 80vw;
+  line-height: 1;
+  width: auto;
+  max-width: 90vw;
 }
 
 .titleDescr {
