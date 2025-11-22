@@ -8,13 +8,13 @@ export default function ArtificialIntelligence() {
         <div className={styles.boatImg}>
           <Image
             src="/clifford2.png"
-            alt="Clifford the boat"
+            alt="Cornell AutoBoat team boat"
             fill
             priority
             className={styles.boatImage}
           />
         </div>
-        <div className={styles.overlay}> </div>
+        <div className={styles.overlay} aria-hidden="true" />
         <div className={styles.titleBlock}>
           <h2 className={styles.technicalTitle}>Artificial Intelligence</h2>
         </div>
@@ -44,7 +44,7 @@ export default function ArtificialIntelligence() {
         <div className={styles.techImg}>
           <Image
             src="/clifford2.png"
-            alt="Clifford the boat"
+            alt="Artificial intelligence path planning visualization"
             width={500}
             height={200}
             className={styles.techImage}
@@ -60,7 +60,7 @@ export default function ArtificialIntelligence() {
         <div className={styles.techImg}>
           <Image
             src="/clifford2.png"
-            alt="Clifford the boat"
+            alt="Artificial intelligence path planning visualization"
             width={500}
             height={200}
             className={styles.techImage}

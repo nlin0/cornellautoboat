@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from "./page.module.css";
+import styles from './page.module.css';
 import './globals.css';
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
           quality={100}
           priority
           className={styles.heroHomeImage}
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
         />
 
         <div className={styles.heroHomeContent}>
