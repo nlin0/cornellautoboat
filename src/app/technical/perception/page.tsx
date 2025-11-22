@@ -74,7 +74,7 @@ export default function Perception() {
           more robust depth sensing and confirmation of the objects detected by
           CV.
         </p>
-        <p>UNFINISHED... waiting for updates</p>
+        <p className={styles.descr}>Content coming soon...</p>
       </div>
     </div>
   );

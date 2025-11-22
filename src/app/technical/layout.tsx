@@ -1,11 +1,11 @@
-// app/technical/layout.tsx
+import { ReactNode } from 'react';
 import styles from "./technical.module.css";
 
-export default function TechnicalLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface TechnicalLayoutProps {
+  children: ReactNode;
+}
+
+export default function TechnicalLayout({ children }: TechnicalLayoutProps) {
   return (
     <div className={styles.wrapper}>
       {children}

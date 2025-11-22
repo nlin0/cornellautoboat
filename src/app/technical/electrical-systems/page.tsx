@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../technical.module.css";
 
-export default function ElectricalSys() {
+export default function ElectricalSystems() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.heroImg}>

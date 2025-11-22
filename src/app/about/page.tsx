@@ -5,10 +5,10 @@ export default function About() {
   return (
     <div className="min-h-screen font-sans text-f6eded w-full">
       {/* HERO IMAGE */}
-      <div className="relative w-full min-h-[300px] md:min-h-[400px]">
+      <header className="relative w-full min-h-[300px] md:min-h-[400px]">
         <Image
           src="/clifford2.png"
-          alt="Clifford"
+          alt="Cornell AutoBoat team boat, Clifford"
           fill
           style={{ objectFit: 'cover' }}
           priority
@@ -17,17 +17,18 @@ export default function About() {
         <div
           className="absolute inset-0"
           style={{ backgroundColor: 'rgba(117, 65, 65, 0.57)' }}
+          aria-hidden="true"
         />
 
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-5">
           <h1 className="tracking-wider text-9xl font-bold">Team History</h1>
         </div>
-      </div>
+      </header>
 
       {/* TIMELINE SECTIONS */}
-      <div className={styles.wrapper}>
+      <main className={styles.wrapper}>
         {/* SECTION 1 */}
-        <div className={styles.timelineSection}>
+        <section className={styles.timelineSection}>
           <div className={styles.textBlock}>
             <div className={styles.year}>FALL 2021</div>
             <h2 className={styles.title}>AutoBoat Was Founded</h2>
@@ -40,16 +41,16 @@ export default function About() {
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"
-              alt="fall2021"
+              alt="AutoBoat team in Fall 2021"
               width={400}
               height={300}
               className={styles.timelineImage}
             />
           </div>
-        </div>
+        </section>
 
         {/* SECTION 2 (REVERSED) */}
-        <div className={`${styles.timelineSection} ${styles.reverse}`}>
+        <section className={`${styles.timelineSection} ${styles.reverse}`}>
           <div className={styles.textBlock}>
             <div className={styles.year}>FALL 2022</div>
             <h2 className={styles.title}>The First Boat Prototype</h2>
@@ -64,16 +65,16 @@ export default function About() {
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"
-              alt="fall2022"
+              alt="First boat prototype in Fall 2022"
               width={500}
               height={500}
               className={styles.timelineImage}
             />
           </div>
-        </div>
+        </section>
 
         {/* SECTION 3 */}
-        <div className={styles.timelineSection}>
+        <section className={styles.timelineSection}>
           <div className={styles.textBlock}>
             <div className={styles.year}>SPRING 2023</div>
             <h2 className={styles.title}>George</h2>
@@ -89,16 +90,16 @@ export default function About() {
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"
-              alt="spring2023"
+              alt="George, the first competition boat in Spring 2023"
               width={400}
               height={300}
               className={styles.timelineImage}
             />
           </div>
-        </div>
+        </section>
 
         {/* SECTION 4 (REVERSED) */}
-        <div className={`${styles.timelineSection} ${styles.reverse}`}>
+        <section className={`${styles.timelineSection} ${styles.reverse}`}>
           <div className={styles.textBlock}>
             <div className={styles.year}>FALL 2023 - SPRING 2024</div>
             <h2 className={styles.title}>Clifford</h2>
@@ -119,16 +120,16 @@ export default function About() {
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"
-              alt="fall2023"
+              alt="Clifford boat in Fall 2023 - Spring 2024"
               width={400}
               height={300}
               className={styles.timelineImage}
             />
           </div>
-        </div>
+        </section>
 
         {/* SECTION 5 */}
-        <div className={styles.timelineSection}>
+        <section className={styles.timelineSection}>
           <div className={styles.textBlock}>
             <div className={styles.year}>SPRING 2025</div>
             <h2 className={styles.title}>International Champions</h2>
@@ -140,14 +141,14 @@ export default function About() {
           <div className={styles.imageContainer}>
             <Image
               src="/clifford2.png"
-              alt="spring2025"
+              alt="Cornell AutoBoat team celebrating international fifth place in Spring 2025"
               width={400}
               height={300}
               className={styles.timelineImage}
             />
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
 }

@@ -1,10 +1,10 @@
-// app/technical/layout.tsx
+import { ReactNode } from 'react';
 import styles from './team.module.css';
 
-export default function TechnicalLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface TeamLayoutProps {
+  children: ReactNode;
+}
+
+export default function TeamLayout({ children }: TeamLayoutProps) {
   return <div className={styles.wrapper}>{children}</div>;
 }

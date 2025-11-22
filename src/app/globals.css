@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* FONT: Pirlen */
+
+
 :root {
   /* main app background */
   --background: #f6fbff;
@@ -15,7 +18,6 @@
 
   --secondary: #ddf2fd;
   --secondary2: #f6fbff;
-
 
 
   --accent: #23303d;

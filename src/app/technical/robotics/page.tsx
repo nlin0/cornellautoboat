@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../technical.module.css";
 
-export default function Mechanical() {
+export default function Robotics() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.heroImg}>

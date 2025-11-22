@@ -1,15 +1,14 @@
 import Image from 'next/image';
-import styles from "./home.module.css";
+import styles from "./page.module.css";
 import './globals.css';
 
 export default function Home() {
   return (
-
     <div className={styles.pageWrapper}>
       <div className={styles.heroHome}>
         <Image
           src="/background.svg"
-          alt="background"
+          alt="Cornell AutoBoat team background"
           fill
           quality={100}
           priority
@@ -19,9 +18,11 @@ export default function Home() {
 
         <div className={styles.heroHomeContent}>
           <div className={styles.homeHeroText}>
-            <h2 className={styles.homeTitle}>Cornell AutoBoat</h2>
+            <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
-            <p className={styles.homeDescr}>Boats are cool. Idk what to put here.</p>
+            <p className={styles.homeDescr}>
+              Boats are cool. So are we.
+            </p>
           </div>
 
           <div className={styles.homeHeroBoat}>
@@ -38,12 +39,11 @@ export default function Home() {
 
 
       {/* Block Section */}
-      <div className={styles.homeContent}>
-        <div className={styles.blockSection}>
+      <main className={styles.homeContent}>
+        <section className={styles.blockSection}>
           <div className={styles.aboutCrewTitle}>
-            <h3>Aboat</h3>
-            <h3 className={styles.aboutCrewTitle2}>the Crew</h3>
-
+            <h2>Aboat</h2>
+            <h2 className={styles.aboutCrewTitle2}>the Crew</h2>
           </div>
 
           <div className={styles.sectionContent}>
@@ -103,18 +103,10 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.videoCont}>
-            <p>video will go here</p>
-
+            <p>Video will go here</p>
           </div>
-        </div>
-
-      </div>
-
-
-
+        </section>
+      </main>
     </div>
-
-
-
-  )
+  );
 }

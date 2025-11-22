@@ -1,12 +1,9 @@
-import Image from 'next/image';
-
-export default function Home() {
+export default function Competition() {
   return (
-    <div className="min-h-screen font-sans text-white w-full ">
-        <p className="font-sans text-white text-3xl">
-           Competition Placeholder! 
-        </p>
-
-    </div>
+    <main className="min-h-screen font-sans text-white w-full flex items-center justify-center">
+      <p className="font-sans text-white text-3xl">
+        Competition Placeholder!
+      </p>
+    </main>
   );
 }
