@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
-/* FONT: Pirlen */
+/* FONT: Pirulen - Used primarily for logo/branding
+   To use: Add @font-face declaration here if font files are available
+   Example:
+   @font-face {
+     font-family: 'Pirulen';
+     src: url('/fonts/pirulen.woff2') format('woff2');
+     font-weight: normal;
+     font-style: normal;
+   }
+*/
 
 
 :root {
