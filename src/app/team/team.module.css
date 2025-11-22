@@ -44,23 +44,680 @@
   padding: var(--page-space);
 }
 
-.subTeamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
+.subTeam {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.memberCard {
+.subTeamSection {
+  margin-bottom: 2.5rem;
+  position: relative;
+  border-radius: 12px;
+  background: var(--primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+/* Boat Terminal Header - Boarding Gate Style */
+.terminalHeader {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gateInfo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.gateNumber {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  min-width: 100px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gateDestination {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.destinationLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.destinationName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.boardingDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.boardingStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(40, 202, 66, 0.3);
+  border-radius: 8px;
+  border: 2px solid rgba(40, 202, 66, 0.5);
+  box-shadow: 0 0 15px rgba(40, 202, 66, 0.4);
+}
+
+.boardingTime {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1px;
+}
+
+.statusLight {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #28ca42;
+  box-shadow: 0 0 12px #28ca42, 0 0 20px #28ca42;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.statusText {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+}
+
+/* Terminal Content */
+.terminalContent {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  background: var(--primary);
+}
+
+.terminalInfoBoard {
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoBoardContent {
+  display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: var(--foreground);
-  color: var(--secondary2);
-  /* width: 28rem; */
-  height: 16rem;
-  border-radius: 8px;
+}
+
+.terminalDescription {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.boardingArea {
+  width: 100%;
+}
+
+.boardingLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boardingLabel::before {
+  content: '🎫';
+  font-size: 1rem;
+}
+
+/* Terminal Footer */
+.terminalFooter {
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminalInfoFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Themed subteam sections - Boat Terminal Styles */
+.subTeamSection1 .terminalAnnouncement {
+  border-left-color: var(--primary);
+}
+
+.subTeamSection2 .terminalAnnouncement {
+  border-left-color: var(--blue1);
+}
+
+.subTeamSection3 .terminalAnnouncement {
+  border-left-color: var(--accent);
+}
+
+.subTeamSection4 .terminalAnnouncement {
+  border-left-color: #d97706;
+}
+
+.subTeamSection5 .terminalAnnouncement {
+  border-left-color: #d97706;
+}
+
+.subTeamSection:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 500px;
+  height: 3px;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, 0.4) 20%,
+      rgba(255, 255, 255, 0.4) 80%,
+      transparent);
+  border-radius: 2px;
+}
+
+.subTeamSection:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+.subTeamWrapper .subTeamSection:first-of-type h3 {
+  padding-top: 0;
+}
+
+.subTeamWrapper .subTeamSection h3::before {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--header-text), transparent);
+  opacity: 0.5;
+}
+
+.subTeamWrapper .subTeamSection:first-of-type h3::before {
+  display: none;
+}
+
+.subTeamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 1rem 0;
+  justify-items: center;
+}
+
+/* Center cards when there are only 1-2 members */
+.subTeamGrid:has(> :nth-child(1):last-child),
+.subTeamGrid:has(> :nth-child(2):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+  justify-content: center;
+}
+
+/* Wider cards for 3+ members */
+.subTeamGrid:has(> :nth-child(3)) {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .subTeamGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Ticket card container */
+.memberCardContainer {
+  perspective: 1000px;
+  height: 420px;
+  width: 100%;
+}
+
+.memberCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.memberCardContainer:hover .memberCardInner {
+  transform: rotateY(180deg);
+}
+
+.memberCardFront,
+.memberCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ticket Header - Front Card */
+.ticketHeader {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--header-text);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.ticketHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticketAirline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ticketAirlineName {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ticketType {
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.ticketSubteamBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Large Member Photo - Front Card */
+.ticketPhotoSection {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ticketPhotoWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticketPhoto {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ticket Info Section Below Image */
+.ticketInfoSection {
+  padding: 0.75rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.ticketField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ticketLabel {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ticketValue {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--body-text);
+  line-height: 1.2;
+}
+
+.ticketRoleValue {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--body-text);
+  opacity: 0.8;
+  padding-top: 0.25rem;
+}
+
+.ticketInfoSection .ticketNumber {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dotted #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ticket Footer Section - Front Card */
+.ticketFooterSection {
+  padding: 0.75rem 1rem;
+  border-top: 2px dashed #dee2e6;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.ticketNumber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ticketNumberLabel {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ticketNumberValue {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.ticketBarcode {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  align-items: center;
+  height: 40px;
+  padding: 0.5rem 0;
+}
+
+.barcodeLine {
+  width: 3px;
+  height: 100%;
+  background: #2a2a2a;
+  border-radius: 1px;
+}
+
+.barcodeLine:nth-child(odd) {
+  height: 60%;
+}
+
+.barcodeLine:nth-child(even) {
+  height: 80%;
+}
+
+/* Back card header - blue theme (keep for back) */
+.boardingPassHeader {
+  background: linear-gradient(135deg, var(--blue1) 0%, var(--blue2) 100%);
+  color: var(--header-text);
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.memberCardBack .boardingPassHeader {
+  background: linear-gradient(135deg, var(--blue1) 0%, var(--blue2) 100%);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
+}
+
+.memberCardBack .passSubteam {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.passAirline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.airlineName {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+}
+
+.passType {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.passSubteam {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.ticketBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.passNameSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.ticketDivider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dee2e6, transparent);
+  margin: 0.5rem 0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.ticketDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.ticketDetailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted #dee2e6;
+}
+
+.ticketDetailRow:last-child {
+  border-bottom: none;
+}
+
+.ticketDetailLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ticketDetailValue {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--body-text);
+}
+
+/* Boarding Pass Footer */
+.ticketFooter {
+  padding: 0.5rem 0.75rem;
+  border-top: 2px dashed #dee2e6;
+  background: #f8f9fa;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ticketPerforation {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.ticketHole {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #dee2e6;
+  border: 1px solid #ffffff;
+}
+
+.memberCardBack .ticketFooter {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.memberCardBack .ticketHole {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.memberCardFront {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.memberCardBack {
+  background: linear-gradient(135deg, var(--blue1) 0%, var(--blue2) 100%);
+  color: #ffffff;
+  transform: rotateY(180deg);
+  border: none;
+}
+
+.memberCardBack .ticketHeader {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.memberCardBack .ticketLogo {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.memberCardBack .ticketFooter {
+  background: rgba(0, 0, 0, 0.1);
+  border-top: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.memberCardBack .ticketHole {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .memberCardImage {
@@ -68,36 +725,182 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  
+  transition: transform 0.4s ease;
 }
 
-.memberCardImageWrapper {
-  width: 240px;
-  height: 180px;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 2px solid var(--secondary2);
+.memberCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.memberCardBack .memberCardImageWrapper {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.memberCardContainer:hover .memberCardImageWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(150, 3, 3, 0.4);
+}
+
+.memberCardContainer:hover .memberCardImage {
+  transform: scale(1.1);
 }
 
 .memberCardHeader {
-  line-height: 25px;
-  margin-bottom: .5rem;
-  border-radius: 20px;
+  line-height: 1.4;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.memberCardRight {
-  width: 8rem;
+.memberCardName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+  text-align: left;
+}
+
+.memberCardRole {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--body-text);
+  margin: 0;
+  text-align: left;
+  opacity: 0.8;
+}
+
+.memberCardSubteamBadge {
+  display: none;
+}
+
+.memberCardBackContent {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  overflow-y: auto;
+  min-height: 0;
+  overflow-x: hidden;
+}
+
+.memberCardBack .ticketDetails {
+  width: 100%;
+}
+
+.memberCardBack .ticketDetailRow {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+
+.memberCardBack .ticketDetailLabel {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.memberCardBack .ticketDetailValue {
+  color: #ffffff;
+}
+
+.memberCardBack .ticketDivider {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  width: 100%;
+}
+
+.memberCardBack .memberCardName {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  width: 100%;
 }
 
 .memberCardIcons {
   display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  width: 100%;
+  flex-shrink: 0;
+}
 
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.iconLink:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.iconLink:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.15) rotate(5deg);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .iconmini {
-  width: 30px;
+  width: 22px;
+  height: 22px;
+}
+
+.memberCardBack .iconmini {
+  filter: brightness(0) invert(1);
+  stroke: #ffffff;
+}
+
+.memberCardText {
+  width: 100%;
+  text-align: left;
+}
+
+.memberCardTextList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .memberCardTextList li {
-  font-size: var( --text-descr-sm);
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.memberCardBack .memberCardTextList li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.infoLabel {
+  font-weight: 600;
+  opacity: 0.9;
+  min-width: 60px;
 }
