@@ -16,10 +16,11 @@ export default function MemberCard({ member }: MemberCardProps) {
           <div className={styles.ticketHeader}>
             <div className={styles.ticketHeaderTop}>
               <div className={styles.ticketAirline}>
-                <span className={styles.ticketAirlineName}>CORNELL AUTOBOAT</span>
                 <span className={styles.ticketType}>BOARDING PASS</span>
               </div>
-              <div className={styles.ticketSubteamBadge}>{member.subteam}</div>
+              <div className={styles.ticketSubteamBadge}>
+                {member.subteam === "Business and Outreach" ? "Business" : member.subteam}
+              </div>
             </div>
           </div>
 
@@ -78,10 +79,11 @@ export default function MemberCard({ member }: MemberCardProps) {
         <div className={styles.memberCardBack}>
           <div className={styles.boardingPassHeader}>
             <div className={styles.passAirline}>
-              <span className={styles.airlineName}>CORNELL AUTOBOAT</span>
               <span className={styles.passType}>PASSENGER INFO</span>
             </div>
-            <div className={styles.passSubteam}>{member.subteam}</div>
+            <div className={styles.passSubteam}>
+              {member.subteam === "Business and Outreach" ? "Business" : member.subteam}
+            </div>
           </div>
 
           <div className={styles.ticketBody}>
