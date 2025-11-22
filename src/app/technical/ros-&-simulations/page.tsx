@@ -1,27 +1,13 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
+import Divider from '../Divider';
 
-export default function Rossims() {
+export default function RosAndSimulations() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Clifford the boat"
-            fill // ← key: image fills parent
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay}> </div>
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>Ros & Simulations</h2>
-        </div>
-      </div>
-      <div className={styles.dividerWrapper}>
-        <img src="/divider5.png" alt="divider" className={styles.divider} />
-      </div>
+      <TechnicalHero title="ROS & Simulations" />
+      <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The ROS (Robot Operating System) and Simulations team uses the ROS
@@ -31,7 +17,7 @@ export default function Rossims() {
           and usability, troubleshooting integration issues, and ensuring the
           rest of the team’s code is compatible. Additionally, this team is
           responsible for creating a simulations framework for the AI and
-          controls team to test their code in isolation. ​
+          controls team to test their code in isolation.
         </p>
         <h3 className={styles.techHeading}>Robot Operating System</h3>
         <p className={styles.descr}>
@@ -41,13 +27,12 @@ export default function Rossims() {
           entire system to ROS2. Further, to incorporate the new LiDAR sensor,
           we created a new LiDAR node that handles point cloud data and its
           associated processing algorithms. Below is a schematic of our current
-          setup, which is still subject to change.ms. Below is a schematic of
-          our current setup, which is still subject to change.
+          setup, which is still subject to change.
         </p>
 
         <div className={styles.techImg}>
           <Image
-            src="/ROS1.png"
+            src="/technical/ROS1.png"
             alt="ROS1"
             width={600}
             height={550}
@@ -61,7 +46,7 @@ export default function Rossims() {
           This version is created in Unity and uses a ROS TCP connection node to
           connect our codebase to the Unity client. More specifically, this
           simulation is capable of testing AI path planning, controls pure
-          pursuit, or both at the same time.. It includes a generic map of the
+          pursuit, or both at the same time. It includes a generic map of the
           RoboBoat competition course, as well as basic capability for level
           making. Below is an example of path planning code (i.e. follow the
           buoy) running in our simulation.
@@ -69,7 +54,7 @@ export default function Rossims() {
 
         <div className={styles.techImg}>
           <Image
-            src="/ROS2.png"
+            src="/technical/ROS2.png"
             alt="ROS2"
             width={600}
             height={500}

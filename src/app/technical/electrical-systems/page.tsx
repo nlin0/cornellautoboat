@@ -1,27 +1,14 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
+import Divider from '../Divider';
+import ImageGallery from '../ImageGallery';
 
-export default function ElectricalSys() {
+export default function ElectricalSystems() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="clifford2"
-            fill // ← key: image fills parent
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay}> </div>
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>Electrical Systems</h2>
-        </div>
-      </div>
-      <div className={styles.dividerWrapper}>
-        <img src="/divider5.png" alt="divider" className={styles.divider} />
-      </div>
+      <TechnicalHero title="Electrical Systems" />
+      <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>
           E-Systems coordinate the flow of information and power between all the
@@ -44,39 +31,12 @@ export default function ElectricalSys() {
           the delivery of power and data to our onboard bullet antenna, which is
           connected through Wi-Fi to an onshore computer.
         </p>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '20px',
-            marginBottom: '50px',
-          }}
-        >
-          <div>
-            <div className={styles.techImg}>
-              <Image
-                src="/electrical1.png"
-                alt="electrical1"
-                width={600}
-                height={400}
-                className={styles.techImage}
-              />
-            </div>
-          </div>
-
-          <div>
-            <div className={styles.techImg}>
-              <Image
-                src="/electrical2.png"
-                alt="electrical2"
-                width={600}
-                height={400}
-                className={styles.techImage}
-              />
-            </div>
-          </div>
-
-        </div>
+        <ImageGallery
+          images={[
+            { src: '/technical/electrical1.png', alt: 'Power distribution board', width: 600, height: 400 },
+            { src: '/technical/electrical2.png', alt: 'Electrical systems diagram', width: 600, height: 400 },
+          ]}
+        />
 
         <h3 className={styles.techHeading}>Safety Feature</h3>
         <p className={styles.descr}>
@@ -97,7 +57,7 @@ export default function ElectricalSys() {
 
         <div className={styles.techImg}>
           <Image
-            src="/electrical3.png"
+            src="/technical/electrical3.png"
             alt="electrical3"
             width={600}
             height={400}
@@ -113,24 +73,11 @@ export default function ElectricalSys() {
           intricate control pathways between the computer and the motors are
           operating smoothly.
         </p>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '20px',
-            marginBottom: '50px',
-          }}
-        >
-          <div className={styles.techImg}>
-            <Image
-              src="/electrical4.png"
-              alt="electrical4"
-              width={800}
-              height={1000}
-              className={styles.techImage}
-            />
-          </div>
-        </div>
+        <ImageGallery
+          images={[
+            { src: '/technical/electrical4.png', alt: 'Microcontroller PCB design', width: 800, height: 1000 },
+          ]}
+        />
 
         <p className={styles.descr}>
           Looking into the future we are excited to integrate sensors and
@@ -143,7 +90,7 @@ export default function ElectricalSys() {
 
         <div className={styles.techImg}>
           <Image
-            src="/electrical5.png"
+            src="/technical/electrical5.png"
             alt="electrical5"
             width={600}
             height={400}

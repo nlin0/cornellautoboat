@@ -1,29 +1,15 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
+import Divider from '../Divider';
 
 export default function Robotics() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Clifford the boat"
-            fill // ← key: image fills parent
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay}> </div>
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>Robotics</h2>
-        </div>
-      </div>
-      <div className={styles.dividerWrapper}>
-        <img src="/divider5.png" alt="divider" className={styles.divider} />
-      </div>
+      <TechnicalHero title="Robotics" />
+      <Divider />
       <div className={styles.techSection}>
-        <p className={`${styles.descr} mt-0`}>
+        <p className={styles.descr}>
           The Robotics subteam gives our boat all of its advanced capabilities,
           creating all the mechanical systems that enable it to move & interact
           with its environment. The roboboat competition currently has three
@@ -221,7 +207,7 @@ export default function Robotics() {
           robotics-focused tasks (shooting at targets and picking objects up) as
           the boat needs to be steady to be as accurate as possible.
         </p>
-        <p className={styles.descr} style= {{marginTop: "20px"}}>
+        <p className={styles.descr} style={{ marginTop: "20px" }}>
           Here is a video from our holonomic propulsion testing session:
         </p>
 

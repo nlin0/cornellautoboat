@@ -1,27 +1,13 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
+import Divider from '../Divider';
 
 export default function Perception() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Clifford the boat"
-            fill // ← key: image fills parent
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay}> </div>
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>Perception</h2>
-        </div>
-      </div>
-      <div className={styles.dividerWrapper}>
-        <img src="/divider5.png" alt="divider" className={styles.divider} />
-      </div>
+      <TechnicalHero title="Perception" />
+      <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The Perception team is responsible for translating the boat’s
@@ -42,7 +28,7 @@ export default function Perception() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/perception1.png"
+            src="/technical/perception1.png"
             alt="perception1"
             width={500}
             height={200}

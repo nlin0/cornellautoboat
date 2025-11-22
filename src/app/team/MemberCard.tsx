@@ -15,7 +15,7 @@ export default function MemberCard({ member }: MemberCardProps) {
         </h4>
         <div className={styles.memberCardImageWrapper}>
           <Image
-            src={member.image ?? "/ABteam2.JPG"}
+            src={member.image ?? "/team/ABteam2.JPG"}
             alt={`${member.name}, ${member.role}`}
             width={200}
             height={200}

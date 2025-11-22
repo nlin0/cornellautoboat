@@ -25,7 +25,7 @@ export const teamData: Subteam[] = [
     members: [
       {
         name: "Neha Naveen",
-        image: "/Neha.png",
+        image: "/team/Neha.png",
         role: "Full Team Lead",
         subteam: "Software",
         year: "2027",
@@ -37,7 +37,7 @@ export const teamData: Subteam[] = [
       },
       {
         name: "Thomas Wells",
-        image: "/Thomas.png",
+        image: "/team/Thomas.png",
         role: "Full Team Lead",
         subteam: "Hardware",
         year: "2027",
@@ -65,7 +65,7 @@ export const teamData: Subteam[] = [
         hometown: "Westbury, NY",
         major: "Mechanical Engineering",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
       {
@@ -77,7 +77,7 @@ export const teamData: Subteam[] = [
         hometown: "Tampa, FL",
         major: "Materials Science & Engineering",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
       {
@@ -89,7 +89,7 @@ export const teamData: Subteam[] = [
         hometown: "Briarcliff Manor, NY",
         major: "Mechanical Engineering",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
       {
@@ -101,7 +101,7 @@ export const teamData: Subteam[] = [
         hometown: "Raritan, NJ",
         major: "Electrical & Computer Engineering",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
     ],
@@ -122,7 +122,7 @@ export const teamData: Subteam[] = [
         hometown: "San Jose, CA",
         major: "Computer Science",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
       {
@@ -134,7 +134,7 @@ export const teamData: Subteam[] = [
         hometown: "Princeton, NJ",
         major: "Computer Science, Physics",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
       {
@@ -146,7 +146,7 @@ export const teamData: Subteam[] = [
         hometown: "San Jose, CA",
         major: "Computer Science, ECE",
         linkedin: "https://www.linkedin.com/company/cornell-university-autoboat/",
-        image: "/ABteam2.jpg",
+        image: "/team/ABteam2.JPG",
         portfolio: "https://www.cornellautoboat.com/",
       },
     ],

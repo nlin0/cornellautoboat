@@ -1,32 +1,19 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
+import Divider from '../Divider';
+import ImageGallery from '../ImageGallery';
 
 export default function Mechanical() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Clifford the boat"
-            fill // ← key: image fills parent
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay}> </div>
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>Design & Manufacturing</h2>
-        </div>
-      </div>
-      <div className={styles.dividerWrapper}>
-        <img src="/divider5.png" alt="divider" className={styles.divider} />
-      </div>
+      <TechnicalHero title="Design & Manufacturing" />
+      <Divider />
 
       <div className={styles.techSection}>
         <div className={styles.techImg}>
           <Image
-            src="/mechanical1.png"
+            src="/technical/mechanical1.png"
             alt="mechanical1"
             width={500}
             height={500}
@@ -47,38 +34,12 @@ export default function Mechanical() {
           including composite fabrication, machining, laser cutting, and 3D
           printing.
         </p>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '20px',
-            marginBottom: '50px',
-          }}
-        >
-          <div>
-            <div className={styles.techImg}>
-              <Image
-                src="/mechanical2.png"
-                alt="mechanical2"
-                width={600}
-                height={400}
-                className={styles.techImage}
-              />
-            </div>
-          </div>
-
-          <div>
-            <div className={styles.techImg}>
-              <Image
-                src="/mechanical3.png"
-                alt="mechanical3"
-                width={600}
-                height={400}
-                className={styles.techImage}
-              />
-            </div>
-          </div>
-        </div>
+        <ImageGallery
+          images={[
+            { src: '/technical/mechanical2.png', alt: 'Boat design analysis', width: 600, height: 400 },
+            { src: '/technical/mechanical3.png', alt: 'Structural components', width: 600, height: 400 },
+          ]}
+        />
         <p className={styles.descr}>
           Our future goals include developing repeatable mold systems,
           fabricating forged composite parts, developing composite sandwiches
@@ -88,47 +49,28 @@ export default function Mechanical() {
 
         <div className={styles.techImg}>
           <Image
-            src="/mechanical4.png"
+            src="/technical/mechanical4.png"
             alt="mechancial4"
             width={500}
             height={200}
             className={styles.techImage}
           />
         </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '20px',
-            marginBottom: '50px',
-          }}
-        >
-          <div>
-            <div className={styles.techImg}>
-              <Image
-                src="/mechanical5.png"
-                alt="mechanical5"
-                width={600}
-                height={400}
-                className={styles.techImage}
-              />
-            </div>
-          </div>
-
-          <div>
-            <div className={styles.techImg}>
-              <Image
-                src="/mechanical6.png"
-                alt="mechanical6"
-                width={600}
-                height={400}
-                className={styles.techImage}
-              />
-            </div>
-          </div>
-        </div>
+        <ImageGallery
+          images={[
+            { src: '/technical/mechanical5.png', alt: 'Manufacturing process', width: 600, height: 400 },
+            { src: '/technical/mechanical6.png', alt: 'Composite layup', width: 600, height: 400 },
+          ]}
+        />
         <div className={styles.inPageDivider}>
-          <img src="/divider7.png" alt="divider" className={styles.divider} />
+          <Image
+            src="/dividers/divider7.png"
+            alt=""
+            width={1200}
+            height={100}
+            className={styles.divider}
+            aria-hidden="true"
+          />
         </div>
         <h3 className={styles.techHeading}>Hull Manufacturing</h3>
         <p className={styles.descr}>
@@ -155,7 +97,7 @@ export default function Mechanical() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/mechanical7.png"
+            src="/technical/mechanical7.png"
             alt="mechanical7"
             width={700}
             height={400}
@@ -183,7 +125,7 @@ export default function Mechanical() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/mechanical8.png"
+            src="/technical/mechanical8.png"
             alt="mechanical8"
             width={1000}
             height={1000}
@@ -197,7 +139,7 @@ export default function Mechanical() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/mechanical9.png"
+            src="/technical/mechanical9.png"
             alt="mechanical9"
             width={800}
             height={800}

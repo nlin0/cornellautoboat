@@ -41,7 +41,7 @@ export default function Team() {
 
       <div className={styles.dividerWrapper}>
         <Image
-          src="/divider1.svg"
+          src="/dividers/divider1.svg"
           alt=""
           width={1200}
           height={100}
@@ -68,7 +68,7 @@ export default function Team() {
                       </h4>
                       <div className={styles.memberCardImageWrapper}>
                         <Image
-                          src={member.image ?? "/ABteam2.JPG"}
+                          src={member.image ?? "/team/ABteam2.JPG"}
                           alt={`${member.name}, ${member.role}`}
                           width={200}
                           height={200}

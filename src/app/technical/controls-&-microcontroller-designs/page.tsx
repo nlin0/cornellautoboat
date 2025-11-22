@@ -1,29 +1,13 @@
 import Image from 'next/image';
 import styles from '../technical.module.css';
+import TechnicalHero from '../TechnicalHero';
+import Divider from '../Divider';
 
-export default function ArtificialIntelligence() {
+export default function ControlsAndMicrocontrollerDesigns() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heroImg}>
-        <div className={styles.boatImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Clifford the boat"
-            fill
-            priority
-            className={styles.boatImage}
-          />
-        </div>
-        <div className={styles.overlay}> </div>
-        <div className={styles.titleBlock}>
-          <h2 className={styles.technicalTitle}>
-            Controls & Microcontroller Design
-          </h2>
-        </div>
-      </div>
-      <div className={styles.dividerWrapper}>
-        <img src="/divider5.png" alt="divider" className={styles.divider} />
-      </div>
+      <TechnicalHero title="Controls & Microcontroller Design" />
+      <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>
           The Controls & Microcontrollers team is responsible for all the
@@ -57,7 +41,7 @@ export default function ArtificialIntelligence() {
 
         <div className={styles.techImg}>
           <Image
-            src="/controls1.png"
+            src="/technical/controls1.png"
             alt="controls1"
             width={500}
             height={500}
@@ -81,7 +65,7 @@ export default function ArtificialIntelligence() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/controls2.png"
+            src="/technical/controls2.png"
             alt="controls2"
             width={500}
             height={200}
