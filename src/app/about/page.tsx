@@ -90,7 +90,7 @@ export default function About() {
           </div>
           <div className={styles.imageContainer}>
             <Image
-              src="/about/about3"
+              src="/about/about3.png"
               alt="spring2023"
               width={400}
               height={300}
