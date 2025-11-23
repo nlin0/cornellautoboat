@@ -13,7 +13,7 @@ export default function About() {
         </p>
         </div>
       <div className={styles.dividerWrapper}>
-        <img src="/divider1.svg" alt="" className={styles.divider} />
+        <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
       </div>
       {/* --- TIMELINE SECTIONS --- */}
       <div className={styles.timelineContainer}>
@@ -41,7 +41,7 @@ export default function About() {
       </div>
 
       <div className={styles.dividerWrapper}>
-        <img src="/divider2.png" alt="" className={styles.divider} />
+        <img src="/dividers/divider2.png" alt="" className={styles.divider} />
         </div>
 
       {/* SECTION 2 */}
@@ -71,7 +71,7 @@ export default function About() {
       </div>
 
       <div className={styles.dividerWrapper}>
-        <img src="/divider1.svg" alt="" className={styles.divider} />
+        <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
         </div>
 
         {/* SECTION 3 */}
@@ -101,7 +101,7 @@ export default function About() {
       </div>
 
       <div className={styles.dividerWrapper}>
-        <img src="/divider2.png" alt="" className={styles.divider} />
+        <img src="/dividers/divider2.png" alt="" className={styles.divider} />
         </div>
 
       {/* SECTION 4 */}
@@ -138,7 +138,7 @@ export default function About() {
 
       {/* FULL-WIDTH DIVIDER */}
       <div className={styles.dividerWrapper}>
-        <img src="/divider1.svg" alt="" className={styles.divider} />
+        <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
         </div>
 
         {/* SECTION 5 */}
