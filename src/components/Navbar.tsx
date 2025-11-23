@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -36,13 +36,46 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTechnicalOpen, setIsTechnicalOpen] = useState(false);
   const [isTechnicalOpenDesktop, setIsTechnicalOpenDesktop] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const pathname = usePathname();
 
+  // Handle scroll for navbar animation
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
   const toggleTechnicalMobile = useCallback(() => setIsTechnicalOpen((prev) => !prev), []);
-  const handleTechnicalMouseEnter = useCallback(() => setIsTechnicalOpenDesktop(true), []);
-  const handleTechnicalMouseLeave = useCallback(() => setIsTechnicalOpenDesktop(false), []);
+
+  const handleTechnicalMouseEnter = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsTechnicalOpenDesktop(true);
+  }, []);
+
+  const handleTechnicalMouseLeave = useCallback(() => {
+    // Add a small delay before closing to allow mouse movement to dropdown
+    timeoutRef.current = setTimeout(() => {
+      setIsTechnicalOpenDesktop(false);
+    }, 150);
+  }, []);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const isActive = useCallback((path: string) => path === pathname, [pathname]);
 
@@ -50,15 +83,20 @@ export default function Navbar() {
     `/technical/${label.toLowerCase().replace(/\s+/g, '-')}`;
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className={`bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'shadow-lg bg-white/95 backdrop-blur-sm' : 'shadow-sm'
+    }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center gap-3">
-              <div className="h-10 w-10 bg-red-600 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">CA</span>
+            <Link 
+              href="/" 
+              className="flex-shrink-0 flex items-center gap-3 group transition-transform duration-300 hover:scale-105"
+            >
+              <div className="h-10 w-10 bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-[#7d0000] group-hover:shadow-lg group-hover:shadow-red-600/50 group-hover:scale-110">
+                <span className="text-white text-xs font-bold transition-transform duration-300 group-hover:rotate-12">CA</span>
               </div>
-              <span className="font-semibold text-lg text-gray-900 tracking-tight" style={{ fontFamily: 'Pirulen, Arial, sans-serif' }}>
+              <span className="font-semibold text-lg text-gray-900 tracking-tight transition-colors duration-300 group-hover:text-[#960303]" style={{ fontFamily: 'Pirulen, Arial, sans-serif' }}>
                 Cornell AutoBoat
               </span>
             </Link>
@@ -66,17 +104,23 @@ export default function Navbar() {
 
           {/* Desktop menu */}
           <nav className="hidden md:flex items-center space-x-1" aria-label="Main navigation">
-            {MAIN_NAV_LINKS.map(({ href, label }) => (
+            {MAIN_NAV_LINKS.map(({ href, label }, index) => (
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isActive(href)
-                  ? 'bg-[#960303] text-white'
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
+                  ? 'bg-[#960303] text-white shadow-md'
                   : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                   }`}
                 aria-current={isActive(href) ? 'page' : undefined}
+                style={{
+                  animation: `fadeInDown 0.5s ease-out ${index * 0.1}s both`
+                }}
               >
                 {label}
+                {!isActive(href) && (
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#960303] transition-all duration-300 group-hover:w-full"></span>
+                )}
               </Link>
             ))}
 
@@ -88,8 +132,8 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-colors ${pathname.startsWith('/technical')
-                  ? 'bg-[#960303] text-white'
+                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-all duration-300 transform hover:scale-105 relative group ${pathname.startsWith('/technical')
+                  ? 'bg-[#960303] text-white shadow-md'
                   : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                   }`}
                 aria-expanded={isTechnicalOpenDesktop}
@@ -97,19 +141,38 @@ export default function Navbar() {
                 aria-label="Technical Information"
               >
                 Technical Info
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-300 ${isTechnicalOpenDesktop ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                {!pathname.startsWith('/technical') && (
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#960303] transition-all duration-300 group-hover:w-full"></span>
+                )}
               </button>
 
               {isTechnicalOpenDesktop && (
                 <div
-                  className="absolute left-0 top-full z-50 bg-white text-gray-900 mt-1 rounded-lg w-64 shadow-xl border border-gray-200"
+                  className="absolute left-0 top-full z-50 bg-white text-gray-900 pt-1 rounded-lg w-64 shadow-xl border border-gray-200 animate-fadeInDown"
                   role="menu"
+                  onMouseEnter={handleTechnicalMouseEnter}
+                  onMouseLeave={handleTechnicalMouseLeave}
+                  style={{
+                    animation: 'fadeInDown 0.3s ease-out'
+                  }}
                 >
-                  {TECHNICAL_SUBPAGES.map((label) => (
+                  {TECHNICAL_SUBPAGES.map((label, index) => (
                     <Link
                       key={label}
                       href={getTechnicalHref(label)}
-                      className="block px-4 py-2.5 hover:bg-gray-50 hover:text-[#960303] border-b border-gray-100 last:border-b-0 transition-colors text-sm"
+                      className="block px-4 py-2.5 hover:bg-gray-50 hover:text-[#960303] border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5"
                       role="menuitem"
+                      style={{
+                        animation: `fadeInLeft 0.3s ease-out ${index * 0.05}s both`
+                      }}
                     >
                       {label}
                     </Link>
@@ -117,19 +180,25 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            {SECONDARY_NAV_LINKS.map(({ href, label, isButton }) => (
+            {SECONDARY_NAV_LINKS.map(({ href, label, isButton }, index) => (
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${isActive(href)
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
                   ? 'bg-[#960303] text-white shadow-md'
                   : isButton
-                    ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg font-semibold ml-2 px-5 py-2.5'
+                    ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg hover:shadow-red-600/50 font-semibold ml-2 px-5 py-2.5 hover:scale-110'
                     : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                   }`}
                 aria-current={isActive(href) ? 'page' : undefined}
+                style={{
+                  animation: `fadeInDown 0.5s ease-out ${(MAIN_NAV_LINKS.length + 1 + index) * 0.1}s both`
+                }}
               >
                 {label}
+                {!isActive(href) && !isButton && (
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#960303] transition-all duration-300 group-hover:w-full"></span>
+                )}
               </Link>
             ))}
           </nav>
