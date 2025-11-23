@@ -43,12 +43,13 @@ export default function MemberCard({ member }: MemberCardProps) {
               <span className={styles.ticketLabel}>PASSENGER</span>
               <span className={styles.ticketValue}>{member.name}</span>
             </div>
-            <div className={styles.ticketRoleValue}>{member.role}</div>
+            <div className={styles.ticketField}>
+              <span className={styles.ticketRoleValue}>{member.role}</span>
+            </div>
             <div className={styles.ticketNumber}>
               <span className={styles.ticketNumberLabel}>TICKET NO.</span>
               <span className={styles.ticketNumberValue}>
-                {member.name.split(' ').map(n => n[0]).join('').toUpperCase()}
-                {member.year?.toString().slice(-2) || 'XX'}
+                CUAB26
               </span>
             </div>
           </div>
@@ -166,4 +167,5 @@ export default function MemberCard({ member }: MemberCardProps) {
     </article>
   );
 }
+
 

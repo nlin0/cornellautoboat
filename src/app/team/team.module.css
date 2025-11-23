@@ -244,59 +244,94 @@
 
 /* Boat Terminal Header - Boarding Gate Style */
 .terminalHeader {
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 1.5rem;
+  background: #f5e6e6;
+  border-bottom: 1px solid rgba(150, 3, 3, 0.2);
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+
+.terminalHeader::before {
+  content: '● ● ●';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  color: rgba(150, 3, 3, 0.4);
+  line-height: 1;
 }
 
 .gateInfo {
   display: flex;
   align-items: center;
   width: 100%;
+  margin-left: 2.5rem;
 }
 
 .gateDestination {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 200px;
 }
 
 .destinationLabel {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(150, 3, 3, 0.7);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .destinationName {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .boardingDisplay {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
+  align-items: center;
   gap: 0.5rem;
 }
 
 .boardingStatus {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(40, 202, 66, 0.3);
+  background: rgba(150, 3, 3, 0.25);
   border-radius: 8px;
-  border: 2px solid rgba(40, 202, 66, 0.5);
-  box-shadow: 0 0 15px rgba(40, 202, 66, 0.4);
+  border: 2px solid rgba(150, 3, 3, 0.5);
+  box-shadow: 0 0 15px rgba(150, 3, 3, 0.3);
+  white-space: nowrap;
+  animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(150, 3, 3, 0.3), 0 0 25px rgba(150, 3, 3, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(150, 3, 3, 0.5), 0 0 40px rgba(150, 3, 3, 0.3);
+  }
 }
 
 .boardingTime {
@@ -310,8 +345,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #28ca42;
-  box-shadow: 0 0 12px #28ca42, 0 0 20px #28ca42;
+  background: #960303;
+  box-shadow: 0 0 12px #960303, 0 0 20px rgba(150, 3, 3, 0.6);
   animation: pulse 2s infinite;
 }
 
@@ -332,7 +367,7 @@
 .statusText {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #960303;
   letter-spacing: 1.5px;
 }
 
@@ -340,7 +375,8 @@
 .terminalContent {
   flex: 1;
   padding: 1.25rem 1.5rem;
-  background: var(--primary);
+  background: rgba(150, 3, 3, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .terminalDescription {
@@ -589,7 +625,7 @@
 }
 
 .ticketLabel {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 700;
   color: #6c757d;
   text-transform: uppercase;
@@ -597,18 +633,20 @@
 }
 
 .ticketValue {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--body-text);
   line-height: 1.2;
+  margin-top: 0.1rem;
 }
 
 .ticketRoleValue {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--body-text);
-  opacity: 0.8;
-  padding-top: 0.25rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.1rem;
 }
 
 .ticketInfoSection .ticketNumber {

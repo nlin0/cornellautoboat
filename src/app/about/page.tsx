@@ -11,7 +11,7 @@ export default function About() {
         <p className={styles.aboutSubtitle}>
           Continuing to make history
         </p>
-      </div>
+        </div>
       <div className={styles.dividerWrapper}>
         <img src="/divider1.svg" alt="" className={styles.divider} />
       </div>
@@ -42,7 +42,7 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <img src="/divider2.png" alt="" className={styles.divider} />
-      </div>
+        </div>
 
       {/* SECTION 2 */}
       <div className={styles.timelineContainer2}>
@@ -72,9 +72,9 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <img src="/divider1.svg" alt="" className={styles.divider} />
-      </div>
+        </div>
 
-      {/* SECTION 3 */}
+        {/* SECTION 3 */}
       <div className={styles.timelineContainer}>
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
@@ -102,7 +102,7 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <img src="/divider2.png" alt="" className={styles.divider} />
-      </div>
+        </div>
 
       {/* SECTION 4 */}
       <div className={styles.timelineContainer2}>
@@ -139,9 +139,9 @@ export default function About() {
       {/* FULL-WIDTH DIVIDER */}
       <div className={styles.dividerWrapper}>
         <img src="/divider1.svg" alt="" className={styles.divider} />
-      </div>
+        </div>
 
-      {/* SECTION 5 */}
+        {/* SECTION 5 */}
       <div className={styles.timelineContainer}>
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
