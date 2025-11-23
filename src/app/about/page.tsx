@@ -5,10 +5,10 @@ export default function About() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.aboutIntro}>
-        <h2 className="text-primary font-bold text-header-xlg pt-18 mb-0">
+        <h2 className={styles.aboutTitle}>
           Team History
         </h2>
-        <p className="text-primary text-descr-lg font-light mb-8">
+        <p className={styles.aboutSubtitle}>
           Continuing to make history
         </p>
       </div>

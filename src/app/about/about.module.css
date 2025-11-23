@@ -7,6 +7,26 @@
   text-align: center;
   padding-top: var(--page-space);
   padding-bottom: var(--margin-space);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutTitle {
+  font-size: clamp(1.5rem, 7vw, 5rem);
+  letter-spacing: -0.3vw;
+  font-weight: 500;
+  color: var(--primary-text);
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
+
+.aboutSubtitle {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  letter-spacing: 0vw;
+  line-height: 1.8;
+  color: var(--body-text);
+  font-weight: 300;
+  margin: 0;
 }
 
 .dividerWrapper {
@@ -16,11 +36,14 @@
 }
 
 .divider {
-  width: 100%; /* stretch full width */
-  height: auto; /* maintain aspect ratio */
+  width: 100%;
+  /* stretch full width */
+  height: auto;
+  /* maintain aspect ratio */
 
   display: block;
-  object-fit: cover; /* fill the width nicely */
+  object-fit: cover;
+  /* fill the width nicely */
 }
 
 
@@ -30,11 +53,13 @@
   padding: var(--page-space);
   background-color: var(--primary);
 }
+
 .timelineContainer2 {
   width: 100%;
   padding: var(--page-space);
   background-color: var(--secondary);
 }
+
 .timelineSection {
   display: flex;
   align-items: center;
@@ -56,7 +81,7 @@
 }
 
 .textBlock2 {
-    font-size: 30px;
+  font-size: 30px;
   flex: 1;
   z-index: 2;
   color: var(--body-text);
