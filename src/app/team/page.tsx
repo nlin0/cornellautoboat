@@ -43,8 +43,8 @@ export default function Team() {
                     <span className={styles.destinationName}>
                       {subteam.team === "Business and Outreach" ? "Business" : subteam.team}
                     </span>
-                  </div>
-                </div>
+                      </div>
+                    </div>
                 <div className={styles.boardingDisplay}>
                   <div className={styles.boardingStatus}>
                     <span className={styles.statusLight}></span>

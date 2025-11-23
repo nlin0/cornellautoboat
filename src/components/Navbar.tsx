@@ -11,13 +11,13 @@ interface NavLink {
 }
 
 const TECHNICAL_SUBPAGES = [
-  'Perception',
-  'Artificial Intelligence',
-  'Controls & Microcontroller Designs',
-  'ROS & Simulations',
-  'Mechanical',
-  'Robotics',
-  'Electrical Systems',
+    'Perception',
+    'Artificial Intelligence',
+    'Controls & Microcontroller Designs',
+    'ROS & Simulations',
+    'Mechanical',
+    'Robotics',
+    'Electrical Systems',
 ] as const;
 
 const MAIN_NAV_LINKS: NavLink[] = [
@@ -87,7 +87,7 @@ export default function Navbar() {
       isScrolled ? 'shadow-lg bg-white/80 backdrop-blur-sm' : 'shadow-sm'
     }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link 
               href="/" 

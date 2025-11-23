@@ -7,6 +7,7 @@ import './globals.css';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -35,6 +36,7 @@ export default function Home() {
       });
     };
   }, []);
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.heroHome} ref={heroRef}>
@@ -53,17 +55,22 @@ export default function Home() {
             <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
             <p className={styles.homeDescr}>
-              Boats are cool. So are we.
+              Boats are cool. So are we.{' '}
+              <span className={styles.speechBubble}>
+                <span className={styles.speechText}>Click a boat!</span>
+              </span>
             </p>
           </div>
 
           <div className={styles.homeHeroBoat}>
             <Image
               src="/cliffordart.svg"
-              alt="Clifford Boat"
+              alt="Clifford the Big Red Boat"
               width={600}
               height={600}
               className={styles.cliffordBoat}
+              onClick={() => setIsModalOpen(true)}
+              style={{ cursor: 'pointer' }}
             />
           </div>
         </div>
@@ -142,6 +149,36 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Boat Modal Popup */}
+      {isModalOpen && (
+        <div className={styles.modalOverlay} onClick={() => setIsModalOpen(false)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button
+              className={styles.modalClose}
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+            <div className={styles.modalImageFloating}>
+              <Image
+                src="/cliffordart.svg"
+                alt="Clifford the Big Red Boat"
+                width={600}
+                height={600}
+                className={styles.modalImage}
+              />
+            </div>
+            <div className={styles.modalTextContent}>
+              <h2 className={styles.modalTitle}>Clifford the Big Red Boat</h2>
+              <p className={styles.modalDescription}>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
