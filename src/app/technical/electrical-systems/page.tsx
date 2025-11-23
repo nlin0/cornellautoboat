@@ -12,14 +12,14 @@ export default function ElectricalSystems() {
       <div className={styles.techSection}>
         <p className={styles.descr}>
           E-Systems coordinate the flow of information and power between all the
-          boat's components, by developing custom PCBs and implementing
+          boat&apos;s components, by developing custom PCBs and implementing
           electrical infrastructure, serving as the vital bridge between
           hardware and software.
         </p>
 
         <p className={styles.descr}>
           At the heart of E-Systems lies the power distribution board, which
-          routes power at appropriate and precise voltage levels to our boat's
+          routes power at appropriate and precise voltage levels to our boat&apos;s
           low-power components including microcontrollers, our kill switch
           relay, and our transceiver. The board takes an input of 14.8V from our
           BlueRobotics Lithium-Ion battery, which is then routed through an
