@@ -36,10 +36,10 @@ export default function Robotics() {
           <div className={styles.container}>
             <div className={styles.techImg}>
               <Image
-                src="/clifford2.png"
-                alt="Feeder mechanism"
-                width={500}
-                height={300}
+                src="/technical/robotics1.avif"
+                alt="Shooter1"
+                width={600}
+                height={600}
                 className={styles.techImage}
               />
             </div>
@@ -49,8 +49,8 @@ export default function Robotics() {
           <div className={styles.container}>
             <div className={styles.techImg}>
               <Image
-                src="/clifford2.png"
-                alt="Feeder mechanism"
+                src="/technical/robotics2.avif"
+                alt="Shooter2"
                 width={500}
                 height={300}
                 className={styles.techImage}
@@ -83,8 +83,8 @@ export default function Robotics() {
           <div className={styles.container}>
             <div className={styles.techImg}>
               <Image
-                src="/clifford2.png"
-                alt="Feeder mechanism"
+                src="/technical/robotics3.avif"
+                alt="Feeder"
                 width={500}
                 height={300}
                 className={styles.techImage}
@@ -96,8 +96,8 @@ export default function Robotics() {
           <div className={styles.container}>
             <div className={styles.techImg}>
               <Image
-                src="/clifford2.png"
-                alt="Feeder mechanism"
+                src="/technical/robotics4.avif"
+                alt="launch"
                 width={500}
                 height={300}
                 className={styles.techImage}
@@ -117,31 +117,6 @@ export default function Robotics() {
                 possible, counteracting all of the vibrations coming from the
                 motor.
               </p>
-            </div>
-          </div>
-        </div>
-        <div className={styles.sectionContent}>
-          <div className={styles.container}>
-            <div className={styles.descrBlock}>
-              <p className={styles.descr}>
-                The feeder mechanism sits on top and drops skeeballs into the
-                launcher when we are ready to shoot. It has two plates, one with
-                three skeeball slots and one with a singular slot. When the
-                shoot command is sent, the top plate rotates, pushing a skeeball
-                into the hole in the bottom plate, and subsequently into the
-                launcher.
-              </p>
-            </div>
-          </div>
-          <div className={styles.container}>
-            <div className={styles.techImg}>
-              <Image
-                src="/clifford2.png"
-                alt="Feeder mechanism"
-                width={500}
-                height={300}
-                className={styles.techImage}
-              />
             </div>
           </div>
         </div>
@@ -207,7 +182,7 @@ export default function Robotics() {
           robotics-focused tasks (shooting at targets and picking objects up) as
           the boat needs to be steady to be as accurate as possible.
         </p>
-        <p className={styles.descr} style={{ marginTop: "20px" }}>
+        <p className={styles.descr} style={{ marginTop: '20px' }}>
           Here is a video from our holonomic propulsion testing session:
         </p>
 

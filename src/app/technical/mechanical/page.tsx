@@ -62,16 +62,7 @@ export default function Mechanical() {
             { src: '/technical/mechanical6.png', alt: 'Composite layup', width: 600, height: 400 },
           ]}
         />
-        <div className={styles.inPageDivider}>
-          <Image
-            src="/dividers/divider7.png"
-            alt=""
-            width={1200}
-            height={100}
-            className={styles.divider}
-            aria-hidden="true"
-          />
-        </div>
+     
         <h3 className={styles.techHeading}>Hull Manufacturing</h3>
         <p className={styles.descr}>
           This year the amas and main hull were manufactured using a single,

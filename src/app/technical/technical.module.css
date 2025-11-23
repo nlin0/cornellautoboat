@@ -120,6 +120,7 @@
   background-color: var(--primary);
   border-radius: 15px;
   margin: 20px auto 50px;
+   max-width: 900px;
   display: block;
   width: fit-content;
 }
