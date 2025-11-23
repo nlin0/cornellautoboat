@@ -85,12 +85,12 @@ export default function Footer() {
                 <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
                 <nav className="flex space-x-4" aria-label="Social media links">
                   {SOCIAL_LINKS.map(({ href, label, icon }) => (
-                    <a
+                  <a
                       key={href}
                       href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-red-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-red-400 transition-colors"
                       aria-label={label}
                     >
                       {icon}
