@@ -1,104 +1,77 @@
 .wrapper {
   width: 100%;
   min-height: 100vh;
-  background: var(--background);
+  background: var(--secondary2);
 }
 
-/* Hero Section */
-.heroSection {
-  position: relative;
-  width: 100%;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.heroImageWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.heroImage {
-  object-fit: cover;
-  object-position: center;
-  filter: blur(2px);
-}
-
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 150, 231, 0.6) 0%, rgba(125, 210, 255, 0.5) 50%, rgba(150, 3, 3, 0.65) 100%);
-  z-index: 1;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 2;
+/* Header Section */
+.competitionIntro {
+  color: var(--body-text);
   text-align: center;
-  color: var(--header-text);
-  padding: 4rem 2rem;
-  max-width: 900px;
-}
-
-.heroTitle {
-  font-size: clamp(1.5rem, 7vw, 5rem);
-  letter-spacing: -0.3vw;
-  font-weight: 500;
-  color: var(--header-text);
-  margin-bottom: 1.5rem;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  line-height: 1;
-}
-
-.heroSubtitle {
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-  letter-spacing: 0vw;
-  line-height: 1.8;
-  font-weight: 300;
-  opacity: 0.95;
-}
-
-.waveDivider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  z-index: 3;
-  overflow: hidden;
-}
-
-.waveDivider svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Overview Section - Shallow Water */
-.overviewSection {
-  padding: 6rem 2rem;
-  background: linear-gradient(to bottom, var(--secondary2) 0%, var(--secondary) 50%, #b3d9f0 100%);
+  padding: 6rem 2rem 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
   position: relative;
 }
 
-.overviewSection::after {
+.competitionTitle {
+  font-size: clamp(2rem, 8vw, 6rem);
+  letter-spacing: -0.4vw;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+}
+
+.competitionTitle::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent, rgba(0, 150, 231, 0.3));
-  pointer-events: none;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--blue1) 100%);
+  border-radius: 2px;
+}
+
+.competitionSubtitle {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.05vw;
+  line-height: 1.8;
+  color: var(--body-text);
+  font-weight: 400;
+  margin: 2rem auto 0;
+  max-width: 700px;
+  opacity: 0.9;
+}
+
+.dividerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.divider {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Overview Section */
+.overviewSection {
+  padding: 6rem 2rem;
+  background: var(--secondary2);
+  position: relative;
 }
 
 .container {
@@ -125,6 +98,23 @@
   color: var(--primary);
   margin: 0;
   line-height: 1.2;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--blue1) 100%);
+  border-radius: 2px;
+}
+
+.sectionHeader .sectionTitle::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .bodyText {
@@ -137,7 +127,7 @@
 .learnMoreButton {
   display: inline-block;
   padding: 0.875rem 2rem;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -146,19 +136,20 @@
   transition: all 0.3s ease;
   align-self: flex-start;
   margin-top: 0.5rem;
+  box-shadow: 0 2px 8px rgba(150, 3, 3, 0.2);
 }
 
 .learnMoreButton:hover {
-  background: var(--primary-dark);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--blue1) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(150, 3, 3, 0.3);
+  box-shadow: 0 4px 12px rgba(150, 3, 3, 0.4);
 }
 
 .imageWrapper {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(150, 3, 3, 0.15), 0 0 0 2px rgba(150, 3, 3, 0.1);
   background: var(--light-gray);
 }
 
@@ -169,34 +160,12 @@
   object-fit: cover;
 }
 
-/* Tasks Section - Mid Depth */
+/* Tasks Section */
 .tasksSection {
   padding: 6rem 2rem;
-  background: linear-gradient(to bottom, #7db8e8 0%, #4a9dd4 50%, #2e6fa8 100%);
+  background: #e8f4fc;
   position: relative;
-  color: var(--header-text);
-}
-
-.tasksSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(179, 217, 240, 0.5), transparent);
-  pointer-events: none;
-}
-
-.tasksSection::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent, rgba(26, 77, 122, 0.4));
-  pointer-events: none;
+  color: var(--body-text);
 }
 
 .tasksSection .sectionTitle,
@@ -204,43 +173,29 @@
 .tasksSection .taskTitle,
 .tasksSection .taskDescription,
 .tasksSection .detailText {
-  color: var(--header-text);
+  color: var(--body-text);
 }
 
 .tasksSection .taskCard {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .tasksSection .taskCard:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: white;
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
-.tasksSection .detailBox {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-left-color: rgba(255, 255, 255, 0.5);
+.tasksSection .detailBox::before {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--blue1) 100%);
 }
 
-/* Robotic Section - Deep Water */
+/* Robotic Section */
 .roboticSection {
   padding: 6rem 2rem;
-  background: linear-gradient(to bottom, #1a4d7a 0%, #0f2f4a 50%, var(--primary) 100%);
+  background: linear-gradient(to bottom, #e8f4fc 0%, #e0f0f8 100%);
   position: relative;
-  color: var(--header-text);
-}
-
-.roboticSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(46, 111, 168, 0.5), transparent);
-  pointer-events: none;
+  color: var(--body-text);
 }
 
 .roboticSection .sectionTitle,
@@ -248,24 +203,28 @@
 .roboticSection .taskTitle,
 .roboticSection .taskDescription,
 .roboticSection .detailText {
-  color: var(--header-text);
+  color: var(--body-text);
 }
 
 .roboticSection .taskCard {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .roboticSection .taskCard:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: white;
+  border-color: rgba(0, 0, 0, 0.15);
 }
 
-.roboticSection .detailBox {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-left-color: rgba(255, 255, 255, 0.4);
+.roboticSection .detailBox::before {
+  background: linear-gradient(180deg, var(--blue1) 0%, var(--primary) 100%);
+}
+
+.roboticSection .taskTitle {
+  background: linear-gradient(135deg, var(--blue1) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .sectionHeader {
@@ -295,11 +254,28 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.taskCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--blue1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .taskCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(150, 3, 3, 0.2);
+}
+
+.taskCard:hover::before {
+  opacity: 1;
 }
 
 .taskImageWrapper {
@@ -331,7 +307,10 @@
 .taskTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 0 0 0.75rem 0;
 }
 
@@ -348,8 +327,30 @@
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border-left: 4px solid var(--primary);
   margin-top: 2rem;
+  position: relative;
+}
+
+.detailBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--blue1) 100%);
+  border-radius: 12px 0 0 12px;
+}
+
+.detailBox::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--blue1));
+  border-radius: 0 12px 0 0;
 }
 
 .detailText {
@@ -376,12 +377,13 @@
 }
 
 @media (max-width: 640px) {
-  .heroSection {
-    min-height: 60vh;
+  .competitionIntro {
+    padding: 4rem 1.5rem 3rem;
   }
 
-  .heroContent {
-    padding: 3rem 1.5rem;
+  .competitionTitle::after {
+    width: 80px;
+    height: 3px;
   }
 
   .overviewSection,

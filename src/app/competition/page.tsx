@@ -4,31 +4,26 @@ import styles from './competition.module.css';
 export default function Competition() {
   return (
     <div className={styles.wrapper}>
-      {/* Hero Section */}
-      <section className={styles.heroSection}>
-        <div className={styles.heroImageWrapper}>
-          <Image
-            src="/clifford2.png"
-            alt="RoboBoat Competition"
-            fill
-            className={styles.heroImage}
-            priority
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
-        <div className={styles.heroOverlay}></div>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>RoboBoat Competition</h1>
-          <p className={styles.heroSubtitle}>
-            Competing on the international stage of autonomous marine robotics
-          </p>
-        </div>
-        <div className={styles.waveDivider}>
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,60 Q300,20 600,60 T1200,60 L1200,120 L0,120 Z" fill="var(--background)" />
-          </svg>
-        </div>
-      </section>
+      {/* Header Section */}
+      <div className={styles.competitionIntro}>
+        <h1 className={styles.competitionTitle}>RoboBoat Competition</h1>
+        <p className={styles.competitionSubtitle}>
+          Competing on the international stage of autonomous marine robotics
+        </p>
+      </div>
+
+      <div className={styles.dividerWrapper}>
+        <Image
+          src="/dividers/divider5.png"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
+      </div>
 
       {/* RoboBoat Overview Section */}
       <section className={styles.overviewSection}>
