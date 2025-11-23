@@ -38,7 +38,6 @@ export default function Team() {
             <div key={subteam.team} className={`${styles.subTeamSection} ${styles[`subTeamSection${index + 1}`]}`}>
               <div className={styles.terminalHeader}>
                 <div className={styles.gateInfo}>
-                  <div className={styles.gateNumber}>GATE {String(index + 1).padStart(2, '0')}</div>
                   <div className={styles.gateDestination}>
                     <span className={styles.destinationLabel}>DESTINATION:</span>
                     <span className={styles.destinationName}>
@@ -50,9 +49,9 @@ export default function Team() {
                   <div className={styles.boardingStatus}>
                     <span className={styles.statusLight}></span>
                     <span className={styles.statusText}>NOW BOARDING</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
               <div className={styles.terminalContent}>
                 {getSubteamDescription(subteam.team) && (
                   <p className={styles.terminalDescription}>{getSubteamDescription(subteam.team)}</p>

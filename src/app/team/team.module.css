@@ -255,26 +255,14 @@
 .gateInfo {
   display: flex;
   align-items: center;
-  gap: 2rem;
-}
-
-.gateNumber {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 1.5px;
-  min-width: 100px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
 }
 
 .gateDestination {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  flex: 1;
 }
 
 .destinationLabel {
