@@ -1,11 +1,39 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './competition.module.css';
 
 export default function Competition() {
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.fadeInUp);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    contentRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      contentRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
   return (
     <div className={styles.wrapper}>
       {/* Header Section */}
-      <div className={styles.competitionIntro}>
+      <div className={`${styles.competitionIntro} ${styles.fadeInDown}`}>
         <h1 className={styles.competitionTitle}>RoboBoat Competition</h1>
         <p className={styles.competitionSubtitle}>
           Competing on the international stage of autonomous marine robotics
@@ -29,7 +57,10 @@ export default function Competition() {
       <section className={styles.overviewSection}>
         <div className={styles.container}>
           <div className={styles.contentGrid}>
-            <div className={styles.textContent}>
+            <div 
+              className={styles.textContent}
+              ref={(el) => { contentRefs.current[0] = el; }}
+            >
               <h2 className={styles.sectionTitle}>The RoboBoat Competition</h2>
               <p className={styles.bodyText}>
                 RoboBoat is an international marine robotics competition, run by RoboNation. Each team builds an
@@ -45,13 +76,19 @@ export default function Competition() {
                 Learn More About RoboBoat
               </a>
             </div>
-            <div className={styles.imageWrapper}>
+            <div 
+              className={styles.imageWrapper}
+              ref={(el) => { contentRefs.current[1] = el; }}
+            >
               <Image
                 src="/clifford2.png"
                 alt="Autonomous Surface Vehicle (ASV) in competition"
                 width={600}
                 height={400}
                 className={styles.overviewImage}
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
               />
             </div>
           </div>
@@ -61,14 +98,20 @@ export default function Competition() {
       {/* Navigational Tasks Section */}
       <section className={styles.tasksSection}>
         <div className={styles.container}>
-          <div className={styles.sectionHeader}>
+          <div 
+            className={styles.sectionHeader}
+            ref={(el) => { contentRefs.current[2] = el; }}
+          >
             <h2 className={styles.sectionTitle}>Navigational Tasks</h2>
             <p className={styles.sectionDescription}>
               Testing precision, perception, and autonomous navigation capabilities
             </p>
           </div>
           <div className={styles.tasksGrid}>
-            <div className={styles.taskCard}>
+            <div 
+              className={styles.taskCard}
+              ref={(el) => { contentRefs.current[3] = el; }}
+            >
               <div className={styles.taskImageWrapper}>
                 <Image
                   src="/clifford2.png"
@@ -76,6 +119,10 @@ export default function Competition() {
                   width={400}
                   height={300}
                   className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  unoptimized
                 />
               </div>
               <div className={styles.taskContent}>
@@ -85,7 +132,10 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div className={styles.taskCard}>
+            <div 
+              className={styles.taskCard}
+              ref={(el) => { contentRefs.current[4] = el; }}
+            >
               <div className={styles.taskImageWrapper}>
                 <Image
                   src="/clifford2.png"
@@ -93,6 +143,9 @@ export default function Competition() {
                   width={400}
                   height={300}
                   className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
               </div>
               <div className={styles.taskContent}>
@@ -102,7 +155,10 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div className={styles.taskCard}>
+            <div 
+              className={styles.taskCard}
+              ref={(el) => { contentRefs.current[5] = el; }}
+            >
               <div className={styles.taskImageWrapper}>
                 <Image
                   src="/clifford2.png"
@@ -110,6 +166,9 @@ export default function Competition() {
                   width={400}
                   height={300}
                   className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
               </div>
               <div className={styles.taskContent}>
@@ -120,7 +179,10 @@ export default function Competition() {
               </div>
             </div>
           </div>
-          <div className={styles.detailBox}>
+          <div 
+            className={styles.detailBox}
+            ref={(el) => { contentRefs.current[6] = el; }}
+          >
             <p className={styles.detailText}>
               The navigational tasks test the boat's ability to see and recognize obstacles, plan a path around them,
               and then execute that plan. In order to successfully complete these challenges, the computer vision, path
@@ -135,14 +197,20 @@ export default function Competition() {
       {/* Robotic Tasks Section */}
       <section className={styles.roboticSection}>
         <div className={styles.container}>
-          <div className={styles.sectionHeader}>
+          <div 
+            className={styles.sectionHeader}
+            ref={(el) => { contentRefs.current[7] = el; }}
+          >
             <h2 className={styles.sectionTitle}>Robotic Tasks</h2>
             <p className={styles.sectionDescription}>
               Physical interaction and manipulation in aquatic environments
             </p>
           </div>
           <div className={styles.tasksGrid}>
-            <div className={styles.taskCard}>
+            <div 
+              className={styles.taskCard}
+              ref={(el) => { contentRefs.current[8] = el; }}
+            >
               <div className={styles.taskImageWrapper}>
                 <Image
                   src="/clifford2.png"
@@ -150,6 +218,9 @@ export default function Competition() {
                   width={400}
                   height={300}
                   className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
               </div>
               <div className={styles.taskContent}>
@@ -159,7 +230,10 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div className={styles.taskCard}>
+            <div 
+              className={styles.taskCard}
+              ref={(el) => { contentRefs.current[9] = el; }}
+            >
               <div className={styles.taskImageWrapper}>
                 <Image
                   src="/clifford2.png"
@@ -167,6 +241,9 @@ export default function Competition() {
                   width={400}
                   height={300}
                   className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
               </div>
               <div className={styles.taskContent}>
@@ -176,7 +253,10 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div className={styles.taskCard}>
+            <div 
+              className={styles.taskCard}
+              ref={(el) => { contentRefs.current[10] = el; }}
+            >
               <div className={styles.taskImageWrapper}>
                 <Image
                   src="/clifford2.png"
@@ -184,6 +264,9 @@ export default function Competition() {
                   width={400}
                   height={300}
                   className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
               </div>
               <div className={styles.taskContent}>
@@ -194,7 +277,10 @@ export default function Competition() {
               </div>
             </div>
           </div>
-          <div className={styles.detailBox}>
+          <div 
+            className={styles.detailBox}
+            ref={(el) => { contentRefs.current[11] = el; }}
+          >
             <p className={styles.detailText}>
               The robotic tasks test the boat's ability to physically interact with its environment. In order to
               successfully complete these challenges, mechanical and electrical robotics components must be working

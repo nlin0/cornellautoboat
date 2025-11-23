@@ -12,6 +12,14 @@
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fadeInDown {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .competitionTitle {
@@ -90,6 +98,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.textContent.fadeInUp {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sectionTitle {
@@ -151,6 +167,14 @@
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(150, 3, 3, 0.15), 0 0 0 2px rgba(150, 3, 3, 0.1);
   background: var(--light-gray);
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.imageWrapper.fadeInUp {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .overviewImage {
@@ -230,6 +254,14 @@
 .sectionHeader {
   text-align: center;
   margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sectionHeader.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sectionDescription {
@@ -255,6 +287,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease;
+}
+
+.taskCard.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .taskCard::before {
@@ -291,6 +331,12 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
 }
 
 .taskCard:hover .taskImage {
@@ -329,6 +375,14 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   margin-top: 2rem;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.detailBox.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .detailBox::before {
