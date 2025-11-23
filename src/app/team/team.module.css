@@ -231,12 +231,12 @@
 }
 
 .subTeamSection {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   position: relative;
   border-radius: 12px;
   background: var(--primary);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -244,8 +244,10 @@
 
 /* Boat Terminal Header - Boarding Gate Style */
 .terminalHeader {
-  background: #f5e6e6;
-  border-bottom: 1px solid rgba(150, 3, 3, 0.2);
+  background: var(--primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
@@ -262,7 +264,7 @@
   transform: translateY(-50%);
   font-size: 0.5rem;
   letter-spacing: 0.2rem;
-  color: rgba(150, 3, 3, 0.4);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1;
 }
 
@@ -278,10 +280,6 @@
   flex-direction: row;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   min-width: 200px;
 }
 
@@ -289,7 +287,7 @@
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 2px;
-  color: rgba(150, 3, 3, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -297,7 +295,7 @@
 .destinationName {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary);
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -325,10 +323,12 @@
 }
 
 @keyframes glowPulse {
+
   0%,
   100% {
     box-shadow: 0 0 15px rgba(150, 3, 3, 0.3), 0 0 25px rgba(150, 3, 3, 0.2);
   }
+
   50% {
     box-shadow: 0 0 25px rgba(150, 3, 3, 0.5), 0 0 40px rgba(150, 3, 3, 0.3);
   }
@@ -374,9 +374,11 @@
 /* Terminal Content */
 .terminalContent {
   flex: 1;
-  padding: 1.25rem 1.5rem;
-  background: rgba(150, 3, 3, 0.4);
-  backdrop-filter: blur(10px);
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 0 0 12px 12px;
 }
 
 .terminalDescription {
@@ -849,7 +851,7 @@
   height: 6px;
   border-radius: 50%;
   background: #dee2e6;
-  border: 1px solid #ffffff;
+  border: none;
 }
 
 .memberCardBack .ticketFooter {
@@ -864,7 +866,7 @@
 
 .memberCardFront {
   background: #ffffff;
-  border: 1px solid #e0e0e0;
+  border: none;
 }
 
 .memberCardBack {
