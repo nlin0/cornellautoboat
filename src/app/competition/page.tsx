@@ -20,12 +20,13 @@ export default function Competition() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    contentRefs.current.forEach((ref) => {
+    const refs = contentRefs.current;
+    refs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      contentRefs.current.forEach((ref) => {
+      refs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
@@ -57,7 +58,7 @@ export default function Competition() {
       <section className={styles.overviewSection}>
         <div className={styles.container}>
           <div className={styles.contentGrid}>
-            <div 
+            <div
               className={styles.textContent}
               ref={(el) => { contentRefs.current[0] = el; }}
             >
@@ -76,7 +77,7 @@ export default function Competition() {
                 Learn More About RoboBoat
               </a>
             </div>
-            <div 
+            <div
               className={styles.imageWrapper}
               ref={(el) => { contentRefs.current[1] = el; }}
             >
@@ -98,7 +99,7 @@ export default function Competition() {
       {/* Navigational Tasks Section */}
       <section className={styles.tasksSection}>
         <div className={styles.container}>
-          <div 
+          <div
             className={styles.sectionHeader}
             ref={(el) => { contentRefs.current[2] = el; }}
           >
@@ -108,7 +109,7 @@ export default function Competition() {
             </p>
           </div>
           <div className={styles.tasksGrid}>
-            <div 
+            <div
               className={styles.taskCard}
               ref={(el) => { contentRefs.current[3] = el; }}
             >
@@ -132,7 +133,7 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div 
+            <div
               className={styles.taskCard}
               ref={(el) => { contentRefs.current[4] = el; }}
             >
@@ -155,7 +156,7 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div 
+            <div
               className={styles.taskCard}
               ref={(el) => { contentRefs.current[5] = el; }}
             >
@@ -179,12 +180,12 @@ export default function Competition() {
               </div>
             </div>
           </div>
-          <div 
+          <div
             className={styles.detailBox}
             ref={(el) => { contentRefs.current[6] = el; }}
           >
             <p className={styles.detailText}>
-              The navigational tasks test the boat's ability to see and recognize obstacles, plan a path around them,
+              The navigational tasks test the boat&apos;s ability to see and recognize obstacles, plan a path around them,
               and then execute that plan. In order to successfully complete these challenges, the computer vision, path
               planning, and path execution/controls algorithms must be working perfectly in sync within the onboard
               operating system. Mechanically, the boat must remain stable in order for the cameras and sensors to be
@@ -197,7 +198,7 @@ export default function Competition() {
       {/* Robotic Tasks Section */}
       <section className={styles.roboticSection}>
         <div className={styles.container}>
-          <div 
+          <div
             className={styles.sectionHeader}
             ref={(el) => { contentRefs.current[7] = el; }}
           >
@@ -207,7 +208,7 @@ export default function Competition() {
             </p>
           </div>
           <div className={styles.tasksGrid}>
-            <div 
+            <div
               className={styles.taskCard}
               ref={(el) => { contentRefs.current[8] = el; }}
             >
@@ -230,7 +231,7 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div 
+            <div
               className={styles.taskCard}
               ref={(el) => { contentRefs.current[9] = el; }}
             >
@@ -253,7 +254,7 @@ export default function Competition() {
                 </p>
               </div>
             </div>
-            <div 
+            <div
               className={styles.taskCard}
               ref={(el) => { contentRefs.current[10] = el; }}
             >
@@ -277,15 +278,15 @@ export default function Competition() {
               </div>
             </div>
           </div>
-          <div 
+          <div
             className={styles.detailBox}
             ref={(el) => { contentRefs.current[11] = el; }}
           >
             <p className={styles.detailText}>
-              The robotic tasks test the boat's ability to physically interact with its environment. In order to
+              The robotic tasks test the boat&apos;s ability to physically interact with its environment. In order to
               successfully complete these challenges, mechanical and electrical robotics components must be working
               together seamlessly to execute precise movements. On the software side, the cameras and sensors process
-              data about the boat's surroundings, which is then used by the motion planning algorithms and motor control
+              data about the boat&apos;s surroundings, which is then used by the motion planning algorithms and motor control
               code to manipulate onboard actuators.
             </p>
           </div>
