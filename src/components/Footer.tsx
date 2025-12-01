@@ -6,7 +6,7 @@ interface SocialLink {
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/cornellautoboat/?hl=en',
     label: 'Follow us on Instagram',
     icon: (
       <svg
@@ -34,7 +34,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     ),
   },
   {
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/company/cornell-university-autoboat/',
     label: 'Follow us on LinkedIn',
     icon: (
       <svg
@@ -75,7 +75,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className=" hover:text-gray-100"
               >
-              Cornell University Equal Education and Employment Policy
+                Cornell University Equal Education and Employment Policy
               </a>
             </p>
 
@@ -91,7 +91,11 @@ export default function Footer() {
             <div className="space-y-2 text-gray-400 text-sm">
               <p>Cornell University</p>
               <p>Ithaca, NY 14850</p>
-              <p className="break-all">cornellautoboat@cornell.edu</p>
+              <p className="break-all">cornellautoboat@gmail.com</p>
+              <p className="break-all">
+                General: njn43@cornell.edu tlw85@cornell.edu
+              </p>
+              <p className="break-all">Sponsorships: jy869@cornell.edu</p>
               <div className="pt-4">
                 <h4 className="text-sm font-semibold mb-2 text-white">
                   Follow Us
