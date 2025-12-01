@@ -6,8 +6,8 @@ interface SocialLink {
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: "https://instagram.com",
-    label: "Follow us on Instagram",
+    href: 'https://instagram.com',
+    label: 'Follow us on Instagram',
     icon: (
       <svg
         className="h-6 w-6"
@@ -20,8 +20,8 @@ const SOCIAL_LINKS: SocialLink[] = [
     ),
   },
   {
-    href: "https://github.com",
-    label: "Follow us on GitHub",
+    href: 'https://github.com',
+    label: 'Follow us on GitHub',
     icon: (
       <svg
         className="h-6 w-6"
@@ -34,8 +34,8 @@ const SOCIAL_LINKS: SocialLink[] = [
     ),
   },
   {
-    href: "https://linkedin.com",
-    label: "Follow us on LinkedIn",
+    href: 'https://linkedin.com',
+    label: 'Follow us on LinkedIn',
     icon: (
       <svg
         className="h-6 w-6"
@@ -59,18 +59,29 @@ export default function Footer() {
             <div className="flex items-center">
               {/* Replace with actual logo when available */}
               <div className="h-10 w-10 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-              <span className="font-bold text-xl sm:text-2xl">Cornell AutoBoat</span>
+              <span className="font-bold text-xl sm:text-2xl">
+                Cornell AutoBoat
+              </span>
             </div>
             <p className="italic text-sm text-gray-300">
               Registered Project Team of Cornell University
             </p>
-            <p className="text-gray-300 text-sm sm:text-base">
-              Cornell University&apos;s autonomous boat team, building innovative
-              marine robotics solutions and competing internationally.
+
+            <p className="italic text-sm text-gray-300">
+              Adheres to&nbsp;
+              <a
+                href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" hover:text-gray-100"
+              >
+              Cornell University Equal Education and Employment Policy
+              </a>
             </p>
+
             <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All
+              rights reserved.
             </p>
           </div>
 
@@ -82,15 +93,17 @@ export default function Footer() {
               <p>Ithaca, NY 14850</p>
               <p className="break-all">cornellautoboat@cornell.edu</p>
               <div className="pt-4">
-                <h4 className="text-sm font-semibold mb-2 text-white">Follow Us</h4>
+                <h4 className="text-sm font-semibold mb-2 text-white">
+                  Follow Us
+                </h4>
                 <nav className="flex space-x-4" aria-label="Social media links">
                   {SOCIAL_LINKS.map(({ href, label, icon }) => (
-                  <a
+                    <a
                       key={href}
                       href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-red-400 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-red-400 transition-colors"
                       aria-label={label}
                     >
                       {icon}
