@@ -2,6 +2,7 @@
   margin: 0 auto;
   background-color: var(--secondary);
   color: var(--body-text);
+  margin-top: -85px;
 }
 
 /* HERO IMAGE SECTION */
@@ -74,7 +75,7 @@
   overflow: hidden;
   line-height: 0;
   z-index: 3;
-  transform: translateY(25%);
+  transform: translateY(15%);
 }
 
 .inPageDivider {
@@ -87,12 +88,14 @@
 }
 
 .divider {
+  object-fit: cover; 
   width: 100vw;
-  max-height: 300px;
+  max-height: 400px;
   display: block;
 }
 
 .techSection {
+  margin-top: 65px;
   padding: 10% 10%;
   font-size: 16px;
   z-index: 1;

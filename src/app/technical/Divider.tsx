@@ -5,9 +5,9 @@ export default function Divider() {
   return (
     <div className={styles.dividerWrapper}>
       <Image
-        src="/dividers/divider5.png"
+        src="/dividers/divider5.svg"
         alt=""
-        width={1200}
+        width={1800}
         height={100}
         className={styles.divider}
         aria-hidden="true"
