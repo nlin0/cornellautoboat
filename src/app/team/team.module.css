@@ -1,11 +1,12 @@
 .wrapper {
   background-color: var(--color-secondary);
+  margin-top: -85px;
 }
 
 .teamIntro {
   color: var(--body-text);
   text-align: center;
-  padding-top: var(--page-space);
+  padding-top: calc(var(--page-space) + 85px);
   padding-bottom: var(--margin-space);
   position: relative;
   overflow: hidden;

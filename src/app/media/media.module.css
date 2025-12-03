@@ -1,13 +1,15 @@
 .wrapper {
   background-color: var(--color-secondary);
   min-height: 100vh;
+    margin-top: -85px;
+
 }
 
 /* Header Section */
 .mediaIntro {
   color: var(--body-text);
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: calc(6rem + 105px)  2rem 4rem;
   max-width: 900px;
   margin: 0 auto;
   position: relative;
@@ -16,7 +18,7 @@
 
 .polaroidContainer {
   position: absolute;
-  top: 0;
+  top: 85px;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;

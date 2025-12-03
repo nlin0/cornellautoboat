@@ -1,12 +1,13 @@
 .wrapper {
+
   background-color: var(--color-secondary);
+   margin-top: -85px;
 }
 
 .aboutIntro {
   color: var(--body-text);
   text-align: center;
-  padding-top: var(--page-space);
-  padding-bottom: var(--margin-space);
+  padding-top: calc(var(--page-space) + 200px);
   max-width: 900px;
   margin: 0 auto;
 }
