@@ -19,7 +19,9 @@ export default function MemberCard({ member }: MemberCardProps) {
                 <span className={styles.ticketType}>BOARDING PASS</span>
               </div>
               <div className={styles.ticketSubteamBadge}>
-                {member.subteam === "Business and Outreach" ? "Business" : member.subteam}
+                {member.subteam === 'Business and Outreach'
+                  ? 'Business'
+                  : member.subteam}
               </div>
             </div>
           </div>
@@ -28,7 +30,7 @@ export default function MemberCard({ member }: MemberCardProps) {
           <div className={styles.ticketPhotoSection}>
             <div className={styles.ticketPhotoWrapper}>
               <Image
-                src={member.image ?? "/team/ABteam2.JPG"}
+                src={member.image ?? '/team/ABteam2.JPG'}
                 alt={`${member.name}, ${member.role}`}
                 fill
                 className={styles.ticketPhoto}
@@ -40,7 +42,7 @@ export default function MemberCard({ member }: MemberCardProps) {
           {/* Ticket Info Section Below Image */}
           <div className={styles.ticketInfoSection}>
             <div className={styles.ticketField}>
-              <span className={styles.ticketLabel}>PASSENGER</span>
+              <span className={styles.ticketLabel}>CREW MEMBER</span>
               <span className={styles.ticketValue}>{member.name}</span>
             </div>
             <div className={styles.ticketField}>
@@ -48,9 +50,7 @@ export default function MemberCard({ member }: MemberCardProps) {
             </div>
             <div className={styles.ticketNumber}>
               <span className={styles.ticketNumberLabel}>TICKET NO.</span>
-              <span className={styles.ticketNumberValue}>
-                CUAB26
-              </span>
+              <span className={styles.ticketNumberValue}>CUAB26</span>
             </div>
           </div>
 
@@ -80,10 +80,12 @@ export default function MemberCard({ member }: MemberCardProps) {
         <div className={styles.memberCardBack}>
           <div className={styles.boardingPassHeader}>
             <div className={styles.passAirline}>
-              <span className={styles.passType}>PASSENGER INFO</span>
+              <span className={styles.passType}>MEMBER INFO</span>
             </div>
             <div className={styles.passSubteam}>
-              {member.subteam === "Business and Outreach" ? "Business" : member.subteam}
+              {member.subteam === 'Business and Outreach'
+                ? 'Business'
+                : member.subteam}
             </div>
           </div>
 
@@ -94,15 +96,21 @@ export default function MemberCard({ member }: MemberCardProps) {
               <div className={styles.ticketDetails}>
                 <div className={styles.ticketDetailRow}>
                   <span className={styles.ticketDetailLabel}>Major</span>
-                  <span className={styles.ticketDetailValue}>{member.major}</span>
+                  <span className={styles.ticketDetailValue}>
+                    {member.major}
+                  </span>
                 </div>
                 <div className={styles.ticketDetailRow}>
                   <span className={styles.ticketDetailLabel}>Class</span>
-                  <span className={styles.ticketDetailValue}>{member.year}</span>
+                  <span className={styles.ticketDetailValue}>
+                    {member.year}
+                  </span>
                 </div>
                 <div className={styles.ticketDetailRow}>
                   <span className={styles.ticketDetailLabel}>Hometown</span>
-                  <span className={styles.ticketDetailValue}>{member.hometown}</span>
+                  <span className={styles.ticketDetailValue}>
+                    {member.hometown}
+                  </span>
                 </div>
               </div>
               <div className={styles.memberCardIcons} role="list">
@@ -167,5 +175,3 @@ export default function MemberCard({ member }: MemberCardProps) {
     </article>
   );
 }
-
-

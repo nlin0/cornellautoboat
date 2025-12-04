@@ -65,7 +65,7 @@ export default function Navbar() {
     // Add a small delay before closing to allow mouse movement to dropdown
     timeoutRef.current = setTimeout(() => {
       setIsTechnicalOpenDesktop(false);
-    }, 150);
+    }, 800);
   }, []);
 
   // Cleanup timeout on unmount
