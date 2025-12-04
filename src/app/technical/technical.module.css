@@ -46,7 +46,7 @@
   z-index: 3;
   text-align: center;
   color: var(--header-text);
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .technicalTitle {
@@ -57,7 +57,7 @@
   margin: 0;
   line-height: 1;
   width: auto;
-  max-width: 90vw;
+  max-width: 95vw;
 }
 
 .titleDescr {
@@ -104,7 +104,7 @@
 .techHeading {
   margin-bottom: 20px;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: var(--primary);
 }
@@ -139,8 +139,8 @@
 .sectionContent {
   display: flex;
   flex-direction: row;
-
   gap: 20px;
+
 }
 
 .container {
@@ -165,3 +165,33 @@
 .descrWithMargin {
   margin-bottom: 20px;
 }
+
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; 
+}
+
+.techButton {
+  padding: 1rem 1.5rem; 
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem; 
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 3rem;
+}
+
+.techButton:hover {
+  background-color: var(--overlay-red);
+  transform: translateY(-1px);
+}
+.techdescr {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: var(--body-text);
+}
+
+
