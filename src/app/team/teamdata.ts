@@ -43,7 +43,7 @@ export const teamData: Subteam[] = [
         subteam: 'Hardware',
         year: '2027',
         major: 'Mechanical Engineering',
-        hometown: 'California',
+        hometown: 'Lansing, NY',
         email: 'tlw85@cornell.edu',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
@@ -293,19 +293,6 @@ export const teamData: Subteam[] = [
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
-        name: 'Junayed Ridwan',
-        email: 'jr2434@cornell.edu',
-        role: 'Mechanical',
-        subteam: 'Mechanical',
-        year: '2028',
-        hometown: 'Queens, NY',
-        major: 'Mechanical Engineering',
-        linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/ABteam2.JPG',
-        portfolio: 'https://www.cornellautoboat.com/',
-      },
-      {
         name: 'Benjamin Rosen',
         email: 'bmr98@cornell.edu',
         role: 'E-Systems',
@@ -318,19 +305,7 @@ export const teamData: Subteam[] = [
         image: '/team/ABteam2.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
-      {
-        name: 'Modupe Ogunmekan',
-        email: 'mdo55@cornell.edu',
-        role: 'Robotics',
-        subteam: 'Robotics',
-        year: '2027',
-        hometown: 'Mansfield, TX',
-        major: 'Electrical and Computer Engineering',
-        linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/ABteam2.JPG',
-        portfolio: 'https://www.cornellautoboat.com/',
-      },
+      
     ],
   },
 
