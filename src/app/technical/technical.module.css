@@ -123,8 +123,8 @@
   background-color: var(--primary);
   border-radius: 15px;
   margin: 20px auto 50px;
-   max-width: 900px;
-  display: block;
+  max-width: 1000px;
+  display: flex;
   width: fit-content;
 }
 
@@ -134,6 +134,16 @@
   width: auto;
   object-fit: contain;
   border-radius: 10px;
+}
+
+.techVideo {
+  width: 100%;       
+  max-width: 1000px;  
+  height: auto;      
+  border-radius: 12px;
+  object-fit: cover; 
+  display: block;
+  margin: 0 auto;   
 }
 
 .sectionContent {

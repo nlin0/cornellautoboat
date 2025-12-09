@@ -68,7 +68,7 @@ export const teamData: Subteam[] = [
         major: 'Mechanical Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/ABteam2.JPG',
+        image: '/team/try2.png',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {

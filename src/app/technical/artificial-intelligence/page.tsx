@@ -44,15 +44,15 @@ export default function ArtificialIntelligence() {
           water testing.
         </p>
 
-        <div className={styles.techImg}>
-          <Image
-            src="/technical/AI1.png"
-            alt="AI path planning visualization"
-            width={600}
-            height={300}
-            className={styles.techImage}
-          />
-        </div>
+        <video
+  src="/technical/AI-VID.mov"
+  className={styles.techVideo}
+  controls
+  loop
+  muted
+  playsInline
+/>
+
 
         <p className={styles.descr}>
           Future goals of the AI team include improving our collision detection
