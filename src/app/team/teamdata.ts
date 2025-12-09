@@ -25,7 +25,7 @@ export const teamData: Subteam[] = [
     members: [
       {
         name: 'Neha Naveen',
-        image: '/team/Neha.png',
+        image: '/team/neha1.png',
         role: 'Full Team Lead',
         subteam: 'Software',
         year: '2027',
@@ -38,7 +38,7 @@ export const teamData: Subteam[] = [
       },
       {
         name: 'Thomas Wells',
-        image: '/team/Thomas.png',
+        image: '/team/thomas1.png',
         role: 'Full Team Lead',
         subteam: 'Hardware',
         year: '2027',
