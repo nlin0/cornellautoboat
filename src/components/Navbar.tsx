@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 interface NavLink {
@@ -84,9 +85,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white/80 border-b border-gray-200 sticky top-5 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-lg bg-white/80 backdrop-blur-sm' : 'shadow-sm'
-      }`}
+      className={`bg-white/80 border-b border-gray-200 sticky top-5 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg bg-white/80 backdrop-blur-sm' : 'shadow-sm'
+        }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-20">
@@ -95,11 +95,14 @@ export default function Navbar() {
             href="/"
             className="flex-shrink-0 flex items-center gap-3 group transition-transform duration-300 hover:scale-105"
           >
-            <div className="h-10 w-10 bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-[#7d0000] group-hover:shadow-lg group-hover:shadow-red-600/50 group-hover:scale-110">
-              <span className="text-white text-xs font-bold transition-transform duration-300 group-hover:rotate-12">
-                CA
-              </span>
-            </div>
+            <Image
+              src="/CUAB_Logo.png"
+              alt="Cornell AutoBoat Logo"
+              width={70}
+              height={70}
+              className="transition-all duration-300 group-hover:scale-110"
+              priority
+            />
             <span
               className="font-semibold text-lg text-gray-900 tracking-tight transition-colors duration-300 group-hover:text-[#960303]"
               style={{ fontFamily: 'Pirulen, Arial, sans-serif' }}
@@ -117,11 +120,10 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${
-                  isActive(href)
-                    ? 'bg-[#960303] text-white shadow-md'
-                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                }`}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
+                  ? 'bg-[#960303] text-white shadow-md'
+                  : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                  }`}
               >
                 {label}
               </Link>
@@ -136,17 +138,15 @@ export default function Navbar() {
               {/* CLICKABLE BUTTON: now a Link */}
               <Link
                 href="/technical"
-                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-all duration-300 transform hover:scale-105 relative group ${
-                  pathname.startsWith('/technical')
-                    ? 'bg-[#960303] text-white shadow-md'
-                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                }`}
+                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-all duration-300 transform hover:scale-105 relative group ${pathname.startsWith('/technical')
+                  ? 'bg-[#960303] text-white shadow-md'
+                  : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                  }`}
               >
                 Technical Info
                 <svg
-                  className={`w-4 h-4 transition-transform duration-300 ${
-                    isTechnicalOpenDesktop ? 'rotate-180' : ''
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-300 ${isTechnicalOpenDesktop ? 'rotate-180' : ''
+                    }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -177,9 +177,8 @@ export default function Navbar() {
                         className="block px-4 py-2.5 hover:bg-gray-50 hover:text-[#960303] border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5"
                         role="menuitem"
                         style={{
-                          animation: `fadeInLeft 0.3s ease-out ${
-                            index * 0.05
-                          }s both`,
+                          animation: `fadeInLeft 0.3s ease-out ${index * 0.05
+                            }s both`,
                         }}
                       >
                         {label}
@@ -195,13 +194,12 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${
-                  isActive(href)
-                    ? 'bg-[#960303] text-white shadow-md'
-                    : isButton
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
+                  ? 'bg-[#960303] text-white shadow-md'
+                  : isButton
                     ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg hover:shadow-red-600/50 font-semibold ml-2 px-5 py-2.5 hover:scale-110'
                     : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                }`}
+                  }`}
               >
                 {label}
               </Link>
@@ -244,11 +242,10 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive(href)
-                  ? 'bg-[#960303] text-white'
-                  : 'text-gray-700 hover:bg-gray-50'
-              }`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
+                ? 'bg-[#960303] text-white'
+                : 'text-gray-700 hover:bg-gray-50'
+                }`}
             >
               {label}
             </Link>
@@ -281,13 +278,12 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive(href)
-                  ? 'bg-[#960303] text-white'
-                  : isButton
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
+                ? 'bg-[#960303] text-white'
+                : isButton
                   ? 'bg-[#960303] text-white hover:bg-[#7d0000] font-semibold mt-2'
                   : 'text-gray-700 hover:bg-gray-50'
-              }`}
+                }`}
             >
               {label}
             </Link>

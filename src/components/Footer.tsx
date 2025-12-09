@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface SocialLink {
   href: string;
   label: string;
@@ -51,69 +53,110 @@ const SOCIAL_LINKS: SocialLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-full px-4 sm:px-6 lg:px-40 py-10">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
+    <footer className="bg-black text-white border-t border-gray-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Logo and brief description */}
-          <div className="space-y-4 flex-1 max-w-md">
-            <div className="flex items-center">
-              {/* Replace with actual logo when available */}
-              <div className="h-10 w-10 bg-red-600 rounded-full mr-3 flex-shrink-0"></div>
-              <span className="font-bold text-xl sm:text-2xl">
-                Cornell AutoBoat
-              </span>
-            </div>
-            <p className="italic text-sm text-gray-300">
+          <div>
+            <Image
+              src="/CUAB_Logo.png"
+              alt="Cornell AutoBoat Logo"
+              width={180}
+              height={180}
+              className="flex-shrink-0 mb-2"
+            />
+            <p className="text-xs text-gray-400 leading-tight">
               Registered Project Team of Cornell University
             </p>
-
-            <p className="italic text-sm text-gray-300">
-              Adheres to&nbsp;
+            <p className="text-xs text-gray-500 leading-tight mt-1">
+              Adheres to{' '}
               <a
                 href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-gray-100"
+                className="text-gray-400 hover:text-gray-300 underline transition-colors"
               >
                 Cornell University Equal Education and Employment Policy
               </a>
             </p>
 
-            <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All
-              rights reserved.
-            </p>
+            {/* Copyright */}
+            <div className="pt-4 border-t border-gray-800">
+              <p className="text-xs text-gray-500">
+                &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights reserved.
+              </p>
+            </div>
           </div>
 
           {/* Contact info */}
-          <div className="flex-shrink-0">
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-2 text-gray-400 text-sm">
-              <p>Cornell University</p>
-              <p>Ithaca, NY 14850</p>
-              <p className="break-all">cornellautoboat@gmail.com</p>
-              <p className="break-all">
-                General: njn43@cornell.edu tlw85@cornell.edu
-              </p>
-              <p className="break-all">Sponsorships: jy869@cornell.edu</p>
-              <div className="pt-4">
-                <h4 className="text-sm font-semibold mb-2 text-white">
-                  Follow Us
-                </h4>
-                <nav className="flex space-x-4" aria-label="Social media links">
-                  {SOCIAL_LINKS.map(({ href, label, icon }) => (
+          <div className="space-y-5">
+            <h3 className="text-lg font-semibold text-white">Contact Us</h3>
+            <div className="grid grid-cols-2 gap-6 text-sm">
+              <div className="space-y-4">
+                <div>
+                  <p className="text-white font-medium mb-2">Location</p>
+                  <div className="text-gray-400 space-y-1">
+                    <p>Cornell University</p>
+                    <p>Ithaca, NY 14850</p>
+                  </div>
+                </div>
+                {/* Social Media */}
+                <div className="pt-2">
+                  <h3 className="text-sm font-semibold text-white mb-3">Follow Us</h3>
+                  <nav className="flex space-x-4" aria-label="Social media links">
+                    {SOCIAL_LINKS.map(({ href, label, icon }) => (
+                      <a
+                        key={href}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-[#960303] transition-colors transform hover:scale-110 duration-200"
+                        aria-label={label}
+                      >
+                        {icon}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <p className="text-white font-medium">Email</p>
+                <div className="text-gray-400 space-y-1.5">
+                  <p>
                     <a
-                      key={href}
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-red-400 transition-colors"
-                      aria-label={label}
+                      href="mailto:cornellautoboat@gmail.com"
+                      className="hover:text-white transition-colors break-all"
                     >
-                      {icon}
+                      cornellautoboat@gmail.com
                     </a>
-                  ))}
-                </nav>
+                  </p>
+                  <p>
+                    <span className="text-gray-500">General:</span>{' '}
+                    <a
+                      href="mailto:njn43@cornell.edu"
+                      className="hover:text-white transition-colors"
+                    >
+                      njn43@cornell.edu
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href="mailto:tlw85@cornell.edu"
+                      className="hover:text-white transition-colors"
+                    >
+                      tlw85@cornell.edu
+                    </a>
+                  </p>
+                  <p>
+                    <span className="text-gray-500">Sponsorships:</span>{' '}
+                    <a
+                      href="mailto:jy869@cornell.edu"
+                      className="hover:text-white transition-colors"
+                    >
+                      jy869@cornell.edu
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -97,7 +97,7 @@ export default function Home() {
               <div className={styles.aboutCrewDescription}>
                 <p className={styles.descr}>
                   We are a student-run team of hardware and software engineers, dedicated to building and innovating in the field of naval architecture and marine robotics.
-                Our driven members challenge themselves in a fast-paced work environment and make lifelong connections.
+                  Our driven members challenge themselves in a fast-paced work environment and make lifelong connections.
                 </p>
               </div>
             </div>
