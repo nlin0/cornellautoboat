@@ -43,7 +43,7 @@ export default function Competition() {
 
       <div className={styles.dividerWrapper}>
         <Image
-          src="/dividers/divider5.png"
+          src="/dividers/divider5.svg"
           alt=""
           width={2400}
           height={200}
