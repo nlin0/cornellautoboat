@@ -241,17 +241,29 @@
   object-position: center -180px;
 }
 
+.aboutCrewSection {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.aboutCrewTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 0 5vw;
+  flex-wrap: wrap;
+}
+
 .aboutCrewTitle {
   font-size: clamp(52px, 8vw, 12vw);
-  margin-left: 5vw;
-  margin-bottom: 5vh;
   font-weight: 900;
   text-transform: uppercase;
   color: var(--light-gray);
   line-height: 1;
-
+  flex: 0 0 auto;
+  min-width: 300px;
   position: relative;
-  align-self: flex-start;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -266,10 +278,23 @@
   font-size: clamp(48px, 5vw, 10vw);
 }
 
+.aboutCrewDescription {
+  flex: 1 1 400px;
+  max-width: 600px;
+  padding-top: 1rem;
+}
+
+.aboutCrewDescription .descr {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--light-gray);
+}
+
 
 .blockSection {
   color: var(--white);
-  margin-top: 10rem;
+  margin-top: 3rem;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -299,7 +324,8 @@
   align-items: center;
   border-color: none;
   width: 50%;
-  height: 50vh;
+  min-height: 50vh;
+  height: auto;
 }
 
 .techImg {
@@ -314,10 +340,108 @@
   margin: 15px;
 }
 
+.descr {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.descrList {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.descrList li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.descrList li::before {
+  content: '•';
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
 .blockHeader {
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--light-gray);
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  color: var(--primary-dark);
+}
+
+.dropdownHeader:hover {
+  background: var(--white);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.dropdownHeader:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.dropdownTriggerText {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdownIcon {
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.dropdownIconOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.dropdownContentOpen {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.5s ease-in, opacity 0.4s ease-in 0.1s;
 }
 
 .videoCont {
