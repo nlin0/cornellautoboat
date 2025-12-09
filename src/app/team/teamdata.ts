@@ -33,7 +33,7 @@ export const teamData: Subteam[] = [
         hometown: 'Sunnyvale, CA',
         email: 'njn43@cornell.edu',
         linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
+          'https://www.linkedin.com/in/neha-j-naveen/',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -46,7 +46,7 @@ export const teamData: Subteam[] = [
         hometown: 'Lansing, NY',
         email: 'tlw85@cornell.edu',
         linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
+          'https://www.linkedin.com/in/thomas-l-wells/',
         portfolio: 'https://www.cornellautoboat.com/',
       },
     ],
