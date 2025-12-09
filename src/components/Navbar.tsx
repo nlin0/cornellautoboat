@@ -29,7 +29,11 @@ const MAIN_NAV_LINKS: NavLink[] = [
 const SECONDARY_NAV_LINKS: NavLink[] = [
   { href: '/competition', label: 'Competition' },
   { href: '/media', label: 'Media' },
-  { href: '/contact', label: 'Donate', isButton: true },
+  {
+    href: 'https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=7311&dids=5372&bledit=1',
+    label: 'Donate',
+    isButton: true,
+  },
 ];
 
 export default function Navbar() {
@@ -49,7 +53,10 @@ export default function Navbar() {
   }, []);
 
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
-  const toggleTechnicalMobile = useCallback(() => setIsTechnicalOpen((prev) => !prev), []);
+  const toggleTechnicalMobile = useCallback(
+    () => setIsTechnicalOpen((prev) => !prev),
+    []
+  );
 
   const handleTechnicalMouseEnter = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -62,13 +69,13 @@ export default function Navbar() {
     }, 250);
   }, []);
 
-useEffect(() => {
-  return () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-}, []);
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const isActive = useCallback((path: string) => path === pathname, [pathname]);
 
@@ -102,7 +109,10 @@ useEffect(() => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-1" aria-label="Main navigation">
+          <nav
+            className="hidden md:flex items-center space-x-1"
+            aria-label="Main navigation"
+          >
             {MAIN_NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
@@ -166,7 +176,11 @@ useEffect(() => {
                         href={getTechnicalHref(label)}
                         className="block px-4 py-2.5 hover:bg-gray-50 hover:text-[#960303] border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5"
                         role="menuitem"
-                        style={{ animation: `fadeInLeft 0.3s ease-out ${index * 0.05}s both` }}
+                        style={{
+                          animation: `fadeInLeft 0.3s ease-out ${
+                            index * 0.05
+                          }s both`,
+                        }}
                       >
                         {label}
                       </Link>
@@ -203,9 +217,19 @@ useEffect(() => {
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor">
                 {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>
@@ -221,7 +245,9 @@ useEffect(() => {
               key={href}
               href={href}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive(href) ? 'bg-[#960303] text-white' : 'text-gray-700 hover:bg-gray-50'
+                isActive(href)
+                  ? 'bg-[#960303] text-white'
+                  : 'text-gray-700 hover:bg-gray-50'
               }`}
             >
               {label}
