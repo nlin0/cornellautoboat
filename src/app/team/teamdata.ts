@@ -30,7 +30,7 @@ export const teamData: Subteam[] = [
         subteam: 'Software',
         year: '2027',
         major: 'Computer Science',
-        hometown: 'California',
+        hometown: 'Sunnyvale, CA',
         email: 'njn43@cornell.edu',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
