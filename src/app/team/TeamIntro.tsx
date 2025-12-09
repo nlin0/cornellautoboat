@@ -49,7 +49,7 @@ export default function TeamIntro() {
           Meet our Team!
         </h2>
         <p className={`${styles.teamDescription} ${styles.descriptionAnimated}`}>
-          Our team consists of four subteams: Hardware, Software, Business and Outreach, and Team Leads.
+          Our team consists of three subteams: Hardware, Software, and Business.
         </p>
       </div>
 

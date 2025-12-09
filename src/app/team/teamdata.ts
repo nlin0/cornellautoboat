@@ -669,18 +669,7 @@ export const teamData: Subteam[] = [
         image: '/team/ABteam2.JPG',
       },
 
-      {
-        name: 'Bekzod Mamasoliyev',
-        email: 'bm723@cornell.edu',
-        role: 'Outreach and Media',
-        subteam: 'Business and Outreach',
-        year: '2028',
-        hometown: 'Brooklyn, NY',
-        major: 'Dyson Business School',
-        linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/ABteam2.JPG',
-      },
+      
     ],
   },
 ];
