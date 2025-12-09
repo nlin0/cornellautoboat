@@ -607,7 +607,7 @@ export const teamData: Subteam[] = [
         major: 'Economics',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/ABteam2.JPG',
+        image: '/team/Jessie.png',
       },
       {
         name: 'Nicole Lin',
