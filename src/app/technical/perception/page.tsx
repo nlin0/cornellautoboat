@@ -52,8 +52,34 @@ export default function Perception() {
         <h3 className={styles.techHeading}>Lidar</h3>
         <p className={styles.descr}>
           The LIDAR team works on developing and implementing algorithms for
-          object detection and object avoidance.
+          object detection and object avoidance using a LIDAR sensor. Our
+          detection pipeline consists of Euclidean clustering, and object
+          classification using RANSAC algorithms.
         </p>
+        <div className={styles.techImg}>
+          <Image
+            src="/technical/perception2.png"
+            alt="perception2"
+            width={500}
+            height={200}
+            className={styles.techImage}
+          />
+        </div>
+        <p className={styles.descr}>
+          The LIDAR team works closely with the controls subteam in order to
+          develop sensor fusion algorithms, which not only merges the LIDAR data
+          with the other sensor data to evaluate game state, but also to
+          leverage the LIDAR data to enhance the capabilities of our other
+          sensors. For example, the LIDAR provides accurate information about
+          regions of interest for our computer vision models.
+        </p>
+        <p className={styles.descr}>
+          The LIDAR project catalyzed the development of our 3D simulation
+          system, which is able to provide simulated LIDAR, positioning, and
+          image data in order to test our code despite limitations in our indoor
+          and outdoor testing environments.
+        </p>
+        
       </div>
     </div>
   );
