@@ -5,13 +5,8 @@ export default function About() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.aboutIntro}>
-        <h2 className={styles.aboutTitle}>
-          Team History
-        </h2>
-        <p className={styles.aboutSubtitle}>
-          Continuing to make history
-        </p>
-        </div>
+        <h2 className={styles.aboutTitle}>Team History</h2>
+      </div>
       <div className={styles.dividerWrapper}>
         <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
       </div>
@@ -42,7 +37,7 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <img src="/dividers/divider2.png" alt="" className={styles.divider} />
-        </div>
+      </div>
 
       {/* SECTION 2 */}
       <div className={styles.timelineContainer2}>
@@ -72,9 +67,9 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
-        </div>
+      </div>
 
-        {/* SECTION 3 */}
+      {/* SECTION 3 */}
       <div className={styles.timelineContainer}>
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
@@ -102,7 +97,7 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <img src="/dividers/divider2.png" alt="" className={styles.divider} />
-        </div>
+      </div>
 
       {/* SECTION 4 */}
       <div className={styles.timelineContainer2}>
@@ -139,9 +134,9 @@ export default function About() {
       {/* FULL-WIDTH DIVIDER */}
       <div className={styles.dividerWrapper}>
         <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
-        </div>
+      </div>
 
-        {/* SECTION 5 */}
+      {/* SECTION 5 */}
       <div className={styles.timelineContainer}>
         <div className={styles.timelineSection}>
           <div className={styles.textBlock}>
@@ -155,6 +150,33 @@ export default function About() {
             <Image
               src="/clifford2.png"
               alt="spring2025"
+              width={400}
+              height={300}
+              className={styles.timelineImage}
+            />
+          </div>
+        </div>
+      </div>
+      <div className={styles.dividerWrapper}>
+        <img src="/dividers/divider2.png" alt="" className={styles.divider} />
+      </div>
+
+      {/* SECTION 4 */}
+      <div className={styles.timelineContainer2}>
+        <div className={`${styles.timelineSection} ${styles.reverse}`}>
+          <div className={styles.textBlock2}>
+            <div className={styles.year2}>FALL 2026</div>
+            <h2 className={styles.title}>Scooby</h2>
+            <p className={styles.subtitle}>
+              UPCOMING: He is the product of key advancements for the team, marking the
+              debut of a new sensor suite, optimized geometry, and an upgraded
+              electrical system
+            </p>
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/about/about4.png"
+              alt="fall2023"
               width={400}
               height={300}
               className={styles.timelineImage}

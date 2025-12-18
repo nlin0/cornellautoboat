@@ -240,19 +240,7 @@ export const teamData: Subteam[] = [
         image: '/team/ABteam2.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
-      {
-        name: 'James Xiao',
-        email: 'jx396@cornell.edu',
-        role: 'Robotics',
-        subteam: 'Robotics',
-        year: '2028',
-        hometown: 'Highland Park, IL',
-        major: 'Mechanical Engineering and CS',
-        linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/ABteam2.JPG',
-        portfolio: 'https://www.cornellautoboat.com/',
-      },
+     
       {
         name: 'Anthony Wang',
         email: 'asw269@cornell.edu',
@@ -285,8 +273,8 @@ export const teamData: Subteam[] = [
         role: 'Mechanical',
         subteam: 'Mechanical',
         year: '2028',
-        hometown: '',
-        major: '',
+        hometown: 'Hicksville, New York',
+        major: 'Mechanical Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
         image: '/team/ABteam2.JPG',
@@ -335,7 +323,7 @@ export const teamData: Subteam[] = [
         subteam: 'Software',
         year: '2027',
         hometown: 'Princeton, NJ',
-        major: 'Computer Science, Physics',
+        major: 'Computer Science & Physics',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
         image: '/team/ABteam2.JPG',
@@ -348,7 +336,7 @@ export const teamData: Subteam[] = [
         subteam: 'Software',
         year: '2027',
         hometown: 'San Jose, CA',
-        major: 'Computer Science, ECE',
+        major: 'Computer Science & ECE',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
         image: '/team/ABteam2.JPG',
@@ -375,6 +363,19 @@ export const teamData: Subteam[] = [
         year: '2027',
         hometown: 'Montclair, NJ',
         major: 'Computer Science',
+        linkedin:
+          'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/ABteam2.JPG',
+        portfolio: 'https://www.cornellautoboat.com/',
+      },
+       {
+        name: 'James Xiao',
+        email: 'jx396@cornell.edu',
+        role: 'Controls',
+        subteam: 'Controls',
+        year: '2028',
+        hometown: 'Highland Park, IL',
+        major: 'Mechanical Engineering & CS',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
         image: '/team/ABteam2.JPG',

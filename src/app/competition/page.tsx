@@ -36,9 +36,7 @@ export default function Competition() {
       {/* Header Section */}
       <div className={`${styles.competitionIntro} ${styles.fadeInDown}`}>
         <h1 className={styles.competitionTitle}>RoboBoat Competition</h1>
-        <p className={styles.competitionSubtitle}>
-          Competing on the international stage of autonomous marine robotics
-        </p>
+      
       </div>
 
       <div className={styles.dividerWrapper}>

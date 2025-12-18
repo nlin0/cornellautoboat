@@ -49,10 +49,6 @@
   display: block;
 }
 
-.mediaTitle {
-  position: relative;
-  z-index: 10;
-}
 
 .mediaTitle {
   font-size: clamp(2rem, 8vw, 6rem);
@@ -62,7 +58,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 0 0 1rem 0;
+  margin: 6rem 0 1rem 0;
   line-height: 1;
   position: relative;
   padding-bottom: 0.5rem;

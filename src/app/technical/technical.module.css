@@ -39,7 +39,7 @@
 /*TITLE */
 .titleBlock {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
@@ -74,7 +74,7 @@
   overflow: hidden;
   line-height: 0;
   z-index: 3;
-  transform: translateY(15%);
+  transform: translateY(40%);
 }
 
 .inPageDivider {
@@ -179,6 +179,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem; 
+  margin-bottom: 8rem;
 }
 
 .techButton {
