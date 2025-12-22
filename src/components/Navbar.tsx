@@ -91,8 +91,8 @@ export default function Navbar() {
   return (
     <nav
       className={`bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'shadow-lg bg-white/80 backdrop-blur-sm translate-y-0'
-          : '-translate-y-full'
+        ? 'shadow-lg bg-white/80 backdrop-blur-sm translate-y-0'
+        : '-translate-y-full'
         }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

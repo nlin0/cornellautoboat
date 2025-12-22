@@ -16,12 +16,16 @@ export default function Home() {
   useEffect(() => {
     setIsVisible(true);
 
-    // Intersection Observer for scroll animations
+    // INTERSCTION OBSERVER FOR SCROLL ANIMATIONS
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.fadeInUp);
+          if (entry.isIntersecting && entry.target) {
+            try {
+              entry.target.classList.add(styles.fadeInUp);
+            } catch (error) {
+              // Element might have been removed, ignore error
+            }
           }
         });
       },
@@ -29,23 +33,27 @@ export default function Home() {
     );
 
     const refs = contentRefs.current;
+    const observedElements: Element[] = [];
+
     refs.forEach((ref) => {
-      if (ref && ref.isConnected) {
-        observer.observe(ref);
+      if (ref && ref.isConnected && ref instanceof Element) {
+        try {
+          observer.observe(ref);
+          observedElements.push(ref);
+        } catch (error) {
+          // Element might not be ready, ignore error
+        }
       }
     });
 
+    // FOR NODE JS NULL ERROR
     return () => {
-      refs.forEach((ref) => {
-        if (ref && ref.isConnected) {
-          try {
-            observer.unobserve(ref);
-          } catch (error) {
-            // Element might have already been removed, ignore error
-          }
-        }
-      });
-      observer.disconnect();
+      // Disconnect observer first to prevent any issues
+      try {
+        observer.disconnect();
+      } catch (error) {
+        // Observer might already be disconnected, ignore error
+      }
     };
   }, []);
 
@@ -91,7 +99,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Block Section */}
+      {/* BLOCK SECTION */}
       <main className={styles.homeContent}>
         <section className={styles.blockSection}>
           <div
@@ -305,10 +313,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Red divider box before footer */}
-      <div className={styles.redDividerBox}></div>
-
-      {/* Boat Modal Popup */}
+      {/* BOAT MODEL POPUP */}
       {isModalOpen && (
         <div
           className={styles.modalOverlay}

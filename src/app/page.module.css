@@ -77,8 +77,8 @@
   top: 0;
   margin-top: 0;
   background-color: var(--primary-dark);
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
   margin-top: -1px;
 }
 
@@ -607,30 +607,154 @@
 }
 
 /* MOBILE VIEW */
-@media (max-width: 661px) {
+@media (max-width: 768px) {
 
   /* HOMEPAGE */
-  .homeHeroBoat {
-    display: flex;
-    margin-top: 1rem;
-    justify-content: center;
-    align-items: center;
+  .heroHome {
+    height: 100vh;
+    min-height: 100vh;
   }
 
   .heroHomeImage {
     object-position: center top;
     object-fit: cover;
+    min-height: 100vh;
+  }
+
+  .heroHomeContent {
+    transform: translateY(-8rem);
+    padding: 0.5rem;
   }
 
   .homeHeroText {
-    margin-top: 1rem;
+    margin-top: 0;
+    padding: 5px;
+  }
+
+  .homeTitle {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .homeTitle2 {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+  }
+
+  .homeDescr {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    margin-top: 0.5rem;
+  }
+
+  .homeHeroBoat {
+    display: flex;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .cliffordBoat {
-    width: 68vw;
-    min-width: 480px;
+    width: 80vw;
+    max-width: 400px;
+    min-width: 0;
   }
 
+  .homeContent {
+    padding: 0.5rem;
+    margin-top: -2rem;
+  }
+
+  .aboutCrewTitleContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .aboutCrewTitle {
+    min-width: 0;
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .aboutCrewTitle2 {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+
+  .aboutCrewDescription {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .aboutCrewDescription .descr {
+    font-size: 1rem;
+  }
+
+  .sectionContent {
+    flex-direction: column;
+    margin: 15px;
+    gap: 15px;
+  }
+
+  .container {
+    width: 100%;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .descrBlock {
+    margin: 10px;
+    width: 100%;
+  }
+
+  .descr {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .blockHeader {
+    font-size: 1.5rem;
+  }
+
+  .blockSection {
+    padding: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .techImg {
+    height: auto;
+    min-height: 200px;
+    margin: 10px 0;
+  }
+
+  .speechBubble {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    margin-left: 0.3rem;
+  }
+
+  .speechText {
+    font-size: 0.7rem;
+  }
+
+  .dropdownHeader {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .dropdownTriggerText {
+    font-size: 0.9rem;
+  }
+
+  .dropdownContent {
+    padding: 0.8rem;
+  }
+
+  .descrList li {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .redDividerBox {
+    height: 150px;
+  }
 }
 
 
@@ -848,13 +972,4 @@
     font-size: 0.95rem;
     padding: 1rem;
   }
-}
-
-/* red divider box before footer */
-/* this is a lazy fix for the issue where the footer is being covered */
-/* TODO: FIX LATER */
-.redDividerBox {
-  width: 100%;
-  height: 300px;
-  background-color: var(--primary);
 }
