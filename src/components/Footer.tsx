@@ -12,7 +12,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     label: 'Follow us on Instagram',
     icon: (
       <svg
-        className="h-6 w-6"
+        className="h-5 w-5"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -26,7 +26,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     label: 'Follow us on GitHub',
     icon: (
       <svg
-        className="h-6 w-6"
+        className="h-5 w-5"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -40,7 +40,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     label: 'Follow us on LinkedIn',
     icon: (
       <svg
-        className="h-6 w-6"
+        className="h-5 w-5"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -54,75 +54,77 @@ const SOCIAL_LINKS: SocialLink[] = [
 export default function Footer() {
   return (
     <footer className="bg-black text-white border-t border-gray-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Logo and brief description */}
-          <div>
-            <Image
-              src="/CUAB_Logo.png"
-              alt="Cornell AutoBoat Logo"
-              width={180}
-              height={180}
-              className="flex-shrink-0 mb-2"
-            />
-            <p className="text-xs text-gray-400 leading-tight">
-              Registered Project Team of Cornell University
-            </p>
-            <p className="text-xs text-gray-500 leading-tight mt-1">
-              Adheres to{' '}
-              <a
-                href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-300 underline transition-colors"
-              >
-                Cornell University Equal Education and Employment Policy
-              </a>
-            </p>
-
-            {/* Copyright */}
-            <div className="pt-4 border-t border-gray-800">
-              <p className="text-xs text-gray-500">
-                &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights reserved.
-              </p>
+          <div className="flex flex-col">
+            <div className="flex items-start gap-4">
+              <Image
+                src="/CUAB_Logo.png"
+                alt="Cornell AutoBoat Logo"
+                width={120}
+                height={120}
+                className="flex-shrink-0"
+              />
+              <div className="flex flex-col gap-0.5 pt-1">
+                <p className="text-[10px] text-gray-400 leading-tight">
+                  Registered Project Team of Cornell University
+                </p>
+                <p className="text-[10px] text-gray-500 leading-tight">
+                  Adheres to{' '}
+                  <a
+                    href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-gray-300 underline transition-colors"
+                  >
+                    Cornell University Equal Education and Employment Policy
+                  </a>
+                </p>
+                <p className="text-[10px] text-gray-500 leading-tight mt-1">
+                  &copy; {new Date().getFullYear()} Cornell AutoBoat Team. All rights reserved.
+                </p>
+              </div>
+            </div>
+            {/* Social Media */}
+            <div className="mt-3 ml-[136px] flex items-center gap-3">
+              <h3 className="text-xs font-semibold text-white">Follow Us</h3>
+              <nav className="flex space-x-3" aria-label="Social media links">
+                {SOCIAL_LINKS.map(({ href, label, icon }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-[#960303] transition-colors transform hover:scale-110 duration-200"
+                    aria-label={label}
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </nav>
             </div>
           </div>
 
           {/* Contact info */}
-          <div className="space-y-5">
-            <h3 className="text-lg font-semibold text-white">Contact Us</h3>
-            <div className="grid grid-cols-2 gap-6 text-sm">
-              <div className="space-y-4">
-                <div>
-                  <p className="text-white font-medium mb-2">Location</p>
-                  <div className="text-gray-400 space-y-1">
-                    <p>Cornell University</p>
-                    <p>Ithaca, NY 14850</p>
+          <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-4 text-xs items-start">
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2 text-center md:text-left">Contact Us</h3>
+                <div className="space-y-2">
+                  <div>
+                    <p className="text-white font-medium mb-1 text-xs">Location</p>
+                    <div className="text-gray-400 space-y-0.5">
+                      <p className="text-xs">Cornell University</p>
+                      <p className="text-xs">Ithaca, NY 14850</p>
+                    </div>
                   </div>
                 </div>
-                {/* Social Media */}
-                <div className="pt-2">
-                  <h3 className="text-sm font-semibold text-white mb-3">Follow Us</h3>
-                  <nav className="flex space-x-4" aria-label="Social media links">
-                    {SOCIAL_LINKS.map(({ href, label, icon }) => (
-                      <a
-                        key={href}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-[#960303] transition-colors transform hover:scale-110 duration-200"
-                        aria-label={label}
-                      >
-                        {icon}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
               </div>
-              <div className="space-y-2">
-                <p className="text-white font-medium">Email</p>
-                <div className="text-gray-400 space-y-1.5">
-                  <p>
+              <div>
+                <h3 className="text-base font-semibold text-white mb-2 text-center md:text-left">Email</h3>
+                <div className="text-gray-400 space-y-1">
+                  <p className="text-xs">
                     <a
                       href="mailto:cornellautoboat@gmail.com"
                       className="hover:text-white transition-colors break-all"
@@ -130,7 +132,7 @@ export default function Footer() {
                       cornellautoboat@gmail.com
                     </a>
                   </p>
-                  <p>
+                  <p className="text-xs">
                     <span className="text-gray-500">General:</span>{' '}
                     <a
                       href="mailto:njn43@cornell.edu"
@@ -139,7 +141,7 @@ export default function Footer() {
                       njn43@cornell.edu
                     </a>
                   </p>
-                  <p>
+                  <p className="text-xs">
                     <a
                       href="mailto:tlw85@cornell.edu"
                       className="hover:text-white transition-colors"
@@ -147,7 +149,7 @@ export default function Footer() {
                       tlw85@cornell.edu
                     </a>
                   </p>
-                  <p>
+                  <p className="text-xs">
                     <span className="text-gray-500">Sponsorships:</span>{' '}
                     <a
                       href="mailto:jy869@cornell.edu"

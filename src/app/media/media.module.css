@@ -9,7 +9,7 @@
 .mediaIntro {
   color: var(--body-text);
   text-align: center;
-  padding: 6rem  2rem 4rem;
+  padding: 6rem 2rem 4rem;
   max-width: 900px;
   margin: 0 auto;
   position: relative;
@@ -103,7 +103,8 @@
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  min-height: 100px;
 }
 
 /* Slideshow Section */
@@ -287,6 +288,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -513,6 +515,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -671,4 +674,3 @@
     right: 1rem;
   }
 }
-

@@ -225,6 +225,9 @@ export default function Home() {
         </section>
       </main>
 
+      {/* Red divider box before footer */}
+      <div className={styles.redDividerBox}></div>
+
       {/* Boat Modal Popup */}
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={() => setIsModalOpen(false)}>
