@@ -8,7 +8,8 @@
 .competitionIntro {
   color: var(--body-text);
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 11rem 2rem 4rem;
+  /* Increased top padding from 6rem to 11rem (added 5rem for navbar) */
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
@@ -431,23 +432,91 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: var(--mobile-breakpoint)) {
   .competitionIntro {
-    padding: 4rem 1.5rem 3rem;
+    padding: 8rem 1rem 2rem;
+  }
+
+  .competitionTitle {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin-bottom: 1rem;
   }
 
   .competitionTitle::after {
-    width: 80px;
+    width: 60px;
     height: 3px;
+  }
+
+  .competitionSubtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-top: 1rem;
+    line-height: 1.6;
   }
 
   .overviewSection,
   .tasksSection,
   .roboticSection {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1rem;
   }
 
   .sectionHeader {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .sectionDescription {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    margin-top: 0.5rem;
+  }
+
+  .bodyText {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .learnMoreButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tasksGrid {
+    gap: 1.5rem;
+  }
+
+  .taskCard {
+    margin-bottom: 0;
+  }
+
+  .taskImageWrapper {
+    height: 200px;
+  }
+
+  .taskContent {
+    padding: 1.25rem;
+  }
+
+  .taskTitle {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .taskDescription {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .detailBox {
+    padding: 1.5rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .detailText {
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }

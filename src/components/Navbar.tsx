@@ -45,9 +45,16 @@ export default function Navbar() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
-  // Scroll state - hide navbar at top, show when scrolling
+  // Scroll state - hide navbar at top, show when scrolling (only on home page)
   useEffect(() => {
+    // Only apply scroll behavior on home page
+    if (!isHomePage) {
+      setIsScrolled(true); // Always show on non-home pages
+      return;
+    }
+
     const handleScroll = () => {
       // Hide navbar when at top (scrollY < 50), show when scrolling down
       setIsScrolled(window.scrollY > 50);
@@ -56,9 +63,13 @@ export default function Navbar() {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+    setIsTechnicalOpen(false);
+  }, []);
   const toggleTechnicalMobile = useCallback(
     () => setIsTechnicalOpen((prev) => !prev),
     []
@@ -88,9 +99,15 @@ export default function Navbar() {
   const getTechnicalHref = (label: string) =>
     `/technical/${label.toLowerCase().replace(/\s+/g, '-')}`;
 
+  // Close mobile menu when pathname changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsTechnicalOpen(false);
+  }, [pathname]);
+
   return (
     <nav
-      className={`bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage
         ? 'shadow-lg bg-white/80 backdrop-blur-sm translate-y-0'
         : '-translate-y-full'
         }`}
@@ -100,6 +117,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
+            onClick={closeMenu}
             className="flex-shrink-0 flex items-center gap-3 group transition-transform duration-300 hover:scale-105"
           >
             <Image
@@ -249,6 +267,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
+              onClick={closeMenu}
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
                 ? 'bg-[#960303] text-white'
                 : 'text-gray-700 hover:bg-gray-50'
@@ -273,6 +292,7 @@ export default function Navbar() {
                 <Link
                   key={label}
                   href={getTechnicalHref(label)}
+                  onClick={closeMenu}
                   className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-[#960303]"
                 >
                   {label}
@@ -285,6 +305,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
+              onClick={closeMenu}
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
                 ? 'bg-[#960303] text-white'
                 : isButton

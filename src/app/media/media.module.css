@@ -9,7 +9,8 @@
 .mediaIntro {
   color: var(--body-text);
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 11rem 2rem 4rem;
+  /* Increased top padding from 6rem to 11rem (added 5rem for navbar) */
   max-width: 900px;
   margin: 0 auto;
   position: relative;
@@ -626,47 +627,172 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: var(--mobile-breakpoint)) {
+  .mediaIntro {
+    padding: 8rem 1rem 2rem;
+    min-height: 300px;
+  }
+
+  .polaroidContainer {
+    top: 60px;
+  }
+
+  .mediaTitle {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin: 4rem 0 0.75rem 0;
+  }
+
+  .mediaSubtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .slideshowSection {
+    padding: 2rem 1rem;
+  }
+
   .slideshowContainer {
     flex-direction: column;
+  }
+
+  .slideshow {
+    border-radius: 12px;
   }
 
   .slideshowButton {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
 
   .slideshowButton:first-of-type {
-    left: 1rem;
+    left: 0.5rem;
   }
 
   .slideshowButton:last-of-type {
-    right: 1rem;
+    right: 0.5rem;
   }
 
-  .albumsGrid {
-    grid-template-columns: 1fr;
+  .playPauseButton {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .slideIndicators {
+    margin-top: 1.5rem;
+    gap: 0.5rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .indicatorActive {
+    width: 24px;
+  }
+
+  .albumsSection {
+    padding: 2rem 1rem;
+  }
+
+  .albumsTitle {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 2rem;
+  }
+
+  .albumsScrollContainer {
+    margin: 0 -1rem;
+  }
+
+  .albumsScroll {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .albumFolder {
+    width: 240px;
+  }
+
+  .folderBody {
+    padding: 1.25rem;
+    padding-top: 1.75rem;
+  }
+
+  .albumTitle {
+    font-size: 1rem;
+  }
+
+  .albumPhotoCount {
+    font-size: 0.8rem;
+  }
+
+  .albumHeader {
+    padding: 3rem 1rem 1.5rem;
+  }
+
+  .backButton {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .albumPageTitle {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .albumPageDescription {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .albumDate {
+    font-size: 0.85rem;
+    padding: 0.2rem 0.75rem;
   }
 
   .photoGrid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .lightbox {
+    padding: 1rem;
+  }
+
+  .lightboxClose {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
   }
 
   .lightboxPrev,
   .lightboxNext {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
 
   .lightboxPrev {
-    left: 1rem;
+    left: 0.5rem;
   }
 
   .lightboxNext {
-    right: 1rem;
+    right: 0.5rem;
+  }
+
+  .lightboxInfo {
+    bottom: 1rem;
+    padding: 0.6rem 1.25rem;
+  }
+
+  .lightboxCounter {
+    font-size: 0.85rem;
   }
 }

@@ -47,10 +47,15 @@
   --margin-space-lg: 9rem;
   --text-space-sm: 5px;
 
+  /* BREAKPOINTS */
+  --mobile-breakpoint: 700px;
 
 }
 
 @theme inline {
+  /* breakpoints */
+  --breakpoint-mobile: var(--mobile-breakpoint);
+
   /* backgrounds */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -109,12 +114,14 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 /* Navbar Animations */
 @keyframes fadeInDown {
   from {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -126,6 +133,7 @@ html {
     opacity: 0;
     transform: translateX(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

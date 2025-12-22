@@ -6,7 +6,8 @@
 .teamIntro {
   color: var(--body-text);
   text-align: center;
-  padding-top: var(--page-space);
+  padding-top: calc(var(--page-space) + 5rem);
+  /* Added 5rem (80px) for persistent navbar */
   padding-bottom: var(--margin-space);
   position: relative;
   overflow: hidden;
@@ -498,7 +499,7 @@
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .subTeamGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1068,4 +1069,175 @@
   font-weight: 600;
   opacity: 0.9;
   min-width: 60px;
+}
+
+/* Mobile Styles */
+@media (max-width: var(--mobile-breakpoint)) {
+  .teamIntro {
+    padding-top: calc(var(--page-space) + 3rem);
+    padding-bottom: 2rem;
+  }
+
+  .teamIntroText {
+    padding: 1.5rem 1rem;
+  }
+
+  .teamTitle {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .teamDescription {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .scrollContainer {
+    padding: 4vh 0;
+  }
+
+  .teamIntroBand {
+    gap: 1rem;
+    padding: 0 1rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .statItem {
+    padding: 1rem;
+    min-width: 0;
+  }
+
+  .statIconWrapper {
+    padding: 0.75rem;
+  }
+
+  .icon {
+    width: 40px;
+  }
+
+  .subTeamWrapper {
+    padding: 1rem;
+  }
+
+  .subTeamSection {
+    margin-bottom: 2rem;
+    padding: 0.25rem 0;
+  }
+
+  .terminalHeader {
+    padding: 0.4rem 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .gateInfo {
+    margin-left: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .gateDestination {
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .destinationLabel {
+    font-size: 0.6rem;
+  }
+
+  .destinationName {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .boardingDisplay {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .boardingStatus {
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .boardingTime {
+    font-size: 0.75rem;
+  }
+
+  .statusText {
+    font-size: 0.75rem;
+  }
+
+  .terminalContent {
+    padding: 1.5rem 1rem;
+  }
+
+  .terminalDescription {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .subTeamGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+  }
+
+  .memberCardContainer {
+    height: 380px;
+  }
+
+  .ticketHeader {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .ticketPhotoSection {
+    height: 180px;
+  }
+
+  .ticketInfoSection {
+    padding: 0.6rem 0.6rem;
+  }
+
+  .ticketValue {
+    font-size: 1.1rem;
+  }
+
+  .ticketRoleValue {
+    font-size: 0.55rem;
+  }
+
+  .ticketFooterSection {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .memberCardBackContent {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .memberCardName {
+    font-size: 1.1rem;
+  }
+
+  .memberCardRole {
+    font-size: 0.75rem;
+  }
+
+  .memberCardTextList li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .iconLink {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iconmini {
+    width: 18px;
+    height: 18px;
+  }
 }

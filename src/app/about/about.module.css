@@ -9,7 +9,8 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  padding-top: 10rem;
+  padding-top: 15rem;
+  /* Increased from 10rem to account for persistent navbar (5rem = 80px) */
 }
 
 .aboutTitle {
@@ -127,4 +128,69 @@
   border-radius: 14px;
   border: 2px solid var(--secondary2);
   object-fit: cover;
+}
+
+/* Mobile Styles */
+@media (max-width: var(--mobile-breakpoint)) {
+  .aboutIntro {
+    padding-top: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .aboutTitle {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .aboutSubtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .timelineSection {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .reverse {
+    flex-direction: column;
+  }
+
+  .textBlock,
+  .textBlock2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .year,
+  .year2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.6;
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timelineImage {
+    max-width: 100%;
+  }
+
+  .timelineContainer,
+  .timelineContainer2 {
+    padding: var(--page-space) 1rem;
+  }
 }

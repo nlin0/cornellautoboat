@@ -8,9 +8,11 @@
 .heroImg {
   position: relative;
   width: 100%;
-  height: clamp(400px, 80vh, 800px);
+  height: 80vh;
   overflow: hidden;
   background-color: var(--primary);
+  margin-top: 5rem;
+  /* Added margin-top for persistent navbar (80px) */
 }
 
 /* IMAGE ITSELF */
@@ -22,7 +24,7 @@
 
 .boatImage {
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -39,7 +41,7 @@
 /*TITLE */
 .titleBlock {
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
@@ -72,11 +74,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  overflow: visible;
+  width: 100vw;
+  overflow: hidden;
   line-height: 0;
   z-index: 3;
-  transform: translateY(25%);
+  transform: translateY(15%);
 }
 
 .inPageDivider {
@@ -89,10 +91,9 @@
 }
 
 .divider {
-  object-fit: contain;
-  width: 100%;
-  height: auto;
-  max-height: none;
+  object-fit: cover;
+  width: 100vw;
+  max-height: 400px;
   display: block;
 }
 
@@ -163,7 +164,7 @@
   border-color: none;
   width: 50%;
   height: auto;
-  min-height: clamp(300px, 50vh, 600px);
+  min-height: 50vh;
 }
 
 .imageGallery {
@@ -205,4 +206,93 @@
   margin-bottom: 20px;
   line-height: 1.6;
   color: var(--body-text);
+}
+
+/* Mobile Styles */
+@media (max-width: var(--mobile-breakpoint)) {
+  .heroImg {
+    height: clamp(300px, 50vh, 500px);
+    margin-top: 3rem;
+  }
+
+  .titleBlock {
+    top: 30%;
+    padding: 0 1rem;
+  }
+
+  .technicalTitle {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+
+  .titleDescr {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-top: 0.75rem;
+  }
+
+  .techSection {
+    margin-top: 2rem;
+    padding: 2rem 1rem;
+    font-size: 14px;
+  }
+
+  .techHeading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 1rem;
+  }
+
+  .descr,
+  .techdescr {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .techImg {
+    padding: 3px;
+    margin: 15px auto 30px;
+    max-width: 100%;
+  }
+
+  .techImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .techVideo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sectionContent {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .container {
+    width: 100%;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .imageGallery {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .linkContainer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .techButton {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .dividerWrapper {
+    transform: translateY(15%);
+  }
 }

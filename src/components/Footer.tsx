@@ -138,7 +138,7 @@ export default function Footer() {
                       href="mailto:njn43@cornell.edu"
                       className="hover:text-white transition-colors"
                     >
-                      njn43@cornell.edu, 
+                      njn43@cornell.edu,
                     </a>
                   </p>
                   <p className="text-xs">
