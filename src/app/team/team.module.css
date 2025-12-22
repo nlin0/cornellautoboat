@@ -219,6 +219,11 @@
   width: 100%;
   height: auto;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  image-rendering: auto;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .subTeamWrapper {

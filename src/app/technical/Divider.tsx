@@ -10,6 +10,8 @@ export default function Divider() {
         width={1800}
         height={100}
         className={styles.divider}
+        quality={100}
+        priority
         aria-hidden="true"
       />
     </div>

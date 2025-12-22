@@ -30,13 +30,22 @@ export default function Home() {
 
     const refs = contentRefs.current;
     refs.forEach((ref) => {
-      if (ref) observer.observe(ref);
+      if (ref && ref.isConnected) {
+        observer.observe(ref);
+      }
     });
 
     return () => {
       refs.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
+        if (ref && ref.isConnected) {
+          try {
+            observer.unobserve(ref);
+          } catch (error) {
+            // Element might have already been removed, ignore error
+          }
+        }
       });
+      observer.disconnect();
     };
   }, []);
 

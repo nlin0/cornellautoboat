@@ -62,61 +62,61 @@ export default function Media() {
       {/* Header Section with Polaroids */}
       <div className={styles.mediaIntro}>
         <div className={styles.polaroidContainer}>
-          <div 
-            className={styles.polaroid} 
-            style={{ 
-              top: '10%', 
-              left: 'calc(50% - 450px + 1%)', 
+          <div
+            className={styles.polaroid}
+            style={{
+              top: '10%',
+              left: 'calc(50% - 450px + 1%)',
               transform: 'rotate(-8deg)'
             }}
           >
             <Image src="/clifford2.png" alt="" width={120} height={120} className={styles.polaroidImage} />
           </div>
-          <div 
-            className={styles.polaroid} 
-            style={{ 
-              top: '20%', 
-              right: 'calc(50% - 450px + 3%)', 
+          <div
+            className={styles.polaroid}
+            style={{
+              top: '20%',
+              right: 'calc(50% - 450px + 3%)',
               transform: 'rotate(12deg)'
             }}
           >
             <Image src="/clifford2.png" alt="" width={100} height={100} className={styles.polaroidImage} />
           </div>
-          <div 
-            className={styles.polaroid} 
-            style={{ 
-              bottom: '15%', 
-              left: 'calc(50% - 450px - 2%)', 
+          <div
+            className={styles.polaroid}
+            style={{
+              bottom: '15%',
+              left: 'calc(50% - 450px - 2%)',
               transform: 'rotate(-5deg)'
             }}
           >
             <Image src="/clifford2.png" alt="" width={110} height={110} className={styles.polaroidImage} />
           </div>
-          <div 
-            className={styles.polaroid} 
-            style={{ 
-              bottom: '20%', 
-              right: 'calc(50% - 450px + 4%)', 
+          <div
+            className={styles.polaroid}
+            style={{
+              bottom: '20%',
+              right: 'calc(50% - 450px + 4%)',
               transform: 'rotate(10deg)'
             }}
           >
             <Image src="/clifford2.png" alt="" width={95} height={95} className={styles.polaroidImage} />
           </div>
-          <div 
-            className={styles.polaroid} 
-            style={{ 
-              top: '50%', 
-              left: 'calc(50% - 450px - 4%)', 
+          <div
+            className={styles.polaroid}
+            style={{
+              top: '50%',
+              left: 'calc(50% - 450px - 4%)',
               transform: 'rotate(-12deg)'
             }}
           >
             <Image src="/clifford2.png" alt="" width={105} height={105} className={styles.polaroidImage} />
           </div>
-          <div 
-            className={styles.polaroid} 
-            style={{ 
-              top: '60%', 
-              right: 'calc(50% - 450px + 2%)', 
+          <div
+            className={styles.polaroid}
+            style={{
+              top: '60%',
+              right: 'calc(50% - 450px + 2%)',
               transform: 'rotate(7deg)'
             }}
           >

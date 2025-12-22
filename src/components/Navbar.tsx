@@ -46,9 +46,14 @@ export default function Navbar() {
 
   const pathname = usePathname();
 
-  // Scroll state
+  // Scroll state - hide navbar at top, show when scrolling
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      // Hide navbar when at top (scrollY < 50), show when scrolling down
+      setIsScrolled(window.scrollY > 50);
+    };
+    // Check initial scroll position
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -85,7 +90,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white/80 border-b border-gray-200 sticky z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg bg-white/80 backdrop-blur-sm' : 'shadow-sm'
+      className={`bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'shadow-lg bg-white/80 backdrop-blur-sm translate-y-0'
+          : '-translate-y-full'
         }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

@@ -8,7 +8,16 @@ export default function About() {
         <h2 className={styles.aboutTitle}>Team History</h2>
       </div>
       <div className={styles.dividerWrapper}>
-        <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
+        <Image
+          src="/dividers/divider1.svg"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
       </div>
       {/* --- TIMELINE SECTIONS --- */}
       <div className={styles.timelineContainer}>
@@ -36,7 +45,16 @@ export default function About() {
       </div>
 
       <div className={styles.dividerWrapper}>
-        <img src="/dividers/divider2.png" alt="" className={styles.divider} />
+        <Image
+          src="/dividers/divider2.png"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
       </div>
 
       {/* SECTION 2 */}
@@ -66,7 +84,16 @@ export default function About() {
       </div>
 
       <div className={styles.dividerWrapper}>
-        <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
+        <Image
+          src="/dividers/divider1.svg"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
       </div>
 
       {/* SECTION 3 */}
@@ -96,7 +123,16 @@ export default function About() {
       </div>
 
       <div className={styles.dividerWrapper}>
-        <img src="/dividers/divider2.png" alt="" className={styles.divider} />
+        <Image
+          src="/dividers/divider2.png"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
       </div>
 
       {/* SECTION 4 */}
@@ -133,7 +169,16 @@ export default function About() {
 
       {/* FULL-WIDTH DIVIDER */}
       <div className={styles.dividerWrapper}>
-        <img src="/dividers/divider1.svg" alt="" className={styles.divider} />
+        <Image
+          src="/dividers/divider1.svg"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
       </div>
 
       {/* SECTION 5 */}
@@ -158,7 +203,16 @@ export default function About() {
         </div>
       </div>
       <div className={styles.dividerWrapper}>
-        <img src="/dividers/divider2.png" alt="" className={styles.divider} />
+        <Image
+          src="/dividers/divider2.png"
+          alt=""
+          width={2400}
+          height={200}
+          className={styles.divider}
+          quality={100}
+          priority
+          aria-hidden="true"
+        />
       </div>
 
       {/* SECTION 4 */}

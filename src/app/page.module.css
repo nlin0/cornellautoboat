@@ -7,13 +7,13 @@
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: var(--primary-dark);
 }
 
 /* cornell autoboat texts */
 .homeHeroText {
-  padding-top: 105px;
   padding: 15px;
-  margin-top: 15vh;
+  margin-top: 0;
   font-size: 11vw;
   font-size: clamp(2rem, 11vw, 8rem);
   letter-spacing: -.4vw;
@@ -74,10 +74,12 @@
 .homeContent {
   position: relative;
   z-index: 0;
-  top: 8vh;
+  top: 0;
+  margin-top: 0;
   background-color: var(--primary-dark);
-  margin-bottom: 8vh;
-  padding-bottom: 4vh;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  margin-top: -1px;
 }
 
 .homeTitle2 {
@@ -237,7 +239,8 @@
 
 .heroHomeImage {
   object-fit: cover;
-  object-position: center -180px;
+  object-position: center top;
+  min-height: 180vh;
 }
 
 .aboutCrewSection {
@@ -485,12 +488,29 @@
   z-index: -1;
 }
 
+.heroHome {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+  min-height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--primary-dark);
+}
+
 .heroHomeContent {
   position: relative;
   z-index: 1;
   color: var(--white);
-  padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translateY(-8rem);
 }
 
 .content {
@@ -598,9 +618,8 @@
   }
 
   .heroHomeImage {
-    object-position: center -280px;
+    object-position: center top;
     object-fit: cover;
-    /* still fills container */
   }
 
   .homeHeroText {
@@ -614,30 +633,6 @@
 
 }
 
-/* FULL SCREEN VIEW */
-@media (min-width: 1400px) {
-
-  /* HOMEPAGE */
-  .homeHeroBoat {
-    display: flex;
-    margin-top: 2rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .homeHeroText {
-    margin-top: 1rem;
-  }
-
-  .homeContent {
-    top: 28vh;
-  }
-
-  .cliffordBoat {
-    width: 68vw;
-    min-width: 480px;
-  }
-}
 
 /* Boat Modal Popup */
 .modalOverlay {
