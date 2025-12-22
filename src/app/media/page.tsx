@@ -124,9 +124,7 @@ export default function Media() {
           </div>
         </div>
         <h1 className={styles.mediaTitle}>Media Gallery</h1>
-        <p className={styles.mediaSubtitle}>
-          Capturing our journey in autonomous marine robotics
-        </p>
+
       </div>
 
       <div className={styles.dividerWrapper}>
