@@ -55,9 +55,8 @@ export default function Home() {
 
         <div className={styles.heroHomeContent}>
           <div
-            className={`${styles.homeHeroText} ${
-              isVisible ? styles.fadeInDown : ''
-            }`}
+            className={`${styles.homeHeroText} ${isVisible ? styles.fadeInDown : ''
+              }`}
           >
             <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
@@ -140,17 +139,15 @@ export default function Home() {
                     Key projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${
-                      isDesignOpen ? styles.dropdownIconOpen : ''
-                    }`}
+                    className={`${styles.dropdownIcon} ${isDesignOpen ? styles.dropdownIconOpen : ''
+                      }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${
-                    isDesignOpen ? styles.dropdownContentOpen : ''
-                  }`}
+                  className={`${styles.dropdownContent} ${isDesignOpen ? styles.dropdownContentOpen : ''
+                    }`}
                 >
                   <ul className={styles.descrList}>
                     <li>
@@ -267,17 +264,15 @@ export default function Home() {
                     Current projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${
-                      isResearchOpen ? styles.dropdownIconOpen : ''
-                    }`}
+                    className={`${styles.dropdownIcon} ${isResearchOpen ? styles.dropdownIconOpen : ''
+                      }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${
-                    isResearchOpen ? styles.dropdownContentOpen : ''
-                  }`}
+                  className={`${styles.dropdownContent} ${isResearchOpen ? styles.dropdownContentOpen : ''
+                    }`}
                 >
                   <ul className={styles.descrList}>
                     <li>Holonomic propulsion system</li>
