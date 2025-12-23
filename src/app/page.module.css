@@ -651,12 +651,12 @@
   }
 
   .heroHomeContent {
-    transform: translateY(-4rem);
+    transform: translateY(-2rem);
     padding: 2rem 1rem;
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
 
   .homeHeroText {
