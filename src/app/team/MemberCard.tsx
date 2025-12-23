@@ -1,12 +1,46 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './team.module.css';
 import type { TeamMember } from './teamdata';
+import { getMemberImage } from './teamdata';
 
 interface MemberCardProps {
   member: TeamMember;
 }
 
 export default function MemberCard({ member }: MemberCardProps) {
+  const [imageSrc, setImageSrc] = useState(getMemberImage(member));
+  const [attemptCount, setAttemptCount] = useState(0);
+
+  const handleImageError = () => {
+    const firstName = member.name.split(' ')[0].trim();
+    
+    // Try different variations:
+    // 1. FirstName.JPG (already tried)
+    // 2. FirstName.jpg
+    // 3. FirstName .JPG (with space, for cases like "Kevin .JPG")
+    // 4. FirstName.PNG
+    // 5. FirstName.png
+    // Then fallback to placeholder
+    
+    const variations = [
+      `/team/teamPhotos/${firstName}.jpg`,
+      `/team/teamPhotos/${firstName} .JPG`,
+      `/team/teamPhotos/${firstName}.PNG`,
+      `/team/teamPhotos/${firstName}.png`,
+      `/team/teamPhotos/${firstName}.jpeg`,
+      `/team/teamPhotos/${firstName}.JPEG`,
+      '/team/ABteam2.JPG', // Final fallback to placeholder
+    ];
+
+    if (attemptCount < variations.length - 1) {
+      setImageSrc(variations[attemptCount + 1]);
+      setAttemptCount(attemptCount + 1);
+    }
+  };
+
   return (
     <article className={styles.memberCardContainer} role="listitem">
       <div className={styles.memberCardInner}>
@@ -30,11 +64,14 @@ export default function MemberCard({ member }: MemberCardProps) {
           <div className={styles.ticketPhotoSection}>
             <div className={styles.ticketPhotoWrapper}>
               <Image
-                src={member.image ?? '/team/ABteam2.JPG'}
+                src={imageSrc}
                 alt={`${member.name}, ${member.role}`}
                 fill
                 className={styles.ticketPhoto}
-                priority
+                loading="lazy"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                onError={handleImageError}
               />
             </div>
           </div>

@@ -66,10 +66,11 @@ export default function Home() {
           src="/background.svg"
           alt="Cornell AutoBoat team background"
           fill
-          quality={100}
+          quality={90}
           priority
           className={styles.heroHomeImage}
           style={{ objectFit: 'cover' }}
+          sizes="100vw"
         />
 
         <div className={styles.heroHomeContent}>
@@ -242,6 +243,9 @@ export default function Home() {
                   fill
                   className={styles.techImage}
                   style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: '30px' }}
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -367,6 +371,9 @@ export default function Home() {
                   fill
                   className={styles.techImage}
                   style={{ objectFit: 'cover', borderRadius: '30px' }}
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -444,6 +451,9 @@ export default function Home() {
                   fill
                   className={styles.techImage}
                   style={{ objectFit: 'cover', borderRadius: '30px' }}
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -473,6 +483,9 @@ export default function Home() {
                 width={1200}
                 height={800}
                 className={styles.sponsorsImage}
+                loading="lazy"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               />
             </div>
           </div>
