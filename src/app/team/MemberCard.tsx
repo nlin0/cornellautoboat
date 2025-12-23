@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './team.module.css';
 import type { TeamMember } from './teamdata';
@@ -11,23 +11,33 @@ interface MemberCardProps {
 }
 
 export default function MemberCard({ member }: MemberCardProps) {
-  // Check if this member should use placeholder directly
-  const initialImage = getMemberImage(member);
-  const [imageSrc, setImageSrc] = useState(initialImage);
-  const [imageError, setImageError] = useState(initialImage === '/team/ABteam2.JPG');
+  const [imageSrc, setImageSrc] = useState(getMemberImage(member));
+  const [attemptCount, setAttemptCount] = useState(0);
 
-  useEffect(() => {
-    // Reset error state when member changes
-    const newImage = getMemberImage(member);
-    setImageSrc(newImage);
-    setImageError(newImage === '/team/ABteam2.JPG');
-  }, [member]);
+  const handleImageError = () => {
+    const firstName = member.name.split(' ')[0].trim();
 
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    // Only try fallback if we haven't already
-    if (!imageError && imageSrc !== '/team/ABteam2.JPG') {
-      setImageSrc('/team/ABteam2.JPG');
-      setImageError(true);
+    // Try different variations:
+    // 1. FirstName.JPG (already tried)
+    // 2. FirstName.jpg
+    // 3. FirstName .JPG (with space, for cases like "Kevin .JPG")
+    // 4. FirstName.PNG
+    // 5. FirstName.png
+    // Then fallback to placeholder
+
+    const variations = [
+      `/team/teamPhotos/${firstName}.jpg`,
+      `/team/teamPhotos/${firstName} .JPG`,
+      `/team/teamPhotos/${firstName}.PNG`,
+      `/team/teamPhotos/${firstName}.png`,
+      `/team/teamPhotos/${firstName}.jpeg`,
+      `/team/teamPhotos/${firstName}.JPEG`,
+      '/team/ABteam2.JPG', // Final fallback to placeholder
+    ];
+
+    if (attemptCount < variations.length - 1) {
+      setImageSrc(variations[attemptCount + 1]);
+      setAttemptCount(attemptCount + 1);
     }
   };
 
@@ -53,30 +63,14 @@ export default function MemberCard({ member }: MemberCardProps) {
           {/* Large Member Photo - Dominant Element */}
           <div className={styles.ticketPhotoSection}>
             <div className={styles.ticketPhotoWrapper}>
-              {imageError || imageSrc === '/team/ABteam2.JPG' ? (
-                <img
-                  src="/team/ABteam2.JPG"
-                  alt={`${member.name}, ${member.role}`}
-                  className={styles.ticketPhoto}
-                  style={{
-                    objectFit: 'cover',
-                    width: '100%',
-                    height: '100%',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                  }}
-                />
-              ) : (
-                <Image
-                  src={imageSrc}
-                  alt={`${member.name}, ${member.role}`}
-                  fill
-                  className={styles.ticketPhoto}
-                  priority
-                  onError={handleImageError}
-                />
-              )}
+              <Image
+                src={imageSrc}
+                alt={`${member.name}, ${member.role}`}
+                fill
+                className={styles.ticketPhoto}
+                priority
+                onError={handleImageError}
+              />
             </div>
           </div>
 

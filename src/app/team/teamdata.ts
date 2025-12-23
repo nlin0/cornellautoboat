@@ -12,38 +12,11 @@ export type TeamMember = {
 };
 
 /**
- * Gets the image path for a team member based on their name.
- * Automatically checks for <firstName>.JPG, <firstName>.jpg, <firstName>.PNG, or <firstName>.png
- * in the /team/teamPhotos/ directory.
- * Falls back to placeholder if image doesn't exist.
+ * Gets the image path for a team member.
+ * Returns the image path if set, otherwise returns placeholder.
  */
 export function getMemberImage(member: TeamMember): string {
-  // If image is explicitly set, use it
-  if (member.image) {
-    return member.image;
-  }
-
-  // Extract first name from full name and handle special cases
-  let firstName = member.name.split(' ')[0];
-  
-  // Handle special cases where the file might have a different name
-  // or handle names with special characters
-  firstName = firstName.trim();
-  
-  // List of known members without images (will default to placeholder)
-  const membersWithoutImages = [
-    'Nick', 'Benjamin', 'Jolly', 'Ireanne', 'Timothy', 'Fanhao',
-    'Tejesh', 'Elise'
-  ];
-  
-  // If we know this member doesn't have an image, return placeholder directly
-  if (membersWithoutImages.includes(firstName)) {
-    return '/team/ABteam2.JPG';
-  }
-  
-  // Return the most common path - Next.js Image will handle errors gracefully
-  // We'll use .JPG as the default (most common in the folder)
-  return `/team/teamPhotos/${firstName}.JPG`;
+  return member.image || '/team/ABteam2.JPG';
 }
 
 export type Subteam = {
@@ -60,7 +33,7 @@ export const teamData: Subteam[] = [
     members: [
       {
         name: 'Neha Naveen',
-        image: '/team/neha1.png',
+        image: '/team/teamPhotos/Neha.JPG',
         role: 'Full Team Lead',
         subteam: 'Software',
         year: '2027',
@@ -73,7 +46,7 @@ export const teamData: Subteam[] = [
       },
       {
         name: 'Thomas Wells',
-        image: '/team/thomas1.png',
+        image: '/team/teamPhotos/Thomas.JPG',
         role: 'Full Team Lead',
         subteam: 'Hardware',
         year: '2027',
@@ -103,6 +76,7 @@ export const teamData: Subteam[] = [
         major: 'Mechanical Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Rajarshi.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -115,6 +89,7 @@ export const teamData: Subteam[] = [
         major: 'Materials Science & Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Findlay.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -151,6 +126,7 @@ export const teamData: Subteam[] = [
         major: 'Mechanical Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Emily.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -175,6 +151,7 @@ export const teamData: Subteam[] = [
         major: 'Mechanical Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Brianna.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -187,6 +164,7 @@ export const teamData: Subteam[] = [
         major: 'Environment and Sustainability',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Calvin.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -247,6 +225,7 @@ export const teamData: Subteam[] = [
         major: 'Electrical and Computer Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Stephanie.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -284,6 +263,7 @@ export const teamData: Subteam[] = [
         major: 'ORIE',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Nick.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -296,6 +276,7 @@ export const teamData: Subteam[] = [
         major: 'Mechanical Engineering',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Bilal.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -330,6 +311,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Avishi.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -342,6 +324,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science & Physics',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Raymond.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -366,6 +349,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Kiran.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -390,6 +374,7 @@ export const teamData: Subteam[] = [
         major: 'Mechanical Engineering & CS',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/James.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -462,6 +447,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science & Math',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Aryan.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -474,6 +460,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Sorong.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -486,6 +473,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Phoebe.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -498,6 +486,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Kaustav.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -510,6 +499,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Harry.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -558,6 +548,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Evan.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
       {
@@ -570,6 +561,7 @@ export const teamData: Subteam[] = [
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Vivien.JPG',
         portfolio: 'https://www.cornellautoboat.com/',
       },
     ],
@@ -591,7 +583,7 @@ export const teamData: Subteam[] = [
         major: 'Economics',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
-        image: '/team/Jessie.png',
+        image: '/team/teamPhotos/Jessie.jpg',
       },
       {
         name: 'Nicole Lin',
@@ -602,6 +594,7 @@ export const teamData: Subteam[] = [
         hometown: 'Omaha, NE',
         major: 'Computer Science',
         linkedin: 'https://www.linkedin.com/in/nicolejlin/',
+        image: '/team/teamPhotos/Nicole.jpg',
       },
       {
         name: 'Preston Garton',
@@ -613,6 +606,7 @@ export const teamData: Subteam[] = [
         major: 'History',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
+        image: '/team/teamPhotos/Preston.JPG',
       },
       {
         name: 'Kathy Zhang',
