@@ -91,7 +91,7 @@
 }
 
 .divider {
-  object-fit: cover;
+  object-fit: cover; 
   width: 100vw;
   max-height: 400px;
   display: block;
@@ -140,13 +140,13 @@
 }
 
 .techVideo {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
+  width: 100%;       
+  max-width: 1000px;  
+  height: auto;      
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: cover; 
   display: block;
-  margin: 0 auto;
+  margin: 0 auto;   
 }
 
 .sectionContent {
@@ -182,16 +182,16 @@
 .linkContainer {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1rem; 
 }
 
 .techButton {
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem; 
   background-color: var(--primary);
   color: white;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1rem; 
   transition: all 0.2s ease-in-out;
   margin-bottom: 3rem;
 }

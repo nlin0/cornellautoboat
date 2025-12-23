@@ -134,7 +134,15 @@ export default function Home() {
             }}
           >
             <div className={styles.container}>
-              <div className={styles.techImg}></div>
+              <div className={styles.techImg}>
+                <Image
+                  src="/home/design.png"
+                  alt="Design"
+                  fill
+                  className={styles.techImage}
+                  style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: '30px' }}
+                />
+              </div>
             </div>
             <div className={styles.container}>
               <div className={styles.descrBlock}>
@@ -228,7 +236,17 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.container}>
-              <div className={styles.techImg}></div>
+              <div className={`${styles.techImg} ${styles.techImgVideo}`}>
+                <video
+                  src="/home/manufacturing.mp4"
+                  className={styles.techVideo}
+                  controls
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', borderRadius: '30px' }}
+                />
+              </div>
             </div>
           </div>
 
@@ -239,7 +257,15 @@ export default function Home() {
             }}
           >
             <div className={styles.container}>
-              <div className={styles.techImg}></div>
+              <div className={styles.techImg}>
+                <Image
+                  src="/home/testing.jpg"
+                  alt="Testing"
+                  fill
+                  className={styles.techImage}
+                  style={{ objectFit: 'cover', borderRadius: '30px' }}
+                />
+              </div>
             </div>
             <div className={styles.container}>
               <div className={styles.descrBlock}>
@@ -307,7 +333,15 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.container}>
-              <div className={styles.techImg}></div>
+              <div className={styles.techImg}>
+                <Image
+                  src="/home/research.png"
+                  alt="Research"
+                  fill
+                  className={styles.techImage}
+                  style={{ objectFit: 'cover', borderRadius: '30px' }}
+                />
+              </div>
             </div>
           </div>
         </section>
