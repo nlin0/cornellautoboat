@@ -180,7 +180,7 @@ export default function Navbar() {
                   : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                   }`}
               >
-                Technical Info
+                Technical
                 <svg
                   className={`w-4 h-4 transition-transform duration-300 ${isTechnicalOpenDesktop ? 'rotate-180' : ''
                     }`}
@@ -295,7 +295,7 @@ export default function Navbar() {
             onClick={toggleTechnicalMobile}
             className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
           >
-            Technical Info
+            Technical
           </button>
 
           {isTechnicalOpen && (
