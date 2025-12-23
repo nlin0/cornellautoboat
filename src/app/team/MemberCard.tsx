@@ -15,7 +15,15 @@ export default function MemberCard({ member }: MemberCardProps) {
   const [attemptCount, setAttemptCount] = useState(0);
 
   const handleImageError = () => {
-    const firstName = member.name.split(' ')[0].trim();
+
+    const firstName = member.name
+      .trim()
+      .toLowerCase()
+      .replace(/['’]/g, "")      // remove apostrophes
+      .replace(/[^a-z0-9]+/g, "_") // spaces, hyphens → underscore
+      .replace(/^_+|_+$/g, "");   // trim leading/trailing _
+
+    console.log("jolly here");    
 
     // Try different variations:
     // 1. FirstName.JPG (already tried)
