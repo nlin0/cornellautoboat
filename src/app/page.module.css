@@ -289,9 +289,12 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
   gap: 3rem;
   padding: 0 5vw;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 .aboutCrewTitle {
@@ -330,6 +333,376 @@
   color: var(--light-gray);
 }
 
+/* TEAM VIDEO SECTION */
+.teamVideoSection {
+  width: 100%;
+  padding: 0 5vw 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-dark);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-top: -1rem;
+}
+
+.teamVideoSection.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.teamVideoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: var(--white);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.teamVideoButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.teamVideoButton:active {
+  transform: translateY(0);
+}
+
+.teamVideoButtonIcon {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.teamVideoButtonIconOpen {
+  transform: rotate(180deg);
+}
+
+.teamVideoDropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+  opacity: 0;
+  margin-top: 0;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.teamVideoDropdownOpen {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 0.5rem;
+  transition: max-height 0.6s ease-in, opacity 0.4s ease-in 0.1s, margin-top 0.4s ease-in 0.1s;
+}
+
+.teamVideoContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 2px #0a0a0a,
+    inset 0 1px 5px rgba(255, 255, 255, 0.05),
+    inset 0 -1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.teamVideoContainer::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 8px;
+  background: linear-gradient(90deg, #333 0%, #444 50%, #333 100%);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.teamVideo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  display: block;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+  background: #000;
+  border: 8px solid #0a0a0a;
+}
+
+/* COMPETITION CYCLE SECTION */
+.competitionCycleSection {
+  width: 100%;
+  padding: 4rem 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  position: relative;
+}
+
+.competitionCycleSection.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.competitionCycleSection.fadeInUp .competitionCycleContent {
+  animation: floatTicket 6s ease-in-out infinite;
+}
+
+@keyframes floatTicket {
+
+  0%,
+  100% {
+    transform: rotate(-1.5deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(1.5deg) translateY(-10px);
+  }
+}
+
+.competitionCycleContent {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  background: white;
+  border: 2px solid rgba(149, 3, 3, 0.4);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  position: relative;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(149, 3, 3, 0.1) inset;
+  transform: rotate(-1deg);
+  overflow: hidden;
+}
+
+.competitionCycleContent::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: var(--primary-dark);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(149, 3, 3, 0.3),
+    5px 0 0 0 var(--primary-dark);
+}
+
+.competitionCycleContent::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: var(--primary-dark);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 2px rgba(149, 3, 3, 0.3),
+    -5px 0 0 0 var(--primary-dark);
+}
+
+.competitionCycleTitle {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #950303;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.competitionCycleSubtitle {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  color: #950303;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+.cycleLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cycleLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: #950303;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(149, 3, 3, 0.2);
+  border-radius: 0;
+  border-right: none;
+  position: relative;
+  white-space: nowrap;
+  background: transparent;
+  box-shadow: 0 0 0 rgba(109, 197, 243, 0);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cycleLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(109, 197, 243, 0.4) 50%,
+      transparent 100%);
+  animation: lightStreak 3s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes lightStreak {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.cycleLink:nth-child(1)::before {
+  animation-delay: 0s;
+}
+
+.cycleLink:nth-child(2)::before {
+  animation-delay: 0.5s;
+}
+
+.cycleLink:nth-child(3)::before {
+  animation-delay: 1s;
+}
+
+.cycleLink:nth-child(4)::before {
+  animation-delay: 1.5s;
+}
+
+.cycleLink:hover {
+  transform: translateY(-3px);
+}
+
+.cycleLink:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.cycleLink:last-child {
+  border-right: 1px solid rgba(149, 3, 3, 0.2);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.cycleLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(149, 3, 3, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.cycleLink:hover::after {
+  opacity: 1;
+}
+
+.cycleLink:hover {
+  color: #950303;
+  border-color: rgba(149, 3, 3, 0.5);
+  background: rgba(149, 3, 3, 0.05);
+  box-shadow:
+    0 4px 12px rgba(149, 3, 3, 0.2),
+    inset 0 0 15px rgba(149, 3, 3, 0.05);
+}
+
+.cycleLink:active {
+  transform: translateY(-1px);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cycleIcon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #950303;
+  position: relative;
+  z-index: 1;
+}
+
+.cycleLink:hover .cycleIcon {
+  color: #950303;
+  transform: scale(1.1) translateY(-2px);
+}
+
+.cycleLink span {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.cycleLink:hover span {
+  transform: translateX(2px);
+}
 
 .blockSection {
   color: var(--white);
@@ -857,6 +1230,97 @@
   .aboutCrewDescription .descr {
     font-size: clamp(0.95rem, 3vw, 1.1rem);
     line-height: 1.7;
+  }
+
+  .teamVideoSection {
+    padding: 0 1rem 1rem;
+    margin-top: -0.5rem;
+  }
+
+  .teamVideoButton {
+    padding: 0.75rem 1.25rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .teamVideoContainer {
+    border-radius: 12px;
+  }
+
+  .teamVideoDropdownOpen {
+    margin-top: 0.5rem;
+  }
+
+  .competitionCycleSection {
+    padding: 2rem 1rem;
+    background-color: var(--primary-dark);
+  }
+
+  .competitionCycleSection.fadeInUp .competitionCycleContent {
+    animation: floatTicketMobile 6s ease-in-out infinite;
+  }
+
+  @keyframes floatTicketMobile {
+
+    0%,
+    100% {
+      transform: rotate(-0.5deg) translateY(0);
+    }
+
+    50% {
+      transform: rotate(0.5deg) translateY(-8px);
+    }
+  }
+
+  .competitionCycleContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .competitionCycleContent::before,
+  .competitionCycleContent::after {
+    display: none;
+  }
+
+  .competitionCycleTitle {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .competitionCycleSubtitle {
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  .cycleLinks {
+    gap: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cycleLink {
+    justify-content: center;
+    padding: 1rem;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    border: 1px solid rgba(109, 197, 243, 0.3);
+    border-bottom: none;
+    border-radius: 0;
+  }
+
+  .cycleLink:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .cycleLink:last-child {
+    border-bottom: 1px solid rgba(109, 197, 243, 0.3);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .cycleIcon {
+    width: 18px;
+    height: 18px;
   }
 
   .sectionContent {

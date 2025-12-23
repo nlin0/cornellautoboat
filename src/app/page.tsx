@@ -4,12 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import './globals.css';
+import { FlaskConical, DraftingCompass, Factory, Lightbulb } from 'lucide-react';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDesignOpen, setIsDesignOpen] = useState(false);
   const [isResearchOpen, setIsResearchOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -127,11 +129,110 @@ export default function Home() {
             </div>
           </div>
 
+          {/* TEAM VIDEO */}
           <div
-            className={styles.sectionContent}
+            className={styles.teamVideoSection}
             ref={(el) => {
               contentRefs.current[1] = el;
             }}
+          >
+            <button
+              className={styles.teamVideoButton}
+              onClick={() => setIsVideoOpen(!isVideoOpen)}
+              aria-expanded={isVideoOpen}
+            >
+              <span>Watch our team video!</span>
+              <span className={`${styles.teamVideoButtonIcon} ${isVideoOpen ? styles.teamVideoButtonIconOpen : ''}`}>
+                ▼
+              </span>
+            </button>
+            <div className={`${styles.teamVideoDropdown} ${isVideoOpen ? styles.teamVideoDropdownOpen : ''}`}>
+              <div className={styles.teamVideoContainer}>
+                <iframe
+                  className={styles.teamVideo}
+                  src="https://www.youtube.com/embed/diU5pqHvO5w"
+                  title="Cornell AutoBoat Team Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          {/* COMPETITION CYCLE SECTION */}
+          <div
+            className={styles.competitionCycleSection}
+            ref={(el) => {
+              contentRefs.current[2] = el as HTMLDivElement | null;
+            }}
+          >
+            <div className={styles.competitionCycleContent}>
+              <h2 className={styles.competitionCycleTitle}>
+                The 2025-2026 Competition Cycle
+              </h2>
+              <p className={styles.competitionCycleSubtitle}>
+                Incremental hardware updates, significant software changes, and an
+                emphasis on testing.
+              </p>
+              <div className={styles.cycleLinks}>
+                <a
+                  href="#testing"
+                  className={styles.cycleLink}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector('[data-section="testing"]');
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <FlaskConical className={styles.cycleIcon} />
+                  <span>Testing</span>
+                </a>
+                <a
+                  href="#design"
+                  className={styles.cycleLink}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector('[data-section="design"]');
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <DraftingCompass className={styles.cycleIcon} />
+                  <span>Design</span>
+                </a>
+                <a
+                  href="#manufacturing"
+                  className={styles.cycleLink}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector('[data-section="manufacturing"]');
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <Factory className={styles.cycleIcon} />
+                  <span>Manufacturing</span>
+                </a>
+                <a
+                  href="#research"
+                  className={styles.cycleLink}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector('[data-section="research"]');
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                >
+                  <Lightbulb className={styles.cycleIcon} />
+                  <span>Research</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={styles.sectionContent}
+            ref={(el) => {
+              contentRefs.current[3] = el as HTMLDivElement | null;
+            }}
+            data-section="design"
           >
             <div className={styles.container}>
               <div className={styles.techImg}>
@@ -216,8 +317,9 @@ export default function Home() {
           <div
             className={styles.sectionContent}
             ref={(el) => {
-              contentRefs.current[2] = el;
+              contentRefs.current[4] = el as HTMLDivElement | null;
             }}
+            data-section="manufacturing"
           >
             <div className={styles.container}>
               <div className={styles.descrBlock}>
@@ -253,8 +355,9 @@ export default function Home() {
           <div
             className={styles.sectionContent}
             ref={(el) => {
-              contentRefs.current[3] = el;
+              contentRefs.current[5] = el as HTMLDivElement | null;
             }}
+            data-section="testing"
           >
             <div className={styles.container}>
               <div className={styles.techImg}>
@@ -287,8 +390,9 @@ export default function Home() {
           <div
             className={styles.sectionContent}
             ref={(el) => {
-              contentRefs.current[4] = el;
+              contentRefs.current[6] = el as HTMLDivElement | null;
             }}
+            data-section="research"
           >
             <div className={styles.container}>
               <div className={styles.descrBlock}>
@@ -350,7 +454,7 @@ export default function Home() {
         <section
           className={styles.sponsorsSection}
           ref={(el) => {
-            contentRefs.current[5] = el as HTMLDivElement | null;
+            contentRefs.current[7] = el as HTMLDivElement | null;
           }}
         >
           <div className={styles.sponsorsContent}>
