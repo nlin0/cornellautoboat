@@ -75,11 +75,47 @@
   position: relative;
   z-index: 0;
   top: 0;
-  margin-top: 0;
+  margin-top: -1px;
   background-color: var(--primary-dark);
   margin-bottom: 0;
   padding-bottom: 0;
-  margin-top: -1px;
+}
+
+/* Responsive gap - increases with screen size, decreases with smaller screens (excluding mobile) */
+@media (min-width: 701px) and (max-width: 999px) {
+  .homeContent {
+    margin-top: -300px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .homeContent {
+    margin-top: -200px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .homeContent {
+    margin-top: -100px;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .homeContent {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .homeContent {
+    margin-top: 200px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .homeContent {
+    margin-top: 300px;
+  }
 }
 
 .homeTitle2 {
@@ -537,7 +573,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  transform: translateY(-12rem);
+  transform: translateY(-10rem);
 }
 
 .content {
@@ -646,17 +682,17 @@
     object-position: center top;
     object-fit: cover;
     min-height: 100vh;
-    min-width: 100%;
-    /* Ensure full width on mobile */
+    min-width: 800px;
+    /* Maintain size at 800px viewport width */
   }
 
   .heroHomeContent {
-    transform: translateY(-2rem);
+    transform: translateY(0);
     padding: 2rem 1rem;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 4rem;
+    padding-top: 0;
   }
 
   .homeHeroText {

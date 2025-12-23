@@ -42,16 +42,28 @@ export default function Navbar() {
   const [isTechnicalOpen, setIsTechnicalOpen] = useState(false);
   const [isTechnicalOpenDesktop, setIsTechnicalOpenDesktop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
-  // Scroll state - hide navbar at top, show when scrolling (only on home page)
+  // Check if mobile viewport
   useEffect(() => {
-    // Only apply scroll behavior on home page
-    if (!isHomePage) {
-      setIsScrolled(true); // Always show on non-home pages
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 700);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Scroll state - hide navbar at top, show when scrolling (only on home page)
+  // On mobile, always show navbar (persistent)
+  useEffect(() => {
+    // Always show on mobile or non-home pages
+    if (isMobile || !isHomePage) {
+      setIsScrolled(true); // Always show on mobile or non-home pages
       return;
     }
 
@@ -63,7 +75,7 @@ export default function Navbar() {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage]);
+  }, [isHomePage, isMobile]);
 
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
   const closeMenu = useCallback(() => {
