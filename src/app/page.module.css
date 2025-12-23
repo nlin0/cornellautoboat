@@ -529,7 +529,91 @@
   transform: translateY(0);
 }
 
+/* SPONSORS SECTION */
+.sponsorsSection {
+  background-color: var(--primary);
+  padding: 4rem 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
+.sponsorsSection.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sponsorsContent {
+  max-width: 1500px;
+  width: 100%;
+  text-align: center;
+}
+
+.sponsorsTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.sponsorsDescription {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.8;
+  color: var(--white);
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.sponsorsImageContainer {
+  position: relative;
+  display: inline-block;
+  max-width: 90%;
+  margin: 0 auto;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 20px;
+}
+
+.sponsorsImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: white;
+}
+
+/* Tape strips */
+.tapeTape1,
+.tapeTape2 {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.tapeTape1 {
+  top: -15px;
+  left: 30px;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tapeTape2 {
+  top: -15px;
+  right: 30px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 /* GENERAL PAGES */
 .heroContent {
@@ -880,6 +964,39 @@
 
   .redDividerBox {
     height: 150px;
+  }
+
+  .sponsorsSection {
+    padding: 2rem 1rem;
+  }
+
+  .sponsorsContent {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .sponsorsTitle {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .sponsorsDescription {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-bottom: 2rem;
+  }
+
+  .sponsorsImageContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sponsorsImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .tapeTape1,
+  .tapeTape2 {
+    display: none;
   }
 }
 

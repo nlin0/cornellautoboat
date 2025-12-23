@@ -345,6 +345,34 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* SPONSORS SECTION */}
+        <section
+          className={styles.sponsorsSection}
+          ref={(el) => {
+            contentRefs.current[5] = el as HTMLDivElement | null;
+          }}
+        >
+          <div className={styles.sponsorsContent}>
+            <h2 className={styles.sponsorsTitle}>Our Network</h2>
+            <p className={styles.sponsorsDescription}>
+              For many of our members, AutoBoat has served as a gateway to
+              incredible opportunities in industry. Check out some of companies
+              our current members and alumni have worked at.
+            </p>
+            <div className={styles.sponsorsImageContainer}>
+              <div className={styles.tapeTape1}></div>
+              <div className={styles.tapeTape2}></div>
+              <Image
+                src="/home/sponsors.jpg"
+                alt="Our Network - Companies our members and alumni have worked at"
+                width={1200}
+                height={800}
+                className={styles.sponsorsImage}
+              />
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* BOAT MODEL POPUP */}
