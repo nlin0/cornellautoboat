@@ -39,8 +39,6 @@ export default function About() {
               width={400}
               height={300}
               className={styles.timelineImage}
-              loading="lazy"
-              quality={85}
             />
           </div>
         </div>
@@ -80,8 +78,6 @@ export default function About() {
               width={500}
               height={500}
               className={styles.timelineImage}
-              loading="lazy"
-              quality={85}
             />
           </div>
         </div>
@@ -121,8 +117,6 @@ export default function About() {
               width={400}
               height={300}
               className={styles.timelineImage}
-              loading="lazy"
-              quality={85}
             />
           </div>
         </div>
@@ -168,8 +162,6 @@ export default function About() {
               width={400}
               height={300}
               className={styles.timelineImage}
-              loading="lazy"
-              quality={85}
             />
           </div>
         </div>
@@ -242,8 +234,6 @@ export default function About() {
               width={400}
               height={300}
               className={styles.timelineImage}
-              loading="lazy"
-              quality={85}
             />
           </div>
         </div>

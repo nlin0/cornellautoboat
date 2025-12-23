@@ -30,6 +30,17 @@ export function getMemberImage(member: TeamMember): string {
   // or handle names with special characters
   firstName = firstName.trim();
   
+  // List of known members without images (will default to placeholder)
+  const membersWithoutImages = [
+    'Nick', 'Benjamin', 'Jolly', 'Ireanne', 'Timothy', 'Fanhao',
+    'Tejesh', 'Elise'
+  ];
+  
+  // If we know this member doesn't have an image, return placeholder directly
+  if (membersWithoutImages.includes(firstName)) {
+    return '/team/ABteam2.JPG';
+  }
+  
   // Return the most common path - Next.js Image will handle errors gracefully
   // We'll use .JPG as the default (most common in the folder)
   return `/team/teamPhotos/${firstName}.JPG`;
@@ -556,18 +567,6 @@ export const teamData: Subteam[] = [
         subteam: 'Perception',
         year: '2028',
         hometown: 'Palo Alto, California',
-        major: 'Computer Science',
-        linkedin:
-          'https://www.linkedin.com/company/cornell-university-autoboat/',
-        portfolio: 'https://www.cornellautoboat.com/',
-      },
-      {
-        name: 'Kevin Peng',
-        email: 'kcp52@cornell.edu',
-        role: 'Perception',
-        subteam: 'Perception',
-        year: '2028',
-        hometown: 'Potomac, MD',
         major: 'Computer Science',
         linkedin:
           'https://www.linkedin.com/company/cornell-university-autoboat/',
