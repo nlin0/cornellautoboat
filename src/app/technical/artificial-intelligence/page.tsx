@@ -16,7 +16,7 @@ export default function ArtificialIntelligence() {
           brainstorming efficient strategies to tackle the competition tasks and
           transitions between tasks. This group works the most closely with our
           codebase, continuously improving it each year by focusing on great
-          code quality, efficiency, and test coverage
+          code quality, efficiency, and test coverage.
         </p>
         <p className={`${styles.descr} ${styles.descrWithMargin}`}>
           The job of the AI team can be seen from an input/output perspective:
@@ -45,14 +45,13 @@ export default function ArtificialIntelligence() {
         </p>
 
         <video
-  src="/technical/AI-VID.mov"
-  className={styles.techVideo}
-  controls
-  loop
-  muted
-  playsInline
-/>
-
+          src="/technical/AI-VID.mov"
+          className={styles.techVideo}
+          controls
+          loop
+          muted
+          playsInline
+        />
 
         <p className={styles.descr}>
           Future goals of the AI team include improving our collision detection

@@ -54,8 +54,17 @@ export default function RosAndSimulations() {
 
         <div className={styles.techImg}>
           <Image
-            src="/technical/ROS2.png"
-            alt="ROS2"
+            src="/technical/ROS4.png"
+            alt="ROS4"
+            width={600}
+            height={500}
+            className={styles.techImage}
+          />
+        </div>
+          <div className={styles.techImg}>
+          <Image
+            src="/technical/ROS5.png"
+            alt="ROS5"
             width={600}
             height={500}
             className={styles.techImage}

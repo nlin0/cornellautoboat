@@ -10,21 +10,21 @@ export default function Perception() {
       <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>
-          The Perception team is responsible for translating the boat’s
-          surroundings, position, and orientation into information useful for
-          decision making. This encompasses both computer vision and sensors.
+          The Perception team is responsible for classifying objects detected by
+          our LIDAR system.
         </p>
 
         <h3 className={styles.techHeading}>Computer Vision</h3>
         <p className={styles.descr}>
-          Members working on computer vision spend time researching neural
-          networks, building and training an object detection model, augmenting
-          and annotating data, and integrating the model with our ZED 2i camera.
-          The CV group had one main goal this semester: to make our model more
-          robust. Some of the annotations were inaccurate leading the model to
-          recognize objects incorrectly. We worked on correcting these
-          annotations to ensure the model was given the best possible data to be
-          trained on.
+          This year, our perception pipeline underwent a major architectural
+          shift by integrating Light Detection and Ranging (LIDAR) as a primary
+          detection modality alongside our existing computer vision (CV) stack.
+          Instead of relying exclusively on You Only Look Once (YOLO) neural
+          networks for both detection and classification, as we have done in
+          previous years, we now decouple these tasks across two specialized
+          subsystems: LIDAR handles object detection and localization. At the
+          same time, our CV models are used solely for classifying pre-detected
+          regions of interest.
         </p>
         <div className={styles.techImg}>
           <Image
@@ -36,25 +36,32 @@ export default function Perception() {
           />
         </div>
         <p className={styles.descr}>
-          A big project the CV group has been working on is creating a testing
-          plan to go about choosing the best YOLO model that suits our needs and
-          produces the best results. We researched each YOLO model version and
-          size and noted their advantages and disadvantages. We then went out
-          testing these YOLO model versions and sizes and ultimately saw that
-          YOLOv8 yielded the best results.
+          Our CV model combines 3 separate models: buoy classification, sign
+          classification, and beacon classification. For the buoy classification
+          model (YOLOv8 neural network), our data comprises images that we have
+          gotten from previous competitions and current testing videos that we
+          have recorded through our Zed 2i camera. For the sign classification
+          model (YOLOv8 neural network), we do have the black triangle, cross,
+          and circle image data from the last competition, but we used a public
+          TMNIST dataset for images of black font 1, 2, and 3s on a white
+          background, analogous to the numerical signs that we will see. For
+          classifying the beacons by color, we use OpenCV to get the average
+          color inside the passed ‘bounding box’ and sequentially classify it as
+          red or green.
         </p>
-        <p className={styles.descr}>
-          A future goal of the CV group is building a neural network from
-          scratch to serve as our new object detection model. There has been
-          some progress on this but it is still in its elementary development
-          phase.
-        </p>
+
         <h3 className={styles.techHeading}>Lidar</h3>
         <p className={styles.descr}>
-          The LIDAR team works on developing and implementing algorithms for
-          object detection and object avoidance using a LIDAR sensor. Our
-          detection pipeline consists of Euclidean clustering, and object
-          classification using RANSAC algorithms.
+          We expand our ROS infrastructure to support the multi-model system: we
+          start with the main_perception node, which is the central orchestrator
+          of the perception pipeline via launching and managing all
+          perception-related nodes. Requests are routed between LiDAR, the
+          classifiers’ specific nodes, and the buffer service. Using
+          synchronized timestamps across all sensor inputs, when LiDAR detects
+          an object, it will request a ‘service’ from the appropriate
+          classifier’s node to give back a classification. Synchronized
+          timestamps enable LiDAR and CV to communicate while referencing the
+          same frame.
         </p>
         <div className={styles.techImg}>
           <Image
@@ -79,7 +86,6 @@ export default function Perception() {
           image data in order to test our code despite limitations in our indoor
           and outdoor testing environments.
         </p>
-        
       </div>
     </div>
   );
