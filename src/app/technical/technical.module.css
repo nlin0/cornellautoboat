@@ -8,7 +8,7 @@
 .heroImg {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   overflow: hidden;
   background-color: var(--primary);
   margin-top: 5rem;
@@ -98,10 +98,13 @@
 }
 
 .techSection {
-  margin-top: 65px;
+  margin-top: 0px;
   padding: 10% 10%;
   font-size: 16px;
   z-index: 1;
+}
+.subteamSection {
+  margin-bottom: 6rem;
 }
 
 .techHeading {
@@ -229,11 +232,6 @@
     margin-top: 0.75rem;
   }
 
-  .techSection {
-    margin-top: 2rem;
-    padding: 2rem 1rem;
-    font-size: 14px;
-  }
 
   .techHeading {
     font-size: clamp(1.5rem, 6vw, 2rem);
