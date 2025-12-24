@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "watch": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,8 +14,11 @@
     "compress-images": "node scripts/compress-images.js"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "lucide-react": "^0.553.0",
     "next": "^16.1.0",
+    "papaparse": "^5.5.3",
+    "path": "^0.12.7",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },
@@ -22,6 +26,7 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/papaparse": "^5.5.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
