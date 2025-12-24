@@ -13,7 +13,8 @@
     "update-deps": "npm update",
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
     "compress-images": "node scripts/compress-images.js",
-    "generate-albums": "node scripts/generate-albums-data.js"
+    "generate-albums": "node scripts/generate-albums-data.js",
+    "convert-webp": "node scripts/convert-to-webp.js"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
