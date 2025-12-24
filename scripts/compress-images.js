@@ -4,7 +4,7 @@ const path = require('path');
 
 const TEAM_PHOTOS_DIR = path.join(__dirname, '../public/team/teamPhotos');
 const MEDIA_ALBUMS_DIR = path.join(__dirname, '../public/about/media');
-const PLACEHOLDER_IMAGE = path.join(__dirname, '../public/team/teamPhotos/placeholder.JPG');
+const PLACEHOLDER_IMAGE = path.join(__dirname, '../public/team/teamPhotos/ABteam1.JPG');
 const QUALITY = 85; // JPEG quality (1-100)
 const MAX_WIDTH = 1920; // Maximum width in pixels (larger for media photos)
 const MAX_HEIGHT = 1920; // Maximum height in pixels

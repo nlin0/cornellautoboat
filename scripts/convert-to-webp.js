@@ -28,6 +28,12 @@ async function convertToWebP() {
     const baseName = path.parse(file).name;
     const outputPath = path.join(outputDir, `${baseName}.webp`);
 
+    // Skip if webp already exists
+    if (fs.existsSync(outputPath)) {
+      console.log(`⊘ Skipping ${file} (webp already exists)`);
+      continue;
+    }
+
     try {
       await sharp(inputPath)
         .webp({ 
