@@ -1,0 +1,254 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--secondary2);
+}
+
+/* Header Section */
+.competitionIntro {
+  color: var(--body-text);
+  text-align: center;
+  padding: 11rem 2rem 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fadeInDown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.competitionTitle {
+  font-size: clamp(2rem, 8vw, 6rem);
+  letter-spacing: -0.4vw;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+}
+
+.competitionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--blue1) 100%);
+  border-radius: 2px;
+}
+
+.competitionSubtitle {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.05vw;
+  line-height: 1.8;
+  color: var(--body-text);
+  font-weight: 400;
+  margin: 2rem auto 0;
+  max-width: 700px;
+  opacity: 0.9;
+}
+
+/* Sponsor Sections */
+.sponsorSection {
+  padding: 4rem 2rem;
+  background: var(--secondary2);
+  position: relative;
+}
+
+.sponsorSection:nth-of-type(even) {
+  background: linear-gradient(to bottom, var(--secondary2) 0%, #f8f9fa 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tierHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.tierHeader.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tierIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.iconCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(150, 3, 3, 0.3);
+}
+
+.tierTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--body-text);
+  margin: 0;
+  font-style: italic;
+  position: relative;
+}
+
+.tierTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--blue1) 100%);
+  border-radius: 2px;
+}
+
+.sponsorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsorCard {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 2px solid transparent;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.sponsorCard.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sponsorCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(150, 3, 3, 0.15);
+  border-color: var(--primary);
+}
+
+.sponsorLogoWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsorLogo {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: all 0.3s ease;
+}
+
+.sponsorCard:hover .sponsorLogo {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .sponsorGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .competitionIntro {
+    padding: 8rem 1rem 2rem;
+  }
+
+  .competitionTitle {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .competitionTitle::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .competitionSubtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  .sponsorSection {
+    padding: 3rem 1rem;
+  }
+
+  .tierHeader {
+    margin-bottom: 2rem;
+  }
+
+  .iconCircle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .iconCircle svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tierTitle {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .tierTitle::after {
+    width: 60px;
+    height: 2px;
+    bottom: -0.5rem;
+  }
+
+  .sponsorGrid {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .sponsorCard {
+    padding: 2rem 1.5rem;
+    min-height: 150px;
+  }
+}

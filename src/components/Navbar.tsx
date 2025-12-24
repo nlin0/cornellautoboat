@@ -25,11 +25,14 @@ const MAIN_NAV_LINKS: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/team', label: 'Team' },
+
 ];
 
 const SECONDARY_NAV_LINKS: NavLink[] = [
   { href: '/competition', label: 'Competition' },
   { href: '/media', label: 'Media' },
+     { href: '/sponsors', label: 'Sponsors' },
+
   {
     href: 'https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=7311&dids=5372&bledit=1',
     label: 'Donate',
