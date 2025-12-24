@@ -10,7 +10,7 @@ interface MemberCardProps {
   member: TeamMember;
 }
 
-const PLACEHOLDER_IMAGE = '/team/teamPhotos/placeholder.webp';
+const PLACEHOLDER_IMAGE = '/team/teamPhotos/ABteam1.webp';
 
 export default function MemberCard({ member }: MemberCardProps) {
   const [imageSrc, setImageSrc] = useState(getMemberImage(member));

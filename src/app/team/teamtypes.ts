@@ -21,5 +21,5 @@ export type Subteam = {
  * Returns the image path if set, otherwise returns placeholder.
  */
 export function getMemberImage(member: TeamMember): string {
-  return member.image || '/team/teamPhotos/placeholder.webp';
+  return member.image || '/team/teamPhotos/ABteam1.webp';
 }
