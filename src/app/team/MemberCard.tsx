@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import styles from './team.module.css';
-import type { TeamMember } from './teamdata';
-import { getMemberImage } from './teamdata';
+import type { TeamMember } from './teamtypes';
+import { getMemberImage } from './teamtypes';
 
 interface MemberCardProps {
   member: TeamMember;
@@ -22,8 +22,6 @@ export default function MemberCard({ member }: MemberCardProps) {
       .replace(/['’]/g, "")      // remove apostrophes
       .replace(/[^a-z0-9]+/g, "_") // spaces, hyphens → underscore
       .replace(/^_+|_+$/g, "");   // trim leading/trailing _
-
-    console.log("jolly here");    
 
     // Try different variations:
     // 1. FirstName.JPG (already tried)
