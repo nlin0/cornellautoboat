@@ -158,7 +158,7 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
-                  ? 'bg-[#960303] text-white shadow-md'
+                  ? 'text-[#960303] border border-[#960303]'
                   : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                   }`}
               >
@@ -176,7 +176,7 @@ export default function Navbar() {
               <Link
                 href="/technical"
                 className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-all duration-300 transform hover:scale-105 relative group ${pathname.startsWith('/technical')
-                  ? 'bg-[#960303] text-white shadow-md'
+                  ? 'text-[#960303] border border-[#960303]'
                   : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                   }`}
               >
@@ -207,20 +207,28 @@ export default function Navbar() {
                     className="bg-white text-gray-900 rounded-lg w-64 shadow-xl border border-gray-200 animate-fadeInDown"
                     role="menu"
                   >
-                    {TECHNICAL_SUBPAGES.map((label, index) => (
-                      <Link
-                        key={label}
-                        href={getTechnicalHref(label)}
-                        className="block px-4 py-2.5 hover:bg-gray-50 hover:text-[#960303] border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5"
-                        role="menuitem"
-                        style={{
-                          animation: `fadeInLeft 0.3s ease-out ${index * 0.05
-                            }s both`,
-                        }}
-                      >
-                        {label}
-                      </Link>
-                    ))}
+                    {TECHNICAL_SUBPAGES.map((label, index) => {
+                      const technicalHref = getTechnicalHref(label);
+                      const isTechnicalActive = pathname === technicalHref;
+                      return (
+                        <Link
+                          key={label}
+                          href={technicalHref}
+                          className={`block px-4 py-2.5 border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5 ${
+                            isTechnicalActive
+                              ? 'text-[#960303] border-l-2 border-l-[#960303] bg-gray-50'
+                              : 'hover:bg-gray-50 hover:text-[#960303]'
+                          }`}
+                          role="menuitem"
+                          style={{
+                            animation: `fadeInLeft 0.3s ease-out ${index * 0.05
+                              }s both`,
+                          }}
+                        >
+                          {label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -231,8 +239,8 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
-                  ? 'bg-[#960303] text-white shadow-md'
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href) && !isButton
+                  ? 'text-[#960303] border border-[#960303]'
                   : isButton
                     ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg hover:shadow-red-600/50 font-semibold ml-2 px-5 py-2.5 hover:scale-110'
                     : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
@@ -281,7 +289,7 @@ export default function Navbar() {
               href={href}
               onClick={closeMenu}
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
-                ? 'bg-[#960303] text-white'
+                ? 'text-[#960303] border border-[#960303]'
                 : 'text-gray-700 hover:bg-gray-50'
                 }`}
             >
@@ -300,16 +308,24 @@ export default function Navbar() {
 
           {isTechnicalOpen && (
             <div className="ml-4 space-y-1">
-              {TECHNICAL_SUBPAGES.map((label) => (
-                <Link
-                  key={label}
-                  href={getTechnicalHref(label)}
-                  onClick={closeMenu}
-                  className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-[#960303]"
-                >
-                  {label}
-                </Link>
-              ))}
+              {TECHNICAL_SUBPAGES.map((label) => {
+                const technicalHref = getTechnicalHref(label);
+                const isTechnicalActive = pathname === technicalHref;
+                return (
+                  <Link
+                    key={label}
+                    href={technicalHref}
+                    onClick={closeMenu}
+                    className={`block px-3 py-2 rounded-md text-sm ${
+                      isTechnicalActive
+                        ? 'text-[#960303] border border-[#960303]'
+                        : 'text-gray-600 hover:bg-gray-50 hover:text-[#960303]'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
             </div>
           )}
 
@@ -318,8 +334,8 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={closeMenu}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href)
-                ? 'bg-[#960303] text-white'
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(href) && !isButton
+                ? 'text-[#960303] border border-[#960303]'
                 : isButton
                   ? 'bg-[#960303] text-white hover:bg-[#7d0000] font-semibold mt-2'
                   : 'text-gray-700 hover:bg-gray-50'
