@@ -16,7 +16,7 @@ export default function MemberCard({ member }: MemberCardProps) {
 
   const handleImageError = () => {
     // If we've already reached placeholder, stop trying
-    if (imageSrc === '/team/ABteam2.JPG') {
+    if (imageSrc === '/team/teamPhotos/placeholder.JPG') {
       return;
     }
 
@@ -40,7 +40,7 @@ export default function MemberCard({ member }: MemberCardProps) {
       setAttemptCount(1);
     } else {
       // Go straight to placeholder after trying .JPG
-      setImageSrc('/team/ABteam2.JPG');
+      setImageSrc('/team/teamPhotos/placeholder.JPG');
       setAttemptCount(2);
     }
   };
