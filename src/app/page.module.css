@@ -966,7 +966,7 @@
 .tapeTape1,
 .tapeTape2 {
   position: absolute;
-  width: 60px;
+  width: 100px;
   height: 40px;
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(0, 0, 0, 0.1);

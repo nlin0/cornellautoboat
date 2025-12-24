@@ -468,7 +468,7 @@ export default function Home() {
               <div className={styles.tapeTape1}></div>
               <div className={styles.tapeTape2}></div>
               <Image
-                src="/home/sponsors.jpg"
+                src="/logo1.png"
                 alt="Our Network - Companies our members and alumni have worked at"
                 width={1200}
                 height={800}
