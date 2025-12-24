@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "watch": "next dev",
+    "prebuild": "node scripts/generate-albums-data.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "check-updates": "npm outdated",
     "update-deps": "npm update",
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
-    "compress-images": "node scripts/compress-images.js"
+    "compress-images": "node scripts/compress-images.js",
+    "generate-albums": "node scripts/generate-albums-data.js"
   },
   "dependencies": {
     "fs": "^0.0.1-security",

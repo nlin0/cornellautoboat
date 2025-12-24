@@ -7,17 +7,41 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import styles from './media.module.css';
 import { photoAlbums, slideshowImages } from './mediaData';
 
+// Helper function to shuffle array (Fisher-Yates)
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function Media() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isSlideshowPlaying, setIsSlideshowPlaying] = useState(true);
+  const [randomSlideshowImages, setRandomSlideshowImages] = useState<string[]>([]);
   const slideshowIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const albumsScrollRef = useRef<HTMLDivElement>(null);
 
+  // Initialize random images only on client side after mount to avoid hydration mismatch
+  useEffect(() => {
+    // Get all photos from all albums and shuffle them for slideshow
+    const allPhotos = photoAlbums.flatMap(album => album.photos);
+    // Use all photos if we have less than 10, otherwise take 10 random ones
+    const shuffledSlideshow = allPhotos.length <= 10 
+      ? shuffleArray(allPhotos) 
+      : shuffleArray(allPhotos).slice(0, 10);
+    setRandomSlideshowImages(shuffledSlideshow);
+  }, []);
+
   // Auto-advance slideshow
   useEffect(() => {
+    if (!randomSlideshowImages.length) return; // Wait for images to load
+    
     if (isSlideshowPlaying) {
       slideshowIntervalRef.current = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+        setCurrentSlide((prev) => (prev + 1) % randomSlideshowImages.length);
       }, 4000);
     } else {
       if (slideshowIntervalRef.current) {
@@ -30,7 +54,7 @@ export default function Media() {
         clearInterval(slideshowIntervalRef.current);
       }
     };
-  }, [isSlideshowPlaying]);
+  }, [isSlideshowPlaying, randomSlideshowImages.length]);
 
   // Auto-scroll albums horizontally - using CSS animation like team stats
   useEffect(() => {
@@ -46,11 +70,11 @@ export default function Media() {
   }, []);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+    setCurrentSlide((prev) => (prev + 1) % randomSlideshowImages.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slideshowImages.length) % slideshowImages.length);
+    setCurrentSlide((prev) => (prev - 1 + randomSlideshowImages.length) % randomSlideshowImages.length);
   };
 
   const goToSlide = (index: number) => {
@@ -142,6 +166,7 @@ export default function Media() {
 
       {/* Slideshow Section */}
       <section className={styles.slideshowSection} aria-label="Featured photos">
+        <h2 className={styles.albumsTitle}>Featured Photos</h2>
         <div className={styles.slideshowContainer}>
           <button
             className={styles.slideshowButton}
@@ -152,20 +177,58 @@ export default function Media() {
           </button>
 
           <div className={styles.slideshow}>
-            {slideshowImages.map((image, index) => (
-              <div
-                key={index}
-                className={`${styles.slide} ${index === currentSlide ? styles.slideActive : ''}`}
-              >
-                <Image
-                  src={image}
-                  alt={`Featured photo ${index + 1}`}
-                  fill
-                  className={styles.slideImage}
-                  priority={index === 0}
-                />
-              </div>
-            ))}
+            {randomSlideshowImages.length > 0 ? (
+              randomSlideshowImages.map((image, index) => (
+                <div
+                  key={`${image}-${index}`}
+                  className={`${styles.slide} ${index === currentSlide ? styles.slideActive : ''}`}
+                >
+                  <div className={styles.slideImageContainer}>
+                    <Image
+                      src={image}
+                      alt={`Featured photo ${index + 1}`}
+                      width={1920}
+                      height={1080}
+                      className={styles.slideImage}
+                      priority={index === 0}
+                      style={{ 
+                        width: 'auto', 
+                        height: 'auto', 
+                        maxWidth: '100%', 
+                        maxHeight: '100%',
+                        imageOrientation: 'from-image'
+                      }}
+                    />
+                  </div>
+                </div>
+              ))
+            ) : (
+              // Fallback to original slideshow images during SSR/initial render
+              slideshowImages.map((image, index) => (
+                <div
+                  key={`fallback-${index}`}
+                  className={`${styles.slide} ${index === currentSlide ? styles.slideActive : ''}`}
+                >
+                  <div className={styles.slideImageContainer}>
+                    <Image
+                      src={image}
+                      alt={`Featured photo ${index + 1}`}
+                      width={1920}
+                      height={1080}
+                      className={styles.slideImage}
+                      priority={index === 0}
+                      style={{ 
+                        width: 'auto', 
+                        height: 'auto', 
+                        maxWidth: '100%', 
+                        maxHeight: '100%',
+                        imageOrientation: 'from-image'
+                      }}
+                    />
+                  </div>
+                </div>
+              ))
+            )}
           </div>
 
           <button
@@ -179,7 +242,7 @@ export default function Media() {
 
         {/* Slide Indicators */}
         <div className={styles.slideIndicators}>
-          {slideshowImages.map((_, index) => (
+          {(randomSlideshowImages.length > 0 ? randomSlideshowImages : slideshowImages).map((_, index) => (
             <button
               key={index}
               className={`${styles.indicator} ${index === currentSlide ? styles.indicatorActive : ''}`}

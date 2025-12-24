@@ -1,8 +1,7 @@
 .wrapper {
   background-color: var(--color-secondary);
   min-height: 100vh;
-
-
+  padding-bottom: 6rem;
 }
 
 /* Header Section */
@@ -125,11 +124,16 @@
 .slideshow {
   position: relative;
   width: 100%;
+  min-height: 500px;
+  max-height: 80vh;
   aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide {
@@ -141,6 +145,9 @@
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slideActive {
@@ -149,13 +156,31 @@
   z-index: 1;
 }
 
+.slideImageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 .slideImage {
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.8s ease-in-out;
+  /* Use both width and height constraints to fill container more evenly */
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-position: center;
+  /* Preserve image orientation from EXIF data - don't auto-rotate */
+  image-orientation: from-image;
 }
 
 .slideActive .slideImage {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .slideshowButton {
@@ -238,7 +263,7 @@
 
 /* Albums Section */
 .albumsSection {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 6rem;
   max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -401,7 +426,7 @@
 
 /* Album Page */
 .albumHeader {
-  padding: 4rem 2rem 2rem;
+  padding: 11rem 2rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -456,11 +481,13 @@
 
 .photoGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
   padding: 2rem;
+  padding-bottom: 6rem;
   max-width: 1400px;
   margin: 0 auto;
+  /* Collage-like layout with varied aspect ratios */
 }
 
 .photoThumbnail {
@@ -476,15 +503,45 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.photoThumbnail:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(150, 3, 3, 0.3);
-  z-index: 1;
+/* Create varied sizes for collage effect - different aspect ratios */
+.photoThumbnail:nth-child(3n) {
+  aspect-ratio: 3 / 4;
 }
+
+.photoThumbnail:nth-child(5n) {
+  aspect-ratio: 16 / 9;
+}
+
+.photoThumbnail:nth-child(7n) {
+  aspect-ratio: 1 / 1;
+}
+
+.photoThumbnail:nth-child(11n) {
+  aspect-ratio: 5 / 4;
+}
+
+.photoThumbnail:nth-child(13n) {
+  aspect-ratio: 4 / 5;
+}
+
+/* Make some images span 2 columns for more visual interest */
+.photoThumbnail:nth-child(8n) {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+.photoThumbnail:nth-child(17n) {
+  grid-column: span 2;
+  aspect-ratio: 21 / 9;
+}
+
 
 .thumbnailImage {
   object-fit: cover;
   transition: transform 0.4s ease;
+  /* Preserve image orientation from EXIF data - don't auto-rotate */
+  image-orientation: from-image;
+  transform: none;
 }
 
 .photoThumbnail:hover .thumbnailImage {
@@ -732,7 +789,7 @@
   }
 
   .albumHeader {
-    padding: 3rem 1rem 1.5rem;
+    padding: 8rem 1rem 1.5rem;
   }
 
   .backButton {
@@ -757,9 +814,15 @@
   }
 
   .photoGrid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.75rem;
     padding: 1.5rem 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .photoThumbnail:nth-child(8n),
+  .photoThumbnail:nth-child(17n) {
+    grid-column: span 1;
   }
 
   .lightbox {

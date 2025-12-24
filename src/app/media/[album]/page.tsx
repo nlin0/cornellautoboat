@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import styles from '../media.module.css';
 import { photoAlbums } from '../mediaData';
 
 export default function AlbumPage() {
   const params = useParams();
-  const router = useRouter();
   const albumId = params.album as string;
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
@@ -70,6 +69,7 @@ export default function AlbumPage() {
               alt={`${album.title} - Photo ${index + 1}`}
               fill
               className={styles.thumbnailImage}
+              style={{ imageOrientation: 'from-image' }}
             />
           </button>
         ))}

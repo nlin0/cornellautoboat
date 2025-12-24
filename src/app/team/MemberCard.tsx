@@ -15,35 +15,33 @@ export default function MemberCard({ member }: MemberCardProps) {
   const [attemptCount, setAttemptCount] = useState(0);
 
   const handleImageError = () => {
+    // If we've already reached placeholder, stop trying
+    if (imageSrc === '/team/ABteam2.JPG') {
+      return;
+    }
 
     const firstName = member.name
       .trim()
       .toLowerCase()
-      .replace(/['’]/g, "")      // remove apostrophes
+      .replace(/['']/g, "")      // remove apostrophes
       .replace(/[^a-z0-9]+/g, "_") // spaces, hyphens → underscore
       .replace(/^_+|_+$/g, "");   // trim leading/trailing _
 
-    // Try different variations:
-    // 1. FirstName.JPG (already tried)
-    // 2. FirstName.jpg
-    // 3. FirstName .JPG (with space, for cases like "Kevin .JPG")
-    // 4. FirstName.PNG
-    // 5. FirstName.png
-    // Then fallback to placeholder
+    // Only try variations that actually exist in the directory:
+    // Most files are .JPG (uppercase), some are .jpg (lowercase)
+    // No .PNG files exist, so skip those to reduce noise
+    // attemptCount 0 = initial CSV path (already tried)
+    // attemptCount 1 = try .JPG (uppercase, most common)
+    // attemptCount 2 = go to placeholder
 
-    const variations = [
-      `/team/teamPhotos/${firstName}.jpg`,
-      `/team/teamPhotos/${firstName} .JPG`,
-      `/team/teamPhotos/${firstName}.PNG`,
-      `/team/teamPhotos/${firstName}.png`,
-      `/team/teamPhotos/${firstName}.jpeg`,
-      `/team/teamPhotos/${firstName}.JPEG`,
-      '/team/ABteam2.JPG', // Final fallback to placeholder
-    ];
-
-    if (attemptCount < variations.length - 1) {
-      setImageSrc(variations[attemptCount + 1]);
-      setAttemptCount(attemptCount + 1);
+    if (attemptCount === 0) {
+      // Try uppercase .JPG (most common format in directory)
+      setImageSrc(`/team/teamPhotos/${firstName}.JPG`);
+      setAttemptCount(1);
+    } else {
+      // Go straight to placeholder after trying .JPG
+      setImageSrc('/team/ABteam2.JPG');
+      setAttemptCount(2);
     }
   };
 
