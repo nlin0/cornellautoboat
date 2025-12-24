@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './team.module.css';
 import type { TeamMember } from './teamtypes';
@@ -10,13 +10,30 @@ interface MemberCardProps {
   member: TeamMember;
 }
 
+const PLACEHOLDER_IMAGE = '/team/teamPhotos/placeholder.webp';
+
 export default function MemberCard({ member }: MemberCardProps) {
   const [imageSrc, setImageSrc] = useState(getMemberImage(member));
   const [attemptCount, setAttemptCount] = useState(0);
+  const [hasError, setHasError] = useState(false);
+
+  // Preload placeholder image for faster fallback
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = PLACEHOLDER_IMAGE;
+    document.head.appendChild(link);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
 
   const handleImageError = () => {
-    // If we've already reached placeholder, stop trying
-    if (imageSrc === '/team/teamPhotos/placeholder.JPG') {
+    // If we've already reached placeholder, mark as error and stop trying
+    if (imageSrc === PLACEHOLDER_IMAGE) {
+      setHasError(true);
       return;
     }
 
@@ -40,7 +57,8 @@ export default function MemberCard({ member }: MemberCardProps) {
       setAttemptCount(1);
     } else {
       // Go straight to placeholder after trying .JPG
-      setImageSrc('/team/teamPhotos/placeholder.JPG');
+      // Placeholder is preloaded, so it should load quickly
+      setImageSrc(PLACEHOLDER_IMAGE);
       setAttemptCount(2);
     }
   };
@@ -72,8 +90,9 @@ export default function MemberCard({ member }: MemberCardProps) {
                 alt={`${member.name}, ${member.role}`}
                 fill
                 className={styles.ticketPhoto}
-                priority
+                priority={imageSrc !== PLACEHOLDER_IMAGE}
                 onError={handleImageError}
+                loading={imageSrc === PLACEHOLDER_IMAGE ? 'eager' : undefined}
               />
             </div>
           </div>
