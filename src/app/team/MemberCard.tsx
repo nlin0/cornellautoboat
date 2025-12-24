@@ -75,9 +75,11 @@ export default function MemberCard({ member }: MemberCardProps) {
                 <span className={styles.ticketType}>BOARDING PASS</span>
               </div>
               <div className={styles.ticketSubteamBadge}>
-                {member.subteam === 'Business and Outreach'
-                  ? 'Business'
-                  : member.subteam}
+                {member.role === 'WebDev Design and Media'
+                  ? 'WebDev Design & Media'
+                  : member.subteam === 'Business and Outreach'
+                    ? 'Business'
+                    : member.subteam}
               </div>
             </div>
           </div>
@@ -141,9 +143,11 @@ export default function MemberCard({ member }: MemberCardProps) {
               <span className={styles.passType}>MEMBER INFO</span>
             </div>
             <div className={styles.passSubteam}>
-              {member.subteam === 'Business and Outreach'
-                ? 'Business'
-                : member.subteam}
+              {member.role === 'WebDev Design and Media'
+                ? 'WebDev Design & Media'
+                : member.subteam === 'Business and Outreach'
+                  ? 'Business'
+                  : member.subteam}
             </div>
           </div>
 
