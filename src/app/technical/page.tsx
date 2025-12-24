@@ -87,6 +87,17 @@ export default function TechnicalMain() {
             </Link>
           ))}
         </div>
+        <h3 className={styles.techHeading}>Business</h3>
+        <p className={styles.techdescr}>
+          The business team supports the team by managing operations, outreach,
+          and finances. Key responsibilities include fundraising and sponsorship
+          outreach, producing videos for competition submissions, maintaining
+          and updating the team website (including the site you’re viewing right
+          now :D), and managing budgets and spending. By handling external
+          communication and financial planning, the business team allows the
+          technical subteams to focus on design and manufacturing while ensuring
+          the team operates efficiently, professionally, and competitively.
+        </p>
       </div>
     </div>
   );
