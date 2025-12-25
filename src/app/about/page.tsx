@@ -6,19 +6,9 @@ export default function About() {
   return (
     <div className={styles.wrapper}>
       <AboutHero title="Meet the Subteams" />
-      <div className={styles.dividerWrapper}>
-        <Image
-          src="/dividers/divider1.svg"
-          alt=""
-          width={2400}
-          height={200}
-          className={styles.divider}
-          quality={100}
-          priority
-          aria-hidden="true"
-        />
-      </div>
+      
       {/* --- TIMELINE SECTIONS --- */}
+      <div className={styles.overallTimeline}>
       <div className={styles.timelineContainer}>
         {/* SECTION 1 */}
         <div className={styles.timelineSection}>
@@ -84,7 +74,7 @@ export default function About() {
 
       <div className={styles.dividerWrapper}>
         <Image
-          src="/dividers/divider1.svg"
+          src="/dividers/pic.svg"
           alt=""
           width={2400}
           height={200}
@@ -169,7 +159,7 @@ export default function About() {
       {/* FULL-WIDTH DIVIDER */}
       <div className={styles.dividerWrapper}>
         <Image
-          src="/dividers/divider1.svg"
+          src="/dividers/pic.svg"
           alt=""
           width={2400}
           height={200}
@@ -236,6 +226,7 @@ export default function About() {
             />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
