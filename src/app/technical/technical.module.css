@@ -34,7 +34,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: var(--overlay-red);
+  background-color: var(--overlay-blue);
   z-index: 2;
 }
 

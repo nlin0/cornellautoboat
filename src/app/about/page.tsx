@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import styles from './about.module.css';
+import AboutHero from './AboutHero';
 
 export default function About() {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.aboutIntro}>
-        <h2 className={styles.aboutTitle}>Team History</h2>
-      </div>
+      <AboutHero title="Meet the Subteams" />
       <div className={styles.dividerWrapper}>
         <Image
           src="/dividers/divider1.svg"
@@ -222,9 +221,9 @@ export default function About() {
             <div className={styles.year2}>FALL 2026</div>
             <h2 className={styles.title}>Scooby</h2>
             <p className={styles.subtitle}>
-              UPCOMING: He is the product of key advancements for the team, marking the
-              debut of a new sensor suite, optimized geometry, and an upgraded
-              electrical system
+              UPCOMING: He is the product of key advancements for the team,
+              marking the debut of a new sensor suite, optimized geometry, and
+              an upgraded electrical system
             </p>
           </div>
           <div className={styles.imageContainer}>

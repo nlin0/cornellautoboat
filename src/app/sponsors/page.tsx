@@ -54,7 +54,9 @@ export default function Sponsors() {
       <div className={`${styles.competitionIntro} ${styles.fadeInDown}`}>
         <h1 className={styles.competitionTitle}>Thank You to Our Sponsors</h1>
         <p className={styles.competitionSubtitle}>
-          Our success wouldn't be possible without the generous support of our sponsors
+          Cornell Autoboat is always grateful to all of our sponsors for their
+          support. Our team is able to grow, learn, and succeed due to your
+          generosity and assistance – we would not be the team we are today!
         </p>
       </div>
 
@@ -63,12 +65,17 @@ export default function Sponsors() {
         <div className={styles.container}>
           <div
             className={styles.tierHeader}
-            ref={(el) => { contentRefs.current[0] = el; }}
+            ref={(el) => {
+              contentRefs.current[0] = el;
+            }}
           >
             <div className={styles.tierIcon}>
               <div className={styles.iconCircle}>
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <path d="M20 5L25 15H35L27.5 22L30 32L20 25L10 32L12.5 22L5 15H15L20 5Z" fill="white"/>
+                  <path
+                    d="M20 5L25 15H35L27.5 22L30 32L20 25L10 32L12.5 22L5 15H15L20 5Z"
+                    fill="white"
+                  />
                 </svg>
               </div>
             </div>
@@ -77,7 +84,9 @@ export default function Sponsors() {
           <div className={styles.sponsorGrid}>
             <div
               className={styles.sponsorCard}
-              ref={(el) => { contentRefs.current[1] = el; }}
+              ref={(el) => {
+                contentRefs.current[1] = el;
+              }}
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
@@ -91,7 +100,9 @@ export default function Sponsors() {
             </div>
             <div
               className={styles.sponsorCard}
-              ref={(el) => { contentRefs.current[2] = el; }}
+              ref={(el) => {
+                contentRefs.current[2] = el;
+              }}
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
@@ -112,12 +123,17 @@ export default function Sponsors() {
         <div className={styles.container}>
           <div
             className={styles.tierHeader}
-            ref={(el) => { contentRefs.current[3] = el; }}
+            ref={(el) => {
+              contentRefs.current[3] = el;
+            }}
           >
             <div className={styles.tierIcon}>
               <div className={styles.iconCircle}>
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <path d="M20 8L18 18L8 20L18 22L20 32L22 22L32 20L22 18L20 8Z" fill="white"/>
+                  <path
+                    d="M20 8L18 18L8 20L18 22L20 32L22 22L32 20L22 18L20 8Z"
+                    fill="white"
+                  />
                 </svg>
               </div>
             </div>
@@ -126,7 +142,9 @@ export default function Sponsors() {
           <div className={styles.sponsorGrid}>
             <div
               className={styles.sponsorCard}
-              ref={(el) => { contentRefs.current[4] = el; }}
+              ref={(el) => {
+                contentRefs.current[4] = el;
+              }}
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
@@ -140,7 +158,9 @@ export default function Sponsors() {
             </div>
             <div
               className={styles.sponsorCard}
-              ref={(el) => { contentRefs.current[5] = el; }}
+              ref={(el) => {
+                contentRefs.current[5] = el;
+              }}
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
@@ -161,12 +181,18 @@ export default function Sponsors() {
         <div className={styles.container}>
           <div
             className={styles.tierHeader}
-            ref={(el) => { contentRefs.current[6] = el; }}
+            ref={(el) => {
+              contentRefs.current[6] = el;
+            }}
           >
             <div className={styles.tierIcon}>
               <div className={styles.iconCircle}>
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <path d="M10 15C10 15 15 10 20 10C25 10 30 15 30 15M10 25C10 25 15 30 20 30C25 30 30 25 30 25" stroke="white" strokeWidth="2"/>
+                  <path
+                    d="M10 15C10 15 15 10 20 10C25 10 30 15 30 15M10 25C10 25 15 30 20 30C25 30 30 25 30 25"
+                    stroke="white"
+                    strokeWidth="2"
+                  />
                 </svg>
               </div>
             </div>
@@ -175,7 +201,9 @@ export default function Sponsors() {
           <div className={styles.sponsorGrid}>
             <div
               className={styles.sponsorCard}
-              ref={(el) => { contentRefs.current[7] = el; }}
+              ref={(el) => {
+                contentRefs.current[7] = el;
+              }}
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image

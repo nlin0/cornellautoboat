@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* FONT: Pirulen - Used primarily for logo/branding
    To use: Add @font-face declaration here if font files are available
@@ -10,7 +10,6 @@
      font-style: normal;
    }
 */
-
 
 :root {
   /* main app background */
@@ -40,6 +39,7 @@
   --light-gray-bg: #dedede;
   --white: #ffffff;
   --overlay-red: rgba(117, 65, 65, 0.57);
+  --overlay-blue: rgba(112, 139, 163, 0.57);
 
   /* LAYOUT */
   --page-space: 2rem;
@@ -49,7 +49,6 @@
 
   /* BREAKPOINTS */
   --mobile-breakpoint: 700px;
-
 }
 
 @theme inline {
@@ -95,7 +94,6 @@
   --text-descr-sm: 8px;
 }
 
-
 /* if we wanted to implement dark mode */
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -109,7 +107,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 html {
   scroll-behavior: smooth;

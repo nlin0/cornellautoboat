@@ -13,11 +13,59 @@
   /* Increased from 10rem to account for persistent navbar (5rem = 80px) */
 }
 
+
+/* HERO IMAGE SECTION */
+.heroImg {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background-color: var(--primary);
+  margin-top: 5rem;
+  /* Added margin-top for persistent navbar (80px) */
+}
+
+/* IMAGE ITSELF */
+.boatImg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.boatImage {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* BLUE OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-blue);
+  z-index: 2;
+}
+
+/*TITLE */
+.titleBlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  color: var(--header-text);
+  max-width: 95%;
+}
+
+
 .aboutTitle {
   font-size: clamp(1.5rem, 7vw, 5rem);
   letter-spacing: -0.3vw;
   font-weight: 500;
-  color: var(--primary-text);
+  color: var(--header-text);
   margin: 0 0 1rem 0;
   line-height: 1;
 }
@@ -35,17 +83,18 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  
 }
 
 .divider {
   width: 100%;
-  /* stretch full width */
+
   height: auto;
-  /* maintain aspect ratio */
+
 
   display: block;
   object-fit: cover;
-  /* fill the width nicely */
+
 }
 
 
