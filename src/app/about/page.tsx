@@ -5,7 +5,7 @@ import AboutHero from './AboutHero';
 export default function About() {
   return (
     <div className={styles.wrapper}>
-      <AboutHero title="Meet the Subteams" />
+      <AboutHero title="Team History" />
       
       {/* --- TIMELINE SECTIONS --- */}
       <div className={styles.overallTimeline}>
