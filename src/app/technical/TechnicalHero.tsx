@@ -23,22 +23,24 @@ const HERO_IMAGES: Record<Subteam, string> = {
 
 interface TechnicalHeroProps {
   title: string;
-  subteam: Subteam;
+  subteam?: Subteam; // optional
 }
 
 export default function TechnicalHero({ title, subteam }: TechnicalHeroProps) {
   return (
     <div className={styles.heroWrapper}>
       {/* IMAGE PANEL */}
-      <section className={styles.heroImage}>
-        <Image
-          src={HERO_IMAGES[subteam]}
-          alt={title}
-          fill
-          priority
-          className={styles.boatImage}
-        />
-      </section>
+      {subteam && (
+        <section className={styles.heroImage}>
+          <Image
+            src={HERO_IMAGES[subteam]}
+            alt={title}
+            fill
+            priority
+            className={styles.boatImage}
+          />
+        </section>
+      )}
 
       {/* OVERLAY PANEL */}
       <section className={styles.heroOverlay}>
