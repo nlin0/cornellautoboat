@@ -8,49 +8,37 @@ export default function Sponsors() {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Intersection Observer for scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.target) {
             try {
               entry.target.classList.add(styles.fadeInUp);
-            } catch (error) {
-              // Element might have been removed, ignore error
-            }
+            } catch (error) {}
           }
         });
       },
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const refs = contentRefs.current;
-    const observedElements: Element[] = [];
-
-    refs.forEach((ref) => {
+    contentRefs.current.forEach((ref) => {
       if (ref && ref.isConnected && ref instanceof Element) {
         try {
           observer.observe(ref);
-          observedElements.push(ref);
-        } catch (error) {
-          // Element might not be ready, ignore error
-        }
+        } catch (error) {}
       }
     });
 
     return () => {
-      // Disconnect observer first to prevent any issues
       try {
         observer.disconnect();
-      } catch (error) {
-        // Observer might already be disconnected, ignore error
-      }
+      } catch (error) {}
     };
   }, []);
 
   return (
     <div className={styles.wrapper}>
-      {/* Header Section */}
+      {/* Thank You Header */}
       <div className={`${styles.competitionIntro} ${styles.fadeInDown}`}>
         <h1 className={styles.competitionTitle}>Thank You to Our Sponsors</h1>
         <p className={styles.competitionSubtitle}>
@@ -58,6 +46,51 @@ export default function Sponsors() {
           support. Our team is able to grow, learn, and succeed due to your
           generosity and assistance – we would not be the team we are today!
         </p>
+      </div>
+
+      {/* Sponsorship Info Card */}
+      <div className={styles.sponsorInfoCard}>
+        <h2>Interested in Sponsoring?</h2>
+        <p>
+          Help us reach our goal! As a student-run project team, Cornell
+          Autoboat benefits greatly from any kind of donation or contribution.
+          Your support allows us to purchase materials for the boat and send our
+          team to the annual Roboboat competition!
+        </p>
+        <p>
+          {' '}
+          <strong>There are two methods for giving funds:</strong>
+        </p>
+        <ol>
+          <li>
+            <strong>Cornell Autoboat Gift Fund:</strong> You can sponsor us
+            through our Giving to Cornell page:{' '}
+            <a
+              href="https://tinyurl.com/cornellautoboatgiftfund"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://tinyurl.com/cornellautoboatgiftfund
+            </a>
+          </li>
+          <li>
+            <strong>Invoice:</strong> Contact our Business Lead, Jessie Yung, at{' '}
+            <a href="mailto:jy869@cornell.edu">jy869@cornell.edu</a> and we can
+            send invoice instructions. Please be sure to CC our team email{' '}
+            <a href="mailto:cornellautoboat@gmail.com">
+              cornellautoboat@gmail.com
+            </a>
+            .
+          </li>
+        </ol>
+        <a
+          href="https://drive.google.com/file/d/1UfJ1NOWKrZWKSqS2qA3Xqw5ZbyVaHurO/view?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+           className={styles.customSponsorLink}
+        >
+          Our Sponsorship Packet
+        </a>
       </div>
 
       {/* Captains - Platinum Tier */}
@@ -90,7 +123,7 @@ export default function Sponsors() {
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
-                  src="/sponsors/asml.png"
+                  src="/sponsors/ASML_sponsor.avif"
                   alt="ASML"
                   width={400}
                   height={200}
@@ -106,7 +139,7 @@ export default function Sponsors() {
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
-                  src="/sponsors/saronic.png"
+                  src="/sponsors/saronic_sponsor.avif"
                   alt="Saronic"
                   width={400}
                   height={200}
@@ -148,7 +181,7 @@ export default function Sponsors() {
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
-                  src="/sponsors/cornell.png"
+                  src="/sponsors/cornell-logo.avif"
                   alt="Cornell Engineering"
                   width={400}
                   height={200}
@@ -164,7 +197,7 @@ export default function Sponsors() {
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
-                  src="/sponsors/vectornav.png"
+                  src="/sponsors/vectorn_sponsor.avif"
                   alt="VectorNav"
                   width={400}
                   height={200}
@@ -207,7 +240,7 @@ export default function Sponsors() {
             >
               <div className={styles.sponsorLogoWrapper}>
                 <Image
-                  src="/sponsors/orca3d.png"
+                  src="/sponsors/orca_sponsor.gif"
                   alt="Orca3D"
                   width={400}
                   height={200}
