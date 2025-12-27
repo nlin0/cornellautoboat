@@ -29,7 +29,7 @@ interface TechnicalHeroProps {
 export default function TechnicalHero({ title, subteam }: TechnicalHeroProps) {
   return (
     <div className={styles.heroWrapper}>
-      {/* IMAGE PANEL */}
+   
       {subteam && (
         <section className={styles.heroImage}>
           <Image
@@ -42,12 +42,12 @@ export default function TechnicalHero({ title, subteam }: TechnicalHeroProps) {
         </section>
       )}
 
-      {/* OVERLAY PANEL */}
+
       <section className={styles.heroOverlay}>
         <h1 className={styles.heroTitle}>{title}</h1>
       </section>
 
-      {/* DIVIDER BELOW HERO */}
+    
       <Divider />
     </div>
   );
