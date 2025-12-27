@@ -6,9 +6,10 @@ import Divider from '../Divider';
 export default function Robotics() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Robotics" />
+        <TechnicalHero title="Robotics" subteam="robotics" />
       <Divider />
       <div className={styles.techSection}>
+        
         <p className={styles.descr}>
           The Robotics subteam builds everything on the boat that moves,
           launches, grabs, or interacts with the world. We are a hardware-first

@@ -7,7 +7,7 @@ import ImageGallery from '../ImageGallery';
 export default function Mechanical() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Design & Manufacturing" />
+      <TechnicalHero title="Design & Manufacturing" subteam="mechanical" />
       <Divider />
 
       <div className={styles.techSection}>

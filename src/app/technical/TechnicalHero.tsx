@@ -1,27 +1,52 @@
 import Image from 'next/image';
+import Divider from './Divider';
 import styles from './technical.module.css';
+
+type Subteam =
+  | 'AI'
+  | 'controls'
+  | 'esys'
+  | 'mechanical'
+  | 'perception'
+  | 'robotics'
+  | 'ROS';
+
+const HERO_IMAGES: Record<Subteam, string> = {
+  AI: '/technical/AI.png',
+  controls: '/technical/controls.JPG',
+  esys: '/technical/ESys3.png',
+  mechanical: '/technical/mechanical.JPG',
+  perception: '/technical/perceptionHero.JPG',
+  robotics: '/technical/roboticsHero2.png',
+  ROS: '/technical/ROS.png',
+};
 
 interface TechnicalHeroProps {
   title: string;
+  subteam: Subteam;
 }
 
-export default function TechnicalHero({ title }: TechnicalHeroProps) {
+export default function TechnicalHero({ title, subteam }: TechnicalHeroProps) {
   return (
-    <div className={styles.heroImg}>
-      <div className={styles.boatImg}>
+    <div className={styles.heroWrapper}>
+      {/* IMAGE PANEL */}
+      <section className={styles.heroImage}>
         <Image
-          src="/clifford2.png"
-          alt="Cornell AutoBoat team boat"
+          src={HERO_IMAGES[subteam]}
+          alt={title}
           fill
           priority
           className={styles.boatImage}
         />
-      </div>
-      <div className={styles.overlay} aria-hidden="true" />
-      <div className={styles.titleBlock}>
-        <h2 className={styles.technicalTitle}>{title}</h2>
-      </div>
+      </section>
+
+      {/* OVERLAY PANEL */}
+      <section className={styles.heroOverlay}>
+        <h1 className={styles.heroTitle}>{title}</h1>
+      </section>
+
+      {/* DIVIDER BELOW HERO */}
+      <Divider />
     </div>
   );
 }
-

@@ -6,10 +6,12 @@ import Divider from '../Divider';
 export default function Perception() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Perception" />
+      <TechnicalHero title="Perception" subteam="perception" />
       <Divider />
       <div className={styles.techSection}>
+        
         <p className={styles.descr}>
+          
           The Perception team is responsible for classifying objects detected by
           our LIDAR system.
         </p>

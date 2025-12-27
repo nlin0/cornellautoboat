@@ -6,7 +6,7 @@ import Divider from '../Divider';
 export default function ControlsAndMicrocontrollerDesigns() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Controls & Microcontroller Design" />
+       <TechnicalHero title="Controls & Microcontroller Design" subteam="controls" />
       <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>

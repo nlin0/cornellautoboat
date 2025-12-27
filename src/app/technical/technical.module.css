@@ -4,50 +4,43 @@
   color: var(--body-text);
 }
 
-/* HERO IMAGE SECTION */
-.heroImg {
+.heroWrapper {
   position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
-  background-color: var(--primary);
-  margin-top: 5rem;
-  /* Added margin-top for persistent navbar (80px) */
 }
 
-/* IMAGE ITSELF */
-.boatImg {
-  position: relative;
+.heroImage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .boatImage {
   object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 }
 
-/* BLUE OVERLAY */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: var(--overlay-blue);
+.heroOverlay {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  background: rgba(8, 14, 46, 0.575);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   z-index: 2;
 }
 
-/*TITLE */
-.titleBlock {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+.heroTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.2vw;
+  color: white;
   text-align: center;
-  color: var(--header-text);
-  max-width: 95%;
 }
 
 .technicalTitle {
@@ -159,11 +152,11 @@
 }
 .descrList {
   font-size: 23px;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
   line-height: 1.6;
   color: var(--body-text);
-  margin-top: 0; 
-  padding-left: 0; 
+  margin-top: 0;
+  padding-left: 0;
 }
 
 .descrList li {
@@ -174,16 +167,14 @@
 }
 
 .descrList li::before {
-  content: '▸';     
+  content: '▸';
   position: absolute;
-  left: 0;        
-  top: 0;             
+  left: 0;
+  top: 0;
   font-size: 23px;
   line-height: 1.4;
   color: var(--body-text);
 }
-
-
 
 .container {
   display: flex;
