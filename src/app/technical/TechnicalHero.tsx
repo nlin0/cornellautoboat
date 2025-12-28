@@ -9,7 +9,8 @@ type Subteam =
   | 'mechanical'
   | 'perception'
   | 'robotics'
-  | 'ROS';
+  | 'ROS'
+  | 'main';
 
 const HERO_IMAGES: Record<Subteam, string> = {
   AI: '/technical/AIHero3.png',
@@ -19,6 +20,7 @@ const HERO_IMAGES: Record<Subteam, string> = {
   perception: '/technical/perceptionHero.JPG',
   robotics: '/technical/roboticsHero2.png',
   ROS: '/technical/roboticsHero2.png',
+  main: '/technical/fullteam3.svg',
 };
 
 interface TechnicalHeroProps {

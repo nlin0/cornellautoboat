@@ -6,7 +6,7 @@ import Divider from './Divider';
 export default function TechnicalMain() {
   return (
     <div className={styles.wrapper}>
-      <TechnicalHero title="Meet the Subteams" />
+        <TechnicalHero title="Meet the Subteams!" subteam="main" />
       <Divider />
       <div className={styles.techSection}>
         <section className={styles.subteamSection}>

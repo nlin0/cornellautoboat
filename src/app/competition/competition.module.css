@@ -38,7 +38,7 @@
 }
 
 .competitionTitle::after {
-  content: '';
+  content: none;
   position: absolute;
   bottom: -0.75rem;
   left: 50%;
