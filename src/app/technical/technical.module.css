@@ -9,6 +9,7 @@
 }
 
 .heroImage {
+  margin-top: 60px;
   position: sticky;
   top: 0;
   height: 100vh;

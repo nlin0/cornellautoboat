@@ -26,7 +26,7 @@
   font-size: clamp(2rem, 8vw, 6rem);
   letter-spacing: -0.4vw;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  background: linear-gradient(135deg, #84000d 0%, #0072e5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -37,7 +37,7 @@
 }
 
 .competitionTitle::after {
-  content: '';
+  content: none;
   position: absolute;
   bottom: -0.75rem;
   left: 50%;
@@ -120,7 +120,7 @@
 }
 
 .tierTitle::after {
-  content: '';
+  content: none;
   position: absolute;
   bottom: -0.75rem;
   left: 50%;
@@ -210,18 +210,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(31, 30, 30, 0.571); /* semi-transparent dark overlay */
+  background-color: rgba(31, 30, 30, 0.571); 
   border-radius: 16px;
-  z-index: 0; /* behind content */
+  z-index: 0;
 }
 
-/* Make content appear above overlay */
+
 .sponsorInfoCard > * {
   position: relative;
   z-index: 1;
 }
 
-/* Make it fade in like other sections */
+
 .sponsorInfoCard.fadeInUp {
   opacity: 1;
   transform: translateY(0);

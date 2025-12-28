@@ -12,7 +12,7 @@ type Subteam =
   | 'ROS';
 
 const HERO_IMAGES: Record<Subteam, string> = {
-  AI: '/technical/roboticsHero2.png',
+  AI: '/technical/AIHero3.png',
   controls: '/technical/Controls.JPG',
   esys: '/technical/esys3.png',
   mechanical: '/technical/mechanical.JPG',
