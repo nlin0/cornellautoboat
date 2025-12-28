@@ -67,6 +67,8 @@
   align-items: center;
   margin: 0 auto;
   overflow: hidden;
+  transform: translateY(-30%);
+  margin-bottom: -15rem;
 }
 
 .divider {

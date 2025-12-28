@@ -72,7 +72,7 @@
   overflow: hidden;
   line-height: 0;
   z-index: 3;
-  transform: translateY(40%);
+  transform: translateY(50%);
 }
 
 .inPageDivider {
