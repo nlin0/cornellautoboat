@@ -140,11 +140,12 @@
 .techVideo {
   width: 100%;
   max-width: 1000px;
+
   height: auto;
   border-radius: 12px;
   object-fit: cover;
   display: block;
-  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .sectionContent {

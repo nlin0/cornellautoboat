@@ -107,15 +107,16 @@ export default function Robotics() {
           </li>
         </ul>
 
-        <div className={styles.techImg}>
-          <Image
-            src="/clifford2.png"
-            alt="Robotic arm"
-            width={500}
-            height={200}
-            className={styles.techImage}
-          />
-        </div>
+    
+         <video
+          src="/technical/roboticsVid.mp4"
+          className={styles.techVideo}
+          controls
+          loop
+          muted
+          playsInline
+        />
+
         <h3 className={styles.techHeading}>
           New for 2026: Acoustic Sensing System
         </h3>
