@@ -1,32 +1,39 @@
 /**
- * convert local image paths to Vercel Blob Storage URLs
- * blob URLs follow a predictable pattern, we construct them directly
+ * Utility to convert local image paths to Vercel Blob Storage URLs
+ * 
+ * Since blob URLs follow a predictable pattern, we construct them directly
+ * instead of using a mapping file.
+ * 
  * Format: https://[store-id].public.blob.vercel-storage.com/[path]
  */
 
-// public base URL
+// Base URL for Vercel Blob Storage
+// This is public information - blob URLs are meant to be accessible
 const BLOB_STORAGE_BASE_URL = 'https://uk7thkqkj3aqofka.public.blob.vercel-storage.com';
 
 /**
- * ONLY converts paths that start with /team/teamPhotos/ or /about/media/
+ * Converts a local image path to a blob URL.
+ * Only converts paths that start with /team/teamPhotos/ or /about/media/
+ * (paths that we know are in blob storage).
  * 
  * @param localPath - Local path like "/team/teamPhotos/john_doe.webp"
  * @returns Blob URL if the path matches known blob storage paths, otherwise returns original path
  * 
  * @example
  *   getBlobUrl("/team/teamPhotos/neha_naveen.webp")
- *   Returns: "https://uk7thkqkj3aqofka.public.blob.vercel-storage.com/team/teamPhotos/neha_naveen.webp"
+ *   // Returns: "https://uk7thkqkj3aqofka.public.blob.vercel-storage.com/team/teamPhotos/neha_naveen.webp"
  *   
  *   getBlobUrl("/other/image.png")
- *   Returns: "/other/image.png" (not in blob storage, keep local)
+ *   // Returns: "/other/image.png" (not in blob storage, keep local)
  */
 export function getBlobUrl(localPath: string): string {
+  // Only convert paths that we know are in blob storage
   if (localPath.startsWith('/team/teamPhotos/') || localPath.startsWith('/about/media/')) {
-    // construct blob URL
+    // Remove leading slash and construct blob URL
     const pathWithoutSlash = localPath.startsWith('/') ? localPath.slice(1) : localPath;
     return `${BLOB_STORAGE_BASE_URL}/${pathWithoutSlash}`;
   }
 
-  // other paths = local paths (atl for now)
+  // For other paths, return as-is (local path)
   return localPath;
 }
