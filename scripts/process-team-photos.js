@@ -1,25 +1,16 @@
 /**
- * Script to process team member photos from staging folder
+ * processes team member photos from staging folder:
+ * 1. Reads JPG images from staging folder (public/team/teamPhotos/staging/)
+ * 2. Converts JPG to WebP format
+ * 3. Uploads to Vercel Blob Storage
+ * 4. Updates CSV files with new image paths
  * 
- * This script:
- *   1. Reads JPG images from public/team/teamPhotos/staging/
- *   2. Converts them to WebP format
- *   3. Uploads to Vercel Blob Storage
- *   4. Updates the corresponding CSV files with the new image path
+ * NEEDED:
+ *   - BLOB_READ_WRITE_TOKEN in .env.local (ask if you do not have)
+ *   - Images named: firstname_lastname.jpg
  * 
- * Prerequisites:
- *   - BLOB_READ_WRITE_TOKEN environment variable must be set (or in .env.local)
- *   - Images in staging folder must be named: firstname_lastname.jpg
- * 
- * Usage:
- *   node scripts/process-team-photos.js
- * 
- * Example:
- *   Place: public/team/teamPhotos/staging/john_doe.jpg
- *   This will:
- *     - Convert to webp
- *     - Upload to blob: team/teamPhotos/john_doe.webp
- *     - Update CSV files where name matches "John Doe"
+ * HOW TO USE
+ *   just run node scripts/process-team-photos.js
  */
 
 const { put } = require('@vercel/blob');
@@ -27,7 +18,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-// Load .env.local file if it exists
+// load .env.local file if it exists
+// if this does not exist, ask nicole/whoever is using vercel
 const envPath = path.join(__dirname, '..', '.env.local');
 if (fs.existsSync(envPath)) {
   const envFile = fs.readFileSync(envPath, 'utf8');
@@ -47,294 +39,229 @@ if (fs.existsSync(envPath)) {
   });
 }
 
-// Configuration
+// configs
 const STAGING_DIR = path.join(__dirname, '..', 'public', 'team', 'teamPhotos', 'staging');
 const CSV_DIR = path.join(__dirname, '..', 'src', 'app', 'team', 'data');
-const CSV_FILES = ['team_leads.csv', 'hardware.csv', 'software.csv', 'business.csv'];
-const BLOB_STORAGE_BASE_URL = 'https://uk7thkqkj3aqofka.public.blob.vercel-storage.com';
+const CSV_FILES = [
+  'team_leads.csv',
+  'hardware.csv',
+  'software.csv',
+  'business.csv'
+];
 
 /**
- * Converts a filename like "john_doe" to "John Doe"
+ * normalize a name to match filename format (lowercase, spaces to underscores)
+ * "Firstname Lastname" -> "firstname_lastname"
  */
-function filenameToName(filename) {
-  return filename
-    .split('_')
-    .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
-    .join(' ');
+function normalizeName(name) {
+  return name.toLowerCase().trim().replace(/\s+/g, '_');
 }
 
 /**
- * Converts a name like "John Doe" to "john_doe"
- */
-function nameToFilename(name) {
-  return name
-    .toLowerCase()
-    .replace(/\s+/g, '_');
-}
-
-/**
- * Parses a CSV file and returns rows as objects
+ * parse CSV file and return array of rows
+ * uses PapaParse for CSV handling 
  */
 function parseCSV(filePath) {
+  const Papa = require('papaparse');
   const content = fs.readFileSync(filePath, 'utf8');
-  const lines = content.trim().split('\n');
-  if (lines.length < 2) return { headers: [], rows: [] };
 
-  const headers = lines[0].split(',').map(h => h.trim());
-  const rows = [];
+  const result = Papa.parse(content, {
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: (header) => header.trim(),
+  });
 
-  for (let i = 1; i < lines.length; i++) {
-    const values = [];
-    let current = '';
-    let inQuotes = false;
-
-    for (let j = 0; j < lines[i].length; j++) {
-      const char = lines[i][j];
-      if (char === '"') {
-        if (inQuotes && lines[i][j + 1] === '"') {
-          // Escaped quote ("")
-          current += '"';
-          j++; // Skip next quote
-        } else {
-          // Toggle quote state
-          inQuotes = !inQuotes;
-        }
-      } else if (char === ',' && !inQuotes) {
-        values.push(current.trim());
-        current = '';
-      } else {
-        current += char;
-      }
-    }
-    values.push(current.trim());
-
-    const row = {};
-    headers.forEach((header, index) => {
-      row[header] = values[index] || '';
-    });
-    rows.push(row);
+  if (result.errors.length > 0) {
+    console.warn(`WARNING: CSV parsing warnings for ${path.basename(filePath)}:`, result.errors);
   }
+
+  const headers = result.meta.fields || [];
+  const rows = result.data.map(row => {
+    const cleanRow = {};
+    headers.forEach(header => {
+      cleanRow[header] = (row[header] || '').trim();
+    });
+    return cleanRow;
+  });
 
   return { headers, rows };
 }
 
 /**
- * Writes CSV data back to file
+ * write CSV file from headers and rows
  */
 function writeCSV(filePath, headers, rows) {
-  const lines = [headers.join(',')];
+  const Papa = require('papaparse');
 
-  rows.forEach(row => {
-    const values = headers.map(header => {
-      const value = row[header] || '';
-      // Quote values that contain commas, quotes, or newlines
-      if (value.includes(',') || value.includes('"') || value.includes('\n')) {
-        // Escape quotes by doubling them
-        return `"${value.replace(/"/g, '""')}"`;
-      }
-      return value;
-    });
-    lines.push(values.join(','));
+  // convert rows to array of arrays
+  const data = rows.map(row => headers.map(header => row[header] || ''));
+
+  // include headers
+  const csvContent = Papa.unparse([headers, ...data], {
+    quotes: true, // quote fields when necessary
+    header: false, // no headers
   });
 
-  fs.writeFileSync(filePath, lines.join('\n') + '\n', 'utf8');
+  fs.writeFileSync(filePath, csvContent + '\n', 'utf8');
 }
 
 /**
- * Updates CSV file with new image path for matching member
+ * Find member in CSV files by normalized name
  */
-function updateCSVForMember(csvPath, memberName, imagePath) {
-  const { headers, rows } = parseCSV(csvPath);
-  let updated = false;
+function findMemberInCSVs(normalizedFilename) {
+  for (const csvFile of CSV_FILES) {
+    const csvPath = path.join(CSV_DIR, csvFile);
+    if (!fs.existsSync(csvPath)) {
+      console.warn(`⚠️  CSV file not found: ${csvFile}`);
+      continue;
+    }
 
-  rows.forEach(row => {
-    // Match by name (case-insensitive, flexible spacing)
-    const rowName = row.name ? row.name.trim() : '';
-    const memberNameClean = memberName.trim();
+    const { headers, rows } = parseCSV(csvPath);
 
-    // Check if names match (case-insensitive)
-    if (rowName.toLowerCase() === memberNameClean.toLowerCase()) {
-      if (row.image !== imagePath) {
-        row.image = imagePath;
-        updated = true;
-        console.log(`  ✓ Updated ${path.basename(csvPath)}: ${rowName}`);
+    // verify required columns exist
+    if (!headers.includes('name') || !headers.includes('image')) {
+      console.warn(`⚠️  CSV file missing 'name' or 'image' column: ${csvFile}`);
+      continue;
+    }
+
+    for (const row of rows) {
+      const memberName = row.name;
+      if (!memberName) continue;
+
+      const normalizedMemberName = normalizeName(memberName);
+      if (normalizedMemberName === normalizedFilename) {
+        return {
+          csvFile,
+          csvPath,
+          memberName,
+          row,
+          headers,
+          allRows: rows
+        };
       }
     }
-  });
-
-  if (updated) {
-    writeCSV(csvPath, headers, rows);
   }
 
-  return updated;
+  return null;
 }
 
 /**
- * Processes a single image file
+ * process a JPG
  */
-async function processImage(filePath, token) {
-  const fileName = path.basename(filePath, path.extname(filePath));
-  const memberName = filenameToName(fileName);
+async function processImage(jpgPath, token) {
+  // extract filename
+  const ext = path.extname(jpgPath).toLowerCase();
+  const fileName = path.basename(jpgPath, ext);
+  const normalizedName = fileName.toLowerCase();
 
-  console.log(`\n📸 Processing: ${path.basename(filePath)}`);
-  console.log(`   Member: ${memberName}`);
+  console.log(`\nPROCESSING: ${path.basename(jpgPath)}`);
 
+  // find member in CSV files
+  const memberData = findMemberInCSVs(normalizedName);
+  if (!memberData) {
+    console.error(`\nFAILURE: Could not find member matching "${fileName}" in any CSV file`);
+    console.error(`\nExpected format: firstname_lastname.jpg`);
+    return false;
+  }
+
+  console.log(`\nFound member: ${memberData.memberName} in ${memberData.csvFile}`);
+
+  // convert to WebP
+  const webpBuffer = await sharp(jpgPath)
+    .webp({ quality: 85, effort: 6 })
+    .resize(800, 800, {
+      fit: 'inside',
+      withoutEnlargement: true
+    })
+    .toBuffer();
+
+  console.log(`\nSUCCESS: Converted to WebP`);
+
+  // Upload to blob storage
+  const blobPathname = `team/teamPhotos/${normalizedName}.webp`;
   try {
-    // Step 1: Convert JPG to WebP using sharp
-    console.log(`   Converting to WebP...`);
-    const webpBuffer = await sharp(filePath)
-      .webp({ quality: 85 })
-      .resize(800, 800, {
-        fit: 'inside',
-        withoutEnlargement: true
-      })
-      .toBuffer();
-
-    // Step 2: Upload to blob storage
-    const blobPathname = `team/teamPhotos/${fileName}.webp`;
-    console.log(`   Uploading to blob storage...`);
-
     const blob = await put(blobPathname, webpBuffer, {
       access: 'public',
       addRandomSuffix: false,
-      token: token,
+      token: token
     });
-
-    console.log(`   ✓ Uploaded: ${blob.url}`);
-
-    // Step 3: Update CSV files
-    const imagePath = `/team/teamPhotos/${fileName}.webp`;
-    let foundInCSV = false;
-
-    console.log(`   Updating CSV files...`);
-    for (const csvFile of CSV_FILES) {
-      const csvPath = path.join(CSV_DIR, csvFile);
-      if (fs.existsSync(csvPath)) {
-        const updated = updateCSVForMember(csvPath, memberName, imagePath);
-        if (updated) {
-          foundInCSV = true;
-        }
-      }
-    }
-
-    if (!foundInCSV) {
-      console.warn(`   ⚠️  Warning: Member "${memberName}" not found in any CSV file.`);
-      console.warn(`      Please manually add them to the appropriate CSV.`);
-      console.warn(`      Image path: ${imagePath}`);
-    }
-
-    // Step 4: Move original file to processed folder (or delete)
-    // Option: Keep original for backup, or delete after processing
-    // For now, we'll leave it in staging so user can verify and clean up manually
-
-    return {
-      success: true,
-      memberName,
-      imagePath,
-      blobUrl: blob.url,
-    };
-
+    console.log(`\nSUCCESS: Uploaded to blob storage: ${blob.url}`);
   } catch (error) {
-    console.error(`   ✗ Error processing ${path.basename(filePath)}:`, error.message);
-    return {
-      success: false,
-      memberName,
-      error: error.message,
-    };
+    console.error(`\nFAILURE: Failed to upload to blob: ${error.message}`);
+    return false;
   }
+
+  // update CSV file
+  const imagePath = `/team/teamPhotos/${normalizedName}.webp`;
+  memberData.row.image = imagePath;
+
+  writeCSV(memberData.csvPath, memberData.headers, memberData.allRows);
+  console.log(`\nSUCCESS: Updated ${memberData.csvFile} with new image path`);
+
+  return true;
 }
 
 /**
  * Main function
  */
 async function main() {
-  console.log('🚀 Team Photo Processing Script\n');
-  console.log('='.repeat(50));
+  console.log('Processing team member photos...\n');
 
-  // Check for blob token
+  // check staging directory
+  if (!fs.existsSync(STAGING_DIR)) {
+    console.error(`\nFAILURE: Staging directory not found: ${STAGING_DIR}`);
+    console.error(`\nCreate the directory and add JPG files named: firstname_lastname.jpg`);
+    process.exit(1);
+  }
+
+  // check for token
   const token = process.env.BLOB_READ_WRITE_TOKEN;
   if (!token) {
-    console.error('❌ Error: BLOB_READ_WRITE_TOKEN environment variable is required');
-    console.error('');
-    console.error('Please run:');
-    console.error('  vercel env pull');
-    console.error('Or set BLOB_READ_WRITE_TOKEN manually in .env.local');
+    console.error('\nFAILURE: BLOB_READ_WRITE_TOKEN not found in environment variables');
+    console.error('   Run: vercel env pull');
+    console.error('   Or set it in .env.local');
     process.exit(1);
   }
 
-  // Check if staging directory exists
-  if (!fs.existsSync(STAGING_DIR)) {
-    console.error(`❌ Error: Staging directory not found: ${STAGING_DIR}`);
-    console.error('Please create the directory and add your images there.');
-    process.exit(1);
-  }
+  // find all JPG
+  const files = fs.readdirSync(STAGING_DIR);
+  const jpgFiles = files.filter(file => /\.(jpg|jpeg)$/i.test(file));
 
-  // Find all JPG files in staging directory
-  const files = fs.readdirSync(STAGING_DIR)
-    .filter(file => {
-      const ext = path.extname(file).toLowerCase();
-      return ext === '.jpg' || ext === '.jpeg';
-    })
-    .map(file => path.join(STAGING_DIR, file));
-
-  if (files.length === 0) {
-    console.log('ℹ️  No JPG images found in staging folder.');
-    console.log(`   Staging folder: ${STAGING_DIR}`);
-    console.log('');
-    console.log('To use this script:');
-    console.log('  1. Place JPG images in: public/team/teamPhotos/staging/');
-    console.log('  2. Name them: firstname_lastname.jpg (e.g., john_doe.jpg)');
-    console.log('  3. Run this script again');
+  if (jpgFiles.length === 0) {
+    console.log('No JPG files found in staging directory');
+    console.log(`   Directory: ${STAGING_DIR}`);
+    console.log('   Expected format: firstname_lastname.jpg');
     process.exit(0);
   }
 
-  console.log(`\nFound ${files.length} image(s) to process:\n`);
-  files.forEach(file => {
-    console.log(`  - ${path.basename(file)}`);
-  });
+  console.log(`Found ${jpgFiles.length} image(s) to process:\n`);
 
-  // Process each image
-  const results = [];
-  for (const file of files) {
-    const result = await processImage(file, token);
-    results.push(result);
+  let successCount = 0;
+  let failCount = 0;
+
+  for (const file of jpgFiles) {
+    const jpgPath = path.join(STAGING_DIR, file);
+    const success = await processImage(jpgPath, token);
+    if (success) {
+      successCount++;
+    } else {
+      failCount++;
+    }
   }
 
-  // Summary
-  console.log('\n' + '='.repeat(50));
-  console.log('\n📊 Summary:\n');
-
-  const successful = results.filter(r => r.success);
-  const failed = results.filter(r => !r.success);
-
-  console.log(`✓ Successfully processed: ${successful.length}`);
-  if (failed.length > 0) {
-    console.log(`✗ Failed: ${failed.length}`);
+  console.log(`\nSUCCESS: Summary:`);
+  console.log(`   Processed: ${successCount} successfully`);
+  if (failCount > 0) {
+    console.log(`   Failed: ${failCount}`);
   }
 
-  if (successful.length > 0) {
-    console.log('\n✓ Processed images:');
-    successful.forEach(r => {
-      console.log(`  - ${r.memberName}: ${r.blobUrl}`);
-    });
+  if (successCount > 0) {
+    console.log(`\nNOTE: You can now delete the processed files from the staging folder`);
   }
-
-  if (failed.length > 0) {
-    console.log('\n✗ Failed images:');
-    failed.forEach(r => {
-      console.log(`  - ${r.memberName}: ${r.error}`);
-    });
-  }
-
-  console.log('\n📝 Next steps:');
-  console.log('  1. Review the updated CSV files');
-  console.log('  2. Remove processed images from staging folder if everything looks good');
-  console.log('  3. Commit the CSV changes to git');
-  console.log('  4. Deploy to see the updated images on your site\n');
 }
 
-// Run the script
 main().catch(error => {
-  console.error('\n❌ Fatal error:', error);
+  console.error('ERROR:', error);
   process.exit(1);
 });
+
