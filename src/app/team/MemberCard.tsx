@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './team.module.css';
 import type { TeamMember } from './teamtypes';
 import { getMemberImage } from './teamtypes';
+import { getBlobUrl } from './blobImageMap';
 
 interface MemberCardProps {
   member: TeamMember;
@@ -13,16 +14,19 @@ interface MemberCardProps {
 const PLACEHOLDER_IMAGE = '/team/teamPhotos/ABteam1.webp';
 
 export default function MemberCard({ member }: MemberCardProps) {
-  const [imageSrc, setImageSrc] = useState(getMemberImage(member));
+  // Convert local path to blob URL if available
+  const initialImagePath = getMemberImage(member);
+  const [imageSrc, setImageSrc] = useState(getBlobUrl(initialImagePath));
   const [attemptCount, setAttemptCount] = useState(0);
   const [hasError, setHasError] = useState(false);
 
-  // Preload placeholder image for faster fallback
+  // Preload placeholder image for faster fallback (use blob URL if available)
   useEffect(() => {
+    const placeholderBlobUrl = getBlobUrl(PLACEHOLDER_IMAGE);
     const link = document.createElement('link');
     link.rel = 'preload';
     link.as = 'image';
-    link.href = PLACEHOLDER_IMAGE;
+    link.href = placeholderBlobUrl;
     document.head.appendChild(link);
 
     return () => {
@@ -32,35 +36,15 @@ export default function MemberCard({ member }: MemberCardProps) {
 
   const handleImageError = () => {
     // If we've already reached placeholder, mark as error and stop trying
-    if (imageSrc === PLACEHOLDER_IMAGE) {
+    const placeholderBlobUrl = getBlobUrl(PLACEHOLDER_IMAGE);
+    if (imageSrc === placeholderBlobUrl || imageSrc === PLACEHOLDER_IMAGE) {
       setHasError(true);
       return;
     }
 
-    const firstName = member.name
-      .trim()
-      .toLowerCase()
-      .replace(/['']/g, "")      // remove apostrophes
-      .replace(/[^a-z0-9]+/g, "_") // spaces, hyphens → underscore
-      .replace(/^_+|_+$/g, "");   // trim leading/trailing _
-
-    // Only try variations that actually exist in the directory:
-    // Most files are .JPG (uppercase), some are .jpg (lowercase)
-    // No .PNG files exist, so skip those to reduce noise
-    // attemptCount 0 = initial CSV path (already tried)
-    // attemptCount 1 = try .JPG (uppercase, most common)
-    // attemptCount 2 = go to placeholder
-
-    if (attemptCount === 0) {
-      // Try uppercase .JPG (most common format in directory)
-      setImageSrc(`/team/teamPhotos/${firstName}.JPG`);
-      setAttemptCount(1);
-    } else {
-      // Go straight to placeholder after trying .JPG
-      // Placeholder is preloaded, so it should load quickly
-      setImageSrc(PLACEHOLDER_IMAGE);
-      setAttemptCount(2);
-    }
+    // Fallback: try placeholder (as blob URL)
+    setImageSrc(placeholderBlobUrl);
+    setAttemptCount(1);
   };
 
   return (
@@ -92,9 +76,9 @@ export default function MemberCard({ member }: MemberCardProps) {
                 alt={`${member.name}, ${member.role}`}
                 fill
                 className={styles.ticketPhoto}
-                priority={imageSrc !== PLACEHOLDER_IMAGE}
+                priority={imageSrc !== getBlobUrl(PLACEHOLDER_IMAGE) && imageSrc !== PLACEHOLDER_IMAGE}
                 onError={handleImageError}
-                loading={imageSrc === PLACEHOLDER_IMAGE ? 'eager' : undefined}
+                loading={imageSrc === getBlobUrl(PLACEHOLDER_IMAGE) || imageSrc === PLACEHOLDER_IMAGE ? 'eager' : undefined}
               />
             </div>
           </div>
