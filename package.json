@@ -14,7 +14,8 @@
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
     "compress-images": "node scripts/compress-images.js",
     "generate-albums": "node scripts/generate-albums-data.js",
-    "convert-webp": "node scripts/convert-to-webp.js"
+    "convert-webp": "node scripts/convert-to-webp.js",
+    "process-team-photos": "node scripts/process-team-photos.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
