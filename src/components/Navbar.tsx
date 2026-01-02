@@ -65,7 +65,7 @@ export default function Navbar() {
   // On mobile, always show navbar (persistent)
   useEffect(() => {
     // Always show on mobile or non-home pages
-    if (isMobile || !isHomePage) {
+    if (isMobile || isHomePage) {
       setIsScrolled(true); // Always show on mobile or non-home pages
       return;
     }
