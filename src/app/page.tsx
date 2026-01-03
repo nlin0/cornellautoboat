@@ -1,10 +1,15 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import styles from './page.module.css';
-import './globals.css';
-import { FlaskConical, DraftingCompass, Factory, Lightbulb } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import styles from "./page.module.css";
+import "./globals.css";
+import {
+  FlaskConical,
+  DraftingCompass,
+  Factory,
+  Lightbulb,
+} from "lucide-react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,7 +36,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
     const refs = contentRefs.current;
@@ -69,22 +74,26 @@ export default function Home() {
           quality={100}
           priority
           className={styles.heroHomeImage}
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: "cover" }}
         />
 
         <div className={styles.heroHomeContent}>
           <div
-            className={`${styles.homeHeroText} ${isVisible ? styles.fadeInDown : ''
-              }`}
+            className={`${styles.homeHeroText} ${
+              isVisible ? styles.fadeInDown : ""
+            }`}
           >
             <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
             <p className={styles.homeDescr}>
-              Where Innovation meets Passion{' '}
+              Where Innovation meets Passion{" "}
               <span className={styles.speechBubble}>
                 <span className={styles.speechText}>Click a boat!</span>
               </span>
             </p>
+            <a href="https://forms.gle/2Y3BycZK8QUAHsuYA" className={styles.applyButton}>
+              Apply Now! 
+            </a>
           </div>
 
           <div className={styles.homeHeroBoat}>
@@ -95,7 +104,7 @@ export default function Home() {
               height={600}
               className={styles.cliffordBoat}
               onClick={() => setIsModalOpen(true)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             />
           </div>
         </div>
@@ -142,11 +151,19 @@ export default function Home() {
               aria-expanded={isVideoOpen}
             >
               <span>Watch our team video!</span>
-              <span className={`${styles.teamVideoButtonIcon} ${isVideoOpen ? styles.teamVideoButtonIconOpen : ''}`}>
+              <span
+                className={`${styles.teamVideoButtonIcon} ${
+                  isVideoOpen ? styles.teamVideoButtonIconOpen : ""
+                }`}
+              >
                 ▼
               </span>
             </button>
-            <div className={`${styles.teamVideoDropdown} ${isVideoOpen ? styles.teamVideoDropdownOpen : ''}`}>
+            <div
+              className={`${styles.teamVideoDropdown} ${
+                isVideoOpen ? styles.teamVideoDropdownOpen : ""
+              }`}
+            >
               <div className={styles.teamVideoContainer}>
                 <iframe
                   className={styles.teamVideo}
@@ -171,8 +188,8 @@ export default function Home() {
                 The 2025-2026 Competition Cycle
               </h2>
               <p className={styles.competitionCycleSubtitle}>
-                Incremental hardware updates, significant software changes, and an
-                emphasis on testing.
+                Incremental hardware updates, significant software changes, and
+                an emphasis on testing.
               </p>
               <div className={styles.cycleLinks}>
                 <a
@@ -180,8 +197,13 @@ export default function Home() {
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.querySelector('[data-section="testing"]');
-                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const element = document.querySelector(
+                      '[data-section="testing"]'
+                    );
+                    element?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
                   }}
                 >
                   <FlaskConical className={styles.cycleIcon} />
@@ -192,8 +214,13 @@ export default function Home() {
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.querySelector('[data-section="design"]');
-                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const element = document.querySelector(
+                      '[data-section="design"]'
+                    );
+                    element?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
                   }}
                 >
                   <DraftingCompass className={styles.cycleIcon} />
@@ -204,8 +231,13 @@ export default function Home() {
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.querySelector('[data-section="manufacturing"]');
-                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const element = document.querySelector(
+                      '[data-section="manufacturing"]'
+                    );
+                    element?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
                   }}
                 >
                   <Factory className={styles.cycleIcon} />
@@ -216,8 +248,13 @@ export default function Home() {
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.querySelector('[data-section="research"]');
-                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const element = document.querySelector(
+                      '[data-section="research"]'
+                    );
+                    element?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
                   }}
                 >
                   <Lightbulb className={styles.cycleIcon} />
@@ -241,7 +278,11 @@ export default function Home() {
                   alt="Design"
                   fill
                   className={styles.techImage}
-                  style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: '30px' }}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: "center top",
+                    borderRadius: "30px",
+                  }}
                 />
               </div>
             </div>
@@ -265,15 +306,17 @@ export default function Home() {
                     Key projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${isDesignOpen ? styles.dropdownIconOpen : ''
-                      }`}
+                    className={`${styles.dropdownIcon} ${
+                      isDesignOpen ? styles.dropdownIconOpen : ""
+                    }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${isDesignOpen ? styles.dropdownContentOpen : ''
-                    }`}
+                  className={`${styles.dropdownContent} ${
+                    isDesignOpen ? styles.dropdownContentOpen : ""
+                  }`}
                 >
                   <ul className={styles.descrList}>
                     <li>
@@ -346,7 +389,13 @@ export default function Home() {
                   loop
                   muted
                   playsInline
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', borderRadius: '30px' }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                    borderRadius: "30px",
+                  }}
                 />
               </div>
             </div>
@@ -366,7 +415,7 @@ export default function Home() {
                   alt="Testing"
                   fill
                   className={styles.techImage}
-                  style={{ objectFit: 'cover', borderRadius: '30px' }}
+                  style={{ objectFit: "cover", borderRadius: "30px" }}
                 />
               </div>
             </div>
@@ -411,15 +460,17 @@ export default function Home() {
                     Current projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${isResearchOpen ? styles.dropdownIconOpen : ''
-                      }`}
+                    className={`${styles.dropdownIcon} ${
+                      isResearchOpen ? styles.dropdownIconOpen : ""
+                    }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${isResearchOpen ? styles.dropdownContentOpen : ''
-                    }`}
+                  className={`${styles.dropdownContent} ${
+                    isResearchOpen ? styles.dropdownContentOpen : ""
+                  }`}
                 >
                   <ul className={styles.descrList}>
                     <li>Holonomic propulsion system</li>
@@ -443,7 +494,7 @@ export default function Home() {
                   alt="Research"
                   fill
                   className={styles.techImage}
-                  style={{ objectFit: 'cover', borderRadius: '30px' }}
+                  style={{ objectFit: "cover", borderRadius: "30px" }}
                 />
               </div>
             </div>

@@ -12,12 +12,17 @@
 }
 
 /* cornell autoboat texts */
+
 .homeHeroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* or center if you want */
+  gap: 0.6rem;   
   padding: 15px;
   margin-top: 0;
   font-size: 11vw;
   font-size: clamp(2rem, 11vw, 8rem);
-  letter-spacing: -.4vw;
+  letter-spacing: -0.4vw;
   font-weight: 500;
   color: var(--primary-text);
   line-height: 1;
@@ -37,7 +42,6 @@
 }
 
 @keyframes float1 {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -49,7 +53,6 @@
 }
 
 @keyframes float2 {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -61,7 +64,6 @@
 }
 
 @keyframes float3 {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -82,7 +84,7 @@
   padding-bottom: 0;
 }
 
-/* Responsive gap - increases with screen size, decreases with smaller screens (excluding mobile) 
+/* Responsive gap - increases with screen size, decreases with smaller screens (excluding mobile) */
 @media (min-width: 701px) and (max-width: 999px) {
   .homeContent {
     margin-top: -300px;
@@ -118,7 +120,7 @@
     margin-top: 300px;
   }
 }
-*/
+
 .homeContent {
   margin-top: clamp(-300px, -15vw, 300px);
 }
@@ -127,7 +129,8 @@
   font-size: clamp(1rem, 8vw, 6rem);
   margin-top: 0px;
   display: block;
-  animation: fadeInUp 0.8s ease-out 0.3s both, float2 3s ease-in-out 0.5s infinite;
+  animation: fadeInUp 0.8s ease-out 0.3s both,
+    float2 3s ease-in-out 0.5s infinite;
 }
 
 @keyframes fadeInUp {
@@ -174,7 +177,7 @@
 }
 
 .speechBubble::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -6px;
   left: 20px;
@@ -283,6 +286,30 @@
   object-position: center top;
   min-height: 180vh;
   min-width: 1000px;
+}
+/* Apply now button*/
+.applyButton {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  background: linear-gradient(135deg, #950303 0%, #01aaff 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(150, 3, 3, 0.35);
+  letter-spacing: normal;
+}
+
+.applyButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(150, 3, 3, 0.45);
+}
+
+.applyButton:active {
+  transform: translateY(-1px);
 }
 
 .aboutCrewSection {
@@ -403,7 +430,8 @@
 .teamVideoDropdown {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out,
+    margin-top 0.3s ease-out;
   opacity: 0;
   margin-top: 0;
   width: 100%;
@@ -416,7 +444,8 @@
   max-height: 2000px;
   opacity: 1;
   margin-top: 0.5rem;
-  transition: max-height 0.6s ease-in, opacity 0.4s ease-in 0.1s, margin-top 0.4s ease-in 0.1s;
+  transition: max-height 0.6s ease-in, opacity 0.4s ease-in 0.1s,
+    margin-top 0.4s ease-in 0.1s;
 }
 
 .teamVideoContainer {
@@ -427,15 +456,13 @@
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   border-radius: 15px;
   padding: 20px;
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.3),
-    0 0 0 2px #0a0a0a,
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 2px #0a0a0a,
     inset 0 1px 5px rgba(255, 255, 255, 0.05),
     inset 0 -1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .teamVideoContainer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 8px;
   left: 50%;
@@ -484,7 +511,6 @@
 }
 
 @keyframes floatTicket {
-
   0%,
   100% {
     transform: rotate(-1.5deg) translateY(0);
@@ -499,20 +525,19 @@
   max-width: 1200px;
   width: 100%;
   text-align: center;
-  background: rgba(219, 238, 242, 0.955);
+  background: rgba(236, 244, 246, 0.955);
   border: 2px solid rgba(149, 3, 3, 0.4);
   border-radius: 12px;
   padding: 3rem 2.5rem;
   position: relative;
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.3),
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(149, 3, 3, 0.1) inset;
   transform: rotate(-1deg);
   overflow: hidden;
 }
 
 .competitionCycleContent::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -15px;
   top: 50%;
@@ -521,13 +546,12 @@
   height: 30px;
   background: var(--primary-dark);
   border-radius: 50%;
-  box-shadow:
-    inset 0 0 0 2px rgba(149, 3, 3, 0.3),
+  box-shadow: inset 0 0 0 2px rgba(149, 3, 3, 0.3),
     5px 0 0 0 var(--primary-dark);
 }
 
 .competitionCycleContent::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -15px;
   top: 50%;
@@ -536,8 +560,7 @@
   height: 30px;
   background: var(--primary-dark);
   border-radius: 50%;
-  box-shadow:
-    inset 0 0 0 2px rgba(149, 3, 3, 0.3),
+  box-shadow: inset 0 0 0 2px rgba(149, 3, 3, 0.3),
     -5px 0 0 0 var(--primary-dark);
 }
 
@@ -595,16 +618,18 @@
 }
 
 .cycleLink::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(109, 197, 243, 0.4) 50%,
-      transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(109, 197, 243, 0.4) 50%,
+    transparent 100%
+  );
   animation: lightStreak 3s ease-in-out infinite;
   z-index: 0;
   pointer-events: none;
@@ -656,11 +681,15 @@
 }
 
 .cycleLink::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 4px;
-  background: linear-gradient(135deg, rgba(149, 3, 3, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(149, 3, 3, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
   opacity: 0;
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
@@ -674,8 +703,7 @@
   color: #950303;
   border-color: rgba(149, 3, 3, 0.5);
   background: rgba(149, 3, 3, 0.05);
-  box-shadow:
-    0 4px 12px rgba(149, 3, 3, 0.2),
+  box-shadow: 0 4px 12px rgba(149, 3, 3, 0.2),
     inset 0 0 15px rgba(149, 3, 3, 0.05);
 }
 
@@ -800,7 +828,7 @@
 }
 
 .descrList li::before {
-  content: '▸';
+  content: "▸";
   color: var(--white);
   font-weight: 900;
   position: absolute;
@@ -1001,7 +1029,6 @@
   align-items: center;
 }
 
-
 .heroWrapper {
   position: relative;
   width: 100%;
@@ -1013,7 +1040,6 @@
   z-index: -1;
 }
 
-
 .heroHome {
   position: relative;
   width: 100%;
@@ -1024,6 +1050,7 @@
   justify-content: center;
   overflow: hidden;
   background-color: var(--primary-dark);
+  padding-top: var(--navbar-height);
 }
 
 .heroHomeContent {
@@ -1036,7 +1063,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  transform: translateY(-10rem);
+  padding-top: var(--navbar-height);
 }
 
 .content {
@@ -1134,7 +1161,6 @@
 
 /* MOBILE VIEW */
 @media (max-width: 700px) {
-
   /* HOMEPAGE */
   .heroHome {
     height: 100vh;
@@ -1266,7 +1292,6 @@
   }
 
   @keyframes floatTicketMobile {
-
     0%,
     100% {
       transform: rotate(-0.5deg) translateY(0);
@@ -1339,7 +1364,7 @@
     align-items: stretch;
   }
 
-  .sectionContent>.container {
+  .sectionContent > .container {
     width: 100% !important;
     min-height: auto;
     flex-direction: column !important;
@@ -1470,7 +1495,6 @@
   }
 }
 
-
 /* Boat Modal Popup */
 .modalOverlay {
   position: fixed;
@@ -1563,7 +1587,6 @@
 }
 
 @keyframes floatBoat {
-
   0%,
   100% {
     transform: rotate(20deg) translateY(0px);
@@ -1609,7 +1632,7 @@
 }
 
 .modalTitle::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;

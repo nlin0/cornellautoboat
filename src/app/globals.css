@@ -49,6 +49,8 @@
 
   /* BREAKPOINTS */
   --mobile-breakpoint: 700px;
+  /* navbar-height */
+  --navbar-height: 5px;
 }
 
 @theme inline {
