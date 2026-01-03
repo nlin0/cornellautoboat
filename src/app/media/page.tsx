@@ -94,7 +94,7 @@ export default function Media() {
               transform: 'rotate(-8deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={120} height={120} className={styles.polaroidImage} />
+            <Image src="/about/media/hero7.png" alt="" width={120} height={120} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -104,7 +104,7 @@ export default function Media() {
               transform: 'rotate(12deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={100} height={100} className={styles.polaroidImage} />
+            <Image src="/about/media/hero2.jpg" alt="" width={100} height={100} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -114,7 +114,7 @@ export default function Media() {
               transform: 'rotate(-5deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={110} height={110} className={styles.polaroidImage} />
+            <Image src="/about/media/hero3.jpg" alt="" width={110} height={110} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -124,7 +124,7 @@ export default function Media() {
               transform: 'rotate(10deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={95} height={95} className={styles.polaroidImage} />
+            <Image src="/about/media/hero4.JPG"alt="" width={95} height={95} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -134,7 +134,7 @@ export default function Media() {
               transform: 'rotate(-12deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={105} height={105} className={styles.polaroidImage} />
+            <Image src="/about/media/hero8.png" alt="" width={105} height={105} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -144,7 +144,7 @@ export default function Media() {
               transform: 'rotate(7deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={115} height={115} className={styles.polaroidImage} />
+            <Image src="/about/media/hero1.jpg" alt="" width={115} height={115} className={styles.polaroidImage} />
           </div>
         </div>
         <h1 className={styles.mediaTitle}>Media Gallery</h1>

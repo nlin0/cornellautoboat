@@ -1,7 +1,5 @@
 .wrapper {
-
   background-color: var(--color-secondary);
-
 }
 
 .aboutIntro {
@@ -12,7 +10,6 @@
   padding-top: 15rem;
   /* Increased from 10rem to account for persistent navbar (5rem = 80px) */
 }
-
 
 /* HERO IMAGE SECTION */
 .heroImg {
@@ -60,7 +57,6 @@
   max-width: 95%;
 }
 
-
 .aboutTitle {
   font-size: clamp(8rem, 8vw, 15rem);
   letter-spacing: -0.3vw;
@@ -79,33 +75,26 @@
   margin: 0;
 }
 .dividerWrapperTop {
-  position:relative;
+  position: relative;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform:  translateY(-70%);
-  margin-bottom:-20rem;
+  transform: translateY(-70%);
+  margin-bottom: -20rem;
   z-index: 5;
 }
 .dividerWrapper {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  
 }
 
 .divider {
   width: 100%;
-
   height: auto;
-
-
   display: block;
   object-fit: cover;
-
 }
-
-
 
 .timelineContainer {
   width: 100%;
@@ -166,7 +155,7 @@
 }
 
 .subtitle {
-  font-size: 30px;
+  font-size: 20px;
   opacity: 0.85;
 }
 
