@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import styles from './competition.module.css';
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import styles from "./competition.module.css";
 
 export default function Competition() {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -21,7 +21,7 @@ export default function Competition() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
     const refs = contentRefs.current;
@@ -52,7 +52,6 @@ export default function Competition() {
       {/* Header Section */}
       <div className={`${styles.competitionIntro} ${styles.fadeInDown}`}>
         <h1 className={styles.competitionTitle}>RoboBoat Competition</h1>
-
       </div>
 
       <div className={styles.dividerWrapper}>
@@ -74,12 +73,15 @@ export default function Competition() {
           <div className={styles.contentGrid}>
             <div
               className={styles.textContent}
-              ref={(el) => { contentRefs.current[0] = el; }}
+              ref={(el) => {
+                contentRefs.current[0] = el;
+              }}
             >
-              <h2 className={styles.sectionTitle}>The RoboBoat Competition</h2>
+              <h2 className={styles.sectionTitle}>RoboBoat 2026</h2>
               <p className={styles.bodyText}>
-                RoboBoat is an international marine robotics competition, run by RoboNation. Each team builds an
-                Autonomous Surface Vehicle (ASV) around 3 feet wide and 5 feet long. Over the course of a week,
+                RoboBoat is an international marine robotics competition, run by
+                RoboNation. Each team builds an Autonomous Surface Vehicle (ASV)
+                around 3 feet wide and 5 feet long. Over the course of a week,
                 each ASV must complete a variety of different challenges.
               </p>
               <a
@@ -93,7 +95,9 @@ export default function Competition() {
             </div>
             <div
               className={styles.imageWrapper}
-              ref={(el) => { contentRefs.current[1] = el; }}
+              ref={(el) => {
+                contentRefs.current[1] = el;
+              }}
             >
               <Image
                 src="/clifford2.png"
@@ -115,24 +119,30 @@ export default function Competition() {
         <div className={styles.container}>
           <div
             className={styles.sectionHeader}
-            ref={(el) => { contentRefs.current[2] = el; }}
+            ref={(el) => {
+              contentRefs.current[2] = el;
+            }}
           >
             <h2 className={styles.sectionTitle}>Navigational Tasks</h2>
             <p className={styles.sectionDescription}>
-              Testing precision, perception, and autonomous navigation capabilities
+              Testing precision, perception, and autonomous navigation
+              capabilities
             </p>
           </div>
           <div className={styles.tasksGrid}>
+            {/* Card 1 */}
             <div
               className={styles.taskCard}
-              ref={(el) => { contentRefs.current[3] = el; }}
+              ref={(el) => {
+                contentRefs.current[3] = el;
+              }}
             >
               <div className={styles.taskImageWrapper}>
                 <Image
-                  src="/clifford2.png"
-                  alt="Boat navigating through a maze"
+                  src="/competition/evacuation_route.png"
+                  alt="evacuation"
                   width={400}
-                  height={300}
+                  height={500}
                   className={styles.taskImage}
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
@@ -141,19 +151,23 @@ export default function Competition() {
                 />
               </div>
               <div className={styles.taskContent}>
-                <h3 className={styles.taskTitle}>Maze Navigation</h3>
+                <h3 className={styles.taskTitle}>Evacuation Route</h3>
                 <p className={styles.taskDescription}>
-                  Autonomous path planning through complex obstacle courses
+                  ASV safely transits through entrance and exit gates at
+                  start/end of run.
                 </p>
               </div>
             </div>
+            {/* Card 2 */}
             <div
               className={styles.taskCard}
-              ref={(el) => { contentRefs.current[4] = el; }}
+              ref={(el) => {
+                contentRefs.current[4] = el;
+              }}
             >
               <div className={styles.taskImageWrapper}>
                 <Image
-                  src="/clifford2.png"
+                  src="/competition/debris.png"
                   alt="Boat docking autonomously"
                   width={400}
                   height={300}
@@ -164,19 +178,23 @@ export default function Competition() {
                 />
               </div>
               <div className={styles.taskContent}>
-                <h3 className={styles.taskTitle}>Docking</h3>
+                <h3 className={styles.taskTitle}>Debris Clearance</h3>
                 <p className={styles.taskDescription}>
-                  Precise positioning and docking at designated stations
+                  ASV navigates through channel to debris field, and scans for
+                  floating hazards.
                 </p>
               </div>
             </div>
+            {/* Card 3 */}
             <div
               className={styles.taskCard}
-              ref={(el) => { contentRefs.current[5] = el; }}
+              ref={(el) => {
+                contentRefs.current[5] = el;
+              }}
             >
               <div className={styles.taskImageWrapper}>
                 <Image
-                  src="/clifford2.png"
+                  src="/competition/emergency.png"
                   alt="Boat navigating around buoys"
                   width={400}
                   height={300}
@@ -187,23 +205,140 @@ export default function Competition() {
                 />
               </div>
               <div className={styles.taskContent}>
-                <h3 className={styles.taskTitle}>Buoy Navigation</h3>
+                <h3 className={styles.taskTitle}>Emergency Response Sprint</h3>
                 <p className={styles.taskDescription}>
-                  High-speed navigation around buoys and return to start
+                  ASV sprints to the distress zone, circles the light buoy
+                  correctly, and exits back through the buoys.
+                </p>
+              </div>
+            </div>
+            {/* Card 4 */}
+            <div
+              className={styles.taskCard}
+              ref={(el) => {
+                contentRefs.current[6] = el;
+              }}
+            >
+              <div className={styles.taskImageWrapper}>
+                <Image
+                  src="/competition/supply.avif"
+                  alt="Boat navigating around buoys"
+                  width={400}
+                  height={300}
+                  className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+              </div>
+              <div className={styles.taskContent}>
+                <h3 className={styles.taskTitle}>Supply Drop</h3>
+                <p className={styles.taskDescription}>
+                  ASV delivers water and racquetball supplies to stationary
+                  vessels throughout course.
+                </p>
+              </div>
+            </div>
+            {/* Card 5 */}
+            <div
+              className={styles.taskCard}
+              ref={(el) => {
+                contentRefs.current[7] = el;
+              }}
+            >
+              <div className={styles.taskImageWrapper}>
+                <Image
+                  src="/competition/navigate.png"
+                  alt="Boat navigating around buoys"
+                  width={400}
+                  height={300}
+                  className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+              </div>
+              <div className={styles.taskContent}>
+                <h3 className={styles.taskTitle}>Navigate the Marina</h3>
+                <p className={styles.taskDescription}>
+                  ASV enters marina and docks in an unoccupied slip.
+                </p>
+              </div>
+            </div>
+            {/* Card 6 */}
+            <div
+              className={styles.taskCard}
+              ref={(el) => {
+                contentRefs.current[8] = el;
+              }}
+            >
+              <div className={styles.taskImageWrapper}>
+                <Image
+                  src="/competition/comm2.png"
+                  alt="Boat navigating around buoys"
+                  width={400}
+                  height={300}
+                  className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+              </div>
+
+              <div className={styles.taskContent}>
+                <h3 className={styles.taskTitle}>Communications & Reporting</h3>
+                <p className={styles.taskDescription}>
+                  ASV reports on any given task: time stamp, lat/long locations,
+                  number or color of object.
+                </p>
+              </div>
+            </div>
+            {/* Card 7 */}
+            <div
+              className={styles.taskCard}
+              ref={(el) => {
+                contentRefs.current[9] = el;
+              }}
+            >
+              <div className={styles.taskImageWrapper}>
+                <Image
+                  src="/competition/alert.png"
+                  alt="Boat navigating around buoys"
+                  width={400}
+                  height={300}
+                  className={styles.taskImage}
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                />
+              </div>
+
+              <div className={styles.taskContent}>
+                <h3 className={styles.taskTitle}>Navigate the Marina</h3>
+                <p className={styles.taskDescription}>
+                  ASV responds to emergency audio signal.
                 </p>
               </div>
             </div>
           </div>
+
+          {/* Detail box*/}
           <div
             className={styles.detailBox}
-            ref={(el) => { contentRefs.current[6] = el; }}
+            ref={(el) => {
+              contentRefs.current[10] = el;
+            }}
           >
             <p className={styles.detailText}>
-              The navigational tasks test the boat&apos;s ability to see and recognize obstacles, plan a path around them,
-              and then execute that plan. In order to successfully complete these challenges, the computer vision, path
-              planning, and path execution/controls algorithms must be working perfectly in sync within the onboard
-              operating system. Mechanically, the boat must remain stable in order for the cameras and sensors to be
-              able to see clearly, and the propulsion systems must be able to produce consistent and reliable thrust.
+              The navigational tasks test the boat&apos;s ability to see and
+              recognize obstacles, plan a path around them, and then execute
+              that plan. In order to successfully complete these challenges, the
+              computer vision, path planning, and path execution/controls
+              algorithms must be working perfectly in sync within the onboard
+              operating system. Mechanically, the boat must remain stable in
+              order for the cameras and sensors to be able to see clearly, and
+              the propulsion systems must be able to produce consistent and
+              reliable thrust.
             </p>
           </div>
         </div>
@@ -214,7 +349,9 @@ export default function Competition() {
         <div className={styles.container}>
           <div
             className={styles.sectionHeader}
-            ref={(el) => { contentRefs.current[7] = el; }}
+            ref={(el) => {
+              contentRefs.current[11] = el;
+            }}
           >
             <h2 className={styles.sectionTitle}>Robotic Tasks</h2>
             <p className={styles.sectionDescription}>
@@ -224,7 +361,9 @@ export default function Competition() {
           <div className={styles.tasksGrid}>
             <div
               className={styles.taskCard}
-              ref={(el) => { contentRefs.current[8] = el; }}
+              ref={(el) => {
+                contentRefs.current[12] = el;
+              }}
             >
               <div className={styles.taskImageWrapper}>
                 <Image
@@ -241,13 +380,16 @@ export default function Competition() {
               <div className={styles.taskContent}>
                 <h3 className={styles.taskTitle}>Object Collection</h3>
                 <p className={styles.taskDescription}>
-                  Collecting objects from the water and placing them in specific areas
+                  Collecting objects from the water and placing them in specific
+                  areas
                 </p>
               </div>
             </div>
             <div
               className={styles.taskCard}
-              ref={(el) => { contentRefs.current[9] = el; }}
+              ref={(el) => {
+                contentRefs.current[13] = el;
+              }}
             >
               <div className={styles.taskImageWrapper}>
                 <Image
@@ -270,7 +412,9 @@ export default function Competition() {
             </div>
             <div
               className={styles.taskCard}
-              ref={(el) => { contentRefs.current[10] = el; }}
+              ref={(el) => {
+                contentRefs.current[14] = el;
+              }}
             >
               <div className={styles.taskImageWrapper}>
                 <Image
@@ -294,14 +438,19 @@ export default function Competition() {
           </div>
           <div
             className={styles.detailBox}
-            ref={(el) => { contentRefs.current[11] = el; }}
+            ref={(el) => {
+              contentRefs.current[15] = el;
+            }}
           >
             <p className={styles.detailText}>
-              The robotic tasks test the boat&apos;s ability to physically interact with its environment. In order to
-              successfully complete these challenges, mechanical and electrical robotics components must be working
-              together seamlessly to execute precise movements. On the software side, the cameras and sensors process
-              data about the boat&apos;s surroundings, which is then used by the motion planning algorithms and motor control
-              code to manipulate onboard actuators.
+              The robotic tasks test the boat&apos;s ability to physically
+              interact with its environment. In order to successfully complete
+              these challenges, mechanical and electrical robotics components
+              must be working together seamlessly to execute precise movements.
+              On the software side, the cameras and sensors process data about
+              the boat&apos;s surroundings, which is then used by the motion
+              planning algorithms and motor control code to manipulate onboard
+              actuators.
             </p>
           </div>
         </div>
