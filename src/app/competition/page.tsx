@@ -344,7 +344,8 @@ export default function Competition() {
         </div>
       </section>
 
-      {/* Robotic Tasks Section */}
+      {/* Robotic Tasks Section 
+      
       <section className={styles.roboticSection}>
         <div className={styles.container}>
           <div
@@ -453,8 +454,11 @@ export default function Competition() {
               actuators.
             </p>
           </div>
+          
         </div>
+        
       </section>
+      */}
     </div>
   );
 }
