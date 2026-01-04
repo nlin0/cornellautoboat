@@ -215,7 +215,7 @@ export default function About() {
         <div className={styles.timelineContainer2}>
           <div className={`${styles.timelineSection} ${styles.reverse}`}>
             <div className={styles.textBlock2}>
-              <div className={styles.year2}>FALL 2026</div>
+              <div className={styles.year2}>FALL 2025</div>
               <h2 className={styles.title}>Scooby</h2>
               <p className={styles.subtitle}>
                 During Fall 2025, the team continued to work with Clifford to
