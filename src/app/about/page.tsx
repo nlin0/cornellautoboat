@@ -216,7 +216,7 @@ export default function About() {
           <div className={`${styles.timelineSection} ${styles.reverse}`}>
             <div className={styles.textBlock2}>
               <div className={styles.year2}>FALL 2025</div>
-              <h2 className={styles.title}>Scooby</h2>
+              <h2 className={styles.title}>Preparing for roboboat 2026</h2>
               <p className={styles.subtitle}>
                 During Fall 2025, the team continued to work with Clifford to
                 validate new hardware and software developments, in preparation
@@ -260,7 +260,7 @@ export default function About() {
           <div className={styles.timelineSection}>
             <div className={styles.textBlock}>
               <div className={styles.year}>SPRING 2026</div>
-              <h2 className={styles.title}>Stay Tuned!</h2>
+              <h2 className={styles.title}>Scooby</h2>
               <p className={styles.subtitle}>
                 UPCOMING: Scooby is the product of key advancements for the
                 team, marking the debut of a new sensor suite, optimized
