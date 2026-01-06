@@ -44,41 +44,12 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTechnicalOpen, setIsTechnicalOpen] = useState(false);
   const [isTechnicalOpenDesktop, setIsTechnicalOpenDesktop] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
+  const indicatorRef = useRef<HTMLDivElement | null>(null);
+  const linkRefs = useRef<Map<string, HTMLElement>>(new Map());
 
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
-
-  // Check if mobile viewport
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 700);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Scroll state - hide navbar at top, show when scrolling (only on home page)
-  // On mobile, always show navbar (persistent)
-  useEffect(() => {
-    // Always show on mobile or non-home pages
-    if (isMobile || isHomePage) {
-      setIsScrolled(true); // Always show on mobile or non-home pages
-      return;
-    }
-
-    const handleScroll = () => {
-      // Hide navbar when at top (scrollY < 50), show when scrolling down
-      setIsScrolled(window.scrollY > 50);
-    };
-    // Check initial scroll position
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage, isMobile]);
 
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
   const closeMenu = useCallback(() => {
@@ -114,22 +85,83 @@ export default function Navbar() {
   const getTechnicalHref = (label: string) =>
     `/technical/${label.toLowerCase().replace(/\s+/g, '-')}`;
 
-  // Close mobile menu when pathname changes
+  // close mobile menu when pathname changes
   useEffect(() => {
     setIsMenuOpen(false);
     setIsTechnicalOpen(false);
   }, [pathname]);
 
+  // ANIMATION
+  // update sliding indicator position when pathname changes
+  useEffect(() => {
+    const updateIndicator = () => {
+      if (!indicatorRef.current || !navRef.current) return;
+
+      // find the active link
+      let activeLink: HTMLElement | null = null;
+      
+      // check main nav links
+      for (const { href } of MAIN_NAV_LINKS) {
+        if (pathname === href) {
+          activeLink = linkRefs.current.get(href) || null;
+          break;
+        }
+      }
+      
+      // check technical link
+      if (!activeLink && pathname.startsWith('/technical')) {
+        activeLink = linkRefs.current.get('/technical') || null;
+      }
+      
+      // check secondary nav links (excluding buttons)
+      if (!activeLink) {
+        for (const { href, isButton } of SECONDARY_NAV_LINKS) {
+          if (!isButton && pathname === href) {
+            activeLink = linkRefs.current.get(href) || null;
+            break;
+          }
+        }
+      }
+
+      if (activeLink && navRef.current) {
+        const navRect = navRef.current.getBoundingClientRect();
+        const linkRect = activeLink.getBoundingClientRect();
+        
+        const left = linkRect.left - navRect.left;
+        const top = linkRect.top - navRect.top;
+        const width = linkRect.width;
+        const height = linkRect.height;
+        
+        indicatorRef.current.style.left = `${left}px`;
+        indicatorRef.current.style.top = `${top}px`;
+        indicatorRef.current.style.width = `${width}px`;
+        indicatorRef.current.style.height = `${height}px`;
+        indicatorRef.current.style.opacity = '1';
+      } else {
+        // hide indicator if no active link
+        if (indicatorRef.current) {
+          indicatorRef.current.style.opacity = '0';
+        }
+      }
+    };
+
+    // small delay to ensure DOM is updated
+    const timer = setTimeout(updateIndicator, 10);
+    window.addEventListener('resize', updateIndicator);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateIndicator);
+    };
+  }, [pathname]);
+
   return (
     <nav
-      className={`bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage
-        ? 'shadow-lg bg-white/80 backdrop-blur-sm translate-y-0'
-        : '-translate-y-full'
-        }`}
+      className="bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg bg-white/80 backdrop-blur-sm translate-y-0"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* LOGO */}
           <Link
             href="/"
             onClick={closeMenu}
@@ -151,37 +183,59 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* DESKTOP NAV */}
           <nav
-            className="hidden md:flex items-center space-x-1"
+            ref={navRef}
+            className="hidden md:flex items-center space-x-1 relative"
             aria-label="Main navigation"
           >
+            {/* SLIDING ANIMATION */}
+            <div
+              ref={indicatorRef}
+              className="absolute border border-[#960303] rounded-md transition-all duration-300 ease-out pointer-events-none"
+              style={{
+                opacity: 0,
+                left: 0,
+                top: 0,
+                width: 0,
+                height: 0,
+              }}
+            />
+            
             {MAIN_NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href)
-                  ? 'text-[#960303] border border-[#960303]'
-                  : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                  }`}
+                ref={(el) => {
+                  if (el) linkRefs.current.set(href, el);
+                }}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-out relative group ${
+                  isActive(href)
+                    ? 'text-[#960303]'
+                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                } hover:scale-105 active:scale-95`}
               >
                 {label}
               </Link>
             ))}
 
-            {/* Technical Dropdown */}
+            {/* TECHNICAL DROPTDOWN */}
             <div
               className="relative"
               onMouseEnter={handleTechnicalMouseEnter}
               onMouseLeave={handleTechnicalMouseLeave}
             >
-              {/* CLICKABLE BUTTON: now a Link */}
+              {/* CLICKABLE BUTTON */}
               <Link
                 href="/technical"
-                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-all duration-300 transform hover:scale-105 relative group ${pathname.startsWith('/technical')
-                  ? 'text-[#960303] border border-[#960303]'
-                  : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                  }`}
+                ref={(el) => {
+                  if (el) linkRefs.current.set('/technical', el);
+                }}
+                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-colors duration-200 ease-out relative group ${
+                  pathname.startsWith('/technical')
+                    ? 'text-[#960303]'
+                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                } hover:scale-105 active:scale-95`}
               >
                 Subteams
                 <svg
@@ -200,7 +254,7 @@ export default function Navbar() {
                 </svg>
               </Link>
 
-              {/* Desktop Dropdown */}
+              {/* DESKTOP DROPDOWN */}
               {isTechnicalOpenDesktop && (
                 <div className="absolute left-0 top-full z-50 pt-3">
                   {/* invisible hover bridge */}
@@ -242,19 +296,23 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 transform hover:scale-105 relative group ${isActive(href) && !isButton
-                  ? 'text-[#960303] border border-[#960303]'
-                  : isButton
-                    ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg hover:shadow-red-600/50 font-semibold ml-2 px-5 py-2.5 hover:scale-110'
-                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                  }`}
+                ref={(el) => {
+                  if (el && !isButton) linkRefs.current.set(href, el);
+                }}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-out relative group ${
+                  isActive(href) && !isButton
+                    ? 'text-[#960303]'
+                    : isButton
+                      ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg hover:shadow-red-600/50 font-semibold ml-2 px-5 py-2.5 hover:scale-110 active:scale-95'
+                      : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50 hover:scale-105 active:scale-95'
+                }`}
               >
                 {label}
               </Link>
             ))}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <div className="md:hidden flex items-center">
             <button
               type="button"
@@ -283,7 +341,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* MOBILE NAV */}
       {isMenuOpen && (
         <nav className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {MAIN_NAV_LINKS.map(({ href, label }) => (
@@ -300,7 +358,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Technical Mobile Dropdown */}
+          {/* TECHNICAL MOBILE DROPDOWN */}
           <button
             type="button"
             onClick={toggleTechnicalMobile}
