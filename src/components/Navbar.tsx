@@ -31,7 +31,7 @@ const MAIN_NAV_LINKS: NavLink[] = [
 const SECONDARY_NAV_LINKS: NavLink[] = [
   { href: '/competition', label: 'Competition' },
   { href: '/media', label: 'Media' },
-     { href: '/sponsors', label: 'Sponsors' },
+  { href: '/sponsors', label: 'Sponsors' },
 
   {
     href: 'https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=7311&dids=5372&bledit=1',
@@ -98,7 +98,7 @@ export default function Navbar() {
 
       // find the active link
       let activeLink: HTMLElement | null = null;
-      
+
       // check main nav links
       for (const { href } of MAIN_NAV_LINKS) {
         if (pathname === href) {
@@ -106,12 +106,12 @@ export default function Navbar() {
           break;
         }
       }
-      
+
       // check technical link
       if (!activeLink && pathname.startsWith('/technical')) {
         activeLink = linkRefs.current.get('/technical') || null;
       }
-      
+
       // check secondary nav links (excluding buttons)
       if (!activeLink) {
         for (const { href, isButton } of SECONDARY_NAV_LINKS) {
@@ -125,12 +125,12 @@ export default function Navbar() {
       if (activeLink && navRef.current) {
         const navRect = navRef.current.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
-        
+
         const left = linkRect.left - navRect.left;
         const top = linkRect.top - navRect.top;
         const width = linkRect.width;
         const height = linkRect.height;
-        
+
         indicatorRef.current.style.left = `${left}px`;
         indicatorRef.current.style.top = `${top}px`;
         indicatorRef.current.style.width = `${width}px`;
@@ -147,7 +147,7 @@ export default function Navbar() {
     // small delay to ensure DOM is updated
     const timer = setTimeout(updateIndicator, 10);
     window.addEventListener('resize', updateIndicator);
-    
+
     return () => {
       clearTimeout(timer);
       window.removeEventListener('resize', updateIndicator);
@@ -200,7 +200,7 @@ export default function Navbar() {
                 height: 0,
               }}
             />
-            
+
             {MAIN_NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
@@ -208,11 +208,10 @@ export default function Navbar() {
                 ref={(el) => {
                   if (el) linkRefs.current.set(href, el);
                 }}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-out relative group ${
-                  isActive(href)
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-out relative group ${isActive(href)
                     ? 'text-[#960303]'
                     : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                } hover:scale-105 active:scale-95`}
+                  } hover:scale-105 active:scale-95`}
               >
                 {label}
               </Link>
@@ -230,11 +229,10 @@ export default function Navbar() {
                 ref={(el) => {
                   if (el) linkRefs.current.set('/technical', el);
                 }}
-                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-colors duration-200 ease-out relative group ${
-                  pathname.startsWith('/technical')
+                className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-colors duration-200 ease-out relative group ${pathname.startsWith('/technical')
                     ? 'text-[#960303]'
                     : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                } hover:scale-105 active:scale-95`}
+                  } hover:scale-105 active:scale-95`}
               >
                 Subteams
                 <svg
@@ -270,11 +268,10 @@ export default function Navbar() {
                         <Link
                           key={label}
                           href={technicalHref}
-                          className={`block px-4 py-2.5 border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5 ${
-                            isTechnicalActive
+                          className={`block px-4 py-2.5 border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5 ${isTechnicalActive
                               ? 'text-[#960303] border-l-2 border-l-[#960303] bg-gray-50'
                               : 'hover:bg-gray-50 hover:text-[#960303]'
-                          }`}
+                            }`}
                           role="menuitem"
                           style={{
                             animation: `fadeInLeft 0.3s ease-out ${index * 0.05
@@ -298,13 +295,12 @@ export default function Navbar() {
                 ref={(el) => {
                   if (el && !isButton) linkRefs.current.set(href, el);
                 }}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-out relative group ${
-                  isActive(href) && !isButton
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-out relative group ${isActive(href) && !isButton
                     ? 'text-[#960303]'
                     : isButton
                       ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg hover:shadow-red-600/50 font-semibold ml-2 px-5 py-2.5 hover:scale-110 active:scale-95'
                       : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50 hover:scale-105 active:scale-95'
-                }`}
+                  }`}
               >
                 {label}
               </Link>
@@ -376,11 +372,10 @@ export default function Navbar() {
                     key={label}
                     href={technicalHref}
                     onClick={closeMenu}
-                    className={`block px-3 py-2 rounded-md text-sm ${
-                      isTechnicalActive
+                    className={`block px-3 py-2 rounded-md text-sm ${isTechnicalActive
                         ? 'text-[#960303] border border-[#960303]'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-[#960303]'
-                    }`}
+                      }`}
                   >
                     {label}
                   </Link>
