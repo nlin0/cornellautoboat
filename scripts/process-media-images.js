@@ -1,7 +1,7 @@
 /**
- * Script to process media images from public/about/media/
+ * Script to process media images from public/media/
  * 
- *   1. Finds all JPG/JPEG images in public/about/media/ (recursively)
+ *   1. Finds all JPG/JPEG images in public/media/ (recursively)
  *   2. Converts them to WebP format
  *   3. Uploads to Vercel Blob Storage (preserving folder structure)
  *   4. Optionally removes original JPG files after successful upload
@@ -43,7 +43,7 @@ if (fs.existsSync(envPath)) {
 }
 
 // configs
-const MEDIA_DIR = path.join(__dirname, '..', 'public', 'about', 'media');
+const MEDIA_DIR = path.join(__dirname, '..', 'public', 'media');
 const BLOB_STORAGE_BASE_URL = 'https://uk7thkqkj3aqofka.public.blob.vercel-storage.com';
 
 // check command line flags

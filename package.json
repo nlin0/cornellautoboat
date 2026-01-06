@@ -15,6 +15,7 @@
     "convert-webp": "node scripts/convert-to-webp.js",
     "process-team-photos": "node scripts/process-team-photos.js",
     "process-media-images": "node scripts/process-media-images.js",
+    "upload-media-webp-to-blob": "node scripts/upload-media-webp-to-blob.js",
     "remove-jpg-files": "node scripts/remove-jpg-files.js"
   },
   "dependencies": {

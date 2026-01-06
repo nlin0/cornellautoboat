@@ -4,7 +4,7 @@ import type { PhotoAlbum } from './mediaData';
 import albumMetadata from './albumMetadata.json';
 
 // only use fs on server side (build time)
-const MEDIA_BASE_DIR = path.join(process.cwd(), 'public', 'about', 'media');
+const MEDIA_BASE_DIR = path.join(process.cwd(), 'public', 'media');
 
 /**
  * gets all image files from a directory
