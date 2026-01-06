@@ -314,7 +314,7 @@ export default function Competition() {
               </div>
 
               <div className={styles.taskContent}>
-                <h3 className={styles.taskTitle}>Navigate the Marina</h3>
+                <h3 className={styles.taskTitle}>Harbor Alert</h3>
                 <p className={styles.taskDescription}>
                   ASV responds to emergency audio signal.
                 </p>
