@@ -11,12 +11,8 @@
     "check-updates": "npm outdated",
     "update-deps": "npm update",
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
-    "compress-images": "node scripts/compress-images.js",
-    "convert-webp": "node scripts/convert-to-webp.js",
     "process-team-photos": "node scripts/process-team-photos.js",
     "process-media-images": "node scripts/process-media-images.js",
-    "upload-media-webp-to-blob": "node scripts/upload-media-webp-to-blob.js",
-    "remove-jpg-files": "node scripts/remove-jpg-files.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
