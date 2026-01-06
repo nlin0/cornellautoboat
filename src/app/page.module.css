@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--primary-dark);
-  margin-top: 50px;
+  margin-top: 0;
 }
 
 /* cornell autoboat texts */
@@ -212,7 +212,6 @@
   margin-top: 1rem;
   justify-content: center;
   align-items: center;
-  /* still takes up space so content below isn't overlapped */
   z-index: 0;
 }
 
@@ -1051,7 +1050,7 @@
   justify-content: center;
   overflow: hidden;
   background-color: var(--primary-dark);
-  padding-top: var(--navbar-height);
+  padding-top: 0;
 }
 
 .heroHomeContent {
@@ -1065,21 +1064,16 @@
   justify-content: flex-start;
   width: 100%;
   padding-top: var(--navbar-height);
-  margin-top: -250px;
+  margin-top: -130px;
 }
 
 
 @media (min-width: 1200px) {
   .heroHomeContent {
-    margin-top: -50px;
+    margin-top: 10px;
   }
 }
 
-@media (min-width: 2000px) {
-  .heroHomeContent {
-    margin-top: 0;
-  }
-}
 
 .content {
   position: relative;

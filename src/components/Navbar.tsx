@@ -91,7 +91,6 @@ export default function Navbar() {
     setIsTechnicalOpen(false);
   }, [pathname]);
 
-  // ANIMATION
   // update sliding indicator position when pathname changes
   useEffect(() => {
     const updateIndicator = () => {
@@ -138,7 +137,7 @@ export default function Navbar() {
         indicatorRef.current.style.height = `${height}px`;
         indicatorRef.current.style.opacity = '1';
       } else {
-        // hide indicator if no active link
+        // Hide indicator if no active link
         if (indicatorRef.current) {
           indicatorRef.current.style.opacity = '0';
         }
@@ -189,7 +188,7 @@ export default function Navbar() {
             className="hidden md:flex items-center space-x-1 relative"
             aria-label="Main navigation"
           >
-            {/* SLIDING ANIMATION */}
+            {/* SLIDING INDICATOR */}
             <div
               ref={indicatorRef}
               className="absolute border border-[#960303] rounded-md transition-all duration-300 ease-out pointer-events-none"
@@ -219,13 +218,13 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* TECHNICAL DROPTDOWN */}
+            {/* TECHNICAL DROPDOWN */}
             <div
               className="relative"
               onMouseEnter={handleTechnicalMouseEnter}
               onMouseLeave={handleTechnicalMouseLeave}
             >
-              {/* CLICKABLE BUTTON */}
+              {/* CLICKABLE BUTTON*/}
               <Link
                 href="/technical"
                 ref={(el) => {
@@ -291,7 +290,7 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Secondary Links */}
+            {/* SECONDARY LINKS */}
             {SECONDARY_NAV_LINKS.map(({ href, label, isButton }) => (
               <Link
                 key={href}

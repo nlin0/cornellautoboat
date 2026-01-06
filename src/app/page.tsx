@@ -55,11 +55,10 @@ export default function Home() {
 
     // FOR NODE JS NULL ERROR
     return () => {
-      // Disconnect observer first to prevent any issues
+      // disconnect observer first to prevent any issues
       try {
         observer.disconnect();
       } catch (error) {
-        // Observer might already be disconnected, ignore error
       }
     };
   }, []);
