@@ -16,8 +16,8 @@
 .homeHeroText {
   display: flex;
   flex-direction: column;
-  align-items: center; /* or center if you want */
-  gap: 0.6rem;   
+  align-items: center;
+  gap: 0.6rem;
   padding: 15px;
   margin-top: 0;
   font-size: 11vw;
@@ -42,6 +42,7 @@
 }
 
 @keyframes float1 {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -53,6 +54,7 @@
 }
 
 @keyframes float2 {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -64,6 +66,7 @@
 }
 
 @keyframes float3 {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -287,6 +290,7 @@
   min-height: 180vh;
   min-width: 1000px;
 }
+
 /* Apply now button*/
 .applyButton {
   display: inline-block;
@@ -511,6 +515,7 @@
 }
 
 @keyframes floatTicket {
+
   0%,
   100% {
     transform: rotate(-1.5deg) translateY(0);
@@ -624,12 +629,10 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(109, 197, 243, 0.4) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(109, 197, 243, 0.4) 50%,
+      transparent 100%);
   animation: lightStreak 3s ease-in-out infinite;
   z-index: 0;
   pointer-events: none;
@@ -685,11 +688,9 @@
   position: absolute;
   inset: 0;
   border-radius: 4px;
-  background: linear-gradient(
-    135deg,
-    rgba(149, 3, 3, 0.05) 0%,
-    rgba(255, 255, 255, 0.02) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(149, 3, 3, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%);
   opacity: 0;
   transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
@@ -1061,9 +1062,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding-top: var(--navbar-height);
+  margin-top: -250px;
 }
 
 .content {
@@ -1161,6 +1163,7 @@
 
 /* MOBILE VIEW */
 @media (max-width: 700px) {
+
   /* HOMEPAGE */
   .heroHome {
     height: 100vh;
@@ -1292,6 +1295,7 @@
   }
 
   @keyframes floatTicketMobile {
+
     0%,
     100% {
       transform: rotate(-0.5deg) translateY(0);
@@ -1364,7 +1368,7 @@
     align-items: stretch;
   }
 
-  .sectionContent > .container {
+  .sectionContent>.container {
     width: 100% !important;
     min-height: auto;
     flex-direction: column !important;
@@ -1587,6 +1591,7 @@
 }
 
 @keyframes floatBoat {
+
   0%,
   100% {
     transform: rotate(20deg) translateY(0px);
