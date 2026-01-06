@@ -1068,6 +1068,19 @@
   margin-top: -250px;
 }
 
+
+@media (min-width: 1200px) {
+  .heroHomeContent {
+    margin-top: -50px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .heroHomeContent {
+    margin-top: 0;
+  }
+}
+
 .content {
   position: relative;
   z-index: 1;
@@ -1185,6 +1198,7 @@
     align-items: center;
     min-height: 100vh;
     padding-top: 0;
+    margin-top: 0;
   }
 
   .homeHeroText {
