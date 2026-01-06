@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "watch": "next dev",
-    "prebuild": "node scripts/generate-albums-data.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,9 +12,10 @@
     "update-deps": "npm update",
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
     "compress-images": "node scripts/compress-images.js",
-    "generate-albums": "node scripts/generate-albums-data.js",
     "convert-webp": "node scripts/convert-to-webp.js",
-    "process-team-photos": "node scripts/process-team-photos.js"
+    "process-team-photos": "node scripts/process-team-photos.js",
+    "process-media-images": "node scripts/process-media-images.js",
+    "remove-jpg-files": "node scripts/remove-jpg-files.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

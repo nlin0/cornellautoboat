@@ -3,11 +3,11 @@ import path from 'path';
 import type { PhotoAlbum } from './mediaData';
 import albumMetadata from './albumMetadata.json';
 
-// Only use fs on server side (build time)
+// only use fs on server side (build time)
 const MEDIA_BASE_DIR = path.join(process.cwd(), 'public', 'about', 'media');
 
 /**
- * Gets all image files from a directory
+ * gets all image files from a directory
  */
 function getImageFiles(dir: string): string[] {
   if (!fs.existsSync(dir)) {
@@ -18,39 +18,75 @@ function getImageFiles(dir: string): string[] {
   return files
     .filter((file) => {
       const ext = path.extname(file).toLowerCase();
-      return ['.jpg', '.jpeg', '.png'].includes(ext);
+      // PREFER WebP, but also include JPG/JPEG/PNG for backward compatibility
+      return ['.webp', '.jpg', '.jpeg', '.png'].includes(ext);
     })
-    .sort() // Sort for consistent ordering
+    // sort to prefer WebP files over JPG when both exist
+    .sort((a, b) => {
+      const extA = path.extname(a).toLowerCase();
+      const extB = path.extname(b).toLowerCase();
+      const nameA = path.basename(a, extA);
+      const nameB = path.basename(b, extB);
+
+      // if same base name, prefer WebP
+      if (nameA === nameB) {
+        if (extA === '.webp') return -1;
+        if (extB === '.webp') return 1;
+      }
+      return a.localeCompare(b);
+    })
+    // remove duplicates (if both .jpg and .webp exist, keep only .webp)
+    // ! MIGHT NOT NEED THIS ANYMORE IF WE KEEP BLOB STORAGE !
+    .filter((file, index, arr) => {
+      const ext = path.extname(file).toLowerCase();
+      const name = path.basename(file, ext);
+      // if this is a JPG/JPEG/PNG, check if a WebP version exists
+      if (['.jpg', '.jpeg', '.png'].includes(ext)) {
+        return !arr.some(f => {
+          const fExt = path.extname(f).toLowerCase();
+          const fName = path.basename(f, fExt);
+          return fName === name && fExt === '.webp';
+        });
+      }
+      return true;
+    })
+    .sort() // sort for consistent ordering
     .map((file) => {
-      // Return path relative to public directory
+      // return path relative to public directory
       const relativePath = path.relative(
         path.join(process.cwd(), 'public'),
         path.join(dir, file)
       );
-      return '/' + relativePath.replace(/\\/g, '/');
+      let finalPath = '/' + relativePath.replace(/\\/g, '/');
+
+      // normalize .JPG.webp or .jpg.webp to .webp to match blob storage naming
+      // cuz blob storage has files as IMG_5464.webp, not IMG_5464.JPG.webp
+      finalPath = finalPath.replace(/\.(jpg|jpeg)\.webp$/i, '.webp');
+
+      return finalPath;
     });
 }
 
 /**
- * Generates a URL-friendly ID from a folder name
+ * generates a URL-friendly ID from a folder name
  */
 function generateAlbumId(folderName: string): string {
   return folderName.toLowerCase().replace(/\s+/g, '-');
 }
 
 /**
- * Gets the cover image for an album (first image, or specified in metadata)
+ * gets the cover image for an album (first image, or specified in metadata)
  */
 function getCoverImage(
   albumId: string,
   photos: string[],
   metadata: { title?: string; description?: string; date?: string; coverImage?: string } | undefined
 ): string {
-  // If metadata specifies a cover image, use it
+  // if metadata specifies a cover image, use it
   if (metadata?.coverImage) {
     return metadata.coverImage;
   }
-  // Otherwise use the first photo
+  // otherwise use the first photo
   return photos[0] || '/clifford2.png';
 }
 
@@ -67,7 +103,7 @@ function getCoverImage(
  * - Admin can upload photos and create albums via API routes
  */
 export function getPhotoAlbums(): PhotoAlbum[] {
-  // Only run on server side (during build or in API routes)
+  // only run on server side (during build or in API routes)
   if (typeof window !== 'undefined') {
     console.warn('getPhotoAlbums can only be called on the server side');
     return [];
@@ -92,11 +128,11 @@ export function getPhotoAlbums(): PhotoAlbum[] {
     const photos = getImageFiles(albumPath);
 
     if (photos.length === 0) {
-      // Skip empty albums
+      // skip empty albums
       continue;
     }
 
-    // Get metadata from JSON file (can be extended to use database)
+    // get metadata from JSON file (can be extended to use database)
     const metadata = albumMetadata[folderName as keyof typeof albumMetadata] || {};
 
     albums.push({
@@ -109,7 +145,7 @@ export function getPhotoAlbums(): PhotoAlbum[] {
     });
   }
 
-  // Sort albums by date (newest first), then by title
+  // sort albums by date (newest first), then by title
   albums.sort((a, b) => {
     if (a.date && b.date) {
       return b.date.localeCompare(a.date);
@@ -123,7 +159,7 @@ export function getPhotoAlbums(): PhotoAlbum[] {
 }
 
 /**
- * Gets a single album by ID
+ * gets a single album by ID
  */
 export function getAlbumById(albumId: string): PhotoAlbum | undefined {
   const albums = getPhotoAlbums();
@@ -131,7 +167,7 @@ export function getAlbumById(albumId: string): PhotoAlbum | undefined {
 }
 
 /**
- * Gets slideshow images (can be configured in metadata or use first photo from each album)
+ * gets slideshow images (can be configured in metadata or use first photo from each album)
  */
 export function getSlideshowImages(): string[] {
   const albums = getPhotoAlbums();

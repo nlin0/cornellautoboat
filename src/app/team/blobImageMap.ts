@@ -11,20 +11,27 @@ const BLOB_STORAGE_BASE_URL = 'https://uk7thkqkj3aqofka.public.blob.vercel-stora
 /**
  * ONLY converts paths that start with /team/teamPhotos/ or /about/media/
  * 
- * @param localPath - Local path like "/team/teamPhotos/john_doe.webp"
+ * @param localPath - Local path like "/team/teamPhotos/john_doe.webp" or "/about/media/roboboat 25/IMG_5464.JPG.webp"
  * @returns Blob URL if the path matches known blob storage paths, otherwise returns original path
  * 
  * @example
  *   getBlobUrl("/team/teamPhotos/neha_naveen.webp")
  *   Returns: "https://uk7thkqkj3aqofka.public.blob.vercel-storage.com/team/teamPhotos/neha_naveen.webp"
  *   
+ *   getBlobUrl("/about/media/roboboat 25/IMG_5464.JPG.webp")
+ *   Returns: "https://uk7thkqkj3aqofka.public.blob.vercel-storage.com/about/media/roboboat 25/IMG_5464.webp"
+ *   
  *   getBlobUrl("/other/image.png")
  *   Returns: "/other/image.png" (not in blob storage, keep local)
  */
 export function getBlobUrl(localPath: string): string {
   if (localPath.startsWith('/team/teamPhotos/') || localPath.startsWith('/about/media/')) {
+    // Normalize path: remove .JPG.webp or .jpg.webp and replace with .webp
+    // This handles cases where local files have .JPG.webp but blob storage has .webp
+    let normalizedPath = localPath.replace(/\.(jpg|jpeg)\.webp$/i, '.webp');
+    
     // construct blob URL
-    const pathWithoutSlash = localPath.startsWith('/') ? localPath.slice(1) : localPath;
+    const pathWithoutSlash = normalizedPath.startsWith('/') ? normalizedPath.slice(1) : normalizedPath;
     return `${BLOB_STORAGE_BASE_URL}/${pathWithoutSlash}`;
   }
 
