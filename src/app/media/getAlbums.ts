@@ -125,15 +125,21 @@ export function getPhotoAlbums(): PhotoAlbum[] {
     const folderName = entry.name;
     const albumId = generateAlbumId(folderName);
     const albumPath = path.join(MEDIA_BASE_DIR, folderName);
-    const photos = getImageFiles(albumPath);
+    
+    // get metadata from JSON file (can be extended to use database)
+    const metadata = albumMetadata[folderName as keyof typeof albumMetadata] || {};
+    
+    // Try to get photos from metadata first (for blob storage), fallback to filesystem
+    const metadataPhotos = (metadata as { photos?: string[] }).photos || [];
+    const filesystemPhotos = getImageFiles(albumPath);
+    
+    // Use metadata photos if available, otherwise use filesystem photos
+    const photos = metadataPhotos.length > 0 ? metadataPhotos : filesystemPhotos;
 
     if (photos.length === 0) {
       // skip empty albums
       continue;
     }
-
-    // get metadata from JSON file (can be extended to use database)
-    const metadata = albumMetadata[folderName as keyof typeof albumMetadata] || {};
 
     albums.push({
       id: albumId,
