@@ -189,7 +189,7 @@ export default function About() {
             </div>
             <div className={styles.imageContainer}>
               <Image
-                src="/clifford2.png"
+                src="/about/roboboat.png"
                 alt="spring2025"
                 width={400}
                 height={300}
@@ -232,7 +232,7 @@ export default function About() {
             </div>
             <div className={styles.imageContainer}>
               <Image
-                src="/about/about4.png"
+                src="/about/full_team.png"
                 alt="fall2023"
                 width={400}
                 height={300}
@@ -269,7 +269,7 @@ export default function About() {
             </div>
             <div className={styles.imageContainer}>
               <Image
-                src="/clifford2.png"
+                src="/about/scooby.png"
                 alt="spring2025"
                 width={400}
                 height={300}
