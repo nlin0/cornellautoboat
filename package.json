@@ -12,7 +12,8 @@
     "update-deps": "npm update",
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
     "process-team-photos": "node scripts/process-team-photos.js",
-    "process-media-images": "node scripts/process-media-images.js"
+    "process-media-images": "node scripts/process-media-images.js",
+    "reupload-ss": "node scripts/reupload-ss"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
