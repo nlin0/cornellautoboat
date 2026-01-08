@@ -58,8 +58,7 @@ export default function Home() {
       // disconnect observer first to prevent any issues
       try {
         observer.disconnect();
-      } catch (error) {
-      }
+      } catch (error) {}
     };
   }, []);
 
@@ -90,8 +89,11 @@ export default function Home() {
                 <span className={styles.speechText}>Click a boat!</span>
               </span>
             </p>
-            <a href="https://forms.gle/2Y3BycZK8QUAHsuYA" className={styles.applyButton}>
-              Apply Now! 
+            <a
+              href="https://forms.gle/2Y3BycZK8QUAHsuYA"
+              className={styles.applyButton}
+            >
+              Apply Now!
             </a>
           </div>
 
@@ -558,10 +560,10 @@ export default function Home() {
             <div className={styles.modalTextContent}>
               <h2 className={styles.modalTitle}>Clifford the Big Red Boat</h2>
               <p className={styles.modalDescription}>
-                Clifford the Big Red Boat is our autonomous vessel, designed and
-                built by the Cornell AutoBoat team. Named after Cornell&apos;s
-                beloved mascot, Clifford represents our dedication to innovation
-                in marine robotics and autonomous navigation.
+                Clifford the Big Red Boat is our current autonomous vessel,
+                designed and built in 2024. Named after the beloved red dog,
+                Clifford represents our dedication to innovation in marine
+                robotics and autonomous navigation.
               </p>
             </div>
           </div>
