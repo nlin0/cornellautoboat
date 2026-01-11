@@ -91,14 +91,14 @@ function getCoverImage(
 }
 
 /**
- * Dynamically discovers photo albums from the filesystem
- * This function can be called at build time to generate album data
+ * Dynamically discovers photo albums from albumMetadata.json
+ * This function works at build time and runtime, reading from JSON metadata
  * 
  * NOTE: This only works on the server/build side, not in the browser
  * 
  * For future admin functionality:
  * - This can be extended to read from a database
- * - Or merge filesystem data with database metadata
+ * - Or merge JSON data with database metadata
  * - Admin can update albumMetadata.json or a database
  * - Admin can upload photos and create albums via API routes
  */
@@ -109,32 +109,29 @@ export function getPhotoAlbums(): PhotoAlbum[] {
     return [];
   }
 
-  if (!fs.existsSync(MEDIA_BASE_DIR)) {
-    console.warn(`Media directory not found: ${MEDIA_BASE_DIR}`);
-    return [];
-  }
-
   const albums: PhotoAlbum[] = [];
-  const entries = fs.readdirSync(MEDIA_BASE_DIR, { withFileTypes: true });
-
-  for (const entry of entries) {
-    if (!entry.isDirectory()) {
-      continue;
-    }
-
-    const folderName = entry.name;
+  
+  // Read albums directly from albumMetadata.json (works in production without filesystem)
+  const albumKeys = Object.keys(albumMetadata) as Array<keyof typeof albumMetadata>;
+  
+  for (const folderName of albumKeys) {
+    const metadata = albumMetadata[folderName];
+    if (!metadata) continue;
+    
     const albumId = generateAlbumId(folderName);
-    const albumPath = path.join(MEDIA_BASE_DIR, folderName);
     
-    // get metadata from JSON file (can be extended to use database)
-    const metadata = albumMetadata[folderName as keyof typeof albumMetadata] || {};
-    
-    // Try to get photos from metadata first (for blob storage), fallback to filesystem
+    // Get photos from metadata (required for blob storage)
     const metadataPhotos = (metadata as { photos?: string[] }).photos || [];
-    const filesystemPhotos = getImageFiles(albumPath);
     
-    // Use metadata photos if available, otherwise use filesystem photos
-    const photos = metadataPhotos.length > 0 ? metadataPhotos : filesystemPhotos;
+    // Fallback to filesystem only in development (when directory exists)
+    let photos = metadataPhotos;
+    if (photos.length === 0 && fs.existsSync(MEDIA_BASE_DIR)) {
+      const albumPath = path.join(MEDIA_BASE_DIR, folderName);
+      if (fs.existsSync(albumPath)) {
+        const filesystemPhotos = getImageFiles(albumPath);
+        photos = filesystemPhotos;
+      }
+    }
 
     if (photos.length === 0) {
       // skip empty albums
