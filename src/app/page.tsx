@@ -16,7 +16,6 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDesignOpen, setIsDesignOpen] = useState(false);
   const [isResearchOpen, setIsResearchOpen] = useState(false);
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -58,7 +57,7 @@ export default function Home() {
       // disconnect observer first to prevent any issues
       try {
         observer.disconnect();
-      } catch (error) {}
+      } catch (error) { }
     };
   }, []);
 
@@ -77,9 +76,8 @@ export default function Home() {
 
         <div className={styles.heroHomeContent}>
           <div
-            className={`${styles.homeHeroText} ${
-              isVisible ? styles.fadeInDown : ""
-            }`}
+            className={`${styles.homeHeroText} ${isVisible ? styles.fadeInDown : ""
+              }`}
           >
             <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
@@ -89,12 +87,6 @@ export default function Home() {
                 <span className={styles.speechText}>Click a boat!</span>
               </span>
             </p>
-            <a
-              href="https://forms.gle/2Y3BycZK8QUAHsuYA"
-              className={styles.applyButton}
-            >
-              Apply Now!
-            </a>
           </div>
 
           <div className={styles.homeHeroBoat}>
@@ -146,34 +138,24 @@ export default function Home() {
               contentRefs.current[1] = el;
             }}
           >
-            <button
-              className={styles.teamVideoButton}
-              onClick={() => setIsVideoOpen(!isVideoOpen)}
-              aria-expanded={isVideoOpen}
-            >
-              <span>Watch our team video!</span>
-              <span
-                className={`${styles.teamVideoButtonIcon} ${
-                  isVideoOpen ? styles.teamVideoButtonIconOpen : ""
-                }`}
+            <div className={styles.teamVideoContainer}>
+              <iframe
+                className={styles.teamVideo}
+                src="https://www.youtube.com/embed/diU5pqHvO5w"
+                title="Cornell AutoBoat Team Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            {/* APPLY NOW BUTTON - Comment out when applications are closed */}
+            <div className={styles.applyButtonSection}>
+              <a
+                href="https://forms.gle/2Y3BycZK8QUAHsuYA"
+                className={styles.applyButton}
               >
-                ▼
-              </span>
-            </button>
-            <div
-              className={`${styles.teamVideoDropdown} ${
-                isVideoOpen ? styles.teamVideoDropdownOpen : ""
-              }`}
-            >
-              <div className={styles.teamVideoContainer}>
-                <iframe
-                  className={styles.teamVideo}
-                  src="https://www.youtube.com/embed/diU5pqHvO5w"
-                  title="Cornell AutoBoat Team Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
+                Apply Now!
+              </a>
             </div>
           </div>
 
@@ -307,17 +289,15 @@ export default function Home() {
                     Key projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${
-                      isDesignOpen ? styles.dropdownIconOpen : ""
-                    }`}
+                    className={`${styles.dropdownIcon} ${isDesignOpen ? styles.dropdownIconOpen : ""
+                      }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${
-                    isDesignOpen ? styles.dropdownContentOpen : ""
-                  }`}
+                  className={`${styles.dropdownContent} ${isDesignOpen ? styles.dropdownContentOpen : ""
+                    }`}
                 >
                   <ul className={styles.descrList}>
                     <li>
@@ -461,17 +441,15 @@ export default function Home() {
                     Current projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${
-                      isResearchOpen ? styles.dropdownIconOpen : ""
-                    }`}
+                    className={`${styles.dropdownIcon} ${isResearchOpen ? styles.dropdownIconOpen : ""
+                      }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${
-                    isResearchOpen ? styles.dropdownContentOpen : ""
-                  }`}
+                  className={`${styles.dropdownContent} ${isResearchOpen ? styles.dropdownContentOpen : ""
+                    }`}
                 >
                   <ul className={styles.descrList}>
                     <li>Holonomic propulsion system</li>
