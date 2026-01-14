@@ -15,9 +15,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// CHANGE METADATA/IMAGES HERE
 export const metadata: Metadata = {
   title: "Cornell AutoBoat Team",
   description: "Official website of the Cornell University AutoBoat Team",
+  openGraph: {
+    title: "Cornell AutoBoat Team",
+    description: "Official website of the Cornell University AutoBoat Team",
+    url: "https://www.cornellautoboat.com/",
+    siteName: "Cornell AutoBoat Team",
+    images: [
+      {
+        url: "https://www.cornellautoboat.com/CUAB_Logo.png",
+        width: 1200,
+        height: 1200,
+        alt: "Cornell AutoBoat Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cornell AutoBoat Team",
+    description: "Official website of the Cornell University AutoBoat Team",
+    images: ["https://www.cornellautoboat.com/CUAB_Logo.png"],
+  },
 };
 
 export default function RootLayout({
