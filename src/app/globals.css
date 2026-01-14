@@ -93,9 +93,9 @@
   --font-subheader: 'Town', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-paragraph: 'Avenir', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; */
 
-  --font-header:  Futura;
+  --font-header: Tahoma;
   --font-subheader: Futura;
-  --font-paragraph: Futura;
+  --font-paragraph: Tahoma;
 }
 
 @theme inline {
