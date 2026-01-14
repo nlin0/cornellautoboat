@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+
+/* !! */
+/* TODO: Update the fonts.. Filson soft is adobe, Avenir can be pirated */
 /* CUSTOM FONTS */
 /* Filson Soft - Headers */
 @font-face {
@@ -31,14 +34,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Avenir';
-  src: url('/fonts/avenir-bold.woff2') format('woff2'),
-    url('/fonts/avenir-bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* FONT: Pirulen - Used primarily for logo/branding
    To use: Add @font-face declaration here if font files are available
@@ -93,9 +88,14 @@
   --navbar-height: 5px;
 
   /* FONTS */
-  --font-header: 'Filson Soft', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* commented out since not working */
+  /* --font-header: 'Filson Soft', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-subheader: 'Town', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-paragraph: 'Avenir', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-paragraph: 'Avenir', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; */
+
+  --font-header:  Futura;
+  --font-subheader: Futura;
+  --font-paragraph: Futura;
 }
 
 @theme inline {
@@ -122,10 +122,6 @@
   /* text colors */
   --color-header: var(--header-text);
   --color-body: var(--body-text);
-
-  /* fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 
   /* text sizes */
   --text-header-xlg: 88px;
