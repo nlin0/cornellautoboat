@@ -111,7 +111,7 @@ export function getPhotoAlbums(): PhotoAlbum[] {
 
   const albums: PhotoAlbum[] = [];
   
-  // Read albums directly from albumMetadata.json (works in production without filesystem)
+  // read albums directly from albumMetadata.json (works in production without filesystem)
   const albumKeys = Object.keys(albumMetadata) as Array<keyof typeof albumMetadata>;
   
   for (const folderName of albumKeys) {
@@ -120,10 +120,10 @@ export function getPhotoAlbums(): PhotoAlbum[] {
     
     const albumId = generateAlbumId(folderName);
     
-    // Get photos from metadata (required for blob storage)
+    // get photos from metadata (required for blob storage)
     const metadataPhotos = (metadata as { photos?: string[] }).photos || [];
     
-    // Fallback to filesystem only in development (when directory exists)
+    // fallback to filesystem only in development (when directory exists)
     let photos = metadataPhotos;
     if (photos.length === 0 && fs.existsSync(MEDIA_BASE_DIR)) {
       const albumPath = path.join(MEDIA_BASE_DIR, folderName);

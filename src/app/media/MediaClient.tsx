@@ -98,7 +98,7 @@ export default function MediaClient({ photoAlbums, slideshowImages }: MediaClien
               transform: 'rotate(-8deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={120} height={120} className={styles.polaroidImage} />
+            <Image src={getBlobUrl("/media/media-polaroids/polaroid1.webp")} alt="" width={120} height={120} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -108,7 +108,7 @@ export default function MediaClient({ photoAlbums, slideshowImages }: MediaClien
               transform: 'rotate(12deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={100} height={100} className={styles.polaroidImage} />
+            <Image src={getBlobUrl("/media/media-polaroids/polaroid2.webp")} alt="" width={100} height={100} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -118,7 +118,7 @@ export default function MediaClient({ photoAlbums, slideshowImages }: MediaClien
               transform: 'rotate(-5deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={110} height={110} className={styles.polaroidImage} />
+            <Image src={getBlobUrl("/media/media-polaroids/polaroid3.webp")} alt="" width={110} height={110} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -128,7 +128,7 @@ export default function MediaClient({ photoAlbums, slideshowImages }: MediaClien
               transform: 'rotate(10deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={95} height={95} className={styles.polaroidImage} />
+            <Image src={getBlobUrl("/media/media-polaroids/polaroid4.webp")} alt="" width={95} height={95} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
@@ -138,7 +138,7 @@ export default function MediaClient({ photoAlbums, slideshowImages }: MediaClien
               transform: 'rotate(-12deg)'
             }}
           >
-            <Image src="/clifford2.png" alt="" width={105} height={105} className={styles.polaroidImage} />
+            <Image src={getBlobUrl("/media/media-polaroids/polaroid5.webp")} alt="" width={105} height={105} className={styles.polaroidImage} />
           </div>
           <div
             className={styles.polaroid}
