@@ -13,11 +13,13 @@
     "update-next": "npm install next@latest react@latest react-dom@latest eslint-config-next@latest",
     "process-team-photos": "node scripts/process-team-photos.js",
     "process-media-images": "node scripts/process-media-images.js",
-    "reupload-ss": "node scripts/reupload-ss"
+    "upload-directory-blob": "node scripts/upload-directory-blob.js",
+    "reupload-missing-image": "node scripts/reupload-missing-image.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
     "@vercel/blob": "^2.0.0",
+    "dotenv": "^17.2.3",
     "lucide-react": "^0.553.0",
     "next": "^16.1.0",
     "papaparse": "^5.5.3",
