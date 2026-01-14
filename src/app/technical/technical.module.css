@@ -43,6 +43,7 @@
   letter-spacing: -0.2vw;
   color: white;
   text-align: center;
+  font-family: var(--font-header);
 }
 
 .technicalTitle {
@@ -55,6 +56,7 @@
   width: auto;
   max-width: 95%;
   text-align: center;
+  font-family: var(--font-header);
 }
 
 .titleDescr {
@@ -63,6 +65,7 @@
   line-height: 1.5;
   color: var(--header-text);
   text-align: center;
+  font-family: var(--font-paragraph);
 }
 
 .dividerWrapper {
@@ -108,6 +111,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   color: var(--primary);
+  font-family: var(--font-header);
 }
 
 .descr {
@@ -115,6 +119,7 @@
   margin-bottom: 40px;
   line-height: 1.6;
   color: var(--body-text);
+  font-family: var(--font-paragraph);
 }
 
 /* IMAGE CARDS */
@@ -167,6 +172,7 @@
   line-height: 1.4;
   margin-bottom: 0.4rem;
   padding-left: 1.25rem;
+  font-family: var(--font-paragraph);
 }
 
 .descrList li::before {

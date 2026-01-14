@@ -168,7 +168,7 @@ export default function Home() {
           >
             <div className={styles.competitionCycleContent}>
               <h2 className={styles.competitionCycleTitle}>
-                The 2025-2026 Competition Cycle
+                2025-2026 Competition Cycle
               </h2>
               <p className={styles.competitionCycleSubtitle}>
                 Incremental hardware updates, significant software changes, and
@@ -490,7 +490,7 @@ export default function Home() {
           <div className={styles.sponsorsContent}>
             <h2 className={styles.sponsorsTitle}>Our Network</h2>
             <p className={styles.sponsorsDescription}>
-              For many of our members, AutoBoat has served as a gateway to
+              AutoBoat has served as a gateway to
               incredible opportunities in industry. Check out some of companies
               our current members and alumni have worked at.
             </p>

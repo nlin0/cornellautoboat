@@ -68,30 +68,34 @@
   color: var(--header-text);
   margin: 0 0 1rem 0;
   line-height: 1;
+  font-family: var(--font-header);
 }
 
 .aboutSubtitle {
-  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
   letter-spacing: 0vw;
   line-height: 1.8;
   color: var(--body-text);
   font-weight: 300;
   margin: 0;
+  font-family: var(--font-paragraph);
 }
+
 .dividerWrapperTop {
-  position:relative;
+  position: relative;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform:  translateY(-70%);
-  margin-bottom:-20rem;
+  transform: translateY(-70%);
+  margin-bottom: -20rem;
   z-index: 5;
 }
+
 .dividerWrapper {
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  
+
 }
 
 .divider {
@@ -146,28 +150,33 @@
 }
 
 .year {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--secondary2);
+  font-family: var(--font-subheader);
 }
 
 .year2 {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 8px;
   color: var(--body-text);
+  font-family: var(--font-subheader);
 }
 
 .title {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 10px;
+  font-family: var(--font-header);
 }
 
 .subtitle {
-  font-size: 25px;
+  font-size: 20px;
   opacity: 0.85;
+  line-height: 1.7;
+  font-family: var(--font-paragraph);
 }
 
 .imageContainer {

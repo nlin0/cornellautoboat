@@ -369,6 +369,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  font-family: var(--font-header);
 }
 
 .aboutCrewTitle.scrollFadeIn {
@@ -378,6 +379,7 @@
 
 .aboutCrewTitle2 {
   font-size: clamp(48px, 5vw, 10vw);
+  font-family: var(--font-header);
 }
 
 .aboutCrewDescription {
@@ -538,6 +540,7 @@
   color: #950303;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+  font-family: var(--font-header);
 }
 
 .competitionCycleSubtitle {
@@ -547,6 +550,7 @@
   margin-bottom: 3rem;
   max-width: 800px;
   margin-left: auto;
+  font-family: var(--font-paragraph);
   margin-right: auto;
   opacity: 0.9;
 }
@@ -772,6 +776,7 @@
   line-height: 1.8;
   margin-bottom: 1rem;
   color: var(--white);
+  font-family: var(--font-paragraph);
 }
 
 .descrList {
@@ -788,6 +793,7 @@
   margin-bottom: 0.4rem;
   padding-left: 1.25rem;
   position: relative;
+  font-family: var(--font-paragraph);
 }
 
 .descrList li::before {
@@ -810,6 +816,7 @@
   text-transform: uppercase;
   margin: 0;
   display: inline-block;
+  font-family: var(--font-header);
 }
 
 .dropdownHeader {
@@ -927,11 +934,13 @@
   text-transform: uppercase;
   color: var(--white);
   margin-bottom: 1rem;
+  font-family: var(--font-header);
 }
 
 .sponsorsDescription {
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.8;
+  font-family: var(--font-paragraph);
   color: var(--white);
   margin-bottom: 3rem;
   max-width: 800px;

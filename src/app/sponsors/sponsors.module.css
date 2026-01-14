@@ -57,6 +57,7 @@
   margin: 2rem auto 0;
   max-width: 700px;
   opacity: 0.9;
+  font-family: var(--font-paragraph);
 }
 
 /* Sponsor Sections */
@@ -117,6 +118,7 @@
   margin: 0;
   font-style: italic;
   position: relative;
+  font-family: var(--font-header);
 }
 
 .tierTitle::after {
@@ -242,6 +244,7 @@
   line-height: 1.8;
   margin-bottom: 1rem;
   color: #fff;
+  font-family: var(--font-paragraph);
 }
 
 .sponsorInfoCard ol {
