@@ -20,7 +20,7 @@ export default function MemberCard({ member }: MemberCardProps) {
   const [attemptCount, setAttemptCount] = useState(0);
   const [hasError, setHasError] = useState(false);
 
-  // Preload placeholder image for faster fallback (use blob URL if available)
+  // preload placeholder image for faster fallback (use blob URL if available)
   useEffect(() => {
     const placeholderBlobUrl = getBlobUrl(PLACEHOLDER_IMAGE);
     const link = document.createElement('link');
@@ -35,14 +35,14 @@ export default function MemberCard({ member }: MemberCardProps) {
   }, []);
 
   const handleImageError = () => {
-    // If we've already reached placeholder, mark as error and stop trying
+    // if we've already reached placeholder, mark as error and stop trying
     const placeholderBlobUrl = getBlobUrl(PLACEHOLDER_IMAGE);
     if (imageSrc === placeholderBlobUrl || imageSrc === PLACEHOLDER_IMAGE) {
       setHasError(true);
       return;
     }
 
-    // Fallback: try placeholder (as blob URL)
+    // fallback: try placeholder (as blob URL)
     setImageSrc(placeholderBlobUrl);
     setAttemptCount(1);
   };
@@ -50,7 +50,7 @@ export default function MemberCard({ member }: MemberCardProps) {
   return (
     <article className={styles.memberCardContainer} role="listitem">
       <div className={styles.memberCardInner}>
-        {/* Front of boarding pass */}
+        {/* FRONT OF BOARDING PASS */}
         <div className={styles.memberCardFront}>
           {/* Ticket Header */}
           <div className={styles.ticketHeader}>
@@ -59,11 +59,8 @@ export default function MemberCard({ member }: MemberCardProps) {
                 <span className={styles.ticketType}>BOARDING PASS</span>
               </div>
               <div className={styles.ticketSubteamBadge}>
-                {member.role === 'WebDev Design and Media'
-                  ? 'WebDev Design & Media'
-                  : member.subteam === 'Business and Outreach'
-                    ? 'Business'
-                    : member.subteam}
+                {member.subteam === 'Business and Outreach' ? 'Business'
+                  : member.subteam}
               </div>
             </div>
           </div>
@@ -83,7 +80,7 @@ export default function MemberCard({ member }: MemberCardProps) {
             </div>
           </div>
 
-          {/* Ticket Info Section Below Image */}
+          {/* TICKET INFO SESSION BELOW IMAGE */}
           <div className={styles.ticketInfoSection}>
             <div className={styles.ticketField}>
               <span className={styles.ticketLabel}>CREW MEMBER</span>
@@ -98,7 +95,7 @@ export default function MemberCard({ member }: MemberCardProps) {
             </div>
           </div>
 
-          {/* Ticket Footer with Barcode */}
+          {/* TICKET FOOTER (with barcode lol) */}
           <div className={styles.ticketFooterSection}>
             <div className={styles.ticketBarcode}>
               <div className={styles.barcodeLine}></div>
@@ -120,16 +117,14 @@ export default function MemberCard({ member }: MemberCardProps) {
           </div>
         </div>
 
-        {/* Back of boarding pass */}
+        {/* BACK OF BOARDING PASS */}
         <div className={styles.memberCardBack}>
           <div className={styles.boardingPassHeader}>
             <div className={styles.passAirline}>
               <span className={styles.passType}>MEMBER INFO</span>
             </div>
             <div className={styles.passSubteam}>
-              {member.role === 'WebDev Design and Media'
-                ? 'WebDev Design & Media'
-                : member.subteam === 'Business and Outreach'
+              {member.subteam === 'Business and Outreach'
                   ? 'Business'
                   : member.subteam}
             </div>
