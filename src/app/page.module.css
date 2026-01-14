@@ -81,52 +81,12 @@
   position: relative;
   z-index: 0;
   top: 0;
-  margin-top: -1px;
+  margin-top: 0;
   background-color: var(--primary-dark);
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* Responsive gap - increases with screen size, decreases with smaller screens (excluding mobile) */
-@media (min-width: 701px) and (max-width: 999px) {
-  .homeContent {
-    margin-top: -300px;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1199px) {
-  .homeContent {
-    margin-top: -200px;
-  }
-}
-
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .homeContent {
-    margin-top: -100px;
-  }
-}
-
-@media (min-width: 1400px) and (max-width: 1599px) {
-  .homeContent {
-    margin-top: 60px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .homeContent {
-    margin-top: 200px;
-  }
-}
-
-@media (min-width: 1800px) {
-  .homeContent {
-    margin-top: 300px;
-  }
-}
-
-.homeContent {
-  margin-top: clamp(-300px, -15vw, 300px);
-}
 
 .homeTitle2 {
   font-size: clamp(1rem, 8vw, 6rem);
@@ -286,8 +246,8 @@
 .heroHomeImage {
   object-fit: cover;
   object-position: center top;
-  min-height: 180vh;
-  min-width: 1000px;
+  width: 100%;
+  height: 100%;
 }
 
 /* Apply now button*/
@@ -1043,8 +1003,10 @@
 .heroHome {
   position: relative;
   width: 100%;
-  height: 150vh;
-  min-height: 150vh;
+  /* Background SVG is 5774 x 5501 (aspect ratio ~1.05:1) */
+  /* Height = width / aspect_ratio = 100vw / 1.05 ≈ 95.24vw */
+  height: calc(100vw / 1.05);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1061,17 +1023,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
-  padding-top: var(--navbar-height);
-  margin-top: -130px;
-}
-
-
-@media (min-width: 1200px) {
-  .heroHomeContent {
-    margin-top: 10px;
-  }
+  height: 100%;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 
