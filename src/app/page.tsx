@@ -257,7 +257,7 @@ export default function Home() {
             <div className={styles.container}>
               <div className={styles.techImg}>
                 <Image
-                  src="/home/design.png"
+                  src="/home/design_2.png"
                   alt="Design"
                   fill
                   className={styles.techImage}
