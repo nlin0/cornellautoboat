@@ -73,6 +73,15 @@ export default function Mechanical() {
           were adhered together and lightly sanded to achieve a smooth,
           continuous mold surface.
         </p>
+             <div className={styles.techImg}>
+          <Image
+            src="/technical/mechanical_sand.jpg"
+            alt="mechanical7"
+            width={700}
+            height={400}
+            className={styles.techImage}
+          />
+        </div>
         <p className={styles.descr}>
           Because polyester resin cannot directly contact the foam, the entire
           mold was first covered in Tyvek tape, then coated with a thin,
@@ -88,7 +97,7 @@ export default function Mechanical() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/technical/mechanical7.png"
+            src="/technical/mechanical_hull.jpg"
             alt="mechanical7"
             width={700}
             height={400}
@@ -116,7 +125,7 @@ export default function Mechanical() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/technical/mechanical8.png"
+            src="/technical/mechanical_frame.jpg"
             alt="mechanical8"
             width={1000}
             height={1000}
@@ -130,7 +139,7 @@ export default function Mechanical() {
         </p>
         <div className={styles.techImg}>
           <Image
-            src="/technical/mechanical9.png"
+            src="/technical/mechanical_paint.jpg"
             alt="mechanical9"
             width={800}
             height={800}
