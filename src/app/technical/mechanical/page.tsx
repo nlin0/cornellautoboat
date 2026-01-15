@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import styles from '../technical.module.css';
-import TechnicalHero from '../TechnicalHero';
-import Divider from '../Divider';
-import ImageGallery from '../ImageGallery';
+import Image from "next/image";
+import styles from "../technical.module.css";
+import TechnicalHero from "../TechnicalHero";
+import Divider from "../Divider";
+import ImageGallery from "../ImageGallery";
 
 export default function Mechanical() {
   return (
@@ -36,8 +36,18 @@ export default function Mechanical() {
         </p>
         <ImageGallery
           images={[
-            { src: '/technical/mechanical2.png', alt: 'Boat design analysis', width: 600, height: 400 },
-            { src: '/technical/mechanical3.png', alt: 'Structural components', width: 600, height: 400 },
+            {
+              src: "/technical/mechanical2.png",
+              alt: "Boat design analysis",
+              width: 600,
+              height: 400,
+            },
+            {
+              src: "/technical/mechanical3.png",
+              alt: "Structural components",
+              width: 600,
+              height: 400,
+            },
           ]}
         />
         <p className={styles.descr}>
@@ -58,22 +68,32 @@ export default function Mechanical() {
         </div>
         <ImageGallery
           images={[
-            { src: '/technical/mechanical5.png', alt: 'Manufacturing process', width: 600, height: 400 },
-            { src: '/technical/mechanical6.png', alt: 'Composite layup', width: 600, height: 400 },
+            {
+              src: "/technical/mechanical5.png",
+              alt: "Manufacturing process",
+              width: 600,
+              height: 400,
+            },
+            {
+              src: "/technical/mechanical6.png",
+              alt: "Composite layup",
+              width: 600,
+              height: 400,
+            },
           ]}
         />
-     
+
         <h3 className={styles.techHeading}>Hull Manufacturing</h3>
         <p className={styles.descr}>
           This year the amas and main hull were manufactured using a single,
           unified foam mold rather than being built separately. The mold was
-          created from stacked sections of XPS foam, each CNC-machined to the
-          correct profile and aligned using dowels to ensure symmetry and
-          accuracy across the full assembly. After machining, the foam sections
-          were adhered together and lightly sanded to achieve a smooth,
-          continuous mold surface.
+          created from a combination of CNC-machined XPS foam and 3D printed
+          elements to ensure symmetry and accuracy across the full assembly.
+          After machining, the foam and 3D printed sections were adhered
+          together and lightly sanded to achieve a smooth, continuous mold
+          surface.
         </p>
-             <div className={styles.techImg}>
+        <div className={styles.techImg}>
           <Image
             src="/technical/mechanical_sand.jpg"
             alt="mechanical7"
