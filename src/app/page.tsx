@@ -364,7 +364,7 @@ export default function Home() {
             <div className={styles.container}>
               <div className={`${styles.techImg} ${styles.techImgVideo}`}>
                 <video
-                  src="/manufacturing_2026.mp4"
+                  src="/home/manufacturing2026.mp4"
                   className={styles.techVideo}
                   controls
                   loop
