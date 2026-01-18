@@ -11,7 +11,7 @@ interface MemberCardProps {
   member: TeamMember;
 }
 
-const PLACEHOLDER_IMAGE = '/team/teamPhotos/ABteam1.webp';
+const PLACEHOLDER_IMAGE = '/team/teamPhotos/Full_Team_2.webp';
 
 export default function MemberCard({ member }: MemberCardProps) {
   // Convert local path to blob URL if available
