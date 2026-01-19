@@ -254,7 +254,7 @@
 /* APPLY BUTTON SECTION */
 .applyButtonSection {
   width: 100%;
-  padding: 2rem 5vw 0;
+  padding: 3rem 5vw 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,7 +265,7 @@
   display: block;
   width: 100%;
   padding: 1.2rem 3rem;
-  background: linear-gradient(135deg, #950303 0%, #01aaff 100%);
+  background: linear-gradient(135deg, #ff0707 0%, #21acf2 100%);
   background-size: 200% 200%;
   color: white;
   font-weight: 800;
@@ -398,7 +398,7 @@
 /* TEAM VIDEO SECTION */
 .teamVideoSection {
   width: 100%;
-  padding: 0 5vw 1rem;
+  padding: 4rem 5vw 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
