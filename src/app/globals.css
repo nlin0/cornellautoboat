@@ -1,38 +1,9 @@
+@import url('https://use.typekit.net/vta3qwm.css');
 @import 'tailwindcss';
 
 
 /* !! */
 /* TODO: Update the fonts.. Filson soft is adobe, Avenir can be pirated */
-/* CUSTOM FONTS */
-/* Filson Soft - Headers */
-@font-face {
-  font-family: 'Filson Soft';
-  src: url('/fonts/filson-soft.woff2') format('woff2'),
-    url('/fonts/filson-soft.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Town - Subheaders */
-@font-face {
-  font-family: 'Town';
-  src: url('/fonts/town.woff2') format('woff2'),
-    url('/fonts/town.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Avenir - Paragraphs */
-@font-face {
-  font-family: 'Avenir';
-  src: url('/fonts/avenir.woff2') format('woff2'),
-    url('/fonts/avenir.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 
 /* FONT: Pirulen - Used primarily for logo/branding
@@ -88,14 +59,9 @@
   --navbar-height: 5px;
 
   /* FONTS */
-  /* commented out since not working */
-  /* --font-header: 'Filson Soft', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-subheader: 'Town', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-paragraph: 'Avenir', Futura, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; */
-
-  --font-header: Tahoma;
-  --font-subheader: Futura;
-  --font-paragraph: Tahoma;
+  --font-header: 'polymath', sans-serif;
+  --font-subheader: 'polymath', sans-serif;
+  --font-paragraph: 'polymath', sans-serif;
 }
 
 @theme inline {
@@ -149,6 +115,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-paragraph);
+  font-weight: 300;
 }
 
 html {

@@ -11,11 +11,18 @@ import {
   Lightbulb,
 } from "lucide-react";
 
+const boats = [
+  { src: "boatart/clifford.svg", alt: "Clifford the Big Red Boat", name: "Clifford the Big Red Boat", description: "Clifford the Big Red Boat is our current autonomous vessel, designed and built in 2024. Named after the beloved red dog, Clifford represents our dedication to innovation in marine robotics and autonomous navigation." },
+  { src: "boatart/george.svg", alt: "George", name: "George", description: "Our first competition boat, George, was created in 2023. With George, we completed our first computer vision model and finalized navigation code. This milestone enabled our first in-person appearance at RoboBoat." },
+  { src: "boatart/mystery.svg", alt: "Scooby", name: "Scooby", description: "Scooby is the product of key advancements for the team, marking the debut of a new sensor suite, optimized geometry, and an upgraded electrical system." },
+];
+
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDesignOpen, setIsDesignOpen] = useState(false);
   const [isResearchOpen, setIsResearchOpen] = useState(false);
+  const [currentBoatIndex, setCurrentBoatIndex] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -61,6 +68,16 @@ export default function Home() {
     };
   }, []);
 
+  // Cycle through boats at 90% of animation (16.2s) when boat becomes invisible
+  // This ensures the boat changes before it jumps back to starting position
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBoatIndex((prevIndex) => (prevIndex + 1) % boats.length);
+    }, 16200); // 90% of 18s = 16.2s, when opacity becomes 0 in animation
+
+    return () => clearInterval(interval);
+  }, [boats.length]);
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.heroHome} ref={heroRef}>
@@ -91,13 +108,14 @@ export default function Home() {
 
           <div className={styles.homeHeroBoat}>
             <Image
-              src="/cliffordart.svg"
-              alt="Clifford the Big Red Boat"
+              src={boats[currentBoatIndex].src}
+              alt={boats[currentBoatIndex].alt}
               width={600}
               height={600}
               className={styles.cliffordBoat}
               onClick={() => setIsModalOpen(true)}
               style={{ cursor: "pointer" }}
+              key={currentBoatIndex}
             />
           </div>
         </div>
@@ -528,20 +546,17 @@ export default function Home() {
             </button>
             <div className={styles.modalImageFloating}>
               <Image
-                src="/cliffordart.svg"
-                alt="Clifford the Big Red Boat"
+                src={boats[currentBoatIndex].src}
+                alt={boats[currentBoatIndex].alt}
                 width={600}
                 height={600}
                 className={styles.modalImage}
               />
             </div>
             <div className={styles.modalTextContent}>
-              <h2 className={styles.modalTitle}>Clifford the Big Red Boat</h2>
+              <h2 className={styles.modalTitle}>{boats[currentBoatIndex].name}</h2>
               <p className={styles.modalDescription}>
-                Clifford the Big Red Boat is our current autonomous vessel,
-                designed and built in 2024. Named after the beloved red dog,
-                Clifford represents our dedication to innovation in marine
-                robotics and autonomous navigation.
+                {boats[currentBoatIndex].description}
               </p>
             </div>
           </div>
