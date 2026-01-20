@@ -178,7 +178,7 @@ export default function Home() {
             <div className={styles.teamVideoContainer}>
               <iframe
                 className={styles.teamVideo}
-                src="https://www.youtube.com/embed/diU5pqHvO5w"
+                src="https://www.youtube.com/embed/USB9C4o8O2I"
                 title="Cornell AutoBoat Team Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
