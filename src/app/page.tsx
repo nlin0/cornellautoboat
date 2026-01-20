@@ -12,9 +12,27 @@ import {
 } from "lucide-react";
 
 const boats = [
-  { src: "boatart/clifford.svg", alt: "Clifford the Big Red Boat", name: "Clifford the Big Red Boat", description: "Clifford the Big Red Boat is our current autonomous vessel, designed and built in 2024. Named after the beloved red dog, Clifford represents our dedication to innovation in marine robotics and autonomous navigation." },
-  { src: "boatart/george.svg", alt: "George", name: "George", description: "Our first competition boat, George, was created in 2023. With George, we completed our first computer vision model and finalized navigation code. This milestone enabled our first in-person appearance at RoboBoat." },
-  { src: "boatart/mystery.svg", alt: "Scooby", name: "Scooby", description: "Scooby is the product of key advancements for the team, marking the debut of a new sensor suite, optimized geometry, and an upgraded electrical system." },
+  {
+    src: "boatart/clifford.svg",
+    alt: "Clifford the Big Red Boat",
+    name: "Clifford the Big Red Boat",
+    description:
+      "Clifford the Big Red Boat is our current autonomous vessel, designed and built in 2024. Named after the beloved red dog, Clifford represents our dedication to innovation in marine robotics and autonomous navigation.",
+  },
+  {
+    src: "boatart/george.svg",
+    alt: "George",
+    name: "George",
+    description:
+      "Our first competition boat, George, was created in 2023. With George, we completed our first computer vision model and finalized navigation code. This milestone enabled our first in-person appearance at RoboBoat.",
+  },
+  {
+    src: "boatart/mystery.svg",
+    alt: "Scooby",
+    name: "Scooby",
+    description:
+      "Scooby is the product of key advancements for the team, marking the debut of a new sensor suite, optimized geometry, and an upgraded electrical system.",
+  },
 ];
 
 export default function Home() {
@@ -42,7 +60,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     );
 
     const refs = contentRefs.current;
@@ -64,7 +82,7 @@ export default function Home() {
       // disconnect observer first to prevent any issues
       try {
         observer.disconnect();
-      } catch (error) { }
+      } catch (error) {}
     };
   }, []);
 
@@ -93,8 +111,9 @@ export default function Home() {
 
         <div className={styles.heroHomeContent}>
           <div
-            className={`${styles.homeHeroText} ${isVisible ? styles.fadeInDown : ""
-              }`}
+            className={`${styles.homeHeroText} ${
+              isVisible ? styles.fadeInDown : ""
+            }`}
           >
             <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
@@ -199,7 +218,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.preventDefault();
                     const element = document.querySelector(
-                      '[data-section="testing"]'
+                      '[data-section="testing"]',
                     );
                     element?.scrollIntoView({
                       behavior: "smooth",
@@ -216,7 +235,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.preventDefault();
                     const element = document.querySelector(
-                      '[data-section="design"]'
+                      '[data-section="design"]',
                     );
                     element?.scrollIntoView({
                       behavior: "smooth",
@@ -233,7 +252,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.preventDefault();
                     const element = document.querySelector(
-                      '[data-section="manufacturing"]'
+                      '[data-section="manufacturing"]',
                     );
                     element?.scrollIntoView({
                       behavior: "smooth",
@@ -250,7 +269,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.preventDefault();
                     const element = document.querySelector(
-                      '[data-section="research"]'
+                      '[data-section="research"]',
                     );
                     element?.scrollIntoView({
                       behavior: "smooth",
@@ -307,15 +326,17 @@ export default function Home() {
                     Key projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${isDesignOpen ? styles.dropdownIconOpen : ""
-                      }`}
+                    className={`${styles.dropdownIcon} ${
+                      isDesignOpen ? styles.dropdownIconOpen : ""
+                    }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${isDesignOpen ? styles.dropdownContentOpen : ""
-                    }`}
+                  className={`${styles.dropdownContent} ${
+                    isDesignOpen ? styles.dropdownContentOpen : ""
+                  }`}
                 >
                   <ul className={styles.descrList}>
                     <li>
@@ -459,15 +480,17 @@ export default function Home() {
                     Current projects
                   </span>
                   <span
-                    className={`${styles.dropdownIcon} ${isResearchOpen ? styles.dropdownIconOpen : ""
-                      }`}
+                    className={`${styles.dropdownIcon} ${
+                      isResearchOpen ? styles.dropdownIconOpen : ""
+                    }`}
                   >
                     ▼
                   </span>
                 </button>
                 <div
-                  className={`${styles.dropdownContent} ${isResearchOpen ? styles.dropdownContentOpen : ""
-                    }`}
+                  className={`${styles.dropdownContent} ${
+                    isResearchOpen ? styles.dropdownContentOpen : ""
+                  }`}
                 >
                   <ul className={styles.descrList}>
                     <li>Holonomic propulsion system</li>
@@ -498,19 +521,50 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TECH REPORT SECTION*/}
+
+        <section
+          className={styles.pdfWrapper}
+          ref={(el) => {
+            contentRefs.current[7] = el as HTMLDivElement | null;
+          }}
+        >
+          <div className={styles.pdfHeaderWrapper}>
+            <h2>Technical Report</h2>
+
+            <a
+              href="https://drive.google.com/file/d/1XUZAcoO9TqLo3rXlTa7F_X595C388yfr/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.pdfExternalLink}
+            >
+              ↗
+            </a>
+          </div>
+
+          <div className={styles.pdfContentContainer}>
+            <iframe
+              src="https://drive.google.com/file/d/1XUZAcoO9TqLo3rXlTa7F_X595C388yfr/preview"
+              title="Technical Report PDF"
+              allow="autoplay"
+              className={styles.pdfIframe}
+            />
+          </div>
+        </section>
+
         {/* SPONSORS SECTION */}
         <section
           className={styles.sponsorsSection}
           ref={(el) => {
-            contentRefs.current[7] = el as HTMLDivElement | null;
+            contentRefs.current[8] = el as HTMLDivElement | null;
           }}
         >
           <div className={styles.sponsorsContent}>
             <h2 className={styles.sponsorsTitle}>Our Network</h2>
             <p className={styles.sponsorsDescription}>
-              AutoBoat has served as a gateway to
-              incredible opportunities in industry. Check out some of companies
-              our current members and alumni have worked at.
+              AutoBoat has served as a gateway to incredible opportunities in
+              industry. Check out some of companies our current members and
+              alumni have worked at.
             </p>
             <div className={styles.sponsorsImageContainer}>
               <div className={styles.tapeTape1}></div>
@@ -554,7 +608,9 @@ export default function Home() {
               />
             </div>
             <div className={styles.modalTextContent}>
-              <h2 className={styles.modalTitle}>{boats[currentBoatIndex].name}</h2>
+              <h2 className={styles.modalTitle}>
+                {boats[currentBoatIndex].name}
+              </h2>
               <p className={styles.modalDescription}>
                 {boats[currentBoatIndex].description}
               </p>
