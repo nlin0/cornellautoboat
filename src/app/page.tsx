@@ -13,7 +13,7 @@ import {
 
 const boats = [
   {
-    src: "boatart/clifford.svg",
+    src: "/boatart/clifford.svg",
     alt: "Clifford the Big Red Boat",
     name: "Clifford the Big Red Boat",
     description:
@@ -100,7 +100,7 @@ export default function Home() {
     <div className={styles.pageWrapper}>
       <div className={styles.heroHome} ref={heroRef}>
         <Image
-          src="/background.svg"
+          src="/home/background.svg"
           alt="Cornell AutoBoat team background"
           fill
           quality={100}
@@ -591,7 +591,7 @@ export default function Home() {
               <div className={styles.tapeTape1}></div>
               <div className={styles.tapeTape2}></div>
               <Image
-                src="/logo1.png"
+                src="/home/logo1.png"
                 alt="Our Network - Companies our members and alumni have worked at"
                 width={1200}
                 height={800}
