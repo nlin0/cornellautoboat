@@ -16,7 +16,7 @@
   width: 100%;
   overflow: hidden;
   z-index: 1;
- 
+
 }
 
 .boatImage {
@@ -101,6 +101,7 @@
   font-size: 16px;
   z-index: 1;
 }
+
 .subteamSection {
   margin-bottom: 6rem;
 }
@@ -158,6 +159,7 @@
   flex-direction: row;
   gap: 20px;
 }
+
 .descrList {
   font-size: 23px;
   margin-bottom: 40px;

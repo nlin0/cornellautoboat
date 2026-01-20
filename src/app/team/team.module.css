@@ -1091,8 +1091,13 @@
   }
 
   .teamDescription {
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
-    line-height: 1.6;
+    font-size: 50px;
+    letter-spacing: 0vw;
+    line-height: 1.8;
+    color: var(--body-text);
+    /* font-weight: 300; */
+    /* margin: 0; */
+    font-family: var(--font-paragraph);
   }
 
   .scrollContainer {

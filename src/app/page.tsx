@@ -175,6 +175,27 @@ export default function Home() {
                 Apply Now!
               </a>
             </div>
+
+            {/* INFO SESSIONS - Comment out when recruiting season is over */}
+            <div className={styles.infoSessionsSection}>
+              <div className={styles.infoSessionsCard}>
+                <div className={styles.infoSessionsHeader}>
+                  <h3 className={styles.infoSessionsTitle}>Come to our Info Sessions!</h3>
+                </div>
+                <div className={styles.infoSessionsList}>
+                  <div className={styles.infoSessionItem}>
+                    <div className={styles.infoSessionDate}>
+                      <span className={styles.infoSessionDay}>Saturday, January 24th</span>
+                      <span className={styles.infoSessionTime}>3:00 PM</span>
+                    </div>
+                    <div className={styles.infoSessionLocation}>
+                      <span className={styles.infoSessionLocationIcon}>📍</span>
+                      <span>Upson Hall 202</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* COMPETITION CYCLE SECTION */}
