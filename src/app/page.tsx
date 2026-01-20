@@ -533,7 +533,7 @@ export default function Home() {
             <h2>Technical Report</h2>
 
             <a
-              href="https://drive.google.com/file/d/1XUZAcoO9TqLo3rXlTa7F_X595C388yfr/preview"
+              href="https://drive.google.com/file/d/1NPBb1-mrDZbUIAp6RZXHid4tCQtAWO9U/preview"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.pdfExternalLink}
@@ -544,7 +544,7 @@ export default function Home() {
 
           <div className={styles.pdfContentContainer}>
             <iframe
-              src="https://drive.google.com/file/d/1XUZAcoO9TqLo3rXlTa7F_X595C388yfr/preview"
+              src="https://drive.google.com/file/d/1NPBb1-mrDZbUIAp6RZXHid4tCQtAWO9U/preview"
               title="Technical Report PDF"
               allow="autoplay"
               className={styles.pdfIframe}
