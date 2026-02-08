@@ -196,7 +196,7 @@ export default function Home() {
             </div>
 
             {/* INFO SESSIONS - Comment out when recruiting season is over */}
-            <div className={styles.infoSessionsSection}>
+            {/* <div className={styles.infoSessionsSection}>
               <div className={styles.infoSessionsCard}>
                 <div className={styles.infoSessionsHeader}>
                   <h3 className={styles.infoSessionsTitle}>Come to our Info Sessions!</h3>
@@ -214,7 +214,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* COMPETITION CYCLE SECTION */}
