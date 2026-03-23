@@ -18,6 +18,7 @@ export async function getTeamDataFromDb(): Promise<Subteam[] | null> {
       image: string | null;
       role: string;
       subteam: string;
+      display_order: number | null;
       year: string | null;
       major: string | null;
       hometown: string | null;
@@ -30,6 +31,7 @@ export async function getTeamDataFromDb(): Promise<Subteam[] | null> {
         image: row.image || undefined,
         role: row.role,
         subteam: row.subteam,
+        display_order: row.display_order ?? undefined,
         year: row.year || "",
         major: row.major || "",
         hometown: row.hometown || "",

@@ -3,6 +3,7 @@ export type TeamMember = {
   image?: string;
   role: string;
   subteam: string;
+  display_order?: number;
   year: string;
   major: string;
   hometown: string;
