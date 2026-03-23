@@ -211,6 +211,9 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
           Add New Admins
         </h2>
         <p className="text-sm text-[var(--body-text)] mb-4">
+          This is connected to ReSend API, but it requires our own domain
+          in order to send emails. So email send doesn't work LMAOAOA. If we
+          want to autosend invite emails, we need to buy domain using pcard :3
           Invite an admin or super-admin. The sign-up link is emailed to them.
         </p>
         <form onSubmit={handleCreateInvite} className="space-y-4 max-w-lg">
