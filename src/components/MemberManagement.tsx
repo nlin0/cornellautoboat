@@ -40,16 +40,15 @@ type MemberManagementProps = {
 };
 
 function getAllowedSubteams(managed: string[] | null, isSuperAdmin: boolean): string[] {
-  if (!managed) {
+  if (isSuperAdmin) {
     return [...new Set(Object.values(SLUG_TO_SUBTEAMS).flat())];
   }
+  if (!managed || managed.length === 0) return [];
   const set = new Set<string>();
   for (const slug of managed) {
     for (const s of SLUG_TO_SUBTEAMS[slug] || []) set.add(s);
   }
-  if (!isSuperAdmin) {
-    set.delete("Team Leads");
-  }
+  set.delete("Team Leads");
   return Array.from(set);
 }
 
@@ -121,6 +120,7 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
       (m.subteam || "").toLowerCase().includes(q)
     );
   });
+  const allowedSubteamSet = new Set(allowed);
 
   async function handleAdd(e: React.FormEvent) {
     e.preventDefault();
@@ -419,13 +419,16 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
             </tr>
           </thead>
           <tbody>
-            {filteredMembers.map((m) => (
+            {filteredMembers.map((m) => {
+              const canManageRow = isSuperAdmin || allowedSubteamSet.has(m.subteam);
+              return (
               <tr key={m.id} className="border-b border-[var(--light-gray)] hover:bg-[var(--light-gray-bg)]">
                 <td className="py-2 px-2">
                   <input
                     type="checkbox"
                     checked={selectedIds.has(m.id)}
                     onChange={() => toggleSelect(m.id)}
+                    disabled={!canManageRow}
                     aria-label={`Select ${m.name}`}
                   />
                 </td>
@@ -449,7 +452,7 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
                     <button
                       type="button"
                       onClick={() => moveMemberInSubteam(m, "up")}
-                      disabled={loading}
+                      disabled={loading || !canManageRow}
                       className="px-1.5 py-0.5 border rounded text-xs disabled:opacity-50"
                       title="Move up within subteam"
                     >
@@ -458,7 +461,7 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
                     <button
                       type="button"
                       onClick={() => moveMemberInSubteam(m, "down")}
-                      disabled={loading}
+                      disabled={loading || !canManageRow}
                       className="px-1.5 py-0.5 border rounded text-xs disabled:opacity-50"
                       title="Move down within subteam"
                     >
@@ -474,21 +477,22 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
                   <button
                     type="button"
                     onClick={() => { setEditing(m); setShowAdd(false); setFormData({}); }}
-                    className="text-[var(--primary)] hover:underline mr-2"
+                    disabled={!canManageRow}
+                    className="text-[var(--primary)] hover:underline mr-2 disabled:opacity-50"
                   >
                     Edit
                   </button>
                   <button
                     type="button"
                     onClick={() => handleDelete(m.id)}
-                    disabled={loading}
-                    className="text-red-600 hover:underline"
+                    disabled={loading || !canManageRow}
+                    className="text-red-600 hover:underline disabled:opacity-50"
                   >
                     Remove
                   </button>
                 </td>
               </tr>
-            ))}
+            )})}
           </tbody>
         </table>
       </div>

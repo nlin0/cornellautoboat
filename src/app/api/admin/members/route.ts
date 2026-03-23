@@ -36,8 +36,13 @@ async function deleteMemberPhotoIfNeeded(path: string | null): Promise<void> {
   }
 }
 
-function canManageSubteam(managed: string[] | null, subteam: string): boolean {
-  if (!managed) return true;
+function canManageSubteam(
+  managed: string[] | null,
+  isSuperAdmin: boolean,
+  subteam: string
+): boolean {
+  if (isSuperAdmin) return true;
+  if (!managed || managed.length === 0) return false;
   if (subteam === "Team Leads") return false;
   const allowed = new Set<string>();
   for (const slug of managed) {
@@ -48,10 +53,11 @@ function canManageSubteam(managed: string[] | null, subteam: string): boolean {
   return allowed.has(subteam);
 }
 
-function getAllowedSubteams(managed: string[] | null): string[] {
-  if (!managed) {
+function getAllowedSubteams(managed: string[] | null, isSuperAdmin: boolean): string[] {
+  if (isSuperAdmin) {
     return [...new Set(Object.values(SLUG_TO_SUBTEAMS).flat())];
   }
+  if (!managed || managed.length === 0) return [];
   const set = new Set<string>();
   for (const slug of managed) {
     for (const s of SLUG_TO_SUBTEAMS[slug] || []) set.add(s);
@@ -69,9 +75,10 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const subteam = searchParams.get("subteam");
   const managed = session.user.managed_subteams;
-  const allowedSubteams = getAllowedSubteams(managed);
+  const isSuperAdmin = session.user.role === "super_admin";
+  const allowedSubteams = getAllowedSubteams(managed, isSuperAdmin);
 
-  if (subteam && !canManageSubteam(managed, subteam)) {
+  if (subteam && !canManageSubteam(managed, isSuperAdmin, subteam)) {
     return NextResponse.json({ error: "Cannot manage this subteam" }, { status: 403 });
   }
 
@@ -119,7 +126,8 @@ export async function POST(request: Request) {
     }
 
     const managed = session.user.managed_subteams;
-    if (!canManageSubteam(managed, subteam)) {
+    const isSuperAdmin = session.user.role === "super_admin";
+    if (!canManageSubteam(managed, isSuperAdmin, subteam)) {
       return NextResponse.json({ error: "Cannot manage this subteam" }, { status: 403 });
     }
 
@@ -131,7 +139,7 @@ export async function POST(request: Request) {
       `;
       if (existingRows.length > 0) {
         const existingRow = existingRows[0] as { id: string; subteam: string };
-        if (!canManageSubteam(managed, existingRow.subteam)) {
+        if (!canManageSubteam(managed, isSuperAdmin, existingRow.subteam)) {
           return NextResponse.json({ error: "Cannot update member in that subteam" }, { status: 403 });
         }
         const { rows: orderRows } = await sql`
@@ -221,7 +229,11 @@ export async function PUT(request: Request) {
 
     const targetSubteam = (subteam as string) || (existing.subteam as string);
     const managed = session.user.managed_subteams;
-    if (!canManageSubteam(managed, existing.subteam as string) || !canManageSubteam(managed, targetSubteam)) {
+    const isSuperAdmin = session.user.role === "super_admin";
+    if (
+      !canManageSubteam(managed, isSuperAdmin, existing.subteam as string) ||
+      !canManageSubteam(managed, isSuperAdmin, targetSubteam)
+    ) {
       return NextResponse.json({ error: "Cannot manage this member" }, { status: 403 });
     }
 
@@ -297,12 +309,13 @@ export async function DELETE(request: Request) {
 
   try {
     const managed = session.user.managed_subteams;
+    const isSuperAdmin = session.user.role === "super_admin";
     const { rows } = await sql`
       SELECT id, subteam FROM members WHERE id = ANY(${idsToDelete})
     `;
 
     for (const row of rows as { id: string; subteam: string }[]) {
-      if (!canManageSubteam(managed, row.subteam)) {
+      if (!canManageSubteam(managed, isSuperAdmin, row.subteam)) {
         return NextResponse.json(
           { error: `Cannot delete member in subteam: ${row.subteam}` },
           { status: 403 }

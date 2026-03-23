@@ -15,9 +15,9 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[var(--secondary2)]">
+    <div className="min-h-screen bg-[var(--secondary2)] pt-24 sm:pt-28">
       <AdminNav user={session.user} />
-      <div className="w-full max-w-[min(100%,1600px)] mx-auto px-4 sm:px-6 pt-16 pb-10">{children}</div>
+      <div className="w-full max-w-[min(100%,1600px)] mx-auto px-4 sm:px-6 pt-10 pb-10">{children}</div>
     </div>
   );
 }

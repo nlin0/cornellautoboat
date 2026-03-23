@@ -16,8 +16,13 @@ const SLUG_TO_SUBTEAMS: Record<string, string[]> = {
   ros: ["ROS + Sims"],
 };
 
-function canManage(managed: string[] | null, slug: string): boolean {
-  if (!managed) return true;
+function canManage(
+  managed: string[] | null,
+  isSuperAdmin: boolean,
+  slug: string
+): boolean {
+  if (isSuperAdmin) return true;
+  if (!managed || managed.length === 0) return false;
   return managed.includes(slug);
 }
 
@@ -33,7 +38,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "slug required" }, { status: 400 });
   }
 
-  if (!canManage(session.user.managed_subteams, slug)) {
+  const isSuperAdmin = session.user.role === "super_admin";
+  if (!canManage(session.user.managed_subteams, isSuperAdmin, slug)) {
     return NextResponse.json({ error: "Cannot manage this subteam" }, { status: 403 });
   }
 
@@ -65,7 +71,8 @@ export async function PUT(request: Request) {
       return NextResponse.json({ error: "slug required" }, { status: 400 });
     }
 
-    if (!canManage(session.user.managed_subteams, slug)) {
+    const isSuperAdmin = session.user.role === "super_admin";
+    if (!canManage(session.user.managed_subteams, isSuperAdmin, slug)) {
       return NextResponse.json({ error: "Cannot manage this subteam" }, { status: 403 });
     }
 

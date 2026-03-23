@@ -9,10 +9,10 @@ export default async function AdminPage() {
   }
 
   return (
-    <div className="w-full max-w-[min(100%,1600px)] mx-auto flex flex-col items-center">
+    <div className="w-full max-w-[min(100%,1600px)] mx-auto flex flex-col items-center pt-8 sm:pt-10">
       <div className="w-full text-center mb-8">
         <h1 className="text-2xl font-bold text-[var(--accent)] mb-2">
-          Admin Dashboard
+          ur an admin lalalala
         </h1>
         <p className="text-[var(--body-text)]">
           Welcome, {session.user.email}. Manage the Cornell AutoBoat site from

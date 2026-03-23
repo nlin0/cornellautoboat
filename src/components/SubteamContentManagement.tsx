@@ -18,8 +18,13 @@ type SubteamContentManagementProps = {
   managedSubteams: string[] | null;
 };
 
-function canManage(managed: string[] | null, slug: string): boolean {
-  if (!managed) return true;
+function canManage(
+  managed: string[] | null,
+  isSuperAdmin: boolean,
+  slug: string
+): boolean {
+  if (isSuperAdmin) return true;
+  if (!managed || managed.length === 0) return false;
   return managed.includes(slug);
 }
 
@@ -33,7 +38,9 @@ export function SubteamContentManagement({ isSuperAdmin, managedSubteams }: Subt
   const [heroError, setHeroError] = useState<string | null>(null);
   const heroInputRef = useRef<HTMLInputElement>(null);
 
-  const allowed = TECHNICAL_SUBTEAMS.filter((s) => canManage(managedSubteams, s.slug));
+  const allowed = TECHNICAL_SUBTEAMS.filter((s) =>
+    canManage(managedSubteams, isSuperAdmin, s.slug)
+  );
 
   const fetchContent = useCallback(async () => {
     if (!selectedSlug) return;

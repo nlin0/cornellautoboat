@@ -320,13 +320,7 @@ export default function Navbar() {
                 >
                   Admin
                 </Link>
-                <button
-                  type="button"
-                  onClick={() => signOut({ callbackUrl: '/' })}
-                  className="px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-[#960303] hover:bg-gray-50"
-                >
-                  Log out
-                </button>
+
               </>
             )}
           </nav>
@@ -436,16 +430,6 @@ export default function Navbar() {
               >
                 Admin
               </Link>
-              <button
-                type="button"
-                onClick={() => {
-                  closeMenu();
-                  signOut({ callbackUrl: '/' });
-                }}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
-              >
-                Log out
-              </button>
             </>
           )}
         </nav>

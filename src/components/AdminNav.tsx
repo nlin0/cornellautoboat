@@ -13,7 +13,7 @@ type AdminNavProps = {
 
 export function AdminNav({ user }: AdminNavProps) {
   return (
-    <nav className="bg-white border-b border-[var(--light-gray)] px-4 py-3">
+    <nav className="mt-8 bg-white border-b border-[var(--light-gray)] px-4 py-3">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link

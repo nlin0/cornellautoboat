@@ -9,7 +9,7 @@ import { verifyPassword } from "lib/auth-utils";
  * set AUTH_SECRET (e.g. Vercel → Environment Variables).
  */
 function getAuthSecret(): string {
-  const fromEnv = process.env.AUTH_SECRET?.trim();
+  const fromEnv = process.env.AUTH_SECRET?.trim() || process.env.NEXTAUTH_SECRET?.trim();
   if (fromEnv) return fromEnv;
 
   const isProductionBuild =

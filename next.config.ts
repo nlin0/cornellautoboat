@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
+    qualities: [75, 85, 100],
   },
 };
 
