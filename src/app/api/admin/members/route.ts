@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { auth } from "auth";
 import { sql } from "lib/db";
 import { del } from "@vercel/blob";
@@ -51,6 +52,11 @@ function canManageSubteam(
     }
   }
   return allowed.has(subteam);
+}
+
+/** Public /team page reads from DB — bust cache when members change. */
+function revalidatePublicTeamPage(): void {
+  revalidatePath("/team");
 }
 
 function getAllowedSubteams(managed: string[] | null, isSuperAdmin: boolean): string[] {
@@ -162,6 +168,7 @@ export async function POST(request: Request) {
             updated_at = NOW()
           WHERE id = ${existingRow.id}
         `;
+        revalidatePublicTeamPage();
         return NextResponse.json({ success: true, updated: true });
       }
     }
@@ -188,6 +195,7 @@ export async function POST(request: Request) {
         ${nextOrder}
       )
     `;
+    revalidatePublicTeamPage();
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Failed to add member:", err);
@@ -280,6 +288,7 @@ export async function PUT(request: Request) {
         updated_at = NOW()
       WHERE id = ${id}
     `;
+    revalidatePublicTeamPage();
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Failed to update member:", err);
@@ -324,6 +333,7 @@ export async function DELETE(request: Request) {
     }
 
     await sql`DELETE FROM members WHERE id = ANY(${idsToDelete})`;
+    revalidatePublicTeamPage();
     return NextResponse.json({ success: true, deleted: idsToDelete.length });
   } catch (err) {
     console.error("Failed to delete member:", err);

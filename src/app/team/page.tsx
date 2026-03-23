@@ -4,6 +4,9 @@ import { getTeamData } from "./teamdata";
 import MemberCard from './MemberCard';
 import TeamIntro from './TeamIntro';
 
+/** Always read fresh member data from Neon (role, photos, etc.) after admin edits — avoid stale static HTML. */
+export const dynamic = 'force-dynamic';
+
 function getSubteamDescription(team: string): string {
   const descriptions: Record<string, string> = {
     'Hardware': 'Hardware designs and manufactures the boat\'s electromechanical system! This involves doing CAD and ECAD, running simulations, machining, working with composites, working with power tools, soldering and assembling electrical components, among other technical skills. Members of the hardware team gain a lot of valuable hands-on experience, while also being able to apply concepts learned in class to their work during the design process.',
