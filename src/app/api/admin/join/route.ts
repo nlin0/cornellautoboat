@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         ${password_hash},
         ${invite.role},
         ${invite.super_admin_type},
-        ${arrLiteral}::text[]
+        ${invite.role === "super_admin" ? null : arrLiteral}::text[]
       )
     `;
 

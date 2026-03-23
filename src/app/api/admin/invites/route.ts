@@ -83,7 +83,7 @@ export async function POST(request: Request) {
         ${netidVal},
         ${role},
         ${role === "super_admin" ? super_admin_type : null},
-        ${arrLiteral}::text[],
+        ${role === "super_admin" ? null : arrLiteral}::text[],
         ${expiresAt.toISOString()}::timestamptz
       )
     `;

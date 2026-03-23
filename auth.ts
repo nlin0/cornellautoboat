@@ -59,7 +59,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           email: admin.email,
           role: admin.role,
           super_admin_type: admin.super_admin_type,
-          managed_subteams: admin.managed_subteams ?? null,
+          managed_subteams:
+            admin.role === "super_admin" ? null : (admin.managed_subteams ?? null),
         };
       },
     }),
