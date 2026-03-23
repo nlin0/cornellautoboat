@@ -86,6 +86,25 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     session: async ({ session, token }) => {
       if (session.user) {
         session.user.id = token.id as string;
+        const currentId = token.id as string | undefined;
+        if (currentId) {
+          const { rows } = await sql`
+            SELECT role, super_admin_type, managed_subteams
+            FROM admins
+            WHERE id = ${currentId}
+            LIMIT 1
+          `;
+          const current = rows[0] as
+            | { role: string; super_admin_type: string | null; managed_subteams: string[] | null }
+            | undefined;
+          if (current) {
+            session.user.role = current.role;
+            session.user.super_admin_type = current.super_admin_type;
+            session.user.managed_subteams =
+              current.role === "super_admin" ? null : (current.managed_subteams ?? null);
+            return session;
+          }
+        }
         session.user.role = token.role as string;
         session.user.super_admin_type = token.super_admin_type as string | null;
         session.user.managed_subteams = (token.managed_subteams as string[] | null) ?? null;

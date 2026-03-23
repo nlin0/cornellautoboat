@@ -2,18 +2,17 @@ import { NextResponse } from "next/server";
 import { auth } from "auth";
 import { sql } from "lib/db";
 
-const SLUG_TO_SUBTEAMS: Record<string, string[]> = {
-  team_leads: ["Team Leads"],
-  hardware: ["Hardware", "Mechanical", "Robotics", "E-Systems"],
-  software: ["Software", "Perception", "AI", "Controls", "ROS + Sims"],
-  business: ["Business and Outreach"],
-  mechanical: ["Mechanical"],
-  robotics: ["Robotics"],
-  esys: ["E-Systems"],
-  perception: ["Perception"],
-  ai: ["AI"],
-  controls: ["Controls"],
-  ros: ["ROS + Sims"],
+const SLUG_TO_MANAGED_SLUGS: Record<string, string[]> = {
+  hardware: ["hardware", "mechanical", "robotics", "esys"],
+  software: ["software", "perception", "ai", "controls", "ros"],
+  business: ["business"],
+  mechanical: ["mechanical"],
+  robotics: ["robotics"],
+  esys: ["esys"],
+  perception: ["perception"],
+  ai: ["ai"],
+  controls: ["controls"],
+  ros: ["ros"],
 };
 
 function canManage(
@@ -23,7 +22,12 @@ function canManage(
 ): boolean {
   if (isSuperAdmin) return true;
   if (!managed || managed.length === 0) return false;
-  return managed.includes(slug);
+  const allowed = new Set<string>();
+  for (const key of managed) {
+    const expanded = SLUG_TO_MANAGED_SLUGS[key] || [key];
+    for (const s of expanded) allowed.add(s);
+  }
+  return allowed.has(slug);
 }
 
 export async function GET(request: Request) {
