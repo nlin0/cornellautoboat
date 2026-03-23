@@ -3,12 +3,28 @@ import Credentials from "next-auth/providers/credentials";
 import { sql } from "lib/db";
 import { verifyPassword } from "lib/auth-utils";
 
-const secret = process.env.AUTH_SECRET;
-if (!secret) {
+/**
+ * Next.js loads auth during `next build` ("Collecting page data") before runtime env
+ * is guaranteed. Use a throwaway secret only for that phase; production/runtime must
+ * set AUTH_SECRET (e.g. Vercel → Environment Variables).
+ */
+function getAuthSecret(): string {
+  const fromEnv = process.env.AUTH_SECRET?.trim();
+  if (fromEnv) return fromEnv;
+
+  const isProductionBuild =
+    process.env.NEXT_PHASE === "phase-production-build";
+
+  if (isProductionBuild) {
+    return "build-time-placeholder-not-used-at-runtime-min-32-chars";
+  }
+
   throw new Error(
     "Missing AUTH_SECRET. Add to .env.local: AUTH_SECRET=$(openssl rand -base64 32)"
   );
 }
+
+const secret = getAuthSecret();
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   secret,
