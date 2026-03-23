@@ -16,6 +16,7 @@ export function MemberPhotoUpload({
 }: MemberPhotoUploadProps) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -28,6 +29,7 @@ export function MemberPhotoUpload({
     }
 
     setError(null);
+    setSuccessMessage(null);
     setUploading(true);
 
     try {
@@ -45,6 +47,9 @@ export function MemberPhotoUpload({
       if (!res.ok) throw new Error(data.error || "Upload failed");
 
       onChange(data.path);
+      setSuccessMessage(
+        "Photo uploaded. Please wait a few moments for changes to appear, and avoid submitting multiple times."
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : "Upload failed");
     } finally {
@@ -92,9 +97,12 @@ export function MemberPhotoUpload({
         </div>
       </div>
       {uploading && (
-        <p className="text-xs text-[var(--body-text)]">Uploading…</p>
+        <p className="text-xs text-[var(--body-text)]">
+          Uploading... Please click once and wait.
+        </p>
       )}
       {error && <p className="text-xs text-red-600">{error}</p>}
+      {successMessage && <p className="text-xs text-green-700">{successMessage}</p>}
       {!nameHint.trim() && (
         <p className="text-xs text-[var(--body-text)]">
           Enter name above to upload (saved as firstname_lastname.webp)

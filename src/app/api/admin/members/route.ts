@@ -175,15 +175,28 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json();
-    const { id, netid, name, image, role, subteam, year, major, hometown, email, linkedin, portfolio } = body;
+    const { id, netid, name, image, role, subteam, year, major, hometown, email, linkedin, portfolio, display_order } = body;
 
     if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
 
     const { rows } = await sql`
-      SELECT name, image, role, subteam, year, major, hometown, email, linkedin, portfolio, netid
+      SELECT name, image, role, subteam, year, major, hometown, email, linkedin, portfolio, netid, display_order
       FROM members WHERE id = ${id}
     `;
-    const existing = rows[0] as Record<string, string | null> | undefined;
+    const existing = rows[0] as ({
+      name: string | null;
+      image: string | null;
+      role: string | null;
+      subteam: string | null;
+      year: string | null;
+      major: string | null;
+      hometown: string | null;
+      email: string | null;
+      linkedin: string | null;
+      portfolio: string | null;
+      netid: string | null;
+      display_order: number | null;
+    }) | undefined;
     if (!existing) return NextResponse.json({ error: "Member not found" }, { status: 404 });
 
     const targetSubteam = (subteam as string) || (existing.subteam as string);
@@ -203,6 +216,11 @@ export async function PUT(request: Request) {
       }
     }
 
+    const displayOrderVal =
+      display_order !== undefined && display_order !== null && Number.isFinite(Number(display_order))
+        ? Number(display_order)
+        : (existing.display_order ?? 0);
+
     await sql`
       UPDATE members SET
         netid = ${netidVal},
@@ -216,6 +234,7 @@ export async function PUT(request: Request) {
         email = ${(email as string) ?? existing.email},
         linkedin = ${(linkedin as string) ?? existing.linkedin},
         portfolio = ${(portfolio as string) ?? existing.portfolio},
+        display_order = ${displayOrderVal},
         updated_at = NOW()
       WHERE id = ${id}
     `;

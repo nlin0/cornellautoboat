@@ -31,6 +31,7 @@ type Member = {
   email: string | null;
   linkedin: string | null;
   portfolio: string | null;
+  display_order: number;
 };
 
 type MemberManagementProps = {
@@ -200,6 +201,41 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
     }
   }
 
+  async function moveMemberInSubteam(member: Member, direction: "up" | "down") {
+    const peers = members
+      .filter((m) => m.subteam === member.subteam)
+      .sort((a, b) => a.display_order - b.display_order || a.name.localeCompare(b.name));
+    const idx = peers.findIndex((m) => m.id === member.id);
+    if (idx < 0) return;
+
+    const swapIdx = direction === "up" ? idx - 1 : idx + 1;
+    if (swapIdx < 0 || swapIdx >= peers.length) return;
+
+    const other = peers[swapIdx];
+    setLoading(true);
+    try {
+      const first = await fetch("/api/admin/members", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: member.id, display_order: other.display_order }),
+      });
+      if (!first.ok) throw new Error((await first.json()).error || "Failed to move member");
+
+      const second = await fetch("/api/admin/members", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: other.id, display_order: member.display_order }),
+      });
+      if (!second.ok) throw new Error((await second.json()).error || "Failed to move member");
+
+      fetchMembers();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Failed to move member");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   function toggleSelect(id: string) {
     setSelectedIds((prev) => {
       const next = new Set(prev);
@@ -290,6 +326,9 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
           </button>
         )}
       </div>
+      <p className="text-xs text-[var(--body-text)] mb-3">
+        Use the arrows in Rank to reorder members within the same subteam.
+      </p>
 
       {showAdd && (
         <form onSubmit={handleAdd} className="mb-6 p-4 border rounded space-y-2">
@@ -371,6 +410,7 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
               <th className="text-left py-2 px-2">Name</th>
               <th className="text-left py-2 px-2">NetID</th>
               <th className="text-left py-2 px-2">Subteam</th>
+              <th className="text-left py-2 px-2">Rank</th>
               <th className="text-left py-2 px-2">Role</th>
               <th className="text-left py-2 px-2">Year</th>
               <th className="text-left py-2 px-2">Major</th>
@@ -403,6 +443,29 @@ export function MemberManagement({ isSuperAdmin, managedSubteams }: MemberManage
                 <td className="py-2 px-2 font-medium">{m.name}</td>
                 <td className="py-2 px-2">{m.netid || "—"}</td>
                 <td className="py-2 px-2">{m.subteam}</td>
+                <td className="py-2 px-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs min-w-[2ch]">{m.display_order + 1}</span>
+                    <button
+                      type="button"
+                      onClick={() => moveMemberInSubteam(m, "up")}
+                      disabled={loading}
+                      className="px-1.5 py-0.5 border rounded text-xs disabled:opacity-50"
+                      title="Move up within subteam"
+                    >
+                      ↑
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => moveMemberInSubteam(m, "down")}
+                      disabled={loading}
+                      className="px-1.5 py-0.5 border rounded text-xs disabled:opacity-50"
+                      title="Move down within subteam"
+                    >
+                      ↓
+                    </button>
+                  </div>
+                </td>
                 <td className="py-2 px-2">{m.role}</td>
                 <td className="py-2 px-2">{m.year || "—"}</td>
                 <td className="py-2 px-2">{m.major || "—"}</td>
