@@ -88,7 +88,9 @@ export async function POST(request: Request) {
       )
     `;
 
-    const baseUrl = process.env.NEXTAUTH_URL
+    const requestOrigin = new URL(request.url).origin;
+    const baseUrl = requestOrigin
+      || process.env.NEXTAUTH_URL
       || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null)
       || "http://localhost:3000";
     const joinUrl = `${baseUrl}/admin/join?token=${token}`;
