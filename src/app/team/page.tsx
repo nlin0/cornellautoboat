@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './team.module.css';
-import { teamData } from "./teamdata";
+import { getTeamData } from "./teamdata";
 import MemberCard from './MemberCard';
 import TeamIntro from './TeamIntro';
 
@@ -13,7 +13,8 @@ function getSubteamDescription(team: string): string {
   return descriptions[team] || '';
 }
 
-export default function Team() {
+export default async function Team() {
+  const teamData = await getTeamData();
   return (
     <div className={styles.wrapper}>
       <TeamIntro />

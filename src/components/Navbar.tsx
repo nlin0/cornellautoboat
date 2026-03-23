@@ -4,6 +4,7 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useSession, signOut } from 'next-auth/react';
 
 interface NavLink {
   href: string;
@@ -50,6 +51,8 @@ export default function Navbar() {
   const linkRefs = useRef<Map<string, HTMLElement>>(new Map());
 
   const pathname = usePathname();
+  const { status } = useSession();
+  const isLoggedIn = status === 'authenticated';
 
   const toggleMenu = useCallback(() => setIsMenuOpen((prev) => !prev), []);
   const closeMenu = useCallback(() => {
@@ -305,6 +308,27 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
+
+            {isLoggedIn && (
+              <>
+                <Link
+                  href="/admin"
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ml-1 ${pathname.startsWith('/admin')
+                      ? 'text-[#960303] bg-gray-50'
+                      : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
+                    }`}
+                >
+                  Admin
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-[#960303] hover:bg-gray-50"
+                >
+                  Log out
+                </button>
+              </>
+            )}
           </nav>
 
           {/* MOBILE MENU BUTTON */}
@@ -399,6 +423,31 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+
+          {isLoggedIn && (
+            <>
+              <Link
+                href="/admin"
+                onClick={closeMenu}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${pathname.startsWith('/admin')
+                    ? 'text-[#960303] border border-[#960303]'
+                    : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+              >
+                Admin
+              </Link>
+              <button
+                type="button"
+                onClick={() => {
+                  closeMenu();
+                  signOut({ callbackUrl: '/' });
+                }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+              >
+                Log out
+              </button>
+            </>
+          )}
         </nav>
       )}
     </nav>

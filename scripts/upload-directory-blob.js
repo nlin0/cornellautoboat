@@ -2,7 +2,7 @@
  * Upload JPG/JPEG/PNG images from a public subdirectory to Vercel Blob as WebP
  *
  * Use:
- *  npm run upload-directory-blob -- public/media/media-polaroids
+ *  npm run upload-directory-blob -- public/media/media-polaroids/enah
  */
 
 

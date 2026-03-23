@@ -25,7 +25,7 @@ const BLOB_STORAGE_BASE_URL = 'https://uk7thkqkj3aqofka.public.blob.vercel-stora
  *   Returns: "/other/image.png" (not in blob storage, keep local)
  */
 export function getBlobUrl(localPath: string): string {
-  if (localPath.startsWith('/team/teamPhotos/')) {
+  if (localPath.startsWith('/team/teamPhotos/') || localPath.startsWith('/team/subteamHeroes/')) {
     // Normalize path: remove .JPG.webp or .jpg.webp and replace with .webp
     let normalizedPath = localPath.replace(/\.(jpg|jpeg)\.webp$/i, '.webp');
     const pathWithoutSlash = normalizedPath.startsWith('/') ? normalizedPath.slice(1) : normalizedPath;
