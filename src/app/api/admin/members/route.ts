@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { auth } from "auth";
 import { sql } from "lib/db";
+import { del } from "@vercel/blob";
+import { getBlobUrl } from "@/app/team/blobImageMap";
 
 const SLUG_TO_SUBTEAMS: Record<string, string[]> = {
   team_leads: ["Team Leads"],
@@ -15,6 +17,24 @@ const SLUG_TO_SUBTEAMS: Record<string, string[]> = {
   controls: ["Controls"],
   ros: ["ROS + Sims"],
 };
+
+const MEMBER_PHOTO_PREFIX = "/team/teamPhotos/";
+const MEMBER_PLACEHOLDER_PHOTO = "/team/teamPhotos/Full_Team_2.webp";
+
+async function deleteMemberPhotoIfNeeded(path: string | null): Promise<void> {
+  if (!path) return;
+  if (!path.startsWith(MEMBER_PHOTO_PREFIX)) return;
+  if (path === MEMBER_PLACEHOLDER_PHOTO) return;
+  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  if (!token) return;
+
+  try {
+    const blobUrl = getBlobUrl(path);
+    await del(blobUrl, { token });
+  } catch (err) {
+    console.warn("Failed to delete previous blob photo:", err);
+  }
+}
 
 function canManageSubteam(managed: string[] | null, subteam: string): boolean {
   if (!managed) return true;
@@ -220,12 +240,22 @@ export async function PUT(request: Request) {
       display_order !== undefined && display_order !== null && Number.isFinite(Number(display_order))
         ? Number(display_order)
         : (existing.display_order ?? 0);
+    const isImageProvided = image !== undefined;
+    const incomingImage = isImageProvided ? String(image ?? "").trim() : null;
+    const imageCleared = isImageProvided && incomingImage === "";
+    const imageVal = isImageProvided
+      ? (incomingImage || null)
+      : ((existing.image as string | null) ?? null);
+
+    if (imageCleared) {
+      await deleteMemberPhotoIfNeeded((existing.image as string | null) ?? null);
+    }
 
     await sql`
       UPDATE members SET
         netid = ${netidVal},
         name = ${(name as string) ?? existing.name},
-        image = ${(image as string) ?? existing.image},
+        image = ${imageVal},
         role = ${(role as string) ?? existing.role},
         subteam = ${targetSubteam},
         year = ${(year as string) ?? existing.year},
