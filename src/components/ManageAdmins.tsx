@@ -28,6 +28,7 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
   const [inviteManagedSubteams, setInviteManagedSubteams] = useState<string[]>(
     []
   );
+  const [inviteSyncTeamCardRole, setInviteSyncTeamCardRole] = useState(false);
   const [inviteLink, setInviteLink] = useState<string | null>(null);
   const [inviteSent, setInviteSent] = useState(false);
   const [inviteEmailError, setInviteEmailError] = useState<string | null>(null);
@@ -35,6 +36,7 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
   const [addEmail, setAddEmail] = useState("");
   const [addNetid, setAddNetid] = useState("");
   const [addPassword, setAddPassword] = useState("");
+  const [addSyncTeamCardRole, setAddSyncTeamCardRole] = useState(false);
   const [addError, setAddError] = useState<string | null>(null);
   const [addSuccess, setAddSuccess] = useState(false);
   const [migrateStatus, setMigrateStatus] = useState<string | null>(null);
@@ -72,6 +74,7 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
       } else {
         body.managed_subteams = inviteManagedSubteams;
       }
+      body.sync_team_card_role = inviteSyncTeamCardRole;
       const res = await fetch("/api/admin/invites", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -114,6 +117,7 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
           email: addEmail,
           password: addPassword,
           netid: addNetid || undefined,
+          sync_team_card_role: addSyncTeamCardRole,
         }),
       });
       const data = await res.json();
@@ -289,6 +293,21 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
               </div>
             </div>
           )}
+          <label className="flex items-start gap-2 text-sm cursor-pointer max-w-lg">
+            <input
+              type="checkbox"
+              checked={inviteSyncTeamCardRole}
+              onChange={(e) => setInviteSyncTeamCardRole(e.target.checked)}
+              className="mt-0.5 shrink-0"
+            />
+            <span>
+              <span className="font-medium">Sync team card title to lead role</span>
+              <span className="block text-[var(--body-text)] mt-0.5">
+                If checked, after they join, their public /team card &quot;role&quot;
+                line updates to match this admin invite (e.g. ____ Lead). 
+              </span>
+            </span>
+          </label>
           {addError && (
             <p className="text-sm text-red-600">{addError}</p>
           )}
@@ -336,36 +355,55 @@ export function ManageAdmins({ currentUserId }: ManageAdminsProps) {
           Add directly or use invite links above. Remove admins or super-admins.
         </p>
 
-        <form onSubmit={handleAddAdmin} className="flex flex-wrap gap-4 mb-6">
-          <input
-            type="email"
-            placeholder="Email"
-            value={addEmail}
-            onChange={(e) => setAddEmail(e.target.value)}
-            className="px-3 py-2 border border-[var(--light-gray)] rounded-md text-sm"
-          />
-          <input
-            type="text"
-            placeholder="NetID (optional)"
-            value={addNetid}
-            onChange={(e) => setAddNetid(e.target.value)}
-            className="px-3 py-2 border border-[var(--light-gray)] rounded-md text-sm"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={addPassword}
-            onChange={(e) => setAddPassword(e.target.value)}
-            minLength={8}
-            className="px-3 py-2 border border-[var(--light-gray)] rounded-md text-sm"
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className="px-4 py-2 bg-[var(--primary)] text-white text-sm font-medium rounded-md hover:bg-[var(--primary-dark)] disabled:opacity-60"
-          >
-            Add Admin Directly
-          </button>
+        <form onSubmit={handleAddAdmin} className="space-y-3 mb-6 max-w-2xl">
+          <div className="flex flex-wrap gap-4 items-end">
+            <input
+              type="email"
+              placeholder="Email"
+              value={addEmail}
+              onChange={(e) => setAddEmail(e.target.value)}
+              className="px-3 py-2 border border-[var(--light-gray)] rounded-md text-sm"
+            />
+            <input
+              type="text"
+              placeholder="NetID (optional)"
+              value={addNetid}
+              onChange={(e) => setAddNetid(e.target.value)}
+              className="px-3 py-2 border border-[var(--light-gray)] rounded-md text-sm"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={addPassword}
+              onChange={(e) => setAddPassword(e.target.value)}
+              minLength={8}
+              className="px-3 py-2 border border-[var(--light-gray)] rounded-md text-sm"
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="px-4 py-2 bg-[var(--primary)] text-white text-sm font-medium rounded-md hover:bg-[var(--primary-dark)] disabled:opacity-60"
+            >
+              Add Admin Directly
+            </button>
+          </div>
+          <label className="flex items-start gap-2 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={addSyncTeamCardRole}
+              onChange={(e) => setAddSyncTeamCardRole(e.target.checked)}
+              className="mt-0.5 shrink-0"
+            />
+            <span>
+              <span className="font-medium">Sync team card title to lead role</span>
+              <span className="block text-[var(--body-text)] mt-0.5">
+                Direct add doesn&apos;t set subteam scope here — if checked, their
+                card role becomes &quot;Subteam Lead&quot;. For a specific title (e.g.
+                Software Lead), use an invite with managed subteams, or edit their
+                role on the Members page afterward.
+              </span>
+            </span>
+          </label>
         </form>
         {addSuccess && <p className="text-sm text-green-600 mb-2">Admin added.</p>}
 

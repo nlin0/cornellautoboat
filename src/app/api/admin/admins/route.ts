@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { email, password, netid, managed_subteams } = body;
+    const { email, password, netid, managed_subteams, sync_team_card_role } = body;
 
     if (!email || !password) {
       return NextResponse.json(
@@ -67,13 +67,15 @@ export async function POST(request: Request) {
       )
     `;
 
-    await syncMemberLeadRoleForNewAdmin({
-      email: emailStr,
-      netid: netidVal,
-      adminRole: "admin",
-      super_admin_type: null,
-      managed_subteams: managedSubteams,
-    });
+    if (Boolean(sync_team_card_role)) {
+      await syncMemberLeadRoleForNewAdmin({
+        email: emailStr,
+        netid: netidVal,
+        adminRole: "admin",
+        super_admin_type: null,
+        managed_subteams: managedSubteams,
+      });
+    }
 
     return NextResponse.json({ success: true });
   } catch (err: unknown) {

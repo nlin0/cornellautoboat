@@ -14,7 +14,7 @@ export async function GET() {
 
   try {
     const { rows } = await sql`
-      SELECT id, email, netid, role, super_admin_type, managed_subteams, expires_at, created_at
+      SELECT id, email, netid, role, super_admin_type, managed_subteams, sync_team_card_role, expires_at, created_at
       FROM admin_invites
       WHERE expires_at > NOW()
       ORDER BY created_at DESC
@@ -34,7 +34,8 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { email, netid, role, super_admin_type, managed_subteams } = body;
+    const { email, netid, role, super_admin_type, managed_subteams, sync_team_card_role } = body;
+    const syncTeamCardRole = Boolean(sync_team_card_role);
 
     const emailStr = String(email || "").toLowerCase().trim();
     if (!emailStr) {
@@ -76,7 +77,7 @@ export async function POST(request: Request) {
         : "{}";
 
     await sql`
-      INSERT INTO admin_invites (token, email, netid, role, super_admin_type, managed_subteams, expires_at)
+      INSERT INTO admin_invites (token, email, netid, role, super_admin_type, managed_subteams, sync_team_card_role, expires_at)
       VALUES (
         ${token},
         ${emailStr},
@@ -84,6 +85,7 @@ export async function POST(request: Request) {
         ${role},
         ${role === "super_admin" ? super_admin_type : null},
         ${role === "super_admin" ? null : arrLiteral}::text[],
+        ${syncTeamCardRole},
         ${expiresAt.toISOString()}::timestamptz
       )
     `;

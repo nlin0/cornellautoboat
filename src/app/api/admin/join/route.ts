@@ -16,13 +16,20 @@ export async function POST(request: Request) {
     }
 
     const { rows } = await sql`
-      SELECT email, netid, role, super_admin_type, managed_subteams
+      SELECT email, netid, role, super_admin_type, managed_subteams, sync_team_card_role
       FROM admin_invites
       WHERE token = ${token} AND expires_at > NOW()
       LIMIT 1
     `;
 
-    const invite = rows[0] as { email: string; netid: string | null; role: string; super_admin_type: string | null; managed_subteams: string[] | null } | undefined;
+    const invite = rows[0] as {
+      email: string;
+      netid: string | null;
+      role: string;
+      super_admin_type: string | null;
+      managed_subteams: string[] | null;
+      sync_team_card_role: boolean;
+    } | undefined;
     if (!invite) {
       return NextResponse.json({ error: "Invalid or expired invite" }, { status: 400 });
     }
@@ -53,13 +60,15 @@ export async function POST(request: Request) {
         ? invite.super_admin_type
         : null;
 
-    await syncMemberLeadRoleForNewAdmin({
-      email: invite.email,
-      netid: invite.netid,
-      adminRole: invite.role as "super_admin" | "admin",
-      super_admin_type: superAdminType,
-      managed_subteams: invite.managed_subteams,
-    });
+    if (invite.sync_team_card_role) {
+      await syncMemberLeadRoleForNewAdmin({
+        email: invite.email,
+        netid: invite.netid,
+        adminRole: invite.role as "super_admin" | "admin",
+        super_admin_type: superAdminType,
+        managed_subteams: invite.managed_subteams,
+      });
+    }
 
     return NextResponse.json({ success: true });
   } catch (err: unknown) {
