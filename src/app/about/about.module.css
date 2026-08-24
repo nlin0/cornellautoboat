@@ -1,9 +1,8 @@
+/*Wrapper contains the background color*/
 .wrapper {
-
   background-color: var(--color-secondary);
-
 }
-
+/*This contains the title section*/
 .aboutIntro {
   color: var(--body-text);
   text-align: center;
