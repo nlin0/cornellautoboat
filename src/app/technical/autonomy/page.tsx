@@ -6,7 +6,7 @@ import Divider from '../Divider';
 export default function ArtificialIntelligence() {
   return (
     <div className={styles.wrapper}>
-        <TechnicalHero title="Artificial Intelligence" subteam="autonomy" />
+        <TechnicalHero title="Autonomy" subteam="autonomy" />
       <Divider />
       <div className={styles.techSection}>
         <p className={`${styles.descr} ${styles.descrWithMargin}`}>
