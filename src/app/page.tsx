@@ -188,7 +188,7 @@ export default function Home() {
             {/* APPLY NOW BUTTON - Comment out when applications are closed */}
             <div className={styles.applyButtonSection}>
               <a
-                href="https://forms.gle/2Y3BycZK8QUAHsuYA"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdyiXnXFlgKNF2EGi1rpWyEKVNZUpvFJ9kd6S65DNz0Vs_xIg/viewform"
                 className={styles.applyButton}
               >
                 Apply Now!
