@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import styles from '../technical.module.css';
-import TechnicalHero from '../TechnicalHero';
-import Divider from '../Divider';
+import Image from "next/image";
+import styles from "../technical.module.css";
+import TechnicalHero from "../TechnicalHero";
+import Divider from "../Divider";
 
 export default function RosAndSimulations() {
   return (
     <div className={styles.wrapper}>
-        <TechnicalHero title="Simulations" subteam="simulations" />
+      <TechnicalHero title="Simulations" subteam="simulations" />
       <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>
@@ -19,64 +19,75 @@ export default function RosAndSimulations() {
           responsible for creating a simulations framework for the AI and
           controls team to test their code in isolation.
         </p>
-        <h3 className={styles.techHeading}>Robot Operating System</h3>
-        <p className={styles.descr}>
-          This year we made a couple major changes to our ROS framework, and we
-          also had immense progress on the simulations front. With ROS, we
-          upgraded to a Jetson Orin AGX with Ubuntu 22.04 and thus migrated our
-          entire system to ROS2. Further, to incorporate the new LiDAR sensor,
-          we created a new LiDAR node that handles point cloud data and its
-          associated processing algorithms. Below is a schematic of our current
-          setup, which is still subject to change.
-        </p>
-
-        <div className={styles.techImg}>
-          <Image
-            src="/technical/ROS1.png"
-            alt="ROS1"
-            width={600}
-            height={550}
-            className={styles.techImage}
-          />
-        </div>
-
-        <h3 className={styles.techHeading}>Simulations</h3>
-        <p className={styles.descr}>
-          With simulations, we created version 1 of our RoboBoat simulation.
-          This version is created in Unity and uses a ROS TCP connection node to
-          connect our codebase to the Unity client. More specifically, this
-          simulation is capable of testing AI path planning, controls pure
-          pursuit, or both at the same time. It includes a generic map of the
-          RoboBoat competition course, as well as basic capability for level
-          making. Below is an example of path planning code (i.e. follow the
-          buoy) running in our simulation.
-        </p>
-
-        <div className={styles.techImg}>
-          <Image
-            src="/technical/ROS4.png"
-            alt="ROS4"
-            width={600}
-            height={500}
-            className={styles.techImage}
-          />
-        </div>
-          <div className={styles.techImg}>
-          <Image
-            src="/technical/ROS5.png"
-            alt="ROS5"
-            width={600}
-            height={500}
-            className={styles.techImage}
-          />
-        </div>
+        <h3 className={styles.techHeading}>Synthetic Image Data</h3>
 
         <p className={styles.descr}>
-          This semester, we also developed a 3D LiDAR simulation to generate all
-          sorts of LiDAR data for the LiDAR team to iterate their algorithms on.
-          We hope that this new project can serve as the basis of an eventual
-          full 3D simulation.
+          We use cameras to identify obstacles in the water. However, our
+          location limits our ability to test our vision models throughout the
+          year, so we need another way to gather realistic data.
         </p>
+
+        <ul className={styles.descrList}>
+          <li>
+            Use Blender's Python bindings to create scripts that generate
+            realistic scenes on which to train our YOLO model
+          </li>
+          <li>
+            Use Blender to hand-create 3D models of the buoys, docks, color
+            indicators, and boats
+          </li>
+          <li>Create realistic scenes and water in Blender</li>
+          <li>
+            <strong>Technologies:</strong> Python, Blender, YOLO
+          </li>
+        </ul>
+
+        <p className={styles.descr}>
+          <strong>Next steps:</strong> The Sim-to-Real gap is a major open
+          question in robotics research. We hope to leverage new research in
+          this field to apply it to the maritime domain, which remains mostly
+          unexplored.
+        </p>
+        <h3 className={styles.techHeading}>Reinforcement Learning Sim</h3>
+
+        <p className={styles.descr}>
+          As part of our efforts to improve our boat's pathfinding abilities, we
+          are implementing Reinforcement Learning to control the boat's
+          decision-making to complete each task.
+        </p>
+
+        <ul className={styles.descrList}>
+          <li>
+            Create simulated environments to represent the different tasks we
+            perform at competition
+          </li>
+          <li>Accurately and cheaply model obstacle collision</li>
+          <li>Implement stochastic model for perception data</li>
+          <li>
+            <strong>Technologies:</strong> Python, NumPy, Shapely, MatPlot,
+            Pytorch
+          </li>
+        </ul>
+        <h3 className={styles.techHeading}>3D Simulation</h3>
+
+        <p className={styles.descr}>
+          Currently, we use a Unity-based 3D simulation for testing our boat.
+          However, the buoyancy physics for the model are relatively simplistic.
+        </p>
+
+        <ul className={styles.descrList}>
+          <li>
+            Implement the Fossen 6-DOF Marine Craft model for accurately
+            representing boat buoyancy physics
+          </li>
+          <li>
+            Improve physical modeling of the Racquetball Launcher and Water Gun
+            to better match their real-life counterparts
+          </li>
+          <li>
+            <strong>Technologies:</strong> Linear Algebra, Physics, Unity, C#
+          </li>
+        </ul>
       </div>
     </div>
   );
