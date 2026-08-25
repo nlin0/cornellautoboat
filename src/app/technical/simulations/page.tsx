@@ -6,7 +6,7 @@ import Divider from '../Divider';
 export default function RosAndSimulations() {
   return (
     <div className={styles.wrapper}>
-        <TechnicalHero title="ROS & Simulations" subteam="ROS" />
+        <TechnicalHero title="Simulations" subteam="simulations" />
       <Divider />
       <div className={styles.techSection}>
         <p className={styles.descr}>

@@ -14,9 +14,9 @@ interface NavLink {
 
 const TECHNICAL_SUBPAGES = [
   'Perception',
-  'Artificial Intelligence',
-  'Controls & Microcontroller Designs',
-  'ROS & Simulations',
+  'Autonomy',
+  'Controls',
+  'Simulations',
   'Mechanical',
   'Robotics',
   'Electrical Systems',

@@ -3,23 +3,23 @@ import Divider from './Divider';
 import styles from './technical.module.css';
 
 type Subteam =
-  | 'AI'
+  | 'autonomy'
   | 'controls'
   | 'esys'
   | 'mechanical'
   | 'perception'
   | 'robotics'
-  | 'ROS'
+  | 'simulations'
   | 'main';
 
 const HERO_IMAGES: Record<Subteam, string> = {
-  AI: '/technical/AIHero4.png',
+  autonomy: '/technical/AIHero4.png',
   controls: '/technical/Controls.JPG',
   esys: '/technical/esys3.png',
   mechanical: '/technical/mechanical.JPG',
   perception: '/technical/perceptionHero.JPG',
   robotics: '/technical/roboticsHero3.png',
-  ROS: '/technical/Ros_Sims.JPG',
+  simulations: '/technical/Ros_Sims.JPG',
   main: '/technical/fullteam3.svg',
 };
 

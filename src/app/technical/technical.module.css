@@ -238,6 +238,17 @@
   line-height: 1.6;
   color: var(--body-text);
 }
+.bulletList {
+  list-style: disc !important;
+  padding-left: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.bulletList li {
+  font-size: 20px;
+  display: list-item !important;
+}
 
 /* Mobile Styles */
 @media (max-width: var(--mobile-breakpoint)) {

@@ -83,7 +83,8 @@ export async function getTeamDataFromDb(): Promise<Subteam[] | null> {
       if (!seen.has(team)) result.push({ team, members });
     }
     return result;
-  } catch {
+  } catch (error){
+    console.error("Failed to fetch team data:", error);
     return null;
   }
 }

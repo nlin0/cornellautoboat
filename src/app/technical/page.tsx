@@ -55,9 +55,9 @@ export default function TechnicalMain() {
           <div className={styles.linkContainer}>
             {[
               'Perception',
-              'Artificial Intelligence',
-              'Controls & Microcontroller Design',
-              'ROS & Simulations',
+              'Autonomy',
+              'Controls',
+              'Simulations',
             ].map((subteam) => (
               <Link
                 key={subteam}
