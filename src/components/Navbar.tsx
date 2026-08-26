@@ -15,7 +15,7 @@ interface NavLink {
 const TECHNICAL_SUBPAGES = [
   'Perception',
   'Autonomy',
-  'Controls',
+  /*'Controls',*/
   'Simulations',
   'Mechanical',
   'Robotics',
