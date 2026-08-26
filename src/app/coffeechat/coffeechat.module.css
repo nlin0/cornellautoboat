@@ -1,0 +1,342 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--secondary2);
+}
+
+/* Header Section */
+.coffeeIntro {
+  color: var(--body-text);
+  text-align: center;
+  padding: 11rem 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fadeInDown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.coffeeEyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.3vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--blue1);
+  margin-bottom: 1rem;
+  font-family: var(--font-paragraph);
+}
+
+.coffeeTitle {
+  font-size: clamp(2rem, 7vw, 5.25rem);
+  letter-spacing: -0.3vw;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+  font-family: var(--font-header);
+}
+
+.coffeeSubtitle {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.05vw;
+  line-height: 1.8;
+  color: var(--body-text);
+  font-weight: 400;
+  margin: 1.5rem auto 0;
+  max-width: 650px;
+  opacity: 0.9;
+  font-family: var(--font-paragraph);
+}
+
+/* Info Section */
+.infoSection {
+  padding: 5rem 2rem 3rem;
+  background: var(--secondary2);
+  position: relative;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.infoGrid.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.infoCard {
+  background: white;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid var(--blue1);
+}
+
+.infoNumber {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1vw;
+  color: var(--blue1);
+  font-family: var(--font-paragraph);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.infoTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-header);
+}
+
+.infoText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--body-text);
+  margin: 0;
+  font-family: var(--font-paragraph);
+}
+
+/* Booking Table Section */
+.tableSection {
+  padding: 3rem 2rem 6rem;
+  background: var(--secondary2);
+  position: relative;
+}
+
+.tableSection .container {
+  max-width: 1400px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.sectionHeader.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.2;
+  font-family: var(--font-header);
+}
+
+.sectionDescription {
+  font-size: 1.15rem;
+  color: var(--body-text);
+  margin-top: 0.75rem;
+  opacity: 0.8;
+  font-family: var(--font-paragraph);
+}
+
+.tableWrapper {
+  background: white;
+  box-shadow: 0 8px 32px rgba(150, 3, 3, 0.15), 0 0 0 2px rgba(150, 3, 3, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.tableWrapper.fadeInUp {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bookingTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bookingTable thead {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+}
+
+.bookingTable th {
+  text-align: left;
+  padding: 1.1rem 1.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  font-family: var(--font-paragraph);
+}
+
+.bookingTable td {
+  padding: 1.1rem 1.5rem;
+  font-size: 1rem;
+  color: var(--body-text);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: var(--font-paragraph);
+  vertical-align: middle;
+}
+
+.bookingTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bookingTable tbody tr {
+  transition: background 0.2s ease;
+}
+
+.bookingTable tbody tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.nameCell {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.subteamBadge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  background: var(--light-gray);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-paragraph);
+}
+
+.bookButton {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--blue1) 100%);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: var(--font-paragraph);
+}
+
+.bookButton:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--blue1) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(150, 3, 3, 0.4);
+}
+
+.bookedLabel {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--body-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-paragraph);
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: var(--mobile-breakpoint)) {
+  .coffeeIntro {
+    padding: 8rem 1rem 2rem;
+  }
+
+  .coffeeTitle {
+    font-size: clamp(1.5rem, 8vw, 2.75rem);
+    margin-bottom: 1rem;
+  }
+
+  .coffeeSubtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  .infoSection,
+  .tableSection {
+    padding: 2.5rem 1rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 1.75rem;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+  }
+
+  .sectionDescription {
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+  }
+
+  .infoCard {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Turn the table into stacked cards on small screens */
+  .bookingTable thead {
+    display: none;
+  }
+
+  .bookingTable,
+  .bookingTable tbody,
+  .bookingTable tr,
+  .bookingTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .bookingTable tr {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .bookingTable td {
+    border-bottom: none;
+    padding: 0.35rem 0;
+  }
+
+  .bookingTable td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+    font-weight: 700;
+    color: var(--blue1);
+    margin-bottom: 0.15rem;
+  }
+
+  .bookButton,
+  .bookedLabel {
+    width: 100%;
+    text-align: center;
+  }
+}

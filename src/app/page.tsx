@@ -194,6 +194,14 @@ export default function Home() {
                 Apply Now!
               </a>
             </div>
+            <a href="/coffeechat" className={styles.coffeeButton}>
+              Coffee Chat
+            </a>
+            {/* COFFEECHAt Schedule an informal 30-minute
+             conversation with any of our team leads! 
+             Ask questions about the team, their ex
+             perience, technical projects, the application
+              process, or anything else you’re curious about. */}
 
             {/* INFO SESSIONS - Comment out when recruiting season is over */}
             {/* <div className={styles.infoSessionsSection}>

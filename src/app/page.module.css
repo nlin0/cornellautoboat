@@ -325,6 +325,78 @@
   transform: translateY(-2px) scale(1.02);
 }
 
+/* COFFEE CHAT BUTTON */
+/* COFFEE BUTTON SECTION */
+.coffeeButtonSection {
+  width: 50%;
+  padding: 3rem 5vw 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coffeeButton {
+  display: block;
+  width: 30%;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #ff3b5c 0%, #168ee8 100%);
+  background-size: 200% 200%;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 6px 24px rgba(150, 3, 3, 0.4),
+    0 0 30px rgba(1, 170, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation:
+    gradientShift 3s ease infinite,
+    pulseGlow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.coffeeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.coffeeButton:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 10px 30px rgba(150, 3, 3, 0.5),
+    0 0 45px rgba(1, 170, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation:
+    gradientShift 2s ease infinite,
+    pulseGlow 1.5s ease-in-out infinite;
+}
+
+.coffeeButton:hover::before {
+  left: 100%;
+}
+
+.coffeeButton:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
 /* INFO SESSIONS SECTION */
 .infoSessionsSection {
   width: 100%;
@@ -1542,6 +1614,15 @@
   .applyButton {
     padding: 1rem 2rem;
     font-size: 1rem;
+  }
+
+  .coffeeButtonSection {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .coffeeButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.8rem;
   }
 
   .infoSessionsSection {
