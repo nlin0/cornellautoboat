@@ -13,62 +13,62 @@ const coffeeChatRows: CoffeeChatRow[] = [
   {
     name: "Anthony Wang",
     subteam: "Team Lead",
-    bookingUrl: "https://calendly.com/anthony-wang/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ17RPPoh58nahSKVd8Nw2y0HR53v2XDoexWBGQAGSUeMaF78e0TIQ5o_Nbh9ho0qEDQvs9GzUEK",
   },
   {
     name: "James Xiao",
     subteam: "Team Lead",
-    bookingUrl: "https://calendly.com/james-xiao/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2UozhGrwfG8wNf5dI2pqG44uc56U386-CRNsTahVIWjRTr941Kq_ISoQBQpV8r4YWvWuhb13lM",
   },
   {
     name: "Liz Tipton",
     subteam: "Design Lead",
-    bookingUrl: "https://calendly.com/liz-tipton/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ08q83fuJYVxxakWcoqx8a5cHPHcfh7W73E8PaYcLI9oH6pgOWHCR7JhTAoDZ54_MizgHG4AYg7",
   },
-  {
+  /*{
     name: "Calvin Stern",
     subteam: "Manufacturing Lead",
-    bookingUrl: "https://calendly.com/calvin-stern/coffee-chat",
-  },
+    bookingUrl: "https://calendar.google.com/calendar/u/0/r?cid=Y2Fsdmluc3Rlcm43QGdtYWlsLmNvbQ",
+  },*/
   {
     name: "Ivan Zheng",
     subteam: "Electrical Lead",
-    bookingUrl: "https://calendly.com/ivan-zheng/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0pN4cEWnOeJeX9Ya1GTMyjqCuvMiYBO-IQsAWDCxHjWar7iQKQEZ9DEB3w1D_x2vD55nILX_Jr",
   },
   {
     name: "Keya Cillenwater",
     subteam: "Electrical Lead",
-    bookingUrl: "https://calendly.com/keya-cillenwater/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ33eiz6M6LONLwwCy3YTubiDXqXpBscLWIS7B300v-J1Lbe1eW_XATHUYeXwm3ITVcoz7kqQbgZ",
   },
   {
     name: "Michelle Paszek",
     subteam: "Robotics Lead",
-    bookingUrl: "https://calendly.com/michelle-paszek/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2bGBtlx9dIbTXOgpBF-tHCH6pTL7A30BcYtgW-okMI1oF0IUMNbTxrZVRgYVh-cMmv0am8WStA",
   },
   {
     name: "Raymond Lin",
     subteam: "Autonomy Lead",
-    bookingUrl: "https://calendly.com/raymond-lin/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1AP_jQ6pYxS8iaLwZD0BQN6rt8yIMOhZDg3WAVXnWLgMwwO8p6mGHWxbaUVXVSCCPbiKyekROt",
   },
   {
     name: "Kevin Peng",
     subteam: "Perception Lead",
-    bookingUrl: "https://calendly.com/kevin-peng/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3iSQpH9k-qYZ9SpnddpMcODVJefQprOJrSSjS4kBxwFZ-v6z7xC2-od-yVPEvQUyrazQkchAiv",
   },
   {
     name: "Vivien Chen",
     subteam: "Perception Lead",
-    bookingUrl: "https://calendly.com/vivien-chen/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ23Wl9smWgsf5xLMe20KcF9xMT-MIM3AbiZvuxOR1UvPhrKkd-NFTrLVMG-H0qKJq-2u1JkcGzX",
   },
   {
     name: "Ty Galasinki",
     subteam: "Sims Lead",
-    bookingUrl: "https://calendly.com/ty-galasinki/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0rivQ90jqDMGbz0njkQtVlr5va074pklP0XnK91_E-MLKE_c90beW9dSbhf3aQ_AplNNbR-sg0",
   },
   {
     name: "Neha Naveen",
     subteam: "Business Lead",
-    bookingUrl: "https://calendly.com/neha-naveen/coffee-chat",
+    bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2bHXszqWzwfpacTKptJKKbwW8z5OL6UkvinVT2N58fpFTDpmF_-GIGaEBN-gasNl7Sa0PO3LrD",
   },
 ];
 
@@ -180,7 +180,7 @@ export default function CoffeeChat() {
                           rel="noopener noreferrer"
                           className={styles.bookButton}
                         >
-                          Coming soon!
+                          Book here!
                         </a>
                       ) : (
                         <span className={styles.bookedLabel}>
