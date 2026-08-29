@@ -327,6 +327,17 @@
 
 /* COFFEE CHAT BUTTON */
 /* COFFEE BUTTON SECTION */
+.recruitmentButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 20px auto 40px;
+  position: relative;
+  z-index: 2;
+}
 .coffeeButtonSection {
   width: 50%;
   padding: 3rem 5vw 1.5rem;

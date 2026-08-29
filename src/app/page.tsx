@@ -41,13 +41,14 @@ export default function Home() {
   const [isDesignOpen, setIsDesignOpen] = useState(false);
   const [isResearchOpen, setIsResearchOpen] = useState(false);
   const [currentBoatIndex, setCurrentBoatIndex] = useState(0);
+
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     setIsVisible(true);
 
-    // INTERSCTION OBSERVER FOR SCROLL ANIMATIONS
+    // INTERSECTION OBSERVER FOR SCROLL ANIMATIONS
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -77,27 +78,25 @@ export default function Home() {
       }
     });
 
-    // FOR NODE JS NULL ERROR
     return () => {
-      // disconnect observer first to prevent any issues
       try {
         observer.disconnect();
       } catch (error) {}
     };
   }, []);
 
-  // Cycle through boats at 90% of animation (16.2s) when boat becomes invisible
-  // This ensures the boat changes before it jumps back to starting position
+  // Cycle through boats
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBoatIndex((prevIndex) => (prevIndex + 1) % boats.length);
-    }, 16200); // 90% of 18s = 16.2s, when opacity becomes 0 in animation
+    }, 16200);
 
     return () => clearInterval(interval);
-  }, [boats.length]);
+  }, []);
 
   return (
     <div className={styles.pageWrapper}>
+      {/* HERO */}
       <div className={styles.heroHome} ref={heroRef}>
         <Image
           src="/home/background.svg"
@@ -117,6 +116,7 @@ export default function Home() {
           >
             <h1 className={styles.homeTitle}>Cornell AutoBoat</h1>
             <h2 className={styles.homeTitle2}>Project Team</h2>
+
             <p className={styles.homeDescr}>
               Where Innovation meets Passion{" "}
               <span className={styles.speechBubble}>
@@ -140,9 +140,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* BLOCK SECTION */}
+      {/* MAIN CONTENT */}
       <main className={styles.homeContent}>
         <section className={styles.blockSection}>
+          {/* ABOUT CREW */}
           <div
             className={styles.aboutCrewSection}
             ref={(el) => {
@@ -156,6 +157,7 @@ export default function Home() {
                 <h2>Aboat</h2>
                 <h2 className={styles.aboutCrewTitle2}>the Crew</h2>
               </div>
+
               <div className={styles.aboutCrewDescription}>
                 <p className={styles.descr}>
                   We are a student-run team of hardware and software engineers,
@@ -166,6 +168,20 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* RECRUITMENT BUTTONS */}
+          <div className={styles.recruitmentButtons}>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdyiXnXFlgKNF2EGi1rpWyEKVNZUpvFJ9kd6S65DNz0Vs_xIg/viewform"
+              className={styles.applyButton}
+            >
+              Apply Now!
+            </a>
+
+            <a href="/coffeechat" className={styles.coffeeButton}>
+              Coffee Chat
+            </a>
           </div>
 
           {/* TEAM VIDEO */}
@@ -184,48 +200,42 @@ export default function Home() {
                 allowFullScreen
               ></iframe>
             </div>
+          </div>
 
-            {/* APPLY NOW BUTTON - Comment out when applications are closed */}
-            <div className={styles.applyButtonSection}>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdyiXnXFlgKNF2EGi1rpWyEKVNZUpvFJ9kd6S65DNz0Vs_xIg/viewform"
-                className={styles.applyButton}
-              >
-                Apply Now!
-              </a>
-            </div>
-            <a href="/coffeechat" className={styles.coffeeButton}>
-              Coffee Chat
-            </a>
-            {/* COFFEECHAt Schedule an informal 30-minute
-             conversation with any of our team leads! 
-             Ask questions about the team, their ex
-             perience, technical projects, the application
-              process, or anything else you’re curious about. */}
+          {/* INFO SESSIONS - Comment out when recruiting season is over */}
+          {/*
+          <div className={styles.infoSessionsSection}>
+            <div className={styles.infoSessionsCard}>
+              <div className={styles.infoSessionsHeader}>
+                <h3 className={styles.infoSessionsTitle}>
+                  Come to our Info Sessions!
+                </h3>
+              </div>
 
-            {/* INFO SESSIONS - Comment out when recruiting season is over */}
-            {/* <div className={styles.infoSessionsSection}>
-              <div className={styles.infoSessionsCard}>
-                <div className={styles.infoSessionsHeader}>
-                  <h3 className={styles.infoSessionsTitle}>Come to our Info Sessions!</h3>
-                </div>
-                <div className={styles.infoSessionsList}>
-                  <div className={styles.infoSessionItem}>
-                    <div className={styles.infoSessionDate}>
-                      <span className={styles.infoSessionDay}>Saturday, January 24th</span>
-                      <span className={styles.infoSessionTime}>3:00 PM</span>
-                    </div>
-                    <div className={styles.infoSessionLocation}>
-                      <span className={styles.infoSessionLocationIcon}>📍</span>
-                      <span>Upson Hall 202</span>
-                    </div>
+              <div className={styles.infoSessionsList}>
+                <div className={styles.infoSessionItem}>
+                  <div className={styles.infoSessionDate}>
+                    <span className={styles.infoSessionDay}>
+                      Saturday, January 24th
+                    </span>
+                    <span className={styles.infoSessionTime}>
+                      3:00 PM
+                    </span>
+                  </div>
+
+                  <div className={styles.infoSessionLocation}>
+                    <span className={styles.infoSessionLocationIcon}>
+                      📍
+                    </span>
+                    <span>Upson Hall 202</span>
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
+          */}
 
-          {/* COMPETITION CYCLE SECTION */}
+          {/* COMPETITION CYCLE */}
           <div
             className={styles.competitionCycleSection}
             ref={(el) => {
@@ -236,19 +246,23 @@ export default function Home() {
               <h2 className={styles.competitionCycleTitle}>
                 2025-2026 Competition Cycle
               </h2>
+
               <p className={styles.competitionCycleSubtitle}>
                 Incremental hardware updates, significant software changes, and
                 an emphasis on testing.
               </p>
+
               <div className={styles.cycleLinks}>
                 <a
                   href="#testing"
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
+
                     const element = document.querySelector(
                       '[data-section="testing"]',
                     );
+
                     element?.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
@@ -258,14 +272,17 @@ export default function Home() {
                   <FlaskConical className={styles.cycleIcon} />
                   <span>Testing</span>
                 </a>
+
                 <a
                   href="#design"
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
+
                     const element = document.querySelector(
                       '[data-section="design"]',
                     );
+
                     element?.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
@@ -275,14 +292,17 @@ export default function Home() {
                   <DraftingCompass className={styles.cycleIcon} />
                   <span>Design</span>
                 </a>
+
                 <a
                   href="#manufacturing"
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
+
                     const element = document.querySelector(
                       '[data-section="manufacturing"]',
                     );
+
                     element?.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
@@ -292,14 +312,17 @@ export default function Home() {
                   <Factory className={styles.cycleIcon} />
                   <span>Manufacturing</span>
                 </a>
+
                 <a
                   href="#research"
                   className={styles.cycleLink}
                   onClick={(e) => {
                     e.preventDefault();
+
                     const element = document.querySelector(
                       '[data-section="research"]',
                     );
+
                     element?.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
@@ -313,6 +336,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* DESIGN */}
           <div
             className={styles.sectionContent}
             ref={(el) => {
@@ -335,9 +359,11 @@ export default function Home() {
                 />
               </div>
             </div>
+
             <div className={styles.container}>
               <div className={styles.descrBlock}>
                 <h2 className={styles.blockHeader}>Design</h2>
+
                 <p className={styles.descr}>
                   This year&apos;s design cycle is centered on a complete
                   rebuild of the boat, incorporating improvements identified
@@ -346,6 +372,7 @@ export default function Home() {
                   paired with significant changes to the codebase to improve
                   autonomous performance.
                 </p>
+
                 <button
                   className={styles.dropdownHeader}
                   onClick={() => setIsDesignOpen(!isDesignOpen)}
@@ -354,6 +381,7 @@ export default function Home() {
                   <span className={styles.dropdownTriggerText}>
                     Key projects
                   </span>
+
                   <span
                     className={`${styles.dropdownIcon} ${
                       isDesignOpen ? styles.dropdownIconOpen : ""
@@ -362,6 +390,7 @@ export default function Home() {
                     ▼
                   </span>
                 </button>
+
                 <div
                   className={`${styles.dropdownContent} ${
                     isDesignOpen ? styles.dropdownContentOpen : ""
@@ -406,6 +435,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* MANUFACTURING */}
           <div
             className={styles.sectionContent}
             ref={(el) => {
@@ -416,6 +446,7 @@ export default function Home() {
             <div className={styles.container}>
               <div className={styles.descrBlock}>
                 <h2 className={styles.blockHeader}>Manufacturing</h2>
+
                 <p className={styles.descr}>
                   This year&apos;s competition cycle involves the development of
                   a new boat, with significant updates to both the hull and
@@ -429,6 +460,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
             <div className={styles.container}>
               <div className={`${styles.techImg} ${styles.techImgVideo}`}>
                 <video
@@ -450,6 +482,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* TESTING */}
           <div
             className={styles.sectionContent}
             ref={(el) => {
@@ -464,13 +497,18 @@ export default function Home() {
                   alt="Testing"
                   fill
                   className={styles.techImage}
-                  style={{ objectFit: "cover", borderRadius: "30px" }}
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "30px",
+                  }}
                 />
               </div>
             </div>
+
             <div className={styles.container}>
               <div className={styles.descrBlock}>
                 <h2 className={styles.blockHeader}>Testing</h2>
+
                 <p className={styles.descr}>
                   On-water testing is the team&apos;s main priority this year.
                   This gives the software team as much time as possible to
@@ -485,6 +523,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* RESEARCH */}
           <div
             className={styles.sectionContent}
             ref={(el) => {
@@ -495,11 +534,13 @@ export default function Home() {
             <div className={styles.container}>
               <div className={styles.descrBlock}>
                 <h2 className={styles.blockHeader}>Research</h2>
+
                 <p className={styles.descr}>
                   Our team is focused on preparing for RoboBoat 2026, with a few
                   members doing research and early-stage design for more
                   complex, longer term projects.
                 </p>
+
                 <button
                   className={styles.dropdownHeader}
                   onClick={() => setIsResearchOpen(!isResearchOpen)}
@@ -508,6 +549,7 @@ export default function Home() {
                   <span className={styles.dropdownTriggerText}>
                     Current projects
                   </span>
+
                   <span
                     className={`${styles.dropdownIcon} ${
                       isResearchOpen ? styles.dropdownIconOpen : ""
@@ -516,6 +558,7 @@ export default function Home() {
                     ▼
                   </span>
                 </button>
+
                 <div
                   className={`${styles.dropdownContent} ${
                     isResearchOpen ? styles.dropdownContentOpen : ""
@@ -536,6 +579,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             <div className={styles.container}>
               <div className={styles.techImg}>
                 <Image
@@ -543,15 +587,17 @@ export default function Home() {
                   alt="Research"
                   fill
                   className={styles.techImage}
-                  style={{ objectFit: "cover", borderRadius: "30px" }}
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "30px",
+                  }}
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* TECH REPORT SECTION*/}
-
+        {/* TECHNICAL REPORT */}
         <section
           className={styles.pdfWrapper}
           ref={(el) => {
@@ -581,7 +627,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SPONSORS SECTION */}
+        {/* SPONSORS */}
         <section
           className={styles.sponsorsSection}
           ref={(el) => {
@@ -590,14 +636,17 @@ export default function Home() {
         >
           <div className={styles.sponsorsContent}>
             <h2 className={styles.sponsorsTitle}>Our Network</h2>
+
             <p className={styles.sponsorsDescription}>
               AutoBoat has served as a gateway to incredible opportunities in
               industry. Check out some of companies our current members and
               alumni have worked at.
             </p>
+
             <div className={styles.sponsorsImageContainer}>
               <div className={styles.tapeTape1}></div>
               <div className={styles.tapeTape2}></div>
+
               <Image
                 src="/home/logo1.png"
                 alt="Our Network - Companies our members and alumni have worked at"
@@ -627,6 +676,7 @@ export default function Home() {
             >
               ×
             </button>
+
             <div className={styles.modalImageFloating}>
               <Image
                 src={boats[currentBoatIndex].src}
@@ -636,10 +686,12 @@ export default function Home() {
                 className={styles.modalImage}
               />
             </div>
+
             <div className={styles.modalTextContent}>
               <h2 className={styles.modalTitle}>
                 {boats[currentBoatIndex].name}
               </h2>
+
               <p className={styles.modalDescription}>
                 {boats[currentBoatIndex].description}
               </p>

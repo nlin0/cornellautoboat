@@ -25,11 +25,11 @@ const coffeeChatRows: CoffeeChatRow[] = [
     subteam: "Design Lead",
     bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ08q83fuJYVxxakWcoqx8a5cHPHcfh7W73E8PaYcLI9oH6pgOWHCR7JhTAoDZ54_MizgHG4AYg7",
   },
-  /*{
+  {
     name: "Calvin Stern",
     subteam: "Manufacturing Lead",
-    bookingUrl: "https://calendar.google.com/calendar/u/0/r?cid=Y2Fsdmluc3Rlcm43QGdtYWlsLmNvbQ",
-  },*/
+    bookingUrl: "https://calendar.app.google/Sgq4aZt6rpR3pw539",
+  },
   {
     name: "Ivan Zheng",
     subteam: "Electrical Lead",
