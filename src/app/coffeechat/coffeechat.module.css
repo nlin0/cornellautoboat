@@ -272,13 +272,13 @@
 }
 
 /* Responsive Design */
-@media (max-width: 968px) {
+@media (max-width: 700) {
   .infoGrid {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: var(--mobile-breakpoint)) {
+@media (max-width: 700)  {
   .coffeeIntro {
     padding: 8rem 1rem 2rem;
   }
@@ -323,12 +323,13 @@
   .bookedLabel {
     box-sizing: border-box;
   }
+  /*new change*/
   .bookingTable,
   .bookingTable tbody,
   .bookingTable tr,
   .bookingTable td {
     display: block;
-    width: 50%;
+    width: 100%;
   }
 
   .bookingTable tr {
