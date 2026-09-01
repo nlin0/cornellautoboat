@@ -1627,14 +1627,19 @@
     font-size: 1rem;
   }
 
-  .coffeeButtonSection {
-    padding: 1.25rem 0.75rem;
-  }
+ .coffeeButtonSection {
+  width: 100%;
+  padding: 1rem 1rem;
+  box-sizing: border-box;
+}
 
-  .coffeeButton {
-    padding: 0.8rem 1.5rem;
-    font-size: 1.8rem;
-  }
+.coffeeButton {
+  width: auto;
+  max-width: 90%;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
 
   .infoSessionsSection {
     padding: 0 1rem 1.5rem;
