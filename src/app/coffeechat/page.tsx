@@ -61,7 +61,7 @@ const coffeeChatRows: CoffeeChatRow[] = [
     bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ23Wl9smWgsf5xLMe20KcF9xMT-MIM3AbiZvuxOR1UvPhrKkd-NFTrLVMG-H0qKJq-2u1JkcGzX",
   },
   {
-    name: "Ty Galasinki",
+    name: "Ty Galasinski",
     subteam: "Sims Lead",
     bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0rivQ90jqDMGbz0njkQtVlr5va074pklP0XnK91_E-MLKE_c90beW9dSbhf3aQ_AplNNbR-sg0",
   },
