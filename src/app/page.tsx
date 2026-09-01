@@ -203,7 +203,7 @@ export default function Home() {
           </div>
 
           {/* INFO SESSIONS - Comment out when recruiting season is over */}
-          {/*
+          {
           <div className={styles.infoSessionsSection}>
             <div className={styles.infoSessionsCard}>
               <div className={styles.infoSessionsHeader}>
@@ -211,15 +211,14 @@ export default function Home() {
                   Come to our Info Sessions!
                 </h3>
               </div>
-
-              <div className={styles.infoSessionsList}>
+                <div className={styles.infoSessionsList}>
                 <div className={styles.infoSessionItem}>
                   <div className={styles.infoSessionDate}>
                     <span className={styles.infoSessionDay}>
-                      Saturday, January 24th
+                      Thursday, September 3rd 
                     </span>
                     <span className={styles.infoSessionTime}>
-                      3:00 PM
+                      4:00 PM
                     </span>
                   </div>
 
@@ -227,13 +226,72 @@ export default function Home() {
                     <span className={styles.infoSessionLocationIcon}>
                       📍
                     </span>
-                    <span>Upson Hall 202</span>
+                    <span>Hollister 368</span>
                   </div>
                 </div>
               </div>
+              <div className={styles.infoSessionsList}>
+                <div className={styles.infoSessionItem}>
+                  <div className={styles.infoSessionDate}>
+                    <span className={styles.infoSessionDay}>
+                      Friday, September 11th
+                    </span>
+                    <span className={styles.infoSessionTime}>
+                      5:00 PM
+                    </span>
+                  </div>
+
+                  <div className={styles.infoSessionLocation}>
+                    <span className={styles.infoSessionLocationIcon}>
+                      📍
+                    </span>
+                    <span>Phillips 307</span>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.infoSessionsList}>
+                <div className={styles.infoSessionItem}>
+                  <div className={styles.infoSessionDate}>
+                    <span className={styles.infoSessionDay}>
+                      Sunday, September 13th
+                    </span>
+                    <span className={styles.infoSessionTime}>
+                      4:00 PM
+                    </span>
+                  </div>
+
+                  <div className={styles.infoSessionLocation}>
+                    <span className={styles.infoSessionLocationIcon}>
+                      📍
+                    </span>
+                    <span>Hollister 362</span>
+                  </div>
+                </div>
+              </div>
+            
+              <div className={styles.infoSessionsList}>
+                <div className={styles.infoSessionItem}>
+                  <div className={styles.infoSessionDate}>
+                    <span className={styles.infoSessionDay}>
+                      Sunday, October 4th 
+                    </span>
+                    <span className={styles.infoSessionTime}>
+                      4:00 PM
+                    </span>
+                  </div>
+
+                  <div className={styles.infoSessionLocation}>
+                    <span className={styles.infoSessionLocationIcon}>
+                      📍
+                    </span>
+                    <span>TBD</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-          */}
+          }
 
           {/* COMPETITION CYCLE */}
           <div
