@@ -310,7 +310,7 @@
   .bookingTable tr,
   .bookingTable td {
     display: block;
-    width: 100%;
+    width: 50%;
   }
 
   .bookingTable tr {
