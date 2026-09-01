@@ -74,7 +74,7 @@ const coffeeChatRows: CoffeeChatRow[] = [
 
 export default function CoffeeChat() {
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-//comment here just want to push
+//comment here just want to push now
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

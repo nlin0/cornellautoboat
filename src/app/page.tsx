@@ -56,7 +56,7 @@ export default function Home() {
             try {
               entry.target.classList.add(styles.fadeInUp);
             } catch (error) {
-              // Element might have been removed, ignore error
+              // Element might have been removed, ignore the error
             }
           }
         });
