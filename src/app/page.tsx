@@ -284,7 +284,7 @@ export default function Home() {
                     <span className={styles.infoSessionLocationIcon}>
                       📍
                     </span>
-                    <span>TBD</span>
+                    <span>Upson 206</span>
                   </div>
                 </div>
               </div>
