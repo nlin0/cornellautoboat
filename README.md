@@ -23,3 +23,4 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 
 ## Documentation
+All designs created 2025 - 2026 : Nicole Lin & Michelle Zhao
