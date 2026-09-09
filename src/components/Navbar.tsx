@@ -16,7 +16,7 @@ interface NavLink {
 const TECHNICAL_SUBPAGES = [
   'Perception',
   'Autonomy',
-  /*'Controls',*/
+  /* 'Controls', */
   'Simulations',
   'Mechanical',
   'Robotics',
@@ -33,14 +33,11 @@ const SECONDARY_NAV_LINKS: NavLink[] = [
   { href: '/competition', label: 'Competition' },
   { href: '/media', label: 'Media' },
   { href: '/sponsors', label: 'Sponsors' },
-
-  // KEEP YOUR EXISTING GOOGLE APPLY LINK HERE
   {
     href: 'https://docs.google.com/forms/d/e/1FAIpQLSdyiXnXFlgKNF2EGi1rpWyEKVNZUpvFJ9kd6S65DNz0Vs_xIg/viewform',
     label: 'Apply Now',
     isButton: true,
   },
-
   {
     href: 'https://securelb.imodules.com/s/1717/giving/interior.aspx?sid=1717&gid=2&pgid=16421&cid=7311&dids=5372&bledit=1',
     label: 'Donate',
@@ -54,7 +51,7 @@ export default function Navbar() {
   const [isTechnicalOpenDesktop, setIsTechnicalOpenDesktop] = useState(false);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const navRef = useRef<HTMLElement | null>(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
   const indicatorRef = useRef<HTMLDivElement | null>(null);
   const linkRefs = useRef<Map<string, HTMLElement>>(new Map());
 
@@ -62,30 +59,31 @@ export default function Navbar() {
   const { status } = useSession();
   const isLoggedIn = status === 'authenticated';
 
-  const toggleMenu = useCallback(
-    () => setIsMenuOpen((prev) => !prev),
-    []
-  );
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prev) => !prev);
+  }, []);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
     setIsTechnicalOpen(false);
   }, []);
 
-  const toggleTechnicalMobile = useCallback(
-    () => setIsTechnicalOpen((prev) => !prev),
-    []
-  );
+  const toggleTechnicalMobile = useCallback(() => {
+    setIsTechnicalOpen((prev) => !prev);
+  }, []);
 
   const handleTechnicalMouseEnter = useCallback(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     setIsTechnicalOpenDesktop(true);
   }, []);
 
   const handleTechnicalMouseLeave = useCallback(() => {
     timeoutRef.current = setTimeout(() => {
       setIsTechnicalOpenDesktop(false);
-    }, 250);
+    }, 200);
   }, []);
 
   useEffect(() => {
@@ -104,20 +102,17 @@ export default function Navbar() {
   const getTechnicalHref = (label: string) =>
     `/technical/${label.toLowerCase().replace(/\s+/g, '-')}`;
 
-  // Close mobile menu when pathname changes
   useEffect(() => {
     setIsMenuOpen(false);
     setIsTechnicalOpen(false);
   }, [pathname]);
 
-  // Update sliding indicator
   useEffect(() => {
     const updateIndicator = () => {
       if (!indicatorRef.current || !navRef.current) return;
 
       let activeLink: HTMLElement | null = null;
 
-      // Main nav links
       for (const { href } of MAIN_NAV_LINKS) {
         if (pathname === href) {
           activeLink = linkRefs.current.get(href) || null;
@@ -125,12 +120,10 @@ export default function Navbar() {
         }
       }
 
-      // Technical
       if (!activeLink && pathname.startsWith('/technical')) {
         activeLink = linkRefs.current.get('/technical') || null;
       }
 
-      // Secondary links
       if (!activeLink) {
         for (const { href, isButton } of SECONDARY_NAV_LINKS) {
           if (!isButton && pathname === href) {
@@ -140,19 +133,14 @@ export default function Navbar() {
         }
       }
 
-      if (activeLink && navRef.current) {
+      if (activeLink) {
         const navRect = navRef.current.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
 
-        const left = linkRect.left - navRect.left;
-        const top = linkRect.top - navRect.top;
-        const width = linkRect.width;
-        const height = linkRect.height;
-
-        indicatorRef.current.style.left = `${left}px`;
-        indicatorRef.current.style.top = `${top}px`;
-        indicatorRef.current.style.width = `${width}px`;
-        indicatorRef.current.style.height = `${height}px`;
+        indicatorRef.current.style.left = `${linkRect.left - navRect.left}px`;
+        indicatorRef.current.style.top = `${linkRect.top - navRect.top}px`;
+        indicatorRef.current.style.width = `${linkRect.width}px`;
+        indicatorRef.current.style.height = `${linkRect.height}px`;
         indicatorRef.current.style.opacity = '1';
       } else {
         indicatorRef.current.style.opacity = '0';
@@ -160,6 +148,7 @@ export default function Navbar() {
     };
 
     const timer = setTimeout(updateIndicator, 10);
+
     window.addEventListener('resize', updateIndicator);
 
     return () => {
@@ -169,30 +158,29 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="bg-white/80 border-b border-gray-200 fixed top-0 left-0 right-0 z-50 shadow-lg backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
       
       {/* NAV CONTAINER */}
-      <div className="w-full px-2 sm:px-3 lg:px-4 max-w-[1400px] mx-auto">
-        
-        <div className="flex items-center h-20">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-[76px]">
 
           {/* LOGO */}
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex-shrink-0 flex items-center gap-2 group transition-transform duration-300 hover:scale-105 mr-6"
+            className="flex items-center gap-2.5 shrink-0 group"
           >
             <Image
               src="/CUAB_Logo.png"
               alt="Cornell AutoBoat Logo"
-              width={70}
-              height={70}
-              className="transition-all duration-300 group-hover:scale-110"
+              width={58}
+              height={58}
+              className="transition-transform duration-200 group-hover:scale-105"
               priority
             />
 
             <span
-              className="font-semibold text-lg text-gray-900 tracking-tight transition-colors duration-300 group-hover:text-[#960303] whitespace-nowrap"
+              className="font-semibold text-[17px] tracking-tight text-gray-900 group-hover:text-[#960303] transition-colors duration-200 whitespace-nowrap"
               style={{ fontFamily: 'Pirulen, Arial, sans-serif' }}
             >
               Cornell AutoBoat
@@ -200,16 +188,16 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav
+          <div
             ref={navRef}
-            className="hidden md:flex items-center gap-0 relative ml-20"
+            className="hidden md:flex items-center gap-1 relative ml-auto"
             aria-label="Main navigation"
           >
 
             {/* SLIDING INDICATOR */}
             <div
               ref={indicatorRef}
-              className="absolute border border-[#960303] rounded-md transition-all duration-300 ease-out pointer-events-none"
+              className="absolute border border-[#960303]/60 rounded-lg transition-all duration-300 ease-out pointer-events-none"
               style={{
                 opacity: 0,
                 left: 0,
@@ -225,39 +213,43 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 ref={(el) => {
-                  if (el) linkRefs.current.set(href, el);
+                  if (el) {
+                    linkRefs.current.set(href, el);
+                  }
                 }}
-                className={`px-2.5 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-out relative ${
+                className={`relative z-10 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   isActive(href)
                     ? 'text-[#960303]'
-                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                } hover:scale-105 active:scale-95`}
+                    : 'text-gray-700 hover:text-[#960303]'
+                }`}
               >
                 {label}
               </Link>
             ))}
 
-            {/* TECHNICAL DROPDOWN */}
+            {/* SUBTEAMS */}
             <div
-              className="relative"
+              className="relative z-20"
               onMouseEnter={handleTechnicalMouseEnter}
               onMouseLeave={handleTechnicalMouseLeave}
             >
               <Link
                 href="/technical"
                 ref={(el) => {
-                  if (el) linkRefs.current.set('/technical', el);
+                  if (el) {
+                    linkRefs.current.set('/technical', el);
+                  }
                 }}
-                className={`px-2.5 py-2 rounded-md text-sm font-medium flex items-center gap-1 transition-all duration-200 ease-out ${
+                className={`relative z-10 px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 transition-colors duration-200 ${
                   pathname.startsWith('/technical')
                     ? 'text-[#960303]'
-                    : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                } hover:scale-105 active:scale-95`}
+                    : 'text-gray-700 hover:text-[#960303]'
+                }`}
               >
                 Subteams
 
                 <svg
-                  className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     isTechnicalOpenDesktop ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -273,16 +265,18 @@ export default function Navbar() {
                 </svg>
               </Link>
 
-              {/* DESKTOP DROPDOWN */}
+              {/* DROPDOWN */}
               {isTechnicalOpenDesktop && (
-                <div className="absolute left-0 top-full z-50 pt-3">
-                  <div className="absolute top-0 left-0 w-full h-3 -mt-3 pointer-events-none" />
+                <div className="absolute left-0 top-full pt-3">
+                  <div className="w-60 bg-white rounded-xl border border-gray-200 shadow-xl overflow-hidden">
+                    
+                    <div className="px-4 py-3 border-b border-gray-100">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                        Technical Subteams
+                      </p>
+                    </div>
 
-                  <div
-                    className="bg-white text-gray-900 rounded-lg w-64 shadow-xl border border-gray-200 animate-fadeInDown"
-                    role="menu"
-                  >
-                    {TECHNICAL_SUBPAGES.map((label, index) => {
+                    {TECHNICAL_SUBPAGES.map((label) => {
                       const technicalHref = getTechnicalHref(label);
                       const isTechnicalActive =
                         pathname === technicalHref;
@@ -291,18 +285,19 @@ export default function Navbar() {
                         <Link
                           key={label}
                           href={technicalHref}
-                          className={`block px-4 py-2.5 border-b border-gray-100 last:border-b-0 transition-all duration-200 text-sm transform hover:translate-x-1 hover:pl-5 ${
+                          className={`flex items-center px-4 py-2.5 text-sm transition-colors duration-150 ${
                             isTechnicalActive
-                              ? 'text-[#960303] border-l-2 border-l-[#960303] bg-gray-50'
-                              : 'hover:bg-gray-50 hover:text-[#960303]'
+                              ? 'text-[#960303] bg-red-50 font-medium'
+                              : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                           }`}
-                          role="menuitem"
-                          style={{
-                            animation: `fadeInLeft 0.3s ease-out ${
-                              index * 0.05
-                            }s both`,
-                          }}
                         >
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full mr-3 ${
+                              isTechnicalActive
+                                ? 'bg-[#960303]'
+                                : 'bg-gray-300'
+                            }`}
+                          />
                           {label}
                         </Link>
                       );
@@ -313,35 +308,39 @@ export default function Navbar() {
             </div>
 
             {/* SECONDARY LINKS */}
-            {SECONDARY_NAV_LINKS.map(
-              ({ href, label, isButton }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  ref={(el) => {
-                    if (el && !isButton) {
-                      linkRefs.current.set(href, el);
-                    }
-                  }}
-                  className={`rounded-md text-sm font-medium transition-all duration-200 ease-out relative ${
-                    isButton
-                      ? 'bg-[#960303] text-white hover:bg-[#7d0000] shadow-md hover:shadow-lg font-semibold px-3 py-2 ml-1 hover:scale-105 active:scale-95'
-                      : `px-2.5 py-2 ${
-                          isActive(href)
-                            ? 'text-[#960303]'
-                            : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
-                        } hover:scale-105 active:scale-95`
-                  }`}
-                >
-                  {label}
-                </Link>
-              )
-            )}
+            {SECONDARY_NAV_LINKS.map(({ href, label, isButton }) => (
+              <Link
+                key={href}
+                href={href}
+                ref={(el) => {
+                  if (el && !isButton) {
+                    linkRefs.current.set(href, el);
+                  }
+                }}
+                className={
+                  isButton
+                    ? label === 'Apply Now'
+                      ? 'ml-2 px-4 py-2 rounded-lg text-sm font-semibold bg-[#960303] text-white hover:bg-[#7d0000] transition-colors duration-200 shadow-sm'
+                      : 'ml-1 px-3 py-2 rounded-lg text-sm font-medium border border-gray-300 text-gray-700 hover:border-[#960303] hover:text-[#960303] transition-colors duration-200'
+                    : `relative z-10 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                        isActive(href)
+                          ? 'text-[#960303]'
+                          : 'text-gray-700 hover:text-[#960303]'
+                      }`
+                }
+              >
+                {label}
+              </Link>
+            ))}
 
             {/* COFFEE CHAT */}
             <Link
               href="/coffeechat"
-              className="px-3 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 hover:text-[#960303] transition-all duration-200 ml-1 hover:scale-105 active:scale-95"
+              className={`ml-1 px-3 py-2 rounded-lg text-sm font-medium border transition-colors duration-200 ${
+                pathname === '/coffeechat'
+                  ? 'border-[#960303] text-[#960303] bg-red-50'
+                  : 'border-gray-200 text-gray-700 hover:border-[#960303] hover:text-[#960303]'
+              }`}
             >
               Coffee Chat
             </Link>
@@ -350,28 +349,30 @@ export default function Navbar() {
             {isLoggedIn && (
               <Link
                 href="/admin"
-                className={`px-2.5 py-2 rounded-md text-sm font-medium transition-colors duration-200 ml-1 ${
+                className={`ml-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   pathname.startsWith('/admin')
-                    ? 'text-[#960303] bg-gray-50'
+                    ? 'text-[#960303] bg-red-50'
                     : 'text-gray-700 hover:text-[#960303] hover:bg-gray-50'
                 }`}
               >
                 Admin
               </Link>
             )}
-          </nav>
+          </div>
 
           {/* MOBILE MENU BUTTON */}
-          <div className="md:hidden flex items-center ml-auto">
+          <div className="md:hidden">
             <button
               type="button"
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              className="p-2 rounded-lg text-gray-600 hover:text-[#960303] hover:bg-gray-100 transition-colors"
             >
               <svg
                 className="h-6 w-6"
                 fill="none"
                 stroke="currentColor"
+                viewBox="0 0 24 24"
               >
                 {isMenuOpen ? (
                   <path
@@ -396,16 +397,16 @@ export default function Navbar() {
 
       {/* MOBILE NAV */}
       {isMenuOpen && (
-        <nav className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1 shadow-lg">
 
           {MAIN_NAV_LINKS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={closeMenu}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
+              className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                 isActive(href)
-                  ? 'text-[#960303] border border-[#960303]'
+                  ? 'text-[#960303] bg-red-50'
                   : 'text-gray-700 hover:bg-gray-50'
               }`}
             >
@@ -413,17 +414,37 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* TECHNICAL MOBILE DROPDOWN */}
+          {/* MOBILE SUBTEAMS */}
           <button
             type="button"
             onClick={toggleTechnicalMobile}
-            className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
+            className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+              pathname.startsWith('/technical')
+                ? 'text-[#960303] bg-red-50'
+                : 'text-gray-700 hover:bg-gray-50'
+            }`}
           >
-            Subteams
+            <span>Subteams</span>
+
+            <svg
+              className={`w-4 h-4 transition-transform duration-200 ${
+                isTechnicalOpen ? 'rotate-180' : ''
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </button>
 
           {isTechnicalOpen && (
-            <div className="ml-4 space-y-1">
+            <div className="ml-3 pl-3 border-l-2 border-gray-100 space-y-1">
               {TECHNICAL_SUBPAGES.map((label) => {
                 const technicalHref = getTechnicalHref(label);
                 const isTechnicalActive =
@@ -434,9 +455,9 @@ export default function Navbar() {
                     key={label}
                     href={technicalHref}
                     onClick={closeMenu}
-                    className={`block px-3 py-2 rounded-md text-sm ${
+                    className={`block px-3 py-2.5 rounded-lg text-sm transition-colors ${
                       isTechnicalActive
-                        ? 'text-[#960303] border border-[#960303]'
+                        ? 'text-[#960303] bg-red-50 font-medium'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-[#960303]'
                     }`}
                   >
@@ -448,30 +469,34 @@ export default function Navbar() {
           )}
 
           {/* SECONDARY LINKS */}
-          {SECONDARY_NAV_LINKS.map(
-            ({ href, label, isButton }) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={closeMenu}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  isActive(href) && !isButton
-                    ? 'text-[#960303] border border-[#960303]'
-                    : isButton
+          {SECONDARY_NAV_LINKS.map(({ href, label, isButton }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={closeMenu}
+              className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                isButton
+                  ? label === 'Apply Now'
                     ? 'bg-[#960303] text-white hover:bg-[#7d0000] font-semibold mt-2'
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                {label}
-              </Link>
-            )
-          )}
+                    : 'border border-gray-300 text-gray-700 hover:border-[#960303] hover:text-[#960303] mt-1'
+                  : isActive(href)
+                  ? 'text-[#960303] bg-red-50'
+                  : 'text-gray-700 hover:bg-gray-50'
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
 
           {/* COFFEE CHAT */}
           <Link
             href="/coffeechat"
             onClick={closeMenu}
-            className="block px-3 py-2 rounded-md text-base font-medium bg-gray-100 text-gray-800 hover:bg-gray-200 mt-2"
+            className={`block px-4 py-3 rounded-lg text-base font-medium border transition-colors mt-1 ${
+              pathname === '/coffeechat'
+                ? 'border-[#960303] text-[#960303] bg-red-50'
+                : 'border-gray-200 text-gray-700 hover:border-[#960303] hover:text-[#960303]'
+            }`}
           >
             Coffee Chat
           </Link>
@@ -481,17 +506,18 @@ export default function Navbar() {
             <Link
               href="/admin"
               onClick={closeMenu}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
+              className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                 pathname.startsWith('/admin')
-                  ? 'text-[#960303] border border-[#960303]'
+                  ? 'text-[#960303] bg-red-50'
                   : 'text-gray-700 hover:bg-gray-50'
               }`}
             >
               Admin
             </Link>
           )}
-        </nav>
+        </div>
       )}
     </nav>
   );
 }
+
