@@ -84,7 +84,7 @@ export default function Sponsors() {
           </li>
         </ol>
         <a
-          href="https://drive.google.com/file/d/1UfJ1NOWKrZWKSqS2qA3Xqw5ZbyVaHurO/view?usp=share_link"
+          href="https://drive.google.com/file/d/1NdAhKCT0S-5kW7F0uPK89m5zo63DQLtI/view"
           target="_blank"
           rel="noreferrer"
            className={styles.customSponsorLink}
