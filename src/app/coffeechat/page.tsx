@@ -36,7 +36,7 @@ const coffeeChatRows: CoffeeChatRow[] = [
     bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0pN4cEWnOeJeX9Ya1GTMyjqCuvMiYBO-IQsAWDCxHjWar7iQKQEZ9DEB3w1D_x2vD55nILX_Jr",
   },
   {
-    name: "Keya Cillenwater",
+    name: "Keya Gillenwater",
     subteam: "Electrical Lead",
     bookingUrl: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ33eiz6M6LONLwwCy3YTubiDXqXpBscLWIS7B300v-J1Lbe1eW_XATHUYeXwm3ITVcoz7kqQbgZ",
   },
