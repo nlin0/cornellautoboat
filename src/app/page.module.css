@@ -264,20 +264,20 @@
   align-items: center;
   margin-top: 2rem;
 }
-
 .applyButton {
-  display: block;
-  width: 100%;
-  padding: 1.2rem 3rem;
+  display: inline-block;
+  width: auto;
+  max-width: 680px;
+  padding: 2.5rem 3.5rem;
   background: linear-gradient(135deg, #ff0707 0%, #21acf2 100%);
   background-size: 200% 200%;
   color: white;
   font-weight: 800;
-  font-size: 1.25rem;
-  border-radius: 999px;
+  font-size: 2rem;
+  border-radius: 36px;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -329,7 +329,8 @@
 /* COFFEE BUTTON SECTION */
 .recruitmentButtons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -347,15 +348,16 @@
 }
 
 .coffeeButton {
-  display: block;
-  width: 30%;
-  padding: 0.9rem 2rem;
-  background: linear-gradient(135deg, #ff3b5c 0%, #168ee8 100%);
+  display: inline-block;
+  width: auto;
+  max-width: 680px;
+  padding: 2.5rem 3.5rem;
+  background: linear-gradient(135deg,#21acf2 0%, #ff0707 100% );
   background-size: 200% 200%;
   color: white;
   font-weight: 800;
-  font-size: 1rem;
-  border-radius: 999px;
+  font-size: 2rem;
+  border-radius: 36px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -363,8 +365,8 @@
   position: relative;
   overflow: hidden;
   box-shadow:
-    0 6px 24px rgba(150, 3, 3, 0.4),
-    0 0 30px rgba(1, 170, 255, 0.25),
+    0 8px 30px rgba(150, 3, 3, 0.5),
+    0 0 40px rgba(1, 170, 255, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   animation:
     gradientShift 3s ease infinite,
@@ -372,7 +374,6 @@
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
-
 .coffeeButton::before {
   content: "";
   position: absolute;

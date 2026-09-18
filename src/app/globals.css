@@ -1,10 +1,9 @@
-@import url('https://use.typekit.net/vta3qwm.css');
-@import 'tailwindcss';
-
+@import url("https://use.typekit.net/vta3qwm.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
 
 /* !! */
 /* TODO: Update the fonts.. Filson soft is adobe, Avenir can be pirated */
-
 
 /* FONT: Pirulen - Used primarily for logo/branding
    To use: Add @font-face declaration here if font files are available
@@ -59,9 +58,9 @@
   --navbar-height: 5px;
 
   /* FONTS */
-  --font-header: 'polymath', sans-serif;
-  --font-subheader: 'polymath', sans-serif;
-  --font-paragraph: 'polymath', sans-serif;
+  --font-header: "Arimo", sans-serif;
+  --font-subheader: "Arimo", sans-serif;
+  --font-paragraph: "Arimo", sans-serif;
 }
 
 @theme inline {
