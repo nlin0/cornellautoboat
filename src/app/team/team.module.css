@@ -497,9 +497,11 @@
   justify-content: center;
 }
 
-/* Wider cards for 3+ members */
+/* 3+ members: cap card width instead of letting it stretch to 1fr,
+   so cards keep a portrait ratio no matter how many fit per row */
 .subTeamGrid:has(> :nth-child(3)) {
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 280px));
+  justify-content: center;
 }
 
 @media (max-width: 400px) {
@@ -512,8 +514,10 @@
 /* Ticket card container */
 .memberCardContainer {
   perspective: 1000px;
-  height: 420px;
+  height: 480px;
   width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .memberCardInner {
@@ -596,7 +600,7 @@
 /* Large Member Photo - Front Card */
 .ticketPhotoSection {
   width: 100%;
-  height: 220px;
+  height: 300px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1194,7 +1198,8 @@
   }
 
   .memberCardContainer {
-    height: 380px;
+    height: 440px;
+    max-width: 260px;
   }
 
   .ticketHeader {
@@ -1202,7 +1207,7 @@
   }
 
   .ticketPhotoSection {
-    height: 180px;
+    height: 260px;
   }
 
   .ticketInfoSection {
