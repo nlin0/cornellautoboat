@@ -514,7 +514,7 @@
 /* Ticket card container */
 .memberCardContainer {
   perspective: 1000px;
-  height: 480px;
+  height: 420px;
   width: 100%;
   max-width: 280px;
   margin: 0 auto;
