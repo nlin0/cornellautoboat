@@ -512,7 +512,7 @@
 /* Ticket card container */
 .memberCardContainer {
   perspective: 1000px;
-  height: 410px;
+  height: 420px;
   width: 250px;
   margin: 0 auto;
 }
@@ -597,7 +597,7 @@
 /* Large Member Photo - Front Card */
 .ticketPhotoSection {
   width: 100%;
-  height: 225;
+  height: 235;
   position: relative;
   overflow: hidden;
   display: flex;
